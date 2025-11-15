@@ -52,12 +52,12 @@ console.log(isEven2);
 }
 
 function factorial(number: number): number {
-  if (!Number.isInteger(number)) {
-    throw new Error(`La saisie doit être un nombre entier`);
+  if (!Number.isInteger(number) || number < 0) {
+    throw new Error(`La saisie doit être un nombre entier positif`);
   }
 
   let factorialResult: number = 1;
-  for (let i = 1; i <= number; i++) {
+  for (let i = 2; i <= number; i++) {
     factorialResult *= i;
   }
   return factorialResult;
@@ -66,3 +66,27 @@ function factorial(number: number): number {
 let number = 5;
 let factorialOfANumber: number = factorial(5);
 console.log(factorialOfANumber);
+
+{
+  /*
+  2bis. Factorielle
+Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
+*/
+}
+
+function factorial2(number2: number): number {
+  if (!Number.isInteger(number2) || number2 < 0) {
+    throw new Error(`La saisie doit être un nombre entier`);
+  }
+
+  let factorialResult2: number = 1;
+  for (let i = number2; i >= 2; i--) {
+    factorialResult2 *= i;
+  }
+
+  return factorialResult2;
+}
+
+let number2 = 5;
+let factorialOfANumber2: number = factorial2(number2);
+console.log(factorialOfANumber2);
