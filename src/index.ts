@@ -90,3 +90,31 @@ function factorial2(number2: number): number {
 let number2 = 5;
 let factorialOfANumber2: number = factorial2(number2);
 console.log(factorialOfANumber2);
+
+{
+  /*
+  2ter. Factorielle
+Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
+*/
+}
+
+function factorial3(number3: number): number {
+  if (!Number.isInteger(number3) || number3 < 0) {
+    throw new Error(`La saisie doit être un nombre entier positif`);
+  }
+
+  let factorialResult3: number = 1;
+
+  let i = 2;
+
+  while (i <= number3) {
+    factorialResult3 *= i;
+    i++;
+  }
+
+  return factorialResult3;
+}
+
+let number3 = 5;
+let factorialOfANumber3: number = factorial3(number3);
+console.log(factorialOfANumber3);
