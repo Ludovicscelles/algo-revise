@@ -18,7 +18,7 @@ function evenOrOdd(nbr: number): boolean {
 }
 
 let nbr = 15;
-let isEven = evenOrOdd(nbr);
+let isEven: boolean = evenOrOdd(nbr);
 console.log(isEven);
 
 {
@@ -43,3 +43,26 @@ function evenOrOdd2(nbr2: number): string {
 let nbr2 = 27;
 let isEven2: string = evenOrOdd2(nbr2);
 console.log(isEven2);
+
+{
+  /*
+  2. Factorielle
+Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
+*/
+}
+
+function factorial(number: number): number {
+  if (!Number.isInteger(number)) {
+    throw new Error(`La saisie doit être un nombre entier`);
+  }
+
+  let factorialResult: number = 1;
+  for (let i = 1; i <= number; i++) {
+    factorialResult *= i;
+  }
+  return factorialResult;
+}
+
+let number = 5;
+let factorialOfANumber: number = factorial(5);
+console.log(factorialOfANumber);
