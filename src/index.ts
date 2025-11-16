@@ -157,7 +157,6 @@ console.log(factorialOfANumber4);
 }
 
 function getMaxValue(numArray: number[]): number {
-  
   if (!Array.isArray(numArray) || numArray.length < 2) {
     throw new Error(
       `La saisie d'entrée doit être un tableau comportant à minima deux éléments`
@@ -180,3 +179,36 @@ function getMaxValue(numArray: number[]): number {
 let numArray = [51, 55, 58, 42, 43];
 let maxValue = getMaxValue(numArray);
 console.log(maxValue);
+
+{
+  /*
+  3bis. Plus grand élément d’un tableau
+Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+*/
+}
+
+function getMaxValue2(numArray2: number[]): number {
+  
+  if (!Array.isArray(numArray2) || numArray2.length < 2) {
+    throw new Error(
+      `La saisie doit être un tableau comportant à minima deux éléments`
+    );
+  }
+
+  if (!numArray2.every((num) => Number.isInteger(num))) {
+    throw new Error(`Chaque élément du tableau doit être un nombre entier`);
+  }
+
+  let maxValue2: number = numArray2[numArray2.length - 1];
+
+  for (let i = numArray2.length - 2; i >= 0; i--) {
+    if (numArray2[i] > maxValue2) {
+      maxValue2 = numArray2[i];
+    }
+  }
+  return maxValue2;
+}
+
+let numArray2 = [109, 112, 125, 98, 56];
+let maxValue2 = getMaxValue2(numArray2);
+console.log(maxValue2);
