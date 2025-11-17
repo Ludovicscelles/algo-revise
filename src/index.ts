@@ -355,3 +355,33 @@ function getMaxValue7(numArray7: number[]): number {
 let numArray7 = [505, 518, 596, 501, 499];
 let maxValue7 = getMaxValue7(numArray7);
 console.log(maxValue7);
+
+{
+  /*
+  4. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
+function checkPalindrome(str: string): string {
+  if (typeof str !== "string") {
+    throw new Error(`La saisie d'entrée doit être un chaîne de caractères`);
+  }
+
+  const normalizedStr = str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+
+  for (let i = 0; i < normalizedStr.length / 2; i++) {
+    if (normalizedStr[i] !== normalizedStr[normalizedStr.length - 1 - i]) {
+      return `Ce n'est pas un palindrome`;
+    }
+  }
+  return `C'est un palindrome`;
+}
+
+let str = "Tu l'as trop écrasé César, ce Port-Salut !";
+let isPalindrome = checkPalindrome(str);
+console.log(isPalindrome);
