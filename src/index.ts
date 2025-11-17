@@ -188,7 +188,6 @@ console.log(maxValue);
 }
 
 function getMaxValue2(numArray2: number[]): number {
-  
   if (!Array.isArray(numArray2) || numArray2.length < 2) {
     throw new Error(
       `La saisie doit être un tableau comportant à minima deux éléments`
@@ -212,3 +211,38 @@ function getMaxValue2(numArray2: number[]): number {
 let numArray2 = [109, 112, 125, 98, 56];
 let maxValue2 = getMaxValue2(numArray2);
 console.log(maxValue2);
+
+{
+  /*
+  3ter. Plus grand élément d’un tableau
+Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+*/
+}
+
+function getMaxValue3(numArray3: number[]): number {
+  if (!Array.isArray(numArray3) || numArray3.length < 2) {
+    throw new Error(
+      `La saisie doit être un tableau comportant à minima deux éléments`
+    );
+  }
+
+  if (!numArray3.every((num) => typeof num === "number")) {
+    throw new Error(`Chaque élément du tableau doit être un nombre`);
+  }
+
+  let maxValue3: number = numArray3[0];
+
+  let i = 1;
+
+  while (i < numArray3.length) {
+    if (numArray3[i] > maxValue3) {
+      maxValue3 = numArray3[i];
+    }
+    i++;
+  }
+  return maxValue3;
+}
+
+let numArray3 = [209, 224, 512, 301, 98];
+let maxValue3 = getMaxValue3(numArray3);
+console.log(maxValue3);
