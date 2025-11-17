@@ -226,8 +226,8 @@ function getMaxValue3(numArray3: number[]): number {
     );
   }
 
-  if (!numArray3.every((num) => typeof num === "number")) {
-    throw new Error(`Chaque élément du tableau doit être un nombre`);
+  if (!numArray3.every((num) => Number.isInteger(num))) {
+    throw new Error(`Chaque élément du tableau doit être un nombre entier`);
   }
 
   let maxValue3: number = numArray3[0];
@@ -246,3 +246,31 @@ function getMaxValue3(numArray3: number[]): number {
 let numArray3 = [209, 224, 512, 301, 98];
 let maxValue3 = getMaxValue3(numArray3);
 console.log(maxValue3);
+
+function getMaxValue4(numArray4: number[]): number {
+  if (!Array.isArray(numArray4) || numArray4.length < 2) {
+    throw new Error(
+      `La saisie doit être un tableau comportant à minima deux éléments`
+    );
+  }
+
+  if (!numArray4.every((num) => Number.isInteger(num))) {
+    throw new Error(`Chaque élément du tableau doit être un nombre entier`);
+  }
+
+  let maxValue4: number = numArray4[numArray4.length - 1];
+
+  let i = numArray4.length - 2;
+
+  while (i >= 0) {
+    if (numArray4[i] > maxValue4) {
+      maxValue4 = numArray4[i];
+    }
+    i--;
+  }
+  return maxValue4;
+}
+
+let numArray4 = [1025, 1030, 1350, 1052, 999];
+let maxValue4 = getMaxValue4(numArray4);
+console.log(maxValue4);
