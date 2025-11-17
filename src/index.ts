@@ -327,3 +327,31 @@ function getMaxValue6(numArray6: number[]): number {
 let numArray6 = [302, 352, 369, 301, 300];
 let maxValue6 = getMaxValue6(numArray6);
 console.log(maxValue6);
+
+function getMaxValue7(numArray7: number[]): number {
+  if (!Array.isArray(numArray7) || numArray7.length < 2) {
+    throw new Error(
+      `La saisie d'entrée doit être un tableau comportant à minima deux éléments`
+    );
+  }
+
+  if (!numArray7.every((num) => Number.isInteger(num))) {
+    throw new Error(`Chaque élément du tableau doit être un nombre entier`);
+  }
+
+  let maxValue7: number = numArray7[numArray7.length - 1];
+
+  let i = numArray7.length - 2;
+
+  do {
+    if (numArray7[i] > maxValue7) {
+      maxValue7 = numArray7[i];
+    }
+    i--;
+  } while (i >= 0);
+  return maxValue7;
+}
+
+let numArray7 = [505, 518, 596, 501, 499];
+let maxValue7 = getMaxValue7(numArray7);
+console.log(maxValue7);
