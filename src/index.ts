@@ -385,3 +385,44 @@ function checkPalindrome(str: string): string {
 let str = "Tu l'as trop écrasé César, ce Port-Salut !";
 let isPalindrome = checkPalindrome(str);
 console.log(isPalindrome);
+
+{
+  /*
+  4. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
+// function to check if a string is a palindrome
+function checkPalindromeWithComments(str: string): string {
+  // check if the input is a string
+  if (typeof str !== "string") {
+    throw new Error(`La saisie d'entrée doit être un chaîne de caractères`);
+  }
+
+  // normalize the string: convert to lowercase, remove accents, and remove non-alphanumeric characters
+  const normalizedStr = str
+    // convert to lowercase
+    .toLowerCase()
+    // remove accents by normalizing to NFD form, NFD means Normalization Form Decomposition
+    .normalize("NFD")
+    // remove diacritical marks, diatritical means accent marks
+    .replace(/[\u0300-\u036f]/g, "")
+    // remove non-alphanumeric characters
+    .replace(/[^a-z0-9]/g, "");
+
+  // check if the normalized string is a palindrome using a for loop
+  for (let i = 0; i < normalizedStr.length / 2; i++) {
+    // compare characters from the start and end of the string
+    if (normalizedStr[i] !== normalizedStr[normalizedStr.length - 1 - i]) {
+      // if characters do not match, it's not a palindrome
+      return `Ce n'est pas un palindrome`;
+    }
+  }
+  // if all characters match, it is a palindrome
+  return `C'est un palindrome`;
+}
+
+let strBis = "Tu l'as trop écrasé César, ce Port-Salut !";
+let isPalindromeBis = checkPalindromeWithComments(strBis);
+console.log(isPalindromeBis);
