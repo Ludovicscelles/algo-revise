@@ -274,3 +274,28 @@ function getMaxValue4(numArray4: number[]): number {
 let numArray4 = [1025, 1030, 1350, 1052, 999];
 let maxValue4 = getMaxValue4(numArray4);
 console.log(maxValue4);
+
+function getMaxValue5(numArray5: number[]): number {
+  if (!Array.isArray(numArray5) || numArray5.length < 2) {
+    throw new Error(
+      `La saisie doit être un tableau comportant à minima deux éléments`
+    );
+  }
+
+  if (!numArray5.every((num) => Number.isInteger(num))) {
+    throw new Error(`Chaque élément du tableau doit être un nombre entier`);
+  }
+
+  let maxValue5: number = numArray5[0];
+
+  for (let num of numArray5) {
+    if (num > maxValue5) {
+      maxValue5 = num;
+    }
+  }
+  return maxValue5;
+}
+
+let numArray5 = [201, 263, 298, 152, 175];
+let maxValue5 = getMaxValue5(numArray5);
+console.log(maxValue5);
