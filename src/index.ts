@@ -450,3 +450,54 @@ function checkPalindrome2(str2: string): string {
 let str2 = "Et la marine va venir à Malte";
 let isPalindrome2: string = checkPalindrome2(str2);
 console.log(isPalindrome2);
+
+const normalizedStr = (str: string): string =>
+  str
+    .toLocaleLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+
+function checkPalindrome3(str3: string): string {
+  if (typeof str3 !== "string") {
+    throw new Error(`La saisie doit être une chaîne de caractères`);
+  }
+
+  const normalizedStr3: string = normalizedStr(str3);
+
+  let i = 0;
+
+  while (i < normalizedStr3.length / 2) {
+    if (normalizedStr3[i] !== normalizedStr3[normalizedStr3.length - 1 - i]) {
+      return `Ce n'est pas un palindrome`;
+    }
+    i++;
+  }
+  return `Il s'agit bien d'un palindrome`;
+}
+
+let str3 = "À l'étape, épate-la";
+let isPalindrome3: string = checkPalindrome3(str3);
+console.log(isPalindrome3);
+
+function checkPalindrome4(str4: string): string {
+  if (typeof str4 !== "string") {
+    throw new Error(`La saisie doit être une chaîne de caractères`);
+  }
+
+  const normalizedStr4: string = normalizedStr(str4);
+
+  let i = normalizedStr4.length - 1;
+
+  while (i >= normalizedStr4.length / 2) {
+    if (normalizedStr4[i] !== normalizedStr4[normalizedStr4.length - 1 - i]) {
+      return `Ceci n'est pas un palindrome`;
+    }
+    i--;
+  }
+  return `Il s'agit bien d'un palindrome`;
+}
+
+let str4 = "Engage le jeu que je le gagne";
+let isPalindrome5: string = checkPalindrome4(str4);
+console.log(isPalindrome5);
