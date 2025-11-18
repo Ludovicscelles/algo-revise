@@ -1,4 +1,5 @@
 import { error } from "console";
+import { normalize } from "path";
 
 {
   /*
@@ -426,3 +427,26 @@ function checkPalindromeWithComments(str: string): string {
 let strBis = "Tu l'as trop écrasé César, ce Port-Salut !";
 let isPalindromeBis = checkPalindromeWithComments(strBis);
 console.log(isPalindromeBis);
+
+function checkPalindrome2(str2: string): string {
+  if (typeof str2 !== "string") {
+    throw new Error(`La saisie doit être une chaîne de caractères`);
+  }
+
+  const normalizedStr2: string = str2
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+
+  for (let i = normalizedStr2.length - 1; i >= normalizedStr2.length / 2; i--) {
+    if (normalizedStr2[i] !== normalizedStr2[normalizedStr2.length - 1 - i]) {
+      return `Ce n'est pas un palindrome`;
+    }
+  }
+  return `C'est un palindrome`;
+}
+
+let str2 = "Et la marine va venir à Malte";
+let isPalindrome2: string = checkPalindrome2(str2);
+console.log(isPalindrome2);
