@@ -1,5 +1,3 @@
-import { error } from "console";
-import { normalize } from "path";
 
 {
   /*
@@ -522,5 +520,27 @@ function checkPalindrome5(str5: string): string {
 }
 
 let str5 = "À révéler mon nom, mon nom relèvera";
-let isPalindrome5:string = checkPalindrome5(str5);
-console.log(isPalindrome5)
+let isPalindrome5: string = checkPalindrome5(str5);
+console.log(isPalindrome5);
+
+function checkPalindrome6(str6: string): string {
+  if (typeof str6 !== "string") {
+    throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
+  }
+
+  const normalizedStr6: string = normalizedStr(str6);
+
+  let i = normalizedStr6.length - 1;
+
+  do {
+    if (normalizedStr6[i] !== normalizedStr6[normalizedStr6.length - 1 - i]) {
+      return `Ceci n'est pas un palindrome`;
+    }
+    i--;
+  } while (i >= normalizedStr6.length / 2);
+  return `Ceci est un palindrome`;
+}
+
+let str6 = "La mère Gide digère mal";
+let isPalindrome6 = checkPalindrome6(str6);
+console.log(isPalindrome6);
