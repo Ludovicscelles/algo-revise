@@ -499,5 +499,28 @@ function checkPalindrome4(str4: string): string {
 }
 
 let str4 = "Engage le jeu que je le gagne";
-let isPalindrome5: string = checkPalindrome4(str4);
-console.log(isPalindrome5);
+let isPalindrome4: string = checkPalindrome4(str4);
+console.log(isPalindrome4);
+
+function checkPalindrome5(str5: string): string {
+  if (typeof str5 !== "string") {
+    throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
+  }
+
+  const normalizedStr5: string = normalizedStr(str5);
+
+  let i = 0;
+
+  do {
+    if (normalizedStr5[i] !== normalizedStr5[normalizedStr5.length - 1 - i]) {
+      return `Ceci n'est pas un palindrome`;
+    }
+    i++;
+  } while (i < normalizedStr5.length / 2);
+
+  return `Il s'agit bien d'un palindrome`;
+}
+
+let str5 = "À révéler mon nom, mon nom relèvera";
+let isPalindrome5:string = checkPalindrome5(str5);
+console.log(isPalindrome5)
