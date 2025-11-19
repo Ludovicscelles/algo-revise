@@ -6,11 +6,19 @@
   */
 }
 
+// type guard to check if input is an integer
+// throws an error if not
+// asserts nb is number tells TypeScript that after calling this function, nb can be treated as a number
 const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
+// check if the input is a number and an integer
   if (!Number.isInteger(nb)) {
+    // throw an error if not
+    // message in French: "Input must be an integer."
     throw new Error(`La saisie doit être un nombre entier `);
   }
 };
+
+
 
 function evenOrOdd(nbr: unknown): boolean {
   checkIsInteger(nbr);
@@ -50,6 +58,8 @@ console.log(isEven2);
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
 */
 }
+
+
 
 function factorial(number: number): number {
   if (!Number.isInteger(number) || number < 0) {
