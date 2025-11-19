@@ -1,9 +1,7 @@
-import { array } from "joi";
-
 {
   /*
 
-  1. Pair ou impair
+  1v1. Pair ou impair
 Écris un programme qui prend un nombre entier et affiche s’il est pair ou impair.
   */
 }
@@ -35,7 +33,7 @@ console.log(isEven);
 {
   /*
 
-  1bis. Pair ou impair
+  1v2. Pair ou impair
 Écris un programme qui prend un nombre entier et affiche s’il est pair ou impair.
   */
 }
@@ -54,7 +52,7 @@ console.log(isEven2);
 
 {
   /*
-  2. Factorielle
+  2v1. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
 */
 }
@@ -87,7 +85,7 @@ console.log(factorialOfANumber);
 
 {
   /*
-  2bis. Factorielle
+  2v2. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
 */
 }
@@ -109,7 +107,7 @@ console.log(factorialOfANumber2);
 
 {
   /*
-  2ter. Factorielle
+  2v3. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
 */
 }
@@ -135,7 +133,7 @@ console.log(factorialOfANumber3);
 
 {
   /*
-  2quater. Factorielle
+  2v4. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
 */
 }
@@ -161,7 +159,7 @@ console.log(factorialOfANumber4);
 
 {
   /*
-  3. Plus grand élément d’un tableau
+  3v1. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
 */
 }
@@ -188,22 +186,33 @@ const checkMinArrayLength2: (array: unknown[]) => asserts array is unknown[] = (
   // check if the array has at least 2 elements
   if (array.length < 2) {
     // throw an error if not
-    throw new Error(`Le tableau doit contenir au minimum deux éléments`);
+    throw new Error(`Le tableau doit contenir au minimum deux éléments.`);
   }
 };
 
-function getMaxValue(numArray: number[]): number {
-  checkIsArray(numArray);
-  checkMinArrayLength2(numArray);
-
-  if (!numArray.every((num) => Number.isInteger(num))) {
+// check fonction to ensure all elements in the array are integers
+// throws an error if not
+const checkIsNumbersArray = (array: unknown[]) => {
+  // check if all elements in the array are integers
+  if (!array.every((element) => Number.isInteger(element))) {
+    // throw an error if not
+    // message in French: "Each element of the array must be an integer."
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
   }
-  let maxValue: number = numArray[0];
+};
 
-  for (let i = 0; i < numArray.length; i++) {
-    if (numArray[i] > maxValue) {
-      maxValue = numArray[i];
+function getMaxValue(numArray: unknown[]): number {
+  checkIsArray(numArray);
+  checkMinArrayLength2(numArray);
+  checkIsNumbersArray(numArray);
+
+  const arr = numArray as number[];
+
+  let maxValue: number = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > maxValue) {
+      maxValue = arr[i];
     }
   }
   return maxValue;
@@ -215,24 +224,23 @@ console.log(maxValue);
 
 {
   /*
-  3bis. Plus grand élément d’un tableau
+  3v2. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
 */
 }
 
-function getMaxValue2(numArray2: number[]): number {
+function getMaxValue2(numArray2: unknown[]): number {
   checkIsArray(numArray2);
   checkMinArrayLength2(numArray2);
+  checkIsNumbersArray(numArray2);
 
-  if (!numArray2.every((num) => Number.isInteger(num))) {
-    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
-  }
+  const arr2 = numArray2 as number[];
 
-  let maxValue2: number = numArray2[numArray2.length - 1];
+  let maxValue2: number = arr2[arr2.length - 1];
 
-  for (let i = numArray2.length - 2; i >= 0; i--) {
-    if (numArray2[i] > maxValue2) {
-      maxValue2 = numArray2[i];
+  for (let i = arr2.length - 2; i >= 0; i--) {
+    if (arr2[i] > maxValue2) {
+      maxValue2 = arr2[i];
     }
   }
   return maxValue2;
@@ -244,26 +252,25 @@ console.log(maxValue2);
 
 {
   /*
-  3ter. Plus grand élément d’un tableau
+  3v3. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
 */
 }
 
-function getMaxValue3(numArray3: number[]): number {
+function getMaxValue3(numArray3: unknown[]): number {
   checkIsArray(numArray3);
   checkMinArrayLength2(numArray3);
+  checkIsNumbersArray(numArray3);
 
-  if (!numArray3.every((num) => Number.isInteger(num))) {
-    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
-  }
+  const arr3 = numArray3 as number[];
 
-  let maxValue3: number = numArray3[0];
+  let maxValue3: number = arr3[0];
 
   let i = 1;
 
-  while (i < numArray3.length) {
-    if (numArray3[i] > maxValue3) {
-      maxValue3 = numArray3[i];
+  while (i < arr3.length) {
+    if (arr3[i] > maxValue3) {
+      maxValue3 = arr3[i];
     }
     i++;
   }
@@ -274,21 +281,26 @@ let numArray3 = [209, 224, 512, 301, 98];
 let maxValue3 = getMaxValue3(numArray3);
 console.log(maxValue3);
 
-function getMaxValue4(numArray4: number[]): number {
+{
+  /*
+  3v4. Plus grand élément d’un tableau
+Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+*/
+}
+
+function getMaxValue4(numArray4: unknown[]): number {
   checkIsArray(numArray4);
   checkMinArrayLength2(numArray4);
+  checkIsNumbersArray(numArray4);
 
-  if (!numArray4.every((num) => Number.isInteger(num))) {
-    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
-  }
+  const arr4 = numArray4 as number[];
+  let maxValue4: number = arr4[arr4.length - 1];
 
-  let maxValue4: number = numArray4[numArray4.length - 1];
-
-  let i = numArray4.length - 2;
+  let i = arr4.length - 2;
 
   while (i >= 0) {
-    if (numArray4[i] > maxValue4) {
-      maxValue4 = numArray4[i];
+    if (arr4[i] > maxValue4) {
+      maxValue4 = arr4[i];
     }
     i--;
   }
@@ -299,17 +311,23 @@ let numArray4 = [1025, 1030, 1350, 1052, 999];
 let maxValue4 = getMaxValue4(numArray4);
 console.log(maxValue4);
 
-function getMaxValue5(numArray5: number[]): number {
+{
+  /*
+  3v5. Plus grand élément d’un tableau
+Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+*/
+}
+
+function getMaxValue5(numArray5: unknown[]): number {
   checkIsArray(numArray5);
   checkMinArrayLength2(numArray5);
+  checkMinArrayLength2(numArray5);
 
-  if (!numArray5.every((num) => Number.isInteger(num))) {
-    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
-  }
+  const arr5 = numArray5 as number[];
 
-  let maxValue5: number = numArray5[0];
+  let maxValue5: number = arr5[0];
 
-  for (let num of numArray5) {
+  for (let num of arr5) {
     if (num > maxValue5) {
       maxValue5 = num;
     }
@@ -321,24 +339,30 @@ let numArray5 = [201, 263, 298, 152, 175];
 let maxValue5 = getMaxValue5(numArray5);
 console.log(maxValue5);
 
-function getMaxValue6(numArray6: number[]): number {
+{
+  /*
+  3v6. Plus grand élément d’un tableau
+Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+*/
+}
+
+function getMaxValue6(numArray6: unknown[]): number {
   checkIsArray(numArray6);
   checkMinArrayLength2(numArray6);
+  checkIsNumbersArray(numArray6);
 
-  if (!numArray6.every((num) => Number.isInteger(num))) {
-    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
-  }
+  const arr6 = numArray6 as number[];
 
-  let maxValue6: number = numArray6[0];
+  let maxValue6: number = arr6[0];
 
   let i = 1;
 
   do {
-    if (numArray6[i] > maxValue6) {
-      maxValue6 = numArray6[i];
+    if (arr6[i] > maxValue6) {
+      maxValue6 = arr6[i];
     }
     i++;
-  } while (i < numArray6.length);
+  } while (i < arr6.length);
   return maxValue6;
 }
 
@@ -346,21 +370,26 @@ let numArray6 = [302, 352, 369, 301, 300];
 let maxValue6 = getMaxValue6(numArray6);
 console.log(maxValue6);
 
-function getMaxValue7(numArray7: number[]): number {
+{
+  /*
+  3v7. Plus grand élément d’un tableau
+Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+*/
+}
+
+function getMaxValue7(numArray7: unknown[]): number {
   checkIsArray(numArray7);
   checkMinArrayLength2(numArray7);
+  checkIsNumbersArray(numArray7);
 
-  if (!numArray7.every((num) => Number.isInteger(num))) {
-    throw new Error(`Chaque élément du tableau doit être un nombre entier`);
-  }
+  const arr7 = numArray7 as number[];
+  let maxValue7: number = arr7[arr7.length - 1];
 
-  let maxValue7: number = numArray7[numArray7.length - 1];
-
-  let i = numArray7.length - 2;
+  let i = arr7.length - 2;
 
   do {
-    if (numArray7[i] > maxValue7) {
-      maxValue7 = numArray7[i];
+    if (arr7[i] > maxValue7) {
+      maxValue7 = arr7[i];
     }
     i--;
   } while (i >= 0);
@@ -373,7 +402,7 @@ console.log(maxValue7);
 
 {
   /*
-  4. Palindrome
+  4v1. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
 */
 }
@@ -424,7 +453,7 @@ console.log(isPalindrome);
 
 {
   /*
-  4Bis. Palindrome
+  4bis. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
 */
 }
