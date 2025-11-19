@@ -6,11 +6,14 @@
   */
 }
 
-function evenOrOdd(nbr: number): boolean {
-  if (!Number.isInteger(nbr)) {
-    throw new Error(`La saisie doit être un nombre entier`);
+const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
+  if (!Number.isInteger(nb)) {
+    throw new Error(`La saisie doit être un nombre entier `);
   }
+};
 
+function evenOrOdd(nbr: unknown): boolean {
+  checkIsInteger(nbr);
   if (nbr % 2 !== 0) {
     return false;
   }
@@ -30,14 +33,11 @@ console.log(isEven);
 }
 
 function evenOrOdd2(nbr2: number): string {
-  if (!Number.isInteger(nbr2)) {
-    throw new Error(`La saisie doit être un nombre entier`);
-  }
-
+  checkIsInteger(nbr2);
   if (nbr2 % 2 !== 0) {
-    return `Ce nombre est impair`;
+    return `Ce nombre est impair.`;
   }
-  return `Ce nombre est pair`;
+  return `Ce nombre est pair.`;
 }
 
 let nbr2 = 27;
