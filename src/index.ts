@@ -164,10 +164,16 @@ console.log(factorialOfANumber4);
 */
 }
 
+// type guard to check if input is an array
+// throws an error if not
+// asserts array is Array<unknown> tells TypeScript that after calling this function, array can be treated as an array
 const checkIsArray: (array: unknown) => asserts array is Array<unknown> = (
+  //  check if the input is an array
   array
 ) => {
+  // throw an error if not
   if (!Array.isArray(array)) {
+    // message in French: "Input must be an array."
     throw new Error(`La saisie d'entrée doit être un tableau.`);
   }
 };
