@@ -361,6 +361,18 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
+// type guard to check if input is a string
+// throws an error if not
+// asserts str is string tells TypeScript that after calling this function, str can be treated as a string
+const checkIsString: (str: unknown) => asserts str is string = (str) => {
+  // check if the input is a string
+  if (typeof str !== "string") {
+    // throw an error if not
+    // message in French: "Input must be a string."
+    throw new Error(`La saisie d'entrée doit être une chaîne de caractères. `);
+  }
+};
+
 // helper function to normalize a string
 // removes accents, converts to lowercase, and removes non-alphanumeric characters
 const normalizedStr = (str: string): string =>
@@ -377,11 +389,8 @@ const normalizedStr = (str: string): string =>
 
 // ************
 
-function checkPalindrome(str1: string): string {
-  if (typeof str1 !== "string") {
-    throw new Error(`La saisie d'entrée doit être un chaîne de caractères.`);
-  }
-
+function checkPalindrome(str1: unknown): string {
+  checkIsString(str1);
   const normalizedStr1: string = normalizedStr(str1);
 
   for (let i = 0; i < normalizedStr1.length / 2; i++) {
@@ -404,11 +413,9 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 }
 
 // function to check if a string is a palindrome
-function checkPalindromeWithComments(strBis: string): string {
-  // check if the input is a string
-  if (typeof strBis !== "string") {
-    throw new Error(`La saisie d'entrée doit être un chaîne de caractères.`);
-  }
+function checkPalindromeWithComments(strBis: unknown): string {
+  // type guard to ensure input is a string
+  checkIsString(strBis);
 
   // normalize the string
   // this involves converting to lowercase, removing accents, and stripping non-alphanumeric characters
@@ -433,7 +440,6 @@ let strBis = "Tu l'as trop écrasé César, ce Port-Salut !";
 let isPalindromeBis = checkPalindromeWithComments(strBis);
 console.log(isPalindromeBis);
 
-
 {
   /*
   4v2. Palindrome
@@ -441,11 +447,8 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-function checkPalindrome2(str2: string): string {
-  if (typeof str2 !== "string") {
-    throw new Error(`La saisie doit être une chaîne de caractères.`);
-  }
-
+function checkPalindrome2(str2: unknown): string {
+  checkIsString(str2);
   const normalizedStr2: string = normalizedStr(str2);
 
   for (let i = normalizedStr2.length - 1; i >= normalizedStr2.length / 2; i--) {
@@ -460,7 +463,6 @@ let str2 = "Et la marine va venir à Malte";
 let isPalindrome2: string = checkPalindrome2(str2);
 console.log(isPalindrome2);
 
-
 {
   /*
   4v3. Palindrome
@@ -468,12 +470,8 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-
-function checkPalindrome3(str3: string): string {
-  if (typeof str3 !== "string") {
-    throw new Error(`La saisie doit être une chaîne de caractères.`);
-  }
-
+function checkPalindrome3(str3: unknown): string {
+  checkIsString(str3);
   const normalizedStr3: string = normalizedStr(str3);
 
   let i = 0;
@@ -491,7 +489,6 @@ let str3 = "À l'étape, épate-la";
 let isPalindrome3: string = checkPalindrome3(str3);
 console.log(isPalindrome3);
 
-
 {
   /*
   4v4. Palindrome
@@ -499,12 +496,8 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-
 function checkPalindrome4(str4: string): string {
-  if (typeof str4 !== "string") {
-    throw new Error(`La saisie doit être une chaîne de caractères.`);
-  }
-
+  checkIsString(str4);
   const normalizedStr4: string = normalizedStr(str4);
 
   let i = normalizedStr4.length - 1;
@@ -522,7 +515,6 @@ let str4 = "Engage le jeu que je le gagne";
 let isPalindrome4: string = checkPalindrome4(str4);
 console.log(isPalindrome4);
 
-
 {
   /*
   4v5. Palindrome
@@ -531,10 +523,7 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 }
 
 function checkPalindrome5(str5: string): string {
-  if (typeof str5 !== "string") {
-    throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
-  }
-
+  checkIsString(str5);
   const normalizedStr5: string = normalizedStr(str5);
 
   let i = 0;
@@ -549,11 +538,9 @@ function checkPalindrome5(str5: string): string {
   return `Il s'agit bien d'un palindrome.`;
 }
 
-
 let str5 = "À révéler mon nom, mon nom relèvera.";
 let isPalindrome5: string = checkPalindrome5(str5);
 console.log(isPalindrome5);
-
 
 {
   /*
@@ -562,12 +549,8 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-
 function checkPalindrome6(str6: string): string {
-  if (typeof str6 !== "string") {
-    throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
-  }
-
+  checkIsString(str6);
   const normalizedStr6: string = normalizedStr(str6);
 
   let i = normalizedStr6.length - 1;
