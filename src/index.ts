@@ -1,3 +1,5 @@
+import { IsPositive } from "class-validator";
+
 {
   /*
 
@@ -10,15 +12,13 @@
 // throws an error if not
 // asserts nb is number tells TypeScript that after calling this function, nb can be treated as a number
 const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
-// check if the input is a number and an integer
+  // check if the input is a number and an integer
   if (!Number.isInteger(nb)) {
     // throw an error if not
     // message in French: "Input must be an integer."
     throw new Error(`La saisie doit être un nombre entier `);
   }
 };
-
-
 
 function evenOrOdd(nbr: unknown): boolean {
   checkIsInteger(nbr);
@@ -40,7 +40,7 @@ console.log(isEven);
   */
 }
 
-function evenOrOdd2(nbr2: number): string {
+function evenOrOdd2(nbr2: unknown): string {
   checkIsInteger(nbr2);
   if (nbr2 % 2 !== 0) {
     return `Ce nombre est impair.`;
@@ -59,13 +59,21 @@ console.log(isEven2);
 */
 }
 
-
-
-function factorial(number: number): number {
-  if (!Number.isInteger(number) || number < 0) {
-    throw new Error(`La saisie doit être un nombre entier positif`);
+// type guard to check if input is a positive number
+// throws an error if not
+// asserts nb is number tells TypeScript that after calling this function, nb can be treated as a number
+const checkIsPositifNumber: (nb: number) => asserts nb is number = (nb) => {
+  // check if the input is a positive number
+  if (nb < 0) {
+    // throw an error if not
+    // message in French: "Number must be positive."
+    throw new Error(`Le nombre doit être positif`);
   }
+};
 
+function factorial(number: unknown): number {
+  checkIsInteger(number);
+  checkIsPositifNumber(number);
   let factorialResult: number = 1;
   for (let i = 2; i <= number; i++) {
     factorialResult *= i;
@@ -74,7 +82,7 @@ function factorial(number: number): number {
 }
 
 let number = 5;
-let factorialOfANumber: number = factorial(5);
+let factorialOfANumber: number = factorial(number);
 console.log(factorialOfANumber);
 
 {
@@ -84,11 +92,9 @@ console.log(factorialOfANumber);
 */
 }
 
-function factorial2(number2: number): number {
-  if (!Number.isInteger(number2) || number2 < 0) {
-    throw new Error(`La saisie doit être un nombre entier`);
-  }
-
+function factorial2(number2: unknown): number {
+  checkIsInteger(number2);
+  checkIsPositifNumber(number2);
   let factorialResult2: number = 1;
   for (let i = number2; i >= 2; i--) {
     factorialResult2 *= i;
@@ -108,11 +114,9 @@ console.log(factorialOfANumber2);
 */
 }
 
-function factorial3(number3: number): number {
-  if (!Number.isInteger(number3) || number3 < 0) {
-    throw new Error(`La saisie doit être un nombre entier positif`);
-  }
-
+function factorial3(number3: unknown): number {
+  checkIsInteger(number3);
+  checkIsPositifNumber(number3);
   let factorialResult3: number = 1;
 
   let i = 2;
@@ -136,11 +140,9 @@ console.log(factorialOfANumber3);
 */
 }
 
-function factorial4(number4: number): number {
-  if (!Number.isInteger(number4) || number4 < 0) {
-    throw new Error(`La saisie doit être un nombre entier positif`);
-  }
-
+function factorial4(number4: unknown): number {
+  checkIsInteger(number4);
+  checkIsPositifNumber(number4);
   let factorialOfANumber4: number = 1;
 
   let i = number4;
