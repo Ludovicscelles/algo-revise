@@ -1,4 +1,3 @@
-
 {
   /*
 
@@ -362,47 +361,13 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-function checkPalindrome(str: string): string {
-  if (typeof str !== "string") {
-    throw new Error(`La saisie d'entrée doit être un chaîne de caractères`);
-  }
-
-  const normalizedStr = str
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]/g, "");
-
-  for (let i = 0; i < normalizedStr.length / 2; i++) {
-    if (normalizedStr[i] !== normalizedStr[normalizedStr.length - 1 - i]) {
-      return `Ce n'est pas un palindrome`;
-    }
-  }
-  return `C'est un palindrome`;
-}
-
-let str = "Tu l'as trop écrasé César, ce Port-Salut !";
-let isPalindrome = checkPalindrome(str);
-console.log(isPalindrome);
-
-{
-  /*
-  4. Palindrome
-Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
-*/
-}
-
-// function to check if a string is a palindrome
-function checkPalindromeWithComments(str: string): string {
-  // check if the input is a string
-  if (typeof str !== "string") {
-    throw new Error(`La saisie d'entrée doit être un chaîne de caractères`);
-  }
-
-  // normalize the string: convert to lowercase, remove accents, and remove non-alphanumeric characters
-  const normalizedStr = str
+// helper function to normalize a string
+// removes accents, converts to lowercase, and removes non-alphanumeric characters
+const normalizedStr = (str: string): string =>
+  // normalize the input string
+  str
     // convert to lowercase
-    .toLowerCase()
+    .toLocaleLowerCase()
     // remove accents by normalizing to NFD form, NFD means Normalization Form Decomposition
     .normalize("NFD")
     // remove diacritical marks, diatritical means accent marks
@@ -410,55 +375,103 @@ function checkPalindromeWithComments(str: string): string {
     // remove non-alphanumeric characters
     .replace(/[^a-z0-9]/g, "");
 
+// ************
+
+function checkPalindrome(str1: string): string {
+  if (typeof str1 !== "string") {
+    throw new Error(`La saisie d'entrée doit être un chaîne de caractères.`);
+  }
+
+  const normalizedStr1: string = normalizedStr(str1);
+
+  for (let i = 0; i < normalizedStr1.length / 2; i++) {
+    if (normalizedStr1[i] !== normalizedStr1[normalizedStr1.length - 1 - i]) {
+      return `Ce n'est pas un palindrome.`;
+    }
+  }
+  return `C'est un palindrome.`;
+}
+
+let str1 = "Tu l'as trop écrasé César, ce Port-Salut !";
+let isPalindrome = checkPalindrome(str1);
+console.log(isPalindrome);
+
+{
+  /*
+  4Bis. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
+// function to check if a string is a palindrome
+function checkPalindromeWithComments(strBis: string): string {
+  // check if the input is a string
+  if (typeof strBis !== "string") {
+    throw new Error(`La saisie d'entrée doit être un chaîne de caractères.`);
+  }
+
+  // normalize the string
+  // this involves converting to lowercase, removing accents, and stripping non-alphanumeric characters
+  // we use a helper function for this
+  const normalizedStrBis: string = normalizedStr(strBis);
+
   // check if the normalized string is a palindrome using a for loop
-  for (let i = 0; i < normalizedStr.length / 2; i++) {
+  for (let i = 0; i < normalizedStrBis.length / 2; i++) {
     // compare characters from the start and end of the string
-    if (normalizedStr[i] !== normalizedStr[normalizedStr.length - 1 - i]) {
+    if (
+      normalizedStrBis[i] !== normalizedStrBis[normalizedStrBis.length - 1 - i]
+    ) {
       // if characters do not match, it's not a palindrome
-      return `Ce n'est pas un palindrome`;
+      return `Ce n'est pas un palindrome.`;
     }
   }
   // if all characters match, it is a palindrome
-  return `C'est un palindrome`;
+  return `C'est un palindrome.`;
 }
 
 let strBis = "Tu l'as trop écrasé César, ce Port-Salut !";
 let isPalindromeBis = checkPalindromeWithComments(strBis);
 console.log(isPalindromeBis);
 
+
+{
+  /*
+  4v2. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
 function checkPalindrome2(str2: string): string {
   if (typeof str2 !== "string") {
-    throw new Error(`La saisie doit être une chaîne de caractères`);
+    throw new Error(`La saisie doit être une chaîne de caractères.`);
   }
 
-  const normalizedStr2: string = str2
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]/g, "");
+  const normalizedStr2: string = normalizedStr(str2);
 
   for (let i = normalizedStr2.length - 1; i >= normalizedStr2.length / 2; i--) {
     if (normalizedStr2[i] !== normalizedStr2[normalizedStr2.length - 1 - i]) {
-      return `Ce n'est pas un palindrome`;
+      return `Ce n'est pas un palindrome.`;
     }
   }
-  return `C'est un palindrome`;
+  return `C'est un palindrome.`;
 }
 
 let str2 = "Et la marine va venir à Malte";
 let isPalindrome2: string = checkPalindrome2(str2);
 console.log(isPalindrome2);
 
-const normalizedStr = (str: string): string =>
-  str
-    .toLocaleLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]/g, "");
+
+{
+  /*
+  4v3. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
 
 function checkPalindrome3(str3: string): string {
   if (typeof str3 !== "string") {
-    throw new Error(`La saisie doit être une chaîne de caractères`);
+    throw new Error(`La saisie doit être une chaîne de caractères.`);
   }
 
   const normalizedStr3: string = normalizedStr(str3);
@@ -467,20 +480,29 @@ function checkPalindrome3(str3: string): string {
 
   while (i < normalizedStr3.length / 2) {
     if (normalizedStr3[i] !== normalizedStr3[normalizedStr3.length - 1 - i]) {
-      return `Ce n'est pas un palindrome`;
+      return `Ce n'est pas un palindrome.`;
     }
     i++;
   }
-  return `Il s'agit bien d'un palindrome`;
+  return `Il s'agit bien d'un palindrome.`;
 }
 
 let str3 = "À l'étape, épate-la";
 let isPalindrome3: string = checkPalindrome3(str3);
 console.log(isPalindrome3);
 
+
+{
+  /*
+  4v4. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
+
 function checkPalindrome4(str4: string): string {
   if (typeof str4 !== "string") {
-    throw new Error(`La saisie doit être une chaîne de caractères`);
+    throw new Error(`La saisie doit être une chaîne de caractères.`);
   }
 
   const normalizedStr4: string = normalizedStr(str4);
@@ -489,16 +511,24 @@ function checkPalindrome4(str4: string): string {
 
   while (i >= normalizedStr4.length / 2) {
     if (normalizedStr4[i] !== normalizedStr4[normalizedStr4.length - 1 - i]) {
-      return `Ceci n'est pas un palindrome`;
+      return `Ceci n'est pas un palindrome.`;
     }
     i--;
   }
-  return `Il s'agit bien d'un palindrome`;
+  return `Il s'agit bien d'un palindrome.`;
 }
 
 let str4 = "Engage le jeu que je le gagne";
 let isPalindrome4: string = checkPalindrome4(str4);
 console.log(isPalindrome4);
+
+
+{
+  /*
+  4v5. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
 
 function checkPalindrome5(str5: string): string {
   if (typeof str5 !== "string") {
@@ -511,17 +541,27 @@ function checkPalindrome5(str5: string): string {
 
   do {
     if (normalizedStr5[i] !== normalizedStr5[normalizedStr5.length - 1 - i]) {
-      return `Ceci n'est pas un palindrome`;
+      return `Ceci n'est pas un palindrome.`;
     }
     i++;
   } while (i < normalizedStr5.length / 2);
 
-  return `Il s'agit bien d'un palindrome`;
+  return `Il s'agit bien d'un palindrome.`;
 }
 
-let str5 = "À révéler mon nom, mon nom relèvera";
+
+let str5 = "À révéler mon nom, mon nom relèvera.";
 let isPalindrome5: string = checkPalindrome5(str5);
 console.log(isPalindrome5);
+
+
+{
+  /*
+  4v6. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
 
 function checkPalindrome6(str6: string): string {
   if (typeof str6 !== "string") {
@@ -534,11 +574,11 @@ function checkPalindrome6(str6: string): string {
 
   do {
     if (normalizedStr6[i] !== normalizedStr6[normalizedStr6.length - 1 - i]) {
-      return `Ceci n'est pas un palindrome`;
+      return `Ceci n'est pas un palindrome.`;
     }
     i--;
   } while (i >= normalizedStr6.length / 2);
-  return `Ceci est un palindrome`;
+  return `Ceci est un palindrome.`;
 }
 
 let str6 = "La mère Gide digère mal";
