@@ -1,3 +1,5 @@
+import { array } from "joi";
+
 {
   /*
 
@@ -177,11 +179,22 @@ const checkIsArray: (array: unknown) => asserts array is Array<unknown> = (
     throw new Error(`La saisie d'entrée doit être un tableau.`);
   }
 };
+
+// check fonction to ensure array has at least 2 elements
+// throws an error if not
+const checkMinArrayLength2: (array: unknown[]) => asserts array is unknown[] = (
+  array
+) => {
+  // check if the array has at least 2 elements
+  if (array.length < 2) {
+    // throw an error if not
+    throw new Error(`Le tableau doit contenir au minimum deux éléments`);
+  }
+};
+
 function getMaxValue(numArray: number[]): number {
   checkIsArray(numArray);
-  if (numArray.length < 2) {
-    throw new Error(`La tableau doit comporter à minima deux éléments.`);
-  }
+  checkMinArrayLength2(numArray);
 
   if (!numArray.every((num) => Number.isInteger(num))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
@@ -209,9 +222,7 @@ console.log(maxValue);
 
 function getMaxValue2(numArray2: number[]): number {
   checkIsArray(numArray2);
-  if (numArray2.length < 2) {
-    throw new Error(`Le tableau doit comporter à minima deux éléments.`);
-  }
+  checkMinArrayLength2(numArray2);
 
   if (!numArray2.every((num) => Number.isInteger(num))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
@@ -240,9 +251,7 @@ console.log(maxValue2);
 
 function getMaxValue3(numArray3: number[]): number {
   checkIsArray(numArray3);
-  if (numArray3.length < 2) {
-    throw new Error(`Le tableau doit comporter à minima deux éléments.`);
-  }
+  checkMinArrayLength2(numArray3);
 
   if (!numArray3.every((num) => Number.isInteger(num))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
@@ -267,9 +276,7 @@ console.log(maxValue3);
 
 function getMaxValue4(numArray4: number[]): number {
   checkIsArray(numArray4);
-  if (numArray4.length < 2) {
-    throw new Error(`Le tableau doit comporter à minima deux éléments.`);
-  }
+  checkMinArrayLength2(numArray4);
 
   if (!numArray4.every((num) => Number.isInteger(num))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
@@ -294,9 +301,7 @@ console.log(maxValue4);
 
 function getMaxValue5(numArray5: number[]): number {
   checkIsArray(numArray5);
-  if (numArray5.length < 2) {
-    throw new Error(`Le tableau doit comporter à minima deux éléments.`);
-  }
+  checkMinArrayLength2(numArray5);
 
   if (!numArray5.every((num) => Number.isInteger(num))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
@@ -318,9 +323,7 @@ console.log(maxValue5);
 
 function getMaxValue6(numArray6: number[]): number {
   checkIsArray(numArray6);
-  if (numArray6.length < 2) {
-    throw new Error(`Le tableau doit comporter à minima deux éléments.`);
-  }
+  checkMinArrayLength2(numArray6);
 
   if (!numArray6.every((num) => Number.isInteger(num))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
@@ -345,9 +348,7 @@ console.log(maxValue6);
 
 function getMaxValue7(numArray7: number[]): number {
   checkIsArray(numArray7);
-  if (numArray7.length < 2) {
-    throw new Error(`Le tableau doit comporter à minima deux éléments`);
-  }
+  checkMinArrayLength2(numArray7);
 
   if (!numArray7.every((num) => Number.isInteger(num))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier`);
