@@ -928,3 +928,31 @@ function countVowels3(string3: unknown): number {
 const sentence3: string = `Hello Everybody`;
 const totalOfVowels3: number = countVowels3(sentence3);
 console.log(totalOfVowels3);
+
+{
+  /*
+  6v4. Compter les voyelles
+Écris une fonction qui compte le nombre de voyelles dans une chaîne donnée.
+Boucle while inversé.
+ */
+}
+
+function countVowels4(string4: unknown): number {
+  checkIsString(string4);
+
+  let count: number = 0;
+
+  let i = string4.length - 1;
+
+  while (i >= 0) {
+    if (vowels.includes(string4[i])) {
+      count++;
+    }
+    i--;
+  }
+  return count;
+}
+
+const sentence4: string = `Hello Everyone`;
+const totalOfVowels4: number = countVowels4(sentence4);
+console.log(totalOfVowels4);
