@@ -822,3 +822,29 @@ function sumOfNumbers5(nbr5: unknown): number {
 let nb5: number = 7;
 let totalOfNumbers5: number = sumOfNumbers5(nb5);
 console.log(totalOfNumbers5);
+
+{
+  /*
+    5v6. Somme des nombres de 1 à n
+Écris une fonction qui retourne la somme des nombres de 1 à n.
+Boucle do while.
+    */
+}
+
+function sumOfNumbers6(nbr6: unknown): number {
+  checkIsInteger(nbr6);
+
+  let total: number = 0;
+
+  let i = nbr6;
+
+  do {
+    total += i;
+    i--;
+  } while (i >= 1);
+  return total;
+}
+
+let nb6: number = 8;
+let totalOfNumbers6: number = sumOfNumbers6(nb6);
+console.log(totalOfNumbers6);
