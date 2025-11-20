@@ -1,3 +1,5 @@
+import { fileURLToPath } from "url";
+
 {
   /*
 
@@ -701,6 +703,7 @@ console.log(isPalindrome7Bis);
   /*
     5. Somme des nombres de 1 à n
 Écris une fonction qui retourne la somme des nombres de 1 à n.
+Boucle for.
     */
 }
 
@@ -723,7 +726,8 @@ console.log(totalOfNumbers);
   /*
     5v2. Somme des nombres de 1 à n
 Écris une fonction qui retourne la somme des nombres de 1 à n.
-    */
+Boucle for inversée.
+*/
 }
 
 function sumOfNumbers2(nbr2: unknown): number {
@@ -745,6 +749,7 @@ console.log(totalOfNumbers2);
   /*
     5v3. Somme des nombres de 1 à n
 Écris une fonction qui retourne la somme des nombres de 1 à n.
+Boucle while.
     */
 }
 
@@ -770,6 +775,7 @@ console.log(totalOfNumbers3);
   /*
     5v4. Somme des nombres de 1 à n
 Écris une fonction qui retourne la somme des nombres de 1 à n.
+Boucle while inversée.
     */
 }
 
@@ -790,3 +796,29 @@ function sumOfNumbers4(nbr4: unknown): number {
 let nb4: number = 5;
 let totalOfNumbers4: number = sumOfNumbers4(nb4);
 console.log(totalOfNumbers4);
+
+{
+  /*
+    5v5. Somme des nombres de 1 à n
+Écris une fonction qui retourne la somme des nombres de 1 à n.
+Boucle do while.
+    */
+}
+
+function sumOfNumbers5(nbr5: unknown): number {
+  checkIsInteger(nbr5);
+
+  let total: number = 0;
+
+  let i = 1;
+
+  do {
+    total += i;
+    i++;
+  } while (i <= nbr5);
+  return total;
+}
+
+let nb5: number = 7;
+let totalOfNumbers5: number = sumOfNumbers5(nb5);
+console.log(totalOfNumbers5);
