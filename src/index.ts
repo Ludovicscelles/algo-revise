@@ -696,3 +696,26 @@ function checkPalindrome7WithComments(str7Bis: unknown): string {
 let str7Bis = "Et la marine va venir à Malte";
 let isPalindrome7Bis = checkPalindrome7(str7Bis);
 console.log(isPalindrome7Bis);
+
+{
+  /*
+    5. Somme des nombres de 1 à n
+Écris une fonction qui retourne la somme des nombres de 1 à n.
+    */
+}
+
+function sumOfNumbers(nbr: unknown): number {
+  checkIsInteger(nbr);
+
+  let total: number = 0;
+
+  for (let i = 1; i <= nbr; i++) {
+    total += i;
+  }
+  return total;
+}
+
+let nb: number = 5;
+let totalOfNumbers: number = sumOfNumbers(nb);
+console.log(totalOfNumbers);
+
