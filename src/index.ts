@@ -765,3 +765,28 @@ function sumOfNumbers3(nbr3: unknown): number {
 let nb3: number = 5;
 let totalOfNumbers3: number = sumOfNumbers3(nb3);
 console.log(totalOfNumbers3);
+
+{
+  /*
+    5v4. Somme des nombres de 1 à n
+Écris une fonction qui retourne la somme des nombres de 1 à n.
+    */
+}
+
+function sumOfNumbers4(nbr4: unknown): number {
+  checkIsInteger(nbr4);
+
+  let total: number = 0;
+
+  let i = nbr4;
+
+  while (i >= 1) {
+    total += i;
+    i--;
+  }
+  return total;
+}
+
+let nb4: number = 5;
+let totalOfNumbers4: number = sumOfNumbers4(nb4);
+console.log(totalOfNumbers4);
