@@ -542,7 +542,7 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-function checkPalindrome4(str4: string): string {
+function checkPalindrome4(str4: unknown): string {
   checkIsString(str4);
   const normalizedStr4: string = normalizedStr(str4);
 
@@ -568,7 +568,7 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-function checkPalindrome5(str5: string): string {
+function checkPalindrome5(str5: unknown): string {
   checkIsString(str5);
   const normalizedStr5: string = normalizedStr(str5);
 
@@ -595,7 +595,7 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 */
 }
 
-function checkPalindrome6(str6: string): string {
+function checkPalindrome6(str6: unknown): string {
   checkIsString(str6);
   const normalizedStr6: string = normalizedStr(str6);
 
@@ -613,3 +613,34 @@ function checkPalindrome6(str6: string): string {
 let str6 = "La mère Gide digère mal";
 let isPalindrome6 = checkPalindrome6(str6);
 console.log(isPalindrome6);
+
+{
+  /*
+  4v7. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
+function checkPalindrome7(str7: unknown): string {
+  checkIsString(str7);
+  const normalizedStr7: string = normalizedStr(str7);
+
+  let i = 0;
+
+  for (let str of normalizedStr7) {
+    let oppositeI = normalizedStr7.length - 1 - i;
+
+    if (i >= oppositeI) break;
+
+    if (str !== normalizedStr7[oppositeI]) {
+      return `Ceci n'est pas un palindrome.`;
+    }
+
+    i++;
+  }
+  return `Il s'agit bien d'un palindrome`;
+}
+
+let str7 = "Et la marine va venir à Malte";
+let isPalindrome7 = checkPalindrome7(str7);
+console.log(isPalindrome7);
