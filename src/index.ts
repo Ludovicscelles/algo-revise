@@ -857,7 +857,14 @@ Boucle for.
  */
 }
 
-const vowels: string = `aeiouyAEIOUY`;
+const vowels: string =
+  `aeiouyAEIOUY` +
+  `àáâãäåÀÁÂÃÄÅ` +
+  `èéêëÈÉÊË` +
+  `ìíîïÌÍÎÏ` +
+  `òóôõöÒÓÔÕÖ` +
+  `ùúûüÙÚÛÜ` +
+  `ÿŸ`;
 
 function countVowels(string: unknown): number {
   checkIsString(string);
@@ -956,3 +963,32 @@ function countVowels4(string4: unknown): number {
 const sentence4: string = `Hello Everyone`;
 const totalOfVowels4: number = countVowels4(sentence4);
 console.log(totalOfVowels4);
+
+{
+  /*
+  6v4. Compter les voyelles
+Écris une fonction qui compte le nombre de voyelles dans une chaîne donnée.
+Boucle do while.
+ */
+}
+
+function countVowels5(string5: unknown): number {
+  checkIsString(string5);
+
+  let count: number = 0;
+
+  let i = 0;
+
+  do {
+    if (vowels.includes(string5[i])) {
+      count++;
+    }
+    i++;
+  } while (i < string5.length);
+
+  return count;
+}
+
+const sentence5: string = `Angèle et Gilles en gilet gèlent.`;
+const totalOfVowels5: number = countVowels5(sentence5);
+console.log(totalOfVowels5);
