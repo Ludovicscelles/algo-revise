@@ -857,7 +857,7 @@ Boucle for.
  */
 }
 
-const vowels: string = `aeiouAEIOU`;
+const vowels: string = `aeiouyAEIOUY`;
 
 function countVowels(string: unknown): number {
   checkIsString(string);
@@ -900,3 +900,31 @@ function countVowels2(string2: unknown): number {
 const sentence2: string = "Je m'appelle Ludovic Scelles";
 const totalOfVowels2: number = countVowels2(sentence2);
 console.log(totalOfVowels2);
+
+{
+  /*
+  6v3. Compter les voyelles
+Écris une fonction qui compte le nombre de voyelles dans une chaîne donnée.
+Boucle while.
+ */
+}
+
+function countVowels3(string3: unknown): number {
+  checkIsString(string3);
+
+  let count: number = 0;
+
+  let i = 0;
+
+  while (i < string3.length) {
+    if (vowels.includes(string3[i])) {
+      count++;
+    }
+    i++;
+  }
+  return count;
+}
+
+const sentence3: string = `Hello Everybody`;
+const totalOfVowels3: number = countVowels3(sentence3);
+console.log(totalOfVowels3);
