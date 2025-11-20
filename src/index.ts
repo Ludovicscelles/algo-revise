@@ -644,3 +644,55 @@ function checkPalindrome7(str7: unknown): string {
 let str7 = "Et la marine va venir à Malte";
 let isPalindrome7 = checkPalindrome7(str7);
 console.log(isPalindrome7);
+
+{
+  /*
+  4v7Bis. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
+{
+  /*
+  4v7. Palindrome
+Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+*/
+}
+
+// function to check if a string is a palindrome with comments
+function checkPalindrome7WithComments(str7Bis: unknown): string {
+  // type guard to ensure input is a string
+  checkIsString(str7Bis);
+  // normalize the string
+  // this involves converting to lowercase, removing accents, and stripping non-alphanumeric characters
+  // we use a helper function for this
+  const normalizedStr7Bis: string = normalizedStr(str7Bis);
+
+  // initialize index variable
+  let i = 0;
+
+  // iterate over each character in the normalized string
+  // we use a for...of loop to access each character directly
+  for (let str of normalizedStr7Bis) {
+    // calculate the index of the character from the opposite end of the string
+    let oppositeI = normalizedStr7Bis.length - 1 - i;
+
+    // if the current index has reached or passed the opposite index, we can stop checking
+    if (i >= oppositeI) break;
+
+    // compare the character at the current index with the character at the opposite index
+    // if they do not match, the string is not a palindrome
+    if (str !== normalizedStr7Bis[oppositeI]) {
+      return `Ceci n'est pas un palindrome.`;
+    }
+    // increment the index for the next iteration
+    i++;
+  }
+  // if all character comparisons passed, the string is a palindrome
+  return `Il s'agit bien d'un palindrome`;
+}
+
+// test the function with a sample string
+let str7Bis = "Et la marine va venir à Malte";
+let isPalindrome7Bis = checkPalindrome7(str7Bis);
+console.log(isPalindrome7Bis);
