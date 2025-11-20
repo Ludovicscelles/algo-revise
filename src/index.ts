@@ -848,3 +848,29 @@ function sumOfNumbers6(nbr6: unknown): number {
 let nb6: number = 8;
 let totalOfNumbers6: number = sumOfNumbers6(nb6);
 console.log(totalOfNumbers6);
+
+{
+  /*
+  6. Compter les voyelles
+Écris une fonction qui compte le nombre de voyelles dans une chaîne donnée.
+Boucle for.
+ */
+}
+
+function countVowels(string: unknown): number {
+  checkIsString(string);
+
+  const vowels: string = `aeiouAEIOU`;
+  let count: number = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string[i])) {
+      count++;
+    }
+  }
+  return count;
+}
+
+const sentence: string = `Je m'appelle Ludovic`;
+const totalOfVowels: number = countVowels(sentence);
+console.log(totalOfVowels);
