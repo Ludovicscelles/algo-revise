@@ -719,3 +719,24 @@ let nb: number = 5;
 let totalOfNumbers: number = sumOfNumbers(nb);
 console.log(totalOfNumbers);
 
+{
+  /*
+    5v2. Somme des nombres de 1 à n
+Écris une fonction qui retourne la somme des nombres de 1 à n.
+    */
+}
+
+function sumOfNumbers2(nbr2: unknown): number {
+  checkIsInteger(nbr2);
+
+  let total: number = 0;
+
+  for (let i = nbr2; i >= 1; i--) {
+    total += i;
+  }
+  return total;
+}
+
+let nb2: number = 4;
+let totalOfNumbers2: number = sumOfNumbers2(nb2);
+console.log(totalOfNumbers2);
