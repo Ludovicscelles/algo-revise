@@ -1073,3 +1073,30 @@ function fizzBuzz(number: unknown): string[] {
 const numberFB: number = 100;
 const arrayFizzBuzz = fizzBuzz(numberFB);
 console.log(arrayFizzBuzz);
+
+{
+  /*
+  7v2. FizzBuzz
+Affiche les nombres de 1 à N. Pour chaque nombre divisible par 3, affiche « Fizz », par 5 « Buzz », et par les deux « FizzBuzz ».
+Boucle for inversé.
+*/
+}
+
+function fizzBuzz2(number2: number): string[] {
+  checkIsInteger(number2);
+  checkIsPositifNumber(number2);
+
+  let arrayFizzBuzz2: string[] = [];
+
+  for (let i = number2; i >= 1; i--) {
+    if (i % 3 === 0 && i % 5 === 0) arrayFizzBuzz2.push(`FizzBuzz`);
+    else if (i % 5 === 0) arrayFizzBuzz2.push(`Buzz`);
+    else if (i % 3 === 0) arrayFizzBuzz2.push(`Fizz`);
+    else arrayFizzBuzz2.push(i.toString());
+  }
+  return arrayFizzBuzz2.reverse();
+}
+
+const numberFB2: number = 50;
+const arrayFizzBuzz2 = fizzBuzz2(numberFB2);
+console.log(arrayFizzBuzz2);
