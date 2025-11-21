@@ -1109,7 +1109,7 @@ Boucle while.
 */
 }
 
-function fizzBuzz3(number3: number): string[] {
+function fizzBuzz3(number3: unknown): string[] {
   checkIsInteger(number3);
   checkIsPositifNumber(number3);
 
@@ -1130,3 +1130,33 @@ function fizzBuzz3(number3: number): string[] {
 const numberFB3: number = 40;
 const arrayFizzBuzz3 = fizzBuzz3(numberFB3);
 console.log(arrayFizzBuzz3);
+
+{
+  /*
+  7v4. FizzBuzz
+Affiche les nombres de 1 à N. Pour chaque nombre divisible par 3, affiche « Fizz », par 5 « Buzz », et par les deux « FizzBuzz ».
+Boucle while inversé.
+*/
+}
+
+function fizzBuzz4(number4: unknown): string[] {
+  checkIsInteger(number4);
+  checkIsPositifNumber(number4);
+
+  let arrayFizzBuzz4: string[] = [];
+
+  let i = number4;
+
+  while (i >= 1) {
+    if (i % 3 === 0 && i % 5 === 0) arrayFizzBuzz4.push(`FizzBuzz`);
+    else if (i % 5 === 0) arrayFizzBuzz4.push(`Buzz`);
+    else if (i % 3 === 0) arrayFizzBuzz4.push(`Fizz`);
+    else arrayFizzBuzz4.push(i.toString());
+    i--;
+  }
+  return arrayFizzBuzz4.reverse();
+}
+
+const numberFB4: number = 60;
+const arrayFizzBuzz4 = fizzBuzz4(numberFB4);
+console.log(arrayFizzBuzz4);
