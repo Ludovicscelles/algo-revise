@@ -1220,3 +1220,37 @@ function fizzBuzz6(number6: number): string[] {
 const numberFB6: number = 70;
 const arrayFizzBuzz6 = fizzBuzz6(numberFB6);
 console.log(arrayFizzBuzz6);
+
+{
+  /*
+  8. Inverser un tableau
+Écris une fonction qui prend un tableau de string et retourne le même tableau, mais inversé.
+Boucle for
+*/
+}
+
+const checkIsStringArray = (array: unknown[]) => {
+  if (!array.every((element) => typeof element === "string")) {
+    throw new Error(
+      `Chaque élément du tableau doit être un chaîne de caractères`
+    );
+  }
+};
+
+function reverseArray(stArr: unknown[]): string[] {
+  checkIsArray(stArr);
+  checkIsStringArray(stArr);
+
+  const arr = stArr as string[];
+
+  let newStArr: string[] = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newStArr[i] = arr[arr.length - i - 1];
+  }
+  return newStArr;
+}
+
+const stArr = ["aa", "bb", "cc", "dd"];
+const revArr: string[] = reverseArray(stArr);
+console.log(revArr);

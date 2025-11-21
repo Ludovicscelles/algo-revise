@@ -20,7 +20,7 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 Affiche les nombres de 1 à 100. Pour chaque nombre divisible par 3, affiche « Fizz », par 5 « Buzz », et par les deux « FizzBuzz ».
 
 8. Inverser un tableau
-Écris une fonction qui prend un tableau et retourne le même tableau, mais inversé.
+Écris une fonction qui prend un tableau de string et retourne le même tableau, mais inversé.
 
 9. Table de multiplication
 Affiche la table de multiplication de 1 à 10 pour un nombre donné.
