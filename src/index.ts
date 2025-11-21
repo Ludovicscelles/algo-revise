@@ -1225,7 +1225,7 @@ console.log(arrayFizzBuzz6);
   /*
   8. Inverser un tableau
 Écris une fonction qui prend un tableau de string et retourne le même tableau, mais inversé.
-Boucle for
+Boucle for.
 */
 }
 
@@ -1254,3 +1254,29 @@ function reverseArray(stArr: unknown[]): string[] {
 const stArr = ["aa", "bb", "cc", "dd"];
 const revArr: string[] = reverseArray(stArr);
 console.log(revArr);
+
+{
+  /*
+  8v2. Inverser un tableau
+Écris une fonction qui prend un tableau de string et retourne le même tableau, mais inversé.
+Boucle for inversée.
+*/
+}
+
+function reverseArray2(stArr2: unknown[]): string[] {
+  checkIsArray(stArr2);
+  checkIsStringArray(stArr2);
+
+  const arr2 = stArr2 as string[];
+
+  let newStArr2: string[] = [];
+
+  for (let i = arr2.length - 1; i >= 0; i--) {
+    newStArr2.push(arr2[i]);
+  }
+  return newStArr2;
+}
+
+const stArr2 = ["AA", "BB", "CC", "DD", "EE"];
+const revArr2: string[] = reverseArray2(stArr2);
+console.log(revArr2);
