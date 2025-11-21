@@ -1,3 +1,4 @@
+import { func } from "joi";
 import { fileURLToPath } from "url";
 
 {
@@ -1025,7 +1026,7 @@ console.log(totalOfVowels6);
   /*
   6v7. Compter les voyelles
 Écris une fonction qui compte le nombre de voyelles dans une chaîne donnée.
-Boucle do while inversé.
+Boucle for ... of .
  */
 }
 
@@ -1045,3 +1046,30 @@ function countVowels7(string7: unknown): number {
 const sentence7: string = `Une bête noire se baigne dans une baignoire noire`;
 const totalOfVowels7: number = countVowels7(sentence7);
 console.log(totalOfVowels7);
+
+{
+  /*
+  7. FizzBuzz
+Affiche les nombres de 1 à N. Pour chaque nombre divisible par 3, affiche « Fizz », par 5 « Buzz », et par les deux « FizzBuzz ».
+Boucle for.
+*/
+}
+
+function fizzBuzz(number: unknown): string[] {
+  checkIsInteger(number);
+  checkIsPositifNumber(number);
+
+  let arrayFizzBuzz: string[] = [];
+
+  for (let i = 1; i <= number; i++) {
+    if (i % 3 === 0 && i % 5 === 0) arrayFizzBuzz.push(`FizzBuzz`);
+    else if (i % 5 === 0) arrayFizzBuzz.push(`Buzz`);
+    else if (i % 3 === 0) arrayFizzBuzz.push(`Fizz`);
+    else arrayFizzBuzz.push(i.toString());
+  }
+  return arrayFizzBuzz;
+}
+
+const numberFB: number = 100;
+const arrayFizzBuzz = fizzBuzz(numberFB);
+console.log(arrayFizzBuzz);
