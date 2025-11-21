@@ -1160,3 +1160,33 @@ function fizzBuzz4(number4: unknown): string[] {
 const numberFB4: number = 60;
 const arrayFizzBuzz4 = fizzBuzz4(numberFB4);
 console.log(arrayFizzBuzz4);
+
+{
+  /*
+  7v5. FizzBuzz
+Affiche les nombres de 1 à N. Pour chaque nombre divisible par 3, affiche « Fizz », par 5 « Buzz », et par les deux « FizzBuzz ».
+Boucle do while.
+*/
+}
+
+function fizzBuzz5(number5: number): string[] {
+  checkIsInteger(number5);
+  checkIsPositifNumber(number5);
+
+  let arrayFizzBuzz5: string[] = [];
+
+  let i = 1;
+
+  do {
+    if (i % 3 === 0 && i % 5 === 0) arrayFizzBuzz5.push(`FizzBuzz`);
+    else if (i % 5 === 0) arrayFizzBuzz5.push(`Buzz`);
+    else if (i % 3 === 0) arrayFizzBuzz5.push(`Fizz`);
+    else arrayFizzBuzz5.push(i.toString());
+    i++;
+  } while (i <= number5);
+  return arrayFizzBuzz5;
+}
+
+const numberFB5: number = 30;
+const arrayFizzBuzz5 = fizzBuzz5(numberFB5);
+console.log(arrayFizzBuzz5);
