@@ -1425,3 +1425,42 @@ function reverseArray7(stArr7: unknown[]): string[] {
 const stArr7 = ["Allemagne", "Belgique", "France", "Espagne", "Italie"];
 const revArr7: string[] = reverseArray7(stArr7);
 console.log(revArr7);
+
+{
+  /*
+  8v8. Inverser un tableau
+Écris une fonction qui prend un tableau de string et retourne le même tableau, mais inversé.
+Boucle for ... of inversé.
+*/
+}
+
+function reverseArray8(stArr8: unknown): string[] {
+  checkIsArray(stArr8);
+  checkIsStringArray(stArr8);
+
+  const arr8 = stArr8 as string[];
+
+  let newStArr8: string[] = [];
+
+  let i = arr8.length - 1;
+
+  for (let element of arr8) {
+    newStArr8[i] = element;
+    i--;
+  }
+  return newStArr8;
+}
+
+const stArr8 = [
+  "Washinton",
+  "Virginie",
+  "Nevada",
+  "Michigan",
+  "Louisiane",
+  "Floride",
+  "Alaska",
+];
+
+const revArr8: string[] = reverseArray8(stArr8);
+
+console.log(revArr8);
