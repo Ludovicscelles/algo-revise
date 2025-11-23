@@ -1464,3 +1464,26 @@ const stArr8 = [
 const revArr8: string[] = reverseArray8(stArr8);
 
 console.log(revArr8);
+
+{
+  /*
+  9. Table de multiplication
+Affiche la table de multiplication de 1 à 10 pour un nombre donné.
+Boucle for.
+*/
+}
+
+function multiplicationTable(nb: unknown): string {
+  checkIsInteger(nb);
+
+  let result: string = "";
+
+  for (let i = 1; i <= 10; i++) {
+    result += `${nb} x ${i} = ${nb * i}\n`;
+  }
+  return result;
+}
+
+let nbToMultiply: number = 12;
+let timesTable: string = multiplicationTable(nbToMultiply);
+console.log(timesTable);
