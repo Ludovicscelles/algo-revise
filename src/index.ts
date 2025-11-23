@@ -1638,3 +1638,29 @@ function multiplicationTable7(nb7: unknown): string {
 const nbToMultiply7: number = 9;
 const timesTable7: string = multiplicationTable7(nbToMultiply7);
 console.log(timesTable7);
+
+{
+  /*
+  9v8. Table de multiplication
+Affiche la table de multiplication de 1 à 10 pour un nombre donné.
+Boucle for ... in.
+*/
+}
+
+function multiplicationTable8(nb8: unknown): string {
+  checkIsInteger(nb8);
+
+  let result8: string = "";
+
+  let valueArray: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
+
+  for (let i in valueArray) {
+    const valueOfI = valueArray[i];
+    result8 += `${nb8} x ${valueOfI} = ${nb8 * valueOfI}\n`;
+  }
+  return result8;
+}
+
+const nbToMultiply8: number = 14;
+const timesTable8: string = multiplicationTable8(nbToMultiply8);
+console.log(timesTable8);
