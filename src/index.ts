@@ -1487,3 +1487,26 @@ function multiplicationTable(nb: unknown): string {
 let nbToMultiply: number = 12;
 let timesTable: string = multiplicationTable(nbToMultiply);
 console.log(timesTable);
+
+{
+  /*
+  9v2. Table de multiplication
+Affiche la table de multiplication de 1 à 10 pour un nombre donné.
+Boucle for inversé.
+*/
+}
+
+function multiplicationTable2(nb2: unknown): string {
+  checkIsInteger(nb2);
+
+  let result2: string[] = [];
+
+  for (let i = 10; i >= 1; i--) {
+    result2.push(`${nb2} x ${i} = ${nb2 * i}\n`);
+  }
+  return result2.reverse().join(`\n`);
+}
+
+const nbToMultiply2: number = 11;
+const timesTable2: string = multiplicationTable2(nbToMultiply2);
+console.log(timesTable2);
