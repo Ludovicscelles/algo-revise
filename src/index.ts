@@ -1519,7 +1519,7 @@ Boucle while.
 */
 }
 
-function multiplicationTable3(nb3: number): string {
+function multiplicationTable3(nb3: unknown): string {
   checkIsInteger(nb3);
 
   let result3: string = "";
@@ -1536,3 +1536,29 @@ function multiplicationTable3(nb3: number): string {
 const nbToMultiply3: number = 10;
 const timesTable3: string = multiplicationTable3(nbToMultiply3);
 console.log(timesTable3);
+
+{
+  /*
+  9v4. Table de multiplication
+Affiche la table de multiplication de 1 à 10 pour un nombre donné.
+Boucle while inversé.
+*/
+}
+
+function multiplicationTable4(nb4: unknown): string {
+  checkIsInteger(nb4);
+
+  let result4: string[] = [];
+
+  let i = 10;
+
+  while (i >= 1) {
+    result4.push(`${nb4} x ${i} = ${nb4 * i}`);
+    i--;
+  }
+  return result4.reverse().join(`\n`);
+}
+
+const nbToMultiply4: number = 8;
+const timesTable4: string = multiplicationTable4(nbToMultiply4);
+console.log(timesTable4);
