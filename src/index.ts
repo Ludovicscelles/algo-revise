@@ -1562,3 +1562,29 @@ function multiplicationTable4(nb4: unknown): string {
 const nbToMultiply4: number = 8;
 const timesTable4: string = multiplicationTable4(nbToMultiply4);
 console.log(timesTable4);
+
+{
+  /*
+  9v5. Table de multiplication
+Affiche la table de multiplication de 1 à 10 pour un nombre donné.
+Boucle do while.
+*/
+}
+
+function multiplicationTable5(nb5: unknown): string {
+  checkIsInteger(nb5);
+
+  let result5: string = "";
+
+  let i = 1;
+
+  do {
+    result5 += `${nb5} x ${i} = ${nb5 * i}\n`;
+    i++;
+  } while (i <= 10);
+  return result5;
+}
+
+const nbToMultiply5: number = 20;
+const timesTable5: string = multiplicationTable5(nbToMultiply5);
+console.log(timesTable5);
