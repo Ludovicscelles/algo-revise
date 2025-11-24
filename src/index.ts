@@ -1669,6 +1669,7 @@ console.log(timesTable8);
   /*
   10. Trouver les doublons
 Écris un algorithme qui identifie les doublons dans un tableau de nombres.
+Boucle for et méthode de tri.
 */
 }
 
@@ -1694,3 +1695,34 @@ function findDuplicate(nbArray: number[]): number[] {
 const nbArray = [15, 27, 27, 15, 28, 29, 27, 31];
 const duplicateNumbers = findDuplicate(nbArray);
 console.log(duplicateNumbers);
+
+{
+  /*
+  10. Trouver les doublons
+Écris un algorithme qui identifie les doublons dans un tableau de nombres.
+Boucle for inversé et méthode de tri.
+*/
+}
+
+function findDuplicate2(nbArray2: number[]): number[] {
+  checkIsArray(nbArray2);
+  checkIsNumbersArray(nbArray2);
+
+  const sortedNbArray2: number[] = [...nbArray2].sort((a, b) => a - b);
+
+  let duplicateNumbers2: number[] = [];
+
+  for (let i = sortedNbArray2.length - 1; i >= 1; i--) {
+    if (
+      sortedNbArray2[i] === sortedNbArray2[i - 1] &&
+      !duplicateNumbers2.includes(sortedNbArray2[i])
+    ) {
+      duplicateNumbers2.push(sortedNbArray2[i]);
+    }
+  }
+  return duplicateNumbers2.reverse();
+}
+
+const nbArray2 = [101, 123, 104, 101, 123, 123, 100, 101, 104, 108];
+const duplicateNumbers2 = findDuplicate2(nbArray2);
+console.log(duplicateNumbers2);
