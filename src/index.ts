@@ -1663,8 +1663,6 @@ Boucle for et méthode de tri.
 */
 }
 
-
-
 const checkIsNumbersArray = (array: unknown[]) => {
   if (array.every((element) => typeof element !== "number")) {
     throw new Error(`Chaque élément du tableau doit être un nombre`);
@@ -1838,3 +1836,39 @@ function findDuplicate5(nbArray5: unknown[]): number[] {
 const nbArray5 = [2.15, 2.12, 2.17, 2.12, 2.18, 2.21, 2.12, 2.18];
 const duplicateNumbers5 = findDuplicate5(nbArray5);
 console.log(duplicateNumbers5);
+
+{
+  /*
+  10v6. Trouver les doublons
+Écris un algorithme qui identifie les doublons dans un tableau de nombres.
+Boucle do while inversé avec une méthode de tri.
+*/
+}
+
+function findDuplicate6(nbArray6: unknown[]): number[] {
+  checkIsArray(nbArray6);
+  checkIsNumbersArray(nbArray6);
+
+  const arr6 = nbArray6 as number[];
+
+  const sortedNbArray6: number[] = [...arr6].sort((a, b) => a - b);
+
+  let duplicateNumbers6: number[] = [];
+
+  let i = sortedNbArray6.length - 1;
+
+  do {
+    if (
+      sortedNbArray6[i] === sortedNbArray6[i - 1] &&
+      !duplicateNumbers6.includes(sortedNbArray6[i])
+    ) {
+      duplicateNumbers6.push(sortedNbArray6[i]);
+    }
+    i--;
+  } while (i >= 0);
+  return duplicateNumbers6.reverse();
+}
+
+const nbArray6 = [5.289, 5.872, 5.289, 6.233, 6.512, 5.289, 6.988];
+const duplicateNumbers6 = findDuplicate6(nbArray6);
+console.log(duplicateNumbers6);
