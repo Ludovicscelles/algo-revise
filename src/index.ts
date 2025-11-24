@@ -1,6 +1,3 @@
-import { func, string } from "joi";
-import { fileURLToPath } from "url";
-
 {
   /*
 
@@ -1804,3 +1801,39 @@ function findDuplicate4(nbArray4: unknown[]): number[] {
 const nbArray4 = [1, 4, 8, 8, 7, 8, 4, 2, 3];
 const duplicateNumbers4 = findDuplicate4(nbArray4);
 console.log(duplicateNumbers4);
+
+{
+  /*
+  10v5. Trouver les doublons
+Écris un algorithme qui identifie les doublons dans un tableau de nombres.
+Boucle do while avec une méthode de tri.
+*/
+}
+
+function findDuplicate5(nbArray5: unknown[]): number[] {
+  checkIsArray(nbArray5);
+  checkIsNumbersArray(nbArray5);
+
+  const arr5 = nbArray5 as number[];
+
+  let sortedNbArray5 = [...arr5].sort((a, b) => a - b);
+
+  let duplicateNumbers5: number[] = [];
+
+  let i = 0;
+
+  do {
+    if (
+      sortedNbArray5[i] === sortedNbArray5[i + 1] &&
+      !duplicateNumbers5.includes(sortedNbArray5[i])
+    ) {
+      duplicateNumbers5.push(sortedNbArray5[i]);
+    }
+    i++;
+  } while (i < nbArray5.length);
+  return duplicateNumbers5;
+}
+
+const nbArray5 = [215, 212, 217, 212, 218, 221, 212, 218];
+const duplicateNumbers5 = findDuplicate5(nbArray5);
+console.log(duplicateNumbers5);
