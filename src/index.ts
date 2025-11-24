@@ -1664,3 +1664,33 @@ function multiplicationTable8(nb8: unknown): string {
 const nbToMultiply8: number = 14;
 const timesTable8: string = multiplicationTable8(nbToMultiply8);
 console.log(timesTable8);
+
+{
+  /*
+  10. Trouver les doublons
+Écris un algorithme qui identifie les doublons dans un tableau de nombres.
+*/
+}
+
+function findDuplicate(nbArray: number[]): number[] {
+  checkIsArray(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const sortedNbArray: number[] = [...nbArray].sort((a, b) => a - b);
+
+  let duplicateNumbers: number[] = [];
+
+  for (let i = 0; i < sortedNbArray.length - 1; i++) {
+    if (
+      sortedNbArray[i] === sortedNbArray[i + 1] &&
+      !duplicateNumbers.includes(sortedNbArray[i])
+    ) {
+      duplicateNumbers.push(sortedNbArray[i]);
+    }
+  }
+  return duplicateNumbers;
+}
+
+const nbArray = [15, 27, 27, 15, 28, 29, 27, 31];
+const duplicateNumbers = findDuplicate(nbArray);
+console.log(duplicateNumbers);
