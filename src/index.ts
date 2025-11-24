@@ -192,7 +192,7 @@ const checkMinArrayLength2: (array: unknown[]) => asserts array is unknown[] = (
 
 // check fonction to ensure all elements in the array are integers
 // throws an error if not
-const checkIsNumbersArray = (array: unknown[]) => {
+const checkIsIntegersArray = (array: unknown[]) => {
   // check if all elements in the array are integers
   if (!array.every((element) => Number.isInteger(element))) {
     // throw an error if not
@@ -204,7 +204,7 @@ const checkIsNumbersArray = (array: unknown[]) => {
 function getMaxValue(numArray: unknown[]): number {
   checkIsArray(numArray);
   checkMinArrayLength2(numArray);
-  checkIsNumbersArray(numArray);
+  checkIsIntegersArray(numArray);
 
   const arr = numArray as number[];
 
@@ -232,7 +232,7 @@ console.log(maxValue);
 function getMaxValue2(numArray2: unknown[]): number {
   checkIsArray(numArray2);
   checkMinArrayLength2(numArray2);
-  checkIsNumbersArray(numArray2);
+  checkIsIntegersArray(numArray2);
 
   const arr2 = numArray2 as number[];
 
@@ -260,7 +260,7 @@ console.log(maxValue2);
 function getMaxValue3(numArray3: unknown[]): number {
   checkIsArray(numArray3);
   checkMinArrayLength2(numArray3);
-  checkIsNumbersArray(numArray3);
+  checkIsIntegersArray(numArray3);
 
   const arr3 = numArray3 as number[];
 
@@ -291,7 +291,7 @@ console.log(maxValue3);
 function getMaxValue4(numArray4: unknown[]): number {
   checkIsArray(numArray4);
   checkMinArrayLength2(numArray4);
-  checkIsNumbersArray(numArray4);
+  checkIsIntegersArray(numArray4);
 
   const arr4 = numArray4 as number[];
   let maxValue4: number = arr4[arr4.length - 1];
@@ -321,7 +321,7 @@ console.log(maxValue4);
 function getMaxValue5(numArray5: unknown[]): number {
   checkIsArray(numArray5);
   checkMinArrayLength2(numArray5);
-  checkMinArrayLength2(numArray5);
+  checkIsIntegersArray(numArray5);
 
   const arr5 = numArray5 as number[];
 
@@ -349,7 +349,7 @@ console.log(maxValue5);
 function getMaxValue6(numArray6: unknown[]): number {
   checkIsArray(numArray6);
   checkMinArrayLength2(numArray6);
-  checkIsNumbersArray(numArray6);
+  checkIsIntegersArray(numArray6);
 
   const arr6 = numArray6 as number[];
 
@@ -380,7 +380,7 @@ console.log(maxValue6);
 function getMaxValue7(numArray7: unknown[]): number {
   checkIsArray(numArray7);
   checkMinArrayLength2(numArray7);
-  checkIsNumbersArray(numArray7);
+  checkIsIntegersArray(numArray7);
 
   const arr7 = numArray7 as number[];
   let maxValue7: number = arr7[arr7.length - 1];
@@ -648,13 +648,6 @@ console.log(isPalindrome7);
 {
   /*
   4v7Bis. Palindrome
-Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
-*/
-}
-
-{
-  /*
-  4v7. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
 */
 }
@@ -1670,6 +1663,14 @@ Boucle for et méthode de tri.
 */
 }
 
+
+
+const checkIsNumbersArray = (array: unknown[]) => {
+  if (array.every((element) => typeof element !== "number")) {
+    throw new Error(`Chaque élément du tableau doit être un nombre`);
+  }
+};
+
 function findDuplicate(nbArray: unknown[]): number[] {
   checkIsArray(nbArray);
   checkIsNumbersArray(nbArray);
@@ -1834,6 +1835,6 @@ function findDuplicate5(nbArray5: unknown[]): number[] {
   return duplicateNumbers5;
 }
 
-const nbArray5 = [215, 212, 217, 212, 218, 221, 212, 218];
+const nbArray5 = [2.15, 2.12, 2.17, 2.12, 2.18, 2.21, 2.12, 2.18];
 const duplicateNumbers5 = findDuplicate5(nbArray5);
 console.log(duplicateNumbers5);
