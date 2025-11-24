@@ -1673,11 +1673,13 @@ Boucle for et méthode de tri.
 */
 }
 
-function findDuplicate(nbArray: number[]): number[] {
+function findDuplicate(nbArray: unknown[]): number[] {
   checkIsArray(nbArray);
   checkIsNumbersArray(nbArray);
 
-  const sortedNbArray: number[] = [...nbArray].sort((a, b) => a - b);
+  const arr = nbArray as number[];
+
+  const sortedNbArray: number[] = [...arr].sort((a, b) => a - b);
 
   let duplicateNumbers: number[] = [];
 
@@ -1704,11 +1706,13 @@ Boucle for inversé et méthode de tri.
 */
 }
 
-function findDuplicate2(nbArray2: number[]): number[] {
+function findDuplicate2(nbArray2: unknown[]): number[] {
   checkIsArray(nbArray2);
   checkIsNumbersArray(nbArray2);
 
-  const sortedNbArray2: number[] = [...nbArray2].sort((a, b) => a - b);
+  const arr2 = nbArray2 as number[];
+
+  const sortedNbArray2: number[] = [...arr2].sort((a, b) => a - b);
 
   let duplicateNumbers2: number[] = [];
 
@@ -1731,24 +1735,26 @@ console.log(duplicateNumbers2);
   /*
   10v3. Trouver les doublons
 Écris un algorithme qui identifie les doublons dans un tableau de nombres.
-Double boucle while - 
+Double boucle while.
 */
 }
 
-function findDuplicate3(nbArray3: number[]): number[] {
+function findDuplicate3(nbArray3: unknown[]): number[] {
   checkIsArray(nbArray3);
   checkIsNumbersArray(nbArray3);
+
+  const arr3 = nbArray3 as number[];
 
   let duplicateNumbers3: number[] = [];
 
   let i = 0;
 
-  while (i < nbArray3.length) {
+  while (i < arr3.length) {
     let j = i + 1;
-    while (j < nbArray3.length) {
-      if (nbArray3[i] === nbArray3[j]) {
-        if (!duplicateNumbers3.includes(nbArray3[i])) {
-          duplicateNumbers3.push(nbArray3[i]);
+    while (j < arr3.length) {
+      if (arr3[i] === arr3[j]) {
+        if (!duplicateNumbers3.includes(arr3[i])) {
+          duplicateNumbers3.push(arr3[i]);
         }
       }
       j++;
@@ -1761,3 +1767,40 @@ function findDuplicate3(nbArray3: number[]): number[] {
 const nbArray3 = [50, 51, 55, 51, 52, 51, 48, 46, 47, 48];
 const duplicateNumbers3 = findDuplicate3(nbArray3);
 console.log(duplicateNumbers3);
+
+{
+  /*
+  10v4. Trouver les doublons
+Écris un algorithme qui identifie les doublons dans un tableau de nombres.
+Double boucle while inversé.
+*/
+}
+
+function findDuplicate4(nbArray4: unknown[]): number[] {
+  checkIsArray(nbArray4);
+  checkIsNumbersArray(nbArray4);
+
+  const arr4 = nbArray4 as number[];
+
+  let duplicateNumbers4: number[] = [];
+
+  let i = arr4.length - 1;
+
+  while (i >= 0) {
+    let j = i - 1;
+    while (j >= 0) {
+      if (arr4[i] === arr4[j]) {
+        if (!duplicateNumbers4.includes(arr4[i])) {
+          duplicateNumbers4.push(arr4[i]);
+        }
+      }
+      j--;
+    }
+    i--;
+  }
+  return duplicateNumbers4;
+}
+
+const nbArray4 = [1, 4, 8, 8, 7, 8, 4, 2, 3];
+const duplicateNumbers4 = findDuplicate4(nbArray4);
+console.log(duplicateNumbers4);
