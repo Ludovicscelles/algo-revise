@@ -1698,7 +1698,7 @@ console.log(duplicateNumbers);
 
 {
   /*
-  10. Trouver les doublons
+  10v2. Trouver les doublons
 Écris un algorithme qui identifie les doublons dans un tableau de nombres.
 Boucle for inversé et méthode de tri.
 */
@@ -1726,3 +1726,38 @@ function findDuplicate2(nbArray2: number[]): number[] {
 const nbArray2 = [101, 123, 104, 101, 123, 123, 100, 101, 104, 108];
 const duplicateNumbers2 = findDuplicate2(nbArray2);
 console.log(duplicateNumbers2);
+
+{
+  /*
+  10v3. Trouver les doublons
+Écris un algorithme qui identifie les doublons dans un tableau de nombres.
+Double boucle while - 
+*/
+}
+
+function findDuplicate3(nbArray3: number[]): number[] {
+  checkIsArray(nbArray3);
+  checkIsNumbersArray(nbArray3);
+
+  let duplicateNumbers3: number[] = [];
+
+  let i = 0;
+
+  while (i < nbArray3.length) {
+    let j = i + 1;
+    while (j < nbArray3.length) {
+      if (nbArray3[i] === nbArray3[j]) {
+        if (!duplicateNumbers3.includes(nbArray3[i])) {
+          duplicateNumbers3.push(nbArray3[i]);
+        }
+      }
+      j++;
+    }
+    i++;
+  }
+  return duplicateNumbers3;
+}
+
+const nbArray3 = [50, 51, 55, 51, 52, 51, 48, 46, 47, 48];
+const duplicateNumbers3 = findDuplicate3(nbArray3);
+console.log(duplicateNumbers3);
