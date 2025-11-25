@@ -163,7 +163,6 @@ Exemple : 12345 → 5
 Boucle for ... of.
 */
 
-
 function getDigitCount7(int7: unknown): number {
   checkIsInteger(int7);
 
@@ -180,3 +179,28 @@ function getDigitCount7(int7: unknown): number {
 const int7 = 1231;
 const digitCount7 = getDigitCount7(int7);
 console.log(digitCount7);
+
+/*
+  1v8. Nombre de chiffres
+Écris une fonction qui retourne le nombre de chiffres dans un entier donné.
+Exemple : 12345 → 5
+Boucle for ... in.
+*/
+
+function getDigitCount8(int8: unknown): number {
+  checkIsInteger(int8);
+
+  const strInt8: string = Math.abs(int8).toString();
+  const chars: string[] = strInt8.split("");
+
+  let count8: number = 0;
+
+  for (let index in chars) {
+    count8++;
+  }
+  return count8;
+}
+
+const int8 = 15559;
+const digitCount8 = getDigitCount8(int8);
+console.log(digitCount8);
