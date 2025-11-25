@@ -101,3 +101,30 @@ function getDigitCount4(int4: unknown): number {
 const int4 = 5269854;
 const digitCount4: number = getDigitCount4(int4);
 console.log(digitCount4);
+
+/*
+  1v5. Nombre de chiffres
+Écris une fonction qui retourne le nombre de chiffres dans un entier donné.
+Exemple : 12345 → 5
+Boucle do while.
+*/
+
+function getDigitCount5(int5: unknown): number {
+  checkIsInteger(int5);
+
+  const strInt5: string = Math.abs(int5).toString();
+
+  let count5: number = 0;
+
+  let i = 0;
+
+  do {
+    count5++;
+    i++;
+  } while (i < strInt5.length);
+  return count5;
+}
+
+const int5 = 285;
+const digitCount5: number = getDigitCount5(int5);
+console.log(digitCount5);
