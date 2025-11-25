@@ -128,3 +128,55 @@ function getDigitCount5(int5: unknown): number {
 const int5 = 285;
 const digitCount5: number = getDigitCount5(int5);
 console.log(digitCount5);
+
+/*
+  1v6. Nombre de chiffres
+Écris une fonction qui retourne le nombre de chiffres dans un entier donné.
+Exemple : 12345 → 5
+Boucle do while inversé.
+*/
+
+function getDigitCount6(int6: unknown): number {
+  checkIsInteger(int6);
+
+  const strInt6: string = Math.abs(int6).toString();
+
+  let count6: number = 0;
+
+  let i = strInt6.length - 1;
+
+  do {
+    count6++;
+    i--;
+  } while (i >= 0);
+  return count6;
+}
+
+const int6 = 10000000;
+const digitCount6: number = getDigitCount6(int6);
+console.log(digitCount6);
+
+/*
+  1v7. Nombre de chiffres
+Écris une fonction qui retourne le nombre de chiffres dans un entier donné.
+Exemple : 12345 → 5
+Boucle for ... of.
+*/
+
+
+function getDigitCount7(int7: unknown): number {
+  checkIsInteger(int7);
+
+  const strInt7: string = Math.abs(int7).toString();
+
+  let count7: number = 0;
+
+  for (let character of strInt7) {
+    count7++;
+  }
+  return count7;
+}
+
+const int7 = 1231;
+const digitCount7 = getDigitCount7(int7);
+console.log(digitCount7);
