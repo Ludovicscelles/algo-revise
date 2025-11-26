@@ -313,7 +313,7 @@ console.log(reversedString4);
 
 {
   /*
-  2v4. Inverser une chaîne
+  2v5. Inverser une chaîne
 Écris une fonction qui retourne une chaîne inversée.
 
 Exemple : "bonjour" → "ruojnob"
@@ -321,7 +321,7 @@ Boucle do while.
 */
 }
 
-function reverseAString5(string5: string): string {
+function reverseAString5(string5: unknown): string {
   checkIsString(string5);
 
   let reversedString5: string = "";
@@ -338,3 +338,31 @@ function reverseAString5(string5: string): string {
 const stringToReverse5: string = "esreveR";
 const reversedString5 = reverseAString5(stringToReverse5);
 console.log(reversedString5);
+
+{
+  /*
+  2v6. Inverser une chaîne
+Écris une fonction qui retourne une chaîne inversée.
+
+Exemple : "bonjour" → "ruojnob"
+Boucle do while inversé.
+*/
+}
+
+function reverseAString6(string6: unknown): string {
+  checkIsString(string6);
+
+  let reversedString6: string = "";
+
+  let i = string6.length - 1;
+
+  do {
+    reversedString6 = reversedString6 + string6[i];
+    i--;
+  } while (i >= 0);
+  return reversedString6;
+}
+
+const stringToReverse6: string = "gnirtS";
+const reversedString6 = reverseAString6(stringToReverse6);
+console.log(reversedString6);
