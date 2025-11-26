@@ -1,4 +1,5 @@
-import { checkIsInteger } from "./CheckFunctions";
+import { func } from "joi";
+import { checkIsInteger, checkIsString } from "./CheckFunctions";
 
 /*
   1. Nombre de chiffres
@@ -203,3 +204,28 @@ function getDigitCount8(int8: unknown): number {
 const int8 = 15559;
 const digitCount8 = getDigitCount8(int8);
 console.log(digitCount8);
+
+{
+  /*
+  2. Inverser une chaîne
+Écris une fonction qui retourne une chaîne inversée.
+
+Exemple : "bonjour" → "ruojnob"
+Boucle for.
+*/
+}
+
+function reverseAString(string: unknown): string {
+  checkIsString(string);
+
+  let reversedString: string = "";
+
+  for (let i = 0; i < string.length; i++) {
+    reversedString = string[i] + reversedString;
+  }
+  return reversedString;
+}
+
+const stringToReverse = "civoduL";
+const reversedString = reverseAString(stringToReverse);
+console.log(reversedString);
