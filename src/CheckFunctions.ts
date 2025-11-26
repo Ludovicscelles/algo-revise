@@ -1,3 +1,5 @@
+import { array } from "joi";
+
 export const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
   if (!Number.isInteger(nb)) {
     throw new Error(`La saisie doit être un nombre entier`);
@@ -15,5 +17,25 @@ const checkIsIntegerWithComments: (nb: unknown) => asserts nb is number = (
     // throw an error if not
     // message in French: "Input must be an integer."
     throw new Error(`La saisie doit être un nombre entier.`);
+  }
+};
+
+export const checkMinArrayLength2: (
+  array: unknown[]
+) => asserts array is unknown[] = (array) => {
+  if (array.length < 2) {
+    throw new Error(`La tableau doit contenir au minimum deux éléments`);
+  }
+};
+
+// check fonction to ensure array has at least 2 elements
+// throws an error if not
+const checkMinArrayLength2WithComments: (array: unknown[]) => asserts array is unknown[] = (
+  array
+) => {
+  // check if the array has at least 2 elements
+  if (array.length < 2) {
+    // throw an error if not
+    throw new Error(`Le tableau doit contenir au minimum deux éléments.`);
   }
 };

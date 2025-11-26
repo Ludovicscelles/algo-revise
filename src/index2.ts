@@ -1,4 +1,3 @@
-import { func } from "joi";
 import { checkIsInteger } from "./CheckFunctions";
 
 /*

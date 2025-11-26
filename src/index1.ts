@@ -1,3 +1,4 @@
+import { checkMinArrayLength2 } from "./CheckFunctions";
 import { checkIsInteger } from "./CheckFunctions";
 
 {
@@ -165,18 +166,6 @@ const checkIsArray: (array: unknown) => asserts array is Array<unknown> = (
   if (!Array.isArray(array)) {
     // message in French: "Input must be an array."
     throw new Error(`La saisie d'entrée doit être un tableau.`);
-  }
-};
-
-// check fonction to ensure array has at least 2 elements
-// throws an error if not
-const checkMinArrayLength2: (array: unknown[]) => asserts array is unknown[] = (
-  array
-) => {
-  // check if the array has at least 2 elements
-  if (array.length < 2) {
-    // throw an error if not
-    throw new Error(`Le tableau doit contenir au minimum deux éléments.`);
   }
 };
 
@@ -1219,6 +1208,7 @@ const checkIsStringArray = (array: unknown[]) => {
 
 function reverseArray(stArr: unknown[]): string[] {
   checkIsArray(stArr);
+  checkMinArrayLength2(stArr);
   checkIsStringArray(stArr);
 
   const arr = stArr as string[];
@@ -1245,6 +1235,7 @@ Boucle for inversée.
 
 function reverseArray2(stArr2: unknown[]): string[] {
   checkIsArray(stArr2);
+  checkMinArrayLength2(stArr2);
   checkIsStringArray(stArr2);
 
   const arr2 = stArr2 as string[];
@@ -1271,6 +1262,7 @@ Boucle while.
 
 function reverseArray3(stArr3: unknown[]): string[] {
   checkIsArray(stArr3);
+  checkMinArrayLength2(stArr3);
   checkIsStringArray(stArr3);
 
   const arr3 = stArr3 as string[];
@@ -1300,6 +1292,7 @@ Boucle while inversé.
 
 function reverseArray4(stArr4: unknown[]): string[] {
   checkIsArray(stArr4);
+  checkMinArrayLength2(stArr4);
   checkIsStringArray(stArr4);
 
   let arr4 = stArr4 as string[];
@@ -1329,6 +1322,7 @@ Boucle do while .
 
 function reverseArray5(stArr5: unknown[]): string[] {
   checkIsArray(stArr5);
+  checkMinArrayLength2(stArr5);
   checkIsStringArray(stArr5);
 
   const arr5 = stArr5 as string[];
@@ -1358,6 +1352,7 @@ Boucle do while inversé.
 
 function reverseArray6(stArr6: unknown[]): string[] {
   checkIsArray(stArr6);
+  checkMinArrayLength2(stArr6);
   checkIsStringArray(stArr6);
 
   const arr6 = stArr6 as string[];
@@ -1387,6 +1382,7 @@ Boucle for ... of.
 
 function reverseArray7(stArr7: unknown[]): string[] {
   checkIsArray(stArr7);
+  checkMinArrayLength2(stArr7);
   checkIsStringArray(stArr7);
 
   const arr7 = stArr7 as string[];
@@ -1416,6 +1412,7 @@ Boucle for ... of inversé.
 
 function reverseArray8(stArr8: unknown): string[] {
   checkIsArray(stArr8);
+  checkMinArrayLength2(stArr8);
   checkIsStringArray(stArr8);
 
   const arr8 = stArr8 as string[];
@@ -1661,6 +1658,7 @@ const checkIsNumbersArray = (array: unknown[]) => {
 
 function findDuplicate(nbArray: unknown[]): number[] {
   checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
   checkIsNumbersArray(nbArray);
 
   const arr = nbArray as number[];
@@ -1694,6 +1692,7 @@ Boucle for inversé et méthode de tri.
 
 function findDuplicate2(nbArray2: unknown[]): number[] {
   checkIsArray(nbArray2);
+  checkMinArrayLength2(nbArray2);
   checkIsNumbersArray(nbArray2);
 
   const arr2 = nbArray2 as number[];
@@ -1727,6 +1726,7 @@ Double boucle while.
 
 function findDuplicate3(nbArray3: unknown[]): number[] {
   checkIsArray(nbArray3);
+  checkMinArrayLength2(nbArray3);
   checkIsNumbersArray(nbArray3);
 
   const arr3 = nbArray3 as number[];
@@ -1764,6 +1764,7 @@ Double boucle while inversé.
 
 function findDuplicate4(nbArray4: unknown[]): number[] {
   checkIsArray(nbArray4);
+  checkMinArrayLength2(nbArray4);
   checkIsNumbersArray(nbArray4);
 
   const arr4 = nbArray4 as number[];
@@ -1801,6 +1802,7 @@ Boucle do while avec une méthode de tri.
 
 function findDuplicate5(nbArray5: unknown[]): number[] {
   checkIsArray(nbArray5);
+  checkMinArrayLength2(nbArray5);
   checkIsNumbersArray(nbArray5);
 
   const arr5 = nbArray5 as number[];
@@ -1837,6 +1839,7 @@ Boucle do while inversé avec une méthode de tri.
 
 function findDuplicate6(nbArray6: unknown[]): number[] {
   checkIsArray(nbArray6);
+  checkMinArrayLength2(nbArray6);
   checkIsNumbersArray(nbArray6);
 
   const arr6 = nbArray6 as number[];
@@ -1873,7 +1876,7 @@ Boucle for ... of.
 
 function findDuplicate7(nbArray7: unknown[]): number[] {
   checkIsArray(nbArray7), checkIsNumbersArray(nbArray7);
-
+  checkMinArrayLength2(nbArray7);
   const arr7 = nbArray7 as number[];
 
   let justOnce: number[] = [];
@@ -1903,6 +1906,7 @@ Boucle for ... in.
 
 function findDuplicate8(nbArray8: unknown[]): number[] {
   checkIsArray(nbArray8);
+  checkMinArrayLength2(nbArray8);
   checkIsNumbersArray(nbArray8);
 
   const arr8 = nbArray8 as number[];
