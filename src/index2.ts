@@ -226,7 +226,7 @@ function reverseAString(string: unknown): string {
   return reversedString;
 }
 
-const stringToReverse = "civoduL";
+const stringToReverse: string = "civoduL";
 const reversedString = reverseAString(stringToReverse);
 console.log(reversedString);
 
@@ -251,7 +251,7 @@ function reverseAString2(string2: unknown): string {
   return reversedString2;
 }
 
-const stringToReverse2 = "oduL";
+const stringToReverse2: string = "oduL";
 const reversedString2 = reverseAString2(stringToReverse2);
 console.log(reversedString2);
 
@@ -279,6 +279,34 @@ function reverseAString3(string3: unknown): string {
   return reversedString3;
 }
 
-const stringToReverse3 = "12345";
+const stringToReverse3: string = "12345";
 const reversedString3 = reverseAString3(stringToReverse3);
 console.log(reversedString3);
+
+{
+  /*
+  2v4. Inverser une chaîne
+Écris une fonction qui retourne une chaîne inversée.
+
+Exemple : "bonjour" → "ruojnob"
+Boucle while inversé.
+*/
+}
+
+function reverseAString4(string4: unknown): string {
+  checkIsString(string4);
+
+  let reversedString4: string = "";
+
+  let i = string4.length - 1;
+
+  while (i >= 0) {
+    reversedString4 = reversedString4 + string4[i];
+    i--;
+  }
+  return reversedString4;
+}
+
+const stringToReverse4: string = "ruojnoB";
+const reversedString4 = reverseAString4(stringToReverse4);
+console.log(reversedString4);
