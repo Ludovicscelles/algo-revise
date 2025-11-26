@@ -391,3 +391,25 @@ function reverseAString7(string7: unknown): string {
 const stringToReverse7: string = "olleH";
 const reversedString7 = reverseAString7(stringToReverse7);
 console.log(reversedString7);
+
+{
+  /*
+  2v8. Inverser une chaîne
+Écris une fonction qui retourne une chaîne inversée.
+
+Exemple : "bonjour" → "ruojnob"
+With split, reverse and join methods.
+*/
+}
+
+function reverseAString8(string8: unknown): string {
+  checkIsString(string8);
+
+  let string8Array: string[] = string8.split("");
+
+  return string8Array.reverse().join("");
+}
+
+const stringToReverse8: string = "dlroW ,olleH";
+const reversedString8 = reverseAString8(stringToReverse8);
+console.log(reversedString8);
