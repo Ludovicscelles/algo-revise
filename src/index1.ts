@@ -1,5 +1,8 @@
-import { checkMinArrayLength2 } from "./CheckFunctions";
-import { checkIsInteger } from "./CheckFunctions";
+import {
+  checkIsInteger,
+  checkIsString,
+  checkMinArrayLength2,
+} from "./CheckFunctions";
 
 {
   /*
@@ -385,18 +388,6 @@ console.log(maxValue7);
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
 */
 }
-
-// type guard to check if input is a string
-// throws an error if not
-// asserts str is string tells TypeScript that after calling this function, str can be treated as a string
-const checkIsString: (str: unknown) => asserts str is string = (str) => {
-  // check if the input is a string
-  if (typeof str !== "string") {
-    // throw an error if not
-    // message in French: "Input must be a string."
-    throw new Error(`La saisie d'entrée doit être une chaîne de caractères. `);
-  }
-};
 
 // helper function to normalize a string
 // removes accents, converts to lowercase, and removes non-alphanumeric characters
