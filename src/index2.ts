@@ -366,3 +366,28 @@ function reverseAString6(string6: unknown): string {
 const stringToReverse6: string = "gnirtS";
 const reversedString6 = reverseAString6(stringToReverse6);
 console.log(reversedString6);
+
+{
+  /*
+  2v7. Inverser une chaîne
+Écris une fonction qui retourne une chaîne inversée.
+
+Exemple : "bonjour" → "ruojnob"
+Boucle for ... of.
+*/
+}
+
+function reverseAString7(string7: unknown): string {
+  checkIsString(string7);
+
+  let reversedString7: string = "";
+
+  for (let str of string7) {
+    reversedString7 = str + reversedString7;
+  }
+  return reversedString7;
+}
+
+const stringToReverse7: string = "olleH";
+const reversedString7 = reverseAString7(stringToReverse7);
+console.log(reversedString7);
