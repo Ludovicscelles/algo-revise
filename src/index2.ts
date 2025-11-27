@@ -485,3 +485,64 @@ const numberOfTables2: number = 3;
 const multiplicationTables2: string =
   displayMultiplicationTables2(numberOfTables2);
 console.log(multiplicationTables2);
+
+{
+  /*
+  3v2bis (with comments). Écris une fonction qui affiche les tables de multiplication pour tous les nombres entiers allant de 1 jusqu’à un nombre n donné.
+Pour chaque nombre, la table doit afficher les multiplications de x 1 à x 10.
+Chaque table doit être précédée d’un titre (ex : “Table de 5”) et d’une ligne de séparation.
+Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
+Boucle for inversé.
+*/
+}
+
+// function with comments for displayMultiplicationTables2
+function displayMultiplicationTables2WithComments(number2Bis: number): string {
+  // Check if the input is an integer
+  checkIsInteger(number2Bis);
+
+  // Initialize an array to hold the formatted multiplication tables
+  let displayTimesTables2: string[] = [];
+
+  // Loop through each number from number2Bis down to 1
+  // This outer loop generates each multiplication table
+  for (let i = number2Bis; i >= 1; i--) {
+    // Initialize an array to hold the lines of the current multiplication table
+    // This will include the title, separator, and multiplication lines
+    let tablelines: string[] = [];
+
+    // Add the title of the multiplication table
+    tablelines.push(`Table de ${i}\n`);
+    // Add the separator line
+    tablelines.push(`-----------------\n`);
+
+    // Inner loop to generate multiplication lines from 10 down to 1
+    for (let j = 10; j >= 1; j--) {
+      // Add each multiplication line in the format "i x j = result"
+      tablelines.push(`${i} x ${j} = ${i * j}\n`);
+    }
+
+    // Reverse the order of multiplication lines to have them from 1 to 10
+    // while keeping the title and separator at the top
+    tablelines = [
+      //  Keep the title line at the top
+      tablelines[0],
+      //  Keep the separator line second
+      tablelines[1],
+      //  Reverse the multiplication lines to be in ascending order
+      //  slice(2) gets all lines after the first two (title and separator)
+      ...tablelines.slice(2).reverse(),
+    ];
+
+    // Join the lines of the current table into a single string and add to the main array
+    displayTimesTables2.push(tablelines.join(""));
+  }
+  // Reverse the order of the tables to have them from 1 to number2Bis
+  return displayTimesTables2.reverse().join("\n");
+}
+
+// Testing the function with comments
+const numberOfTables2Bis: number = 3;
+const multiplicationTables2Bis: string =
+  displayMultiplicationTables2WithComments(numberOfTables2Bis);
+console.log(multiplicationTables2Bis);
