@@ -40,8 +40,10 @@ Exemple : 12345 → 5
 
 Exemple : "bonjour" → "ruojnob"
 
-3. Table de multiplication complète
-Écris une fonction qui affiche toutes les tables de 1 à 10 (10 lignes par table).
+3. Écris une fonction qui affiche les tables de multiplication pour tous les nombres entiers allant de 1 jusqu’à un nombre n donné.
+Pour chaque nombre, la table doit afficher les multiplications de x 1 à x 10.
+Chaque table doit être précédée d’un titre (ex : “Table de 5”) et d’une ligne de séparation.
+Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
 
 4. Somme des chiffres
 Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
