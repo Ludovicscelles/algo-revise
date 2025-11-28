@@ -624,3 +624,44 @@ const numberOfTables4: number = 2;
 const multiplicationTables4: string =
   displayMultiplicationTables4(numberOfTables4);
 console.log(multiplicationTables4);
+
+{
+  /*
+  3v5. Écris une fonction qui affiche les tables de multiplication pour tous les nombres entiers allant de 1 jusqu’à un nombre n donné.
+Pour chaque nombre, la table doit afficher les multiplications de x 1 à x 10.
+Chaque table doit être précédée d’un titre (ex : “Table de 5”) et d’une ligne de séparation.
+Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
+Boucle do while.
+*/
+}
+
+function displayMultiplicationTables5(number5: number): string {
+  checkIsInteger(number5);
+
+  let displayTimesTables5: string = "";
+
+  let i = 1;
+
+  do {
+    if (i > 1) {
+      displayTimesTables5 += `\n`;
+    }
+    displayTimesTables5 += `Table de ${i}\n`;
+    displayTimesTables5 += `-----------------\n`;
+
+    let j = 1;
+
+    do {
+      displayTimesTables5 += `${i} x ${j} = ${i * j}\n`;
+      j++;
+    } while (j <= 10);
+
+    i++;
+  } while (i <= number5);
+  return displayTimesTables5;
+}
+
+const numberOfTables5: number = 6;
+const multiplicationTables5: string =
+  displayMultiplicationTables5(numberOfTables5);
+console.log(multiplicationTables5);
