@@ -553,7 +553,7 @@ console.log(multiplicationTables2Bis);
 Pour chaque nombre, la table doit afficher les multiplications de x 1 à x 10.
 Chaque table doit être précédée d’un titre (ex : “Table de 5”) et d’une ligne de séparation.
 Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
-Boucle for.
+Boucle while.
 */
 }
 
@@ -582,3 +582,45 @@ const numberOfTables3: number = 4;
 const multiplicationTables3: string =
   displayMultiplicationTables3(numberOfTables3);
 console.log(multiplicationTables3);
+
+{
+  /*
+  3v4. Écris une fonction qui affiche les tables de multiplication pour tous les nombres entiers allant de 1 jusqu’à un nombre n donné.
+Pour chaque nombre, la table doit afficher les multiplications de x 1 à x 10.
+Chaque table doit être précédée d’un titre (ex : “Table de 5”) et d’une ligne de séparation.
+Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
+Boucle while inversé.
+*/
+}
+
+function displayMultiplicationTables4(number4: number): string {
+  checkIsInteger(number4);
+
+  let displayTimesTables4: string[] = [];
+
+  let i = number4;
+
+  while (i >= 1) {
+    let tablelines: string[] = [];
+    tablelines.push(`Table de ${i}\n`);
+    tablelines.push(`--------------------\n`);
+    let j = 10;
+    while (j >= 1) {
+      tablelines.push(`${i} x ${j} = ${i * j}\n`);
+      j--;
+    }
+    tablelines = [
+      tablelines[0],
+      tablelines[1],
+      ...tablelines.slice(2).reverse(),
+    ];
+    displayTimesTables4.push(tablelines.join(""));
+    i--;
+  }
+  return displayTimesTables4.reverse().join(`\n`);
+}
+
+const numberOfTables4: number = 2;
+const multiplicationTables4: string =
+  displayMultiplicationTables4(numberOfTables4);
+console.log(multiplicationTables4);
