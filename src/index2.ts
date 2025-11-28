@@ -713,3 +713,71 @@ const numberOfTables6: number = 2;
 const multiplicationTables6: string =
   displayMultiplicationTables6(numberOfTables6);
 console.log(multiplicationTables6);
+
+{
+  /*
+  3v7. Écris une fonction qui affiche les tables de multiplication pour tous les nombres entiers allant de 1 jusqu’à un nombre n donné.
+Pour chaque nombre, la table doit afficher les multiplications de x 1 à x 10.
+Chaque table doit être précédée d’un titre (ex : “Table de 5”) et d’une ligne de séparation.
+Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
+
+*/
+}
+
+class Table {
+  constructor(private n: number) {}
+
+  // constructor (private n: number) {} is same as:
+  // private n: number;
+  // constructor(n: number) {
+  //   this.n = n;
+  // }
+
+  generate(): string {
+    const lines = Array.from(
+      { length: 10 },
+      (_, i) => `${this.n} x ${i + 1} = ${this.n * (i + 1)}`
+    ).join(`\n`);
+    return `Table de ${this.n}\n-----------------\n${lines}`;
+  }
+}
+
+const table5 = new Table(5);
+console.log(table5.generate());
+
+{
+  /*
+  3v7Bis (with comments). Écris une fonction qui affiche les tables de multiplication pour tous les nombres entiers allant de 1 jusqu’à un nombre n donné.
+Pour chaque nombre, la table doit afficher les multiplications de x 1 à x 10.
+Chaque table doit être précédée d’un titre (ex : “Table de 5”) et d’une ligne de séparation.
+Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
+
+*/
+}
+
+// class with comments for TableWithComments
+class TableWithComments {
+  // Constructor to initialize the table with a specific number
+  // The number for which the multiplication table will be generated
+  constructor(private n: number) {}
+
+  // Method to generate the multiplication table as a formatted string
+  // This method creates the multiplication lines and formats them with a title and separator
+  generate(): string {
+    // Create an array of multiplication lines using Array.from
+    // The array has 10 elements, each representing a multiplication from 1 to 10
+    const lines = Array.from(
+      // Create an array with 10 elements
+      //  The underscore (_) is a placeholder for the unused first argument (the current element)
+      { length: 10 },
+      // For each index (i), generate the multiplication line in the format "n x (i+1) = result"
+      (_, i) => `${this.n} x ${i + 1} = ${this.n * (i + 1)}`
+      // Join the array of lines into a single string with newline characters between each line
+    ).join(`\n`);
+    // Return the complete formatted multiplication table with title and separator
+    return `Table de ${this.n}\n-----------------\n${lines}`;
+  }
+}
+
+const table5Bis = new TableWithComments(5);
+console.log(table5Bis.generate());
