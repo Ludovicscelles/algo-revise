@@ -424,7 +424,7 @@ Boucle for.
 */
 }
 
-function displayMultiplicationTables(number: number): string {
+function displayMultiplicationTables(number: unknown): string {
   checkIsInteger(number);
 
   let displayTimesTables: string = "";
@@ -456,7 +456,7 @@ Boucle for inversé.
 */
 }
 
-function displayMultiplicationTables2(number2: number): string {
+function displayMultiplicationTables2(number2: unknown): string {
   checkIsInteger(number2);
 
   let displayTimesTables2: string[] = [];
@@ -497,7 +497,7 @@ Boucle for inversé.
 }
 
 // function with comments for displayMultiplicationTables2
-function displayMultiplicationTables2WithComments(number2Bis: number): string {
+function displayMultiplicationTables2WithComments(number2Bis: unknown): string {
   // Check if the input is an integer
   checkIsInteger(number2Bis);
 
@@ -557,7 +557,7 @@ Boucle while.
 */
 }
 
-function displayMultiplicationTables3(number3: number): string {
+function displayMultiplicationTables3(number3: unknown): string {
   checkIsInteger(number3);
 
   let displayTimesTables3: string = "";
@@ -593,7 +593,7 @@ Boucle while inversé.
 */
 }
 
-function displayMultiplicationTables4(number4: number): string {
+function displayMultiplicationTables4(number4: unknown): string {
   checkIsInteger(number4);
 
   let displayTimesTables4: string[] = [];
@@ -635,7 +635,7 @@ Boucle do while.
 */
 }
 
-function displayMultiplicationTables5(number5: number): string {
+function displayMultiplicationTables5(number5: unknown): string {
   checkIsInteger(number5);
 
   let displayTimesTables5: string = "";
@@ -676,7 +676,7 @@ Boucle do while inversé.
 */
 }
 
-function displayMultiplicationTables6(number6: number): string {
+function displayMultiplicationTables6(number6: unknown): string {
   checkIsInteger(number6);
 
   let displayTimesTables6: string[] = [];
@@ -781,3 +781,32 @@ class TableWithComments {
 
 const table5Bis = new TableWithComments(5);
 console.log(table5Bis.generate());
+
+{
+  /*
+  4. Somme des chiffres
+Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
+
+Exemple : 123 → 1 + 2 + 3 = 6
+
+Boucle for
+*/
+}
+
+function digitsSum(integer: number): number {
+  checkIsInteger(integer);
+
+  let sum: number = 0;
+
+  let integerAsString: string = Math.abs(integer).toString();
+
+  for (let i = 0; i < integerAsString.length; i++) {
+    const digit: number = Number(parseInt(integerAsString[i]));
+    sum += digit;
+  }
+  return sum;
+}
+
+const inputNumber: number = -456;
+const sumOfDigits: number = digitsSum(inputNumber);
+console.log(sumOfDigits);
