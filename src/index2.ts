@@ -855,8 +855,8 @@ function digitsSum3(integer3: unknown): number {
   let i = 0;
 
   while (i < integerAsString3.length) {
-    const digit: number = Number(parseInt(integerAsString3[i]));
-    sum3 += digit;
+    const digit3: number = Number(parseInt(integerAsString3[i]));
+    sum3 += digit3;
     i++;
   }
   return sum3;
@@ -865,3 +865,33 @@ function digitsSum3(integer3: unknown): number {
 const inputNumber3: number = 321;
 const sumOfDigits3: number = digitsSum3(inputNumber3);
 console.log(sumOfDigits3);
+
+{
+  /*
+  4v3. Somme des chiffres
+Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
+Exemple : 123 → 1 + 2 + 3 = 6
+Boucle while inversé.
+*/
+}
+
+function digitsSum4(integer4: unknown): number {
+  checkIsInteger(integer4);
+
+  let sum4: number = 0;
+
+  let integerAsString4: string = Math.abs(integer4).toString();
+
+  let i = integerAsString4.length - 1;
+
+  while (i >= 0) {
+    const digit4: number = Number(parseInt(integerAsString4[i]));
+    sum4 += digit4;
+    i--;
+  }
+  return sum4;
+}
+
+const inputNumber4: number = 654;
+const sumOfDigits4: number = digitsSum4(inputNumber4);
+console.log(sumOfDigits4);
