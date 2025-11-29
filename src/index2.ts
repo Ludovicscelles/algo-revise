@@ -1010,3 +1010,74 @@ function digitsSum8(integer8: unknown): number {
 const inputNumber8: number = 40404;
 const sumOfDigits8: number = digitsSum8(inputNumber8);
 console.log(sumOfDigits8);
+
+{
+  /*
+  4v9. Somme des chiffres
+Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
+Exemple : 123 → 1 + 2 + 3 = 6
+Class POO.
+*/
+}
+
+class DigitsSumUtils {
+  constructor(private integer: number) {
+    checkIsInteger(integer);
+  }
+
+  sum(): number {
+    let sum: number = 0;
+    let integerAsString: string = Math.abs(this.integer).toString();
+
+    for (let str of integerAsString) {
+      const digit: number = Number(parseInt(str));
+      sum += digit;
+    }
+    return sum;
+  }
+}
+
+const digitsSumUtil = new DigitsSumUtils(-50505);
+const sumOfDigitsUtil: number = digitsSumUtil.sum();
+console.log(sumOfDigitsUtil);
+
+{
+  /*
+  4v9bis (with comments). Somme des chiffres
+Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
+Exemple : 123 → 1 + 2 + 3 = 6
+Class POO.
+*/
+}
+
+// class with comments for DigitsSumUtilsWithComments
+class DigitsSumUtilsWithComments {
+  // Constructor to initialize the class with an integer
+  // The integer whose digits will be summed
+  constructor(private integer: number) {
+    // Validate that the input is an integer
+    checkIsInteger(integer);
+  }
+
+  // Method to calculate the sum of the digits of the integer
+  sum(): number {
+    // Initialize sum variable to hold the total sum of digits
+    let sum: number = 0;
+    // Convert the absolute value of the integer to a string
+    let integerAsString: string = Math.abs(this.integer).toString();
+
+    // Loop through each character in the string representation of the integer
+    for (let str of integerAsString) {
+      // Parse the character to an integer digit
+      const digit: number = Number(parseInt(str));
+      // Add the digit to the sum
+      sum += digit;
+    }
+    // Return the final sum of the digits
+    return sum;
+  }
+}
+// Testing the class with comments
+const digitsSumUtilBis = new DigitsSumUtilsWithComments(-60606);
+const sumOfDigitsUtilBis: number = digitsSumUtilBis.sum();
+console.log(sumOfDigitsUtilBis);
