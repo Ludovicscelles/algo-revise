@@ -818,20 +818,50 @@ Boucle for inversé.
 */
 }
 
-function digitsSum2(integer2: unknown):number{
+function digitsSum2(integer2: unknown): number {
   checkIsInteger(integer2);
 
   let sum2: number = 0;
 
   let integerAsString2: string = Math.abs(integer2).toString();
 
-  for (let i = integerAsString2.length - 1; i >=0; i--){
+  for (let i = integerAsString2.length - 1; i >= 0; i--) {
     const digit2: number = Number(parseInt(integerAsString2[i]));
-    sum2 += digit2
+    sum2 += digit2;
   }
-  return sum2
+  return sum2;
 }
 
 const inputNumber2: number = 789;
 const sumOfDigits2: number = digitsSum2(inputNumber2);
 console.log(sumOfDigits2);
+
+{
+  /*
+  4v3. Somme des chiffres
+Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
+Exemple : 123 → 1 + 2 + 3 = 6
+Boucle while.
+*/
+}
+
+function digitsSum3(integer3: unknown): number {
+  checkIsInteger(integer3);
+
+  let sum3: number = 0;
+
+  let integerAsString3: string = Math.abs(integer3).toString();
+
+  let i = 0;
+
+  while (i < integerAsString3.length) {
+    const digit: number = Number(parseInt(integerAsString3[i]));
+    sum3 += digit;
+    i++;
+  }
+  return sum3;
+}
+
+const inputNumber3: number = 321;
+const sumOfDigits3: number = digitsSum3(inputNumber3);
+console.log(sumOfDigits3);
