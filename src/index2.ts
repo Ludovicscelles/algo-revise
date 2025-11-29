@@ -786,14 +786,12 @@ console.log(table5Bis.generate());
   /*
   4. Somme des chiffres
 Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
-
 Exemple : 123 → 1 + 2 + 3 = 6
-
-Boucle for
+Boucle for.
 */
 }
 
-function digitsSum(integer: number): number {
+function digitsSum(integer: unknown): number {
   checkIsInteger(integer);
 
   let sum: number = 0;
@@ -810,3 +808,30 @@ function digitsSum(integer: number): number {
 const inputNumber: number = -456;
 const sumOfDigits: number = digitsSum(inputNumber);
 console.log(sumOfDigits);
+
+{
+  /*
+  4v2. Somme des chiffres
+Écris une fonction qui retourne la somme de tous les chiffres d’un nombre entier.
+Exemple : 123 → 1 + 2 + 3 = 6
+Boucle for inversé.
+*/
+}
+
+function digitsSum2(integer2: unknown):number{
+  checkIsInteger(integer2);
+
+  let sum2: number = 0;
+
+  let integerAsString2: string = Math.abs(integer2).toString();
+
+  for (let i = integerAsString2.length - 1; i >=0; i--){
+    const digit2: number = Number(parseInt(integerAsString2[i]));
+    sum2 += digit2
+  }
+  return sum2
+}
+
+const inputNumber2: number = 789;
+const sumOfDigits2: number = digitsSum2(inputNumber2);
+console.log(sumOfDigits2);
