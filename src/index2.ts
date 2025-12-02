@@ -1,5 +1,8 @@
-import { func } from "joi";
-import { checkIsInteger, checkIsString } from "./CheckFunctions";
+import {
+  checkIsInteger,
+  checkIsString,
+  checkIsPositiveNumber,
+} from "./CheckFunctions";
 
 /*
   1. Nombre de chiffres
@@ -1081,3 +1084,31 @@ class DigitsSumUtilsWithComments {
 const digitsSumUtilBis = new DigitsSumUtilsWithComments(-60606);
 const sumOfDigitsUtilBis: number = digitsSumUtilBis.sum();
 console.log(sumOfDigitsUtilBis);
+
+{
+  /*
+  5. Nombre premier
+Écris une fonction qui vérifie si un nombre est premier (divisible uniquement par 1 et lui-même).
+Boucle for.
+*/
+}
+
+function checkPrimeNumber(nbr: unknown): string {
+  checkIsInteger(nbr);
+  checkIsPositiveNumber(nbr);
+
+  if (nbr <= 1) {
+    return `Il ne s'agit pas d'un nombre premier`;
+  }
+
+  for (let i = 2; i < nbr; i++) {
+    if (nbr % i === 0) {
+      return `Il ne s'agit pas d'un nombre premier`;
+    }
+  }
+  return `Il s'agit d'un nombre premier`;
+}
+
+const nbr: number = 7;
+const primeNumber: string = checkPrimeNumber(nbr);
+console.log(primeNumber);
