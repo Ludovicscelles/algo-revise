@@ -18,6 +18,28 @@ const checkIsIntegerWithComments: (nb: unknown) => asserts nb is number = (
   }
 };
 
+export const checkIsPositiveNumber: (nb: number) => asserts nb is number = (
+  nb
+) => {
+  if (nb < 0) {
+    throw new Error(`Le nombre saisi doit être positif.`);
+  }
+};
+
+// type guard to check if input is a positive number
+// throws an error if not
+// asserts nb is number tells TypeScript that after calling this function, nb can be treated as a number
+const checkIsPositiveNumberWithComments: (nb: number) => asserts nb is number = (
+  nb
+) => {
+  // check if the input is a positive number
+  if (nb < 0) {
+    // throw an error if not
+    // message in French: "Number must be positive."
+    throw new Error(`Le nombre saisi doit être positif.`);
+  }
+};
+
 export const checkIsString: (str: unknown) => asserts str is string = (str) => {
   if (typeof str !== "string") {
     throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
@@ -27,7 +49,9 @@ export const checkIsString: (str: unknown) => asserts str is string = (str) => {
 // type guard to check if input is a string
 // throws an error if not
 // asserts str is string tells TypeScript that after calling this function, str can be treated as a string
-const checkIsStringWithComments : (str: unknown) => asserts str is string = (str) => {
+const checkIsStringWithComments: (str: unknown) => asserts str is string = (
+  str
+) => {
   // check if the input is a string
   if (typeof str !== "string") {
     // throw an error if not

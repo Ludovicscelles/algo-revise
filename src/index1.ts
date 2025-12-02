@@ -1,5 +1,6 @@
 import {
   checkIsInteger,
+  checkIsPositiveNumber,
   checkIsString,
   checkMinArrayLength2,
 } from "./CheckFunctions";
@@ -51,21 +52,9 @@ console.log(isEven2);
 */
 }
 
-// type guard to check if input is a positive number
-// throws an error if not
-// asserts nb is number tells TypeScript that after calling this function, nb can be treated as a number
-const checkIsPositifNumber: (nb: number) => asserts nb is number = (nb) => {
-  // check if the input is a positive number
-  if (nb < 0) {
-    // throw an error if not
-    // message in French: "Number must be positive."
-    throw new Error(`Le nombre doit être positif.`);
-  }
-};
-
 function factorial(number: unknown): number {
   checkIsInteger(number);
-  checkIsPositifNumber(number);
+  checkIsPositiveNumber(number);
   let factorialResult: number = 1;
   for (let i = 2; i <= number; i++) {
     factorialResult *= i;
@@ -86,7 +75,7 @@ console.log(factorialOfANumber);
 
 function factorial2(number2: unknown): number {
   checkIsInteger(number2);
-  checkIsPositifNumber(number2);
+  checkIsPositiveNumber(number2);
   let factorialResult2: number = 1;
   for (let i = number2; i >= 2; i--) {
     factorialResult2 *= i;
@@ -108,7 +97,7 @@ console.log(factorialOfANumber2);
 
 function factorial3(number3: unknown): number {
   checkIsInteger(number3);
-  checkIsPositifNumber(number3);
+  checkIsPositiveNumber(number3);
   let factorialResult3: number = 1;
 
   let i = 2;
@@ -134,7 +123,7 @@ console.log(factorialOfANumber3);
 
 function factorial4(number4: unknown): number {
   checkIsInteger(number4);
-  checkIsPositifNumber(number4);
+  checkIsPositiveNumber(number4);
   let factorialOfANumber4: number = 1;
 
   let i = number4;
@@ -1017,7 +1006,7 @@ Boucle for.
 
 function fizzBuzz(number: unknown): string[] {
   checkIsInteger(number);
-  checkIsPositifNumber(number);
+  checkIsPositiveNumber(number);
 
   let arrayFizzBuzz: string[] = [];
 
@@ -1044,7 +1033,7 @@ Boucle for inversé.
 
 function fizzBuzz2(number2: number): string[] {
   checkIsInteger(number2);
-  checkIsPositifNumber(number2);
+  checkIsPositiveNumber(number2);
 
   let arrayFizzBuzz2: string[] = [];
 
@@ -1071,7 +1060,7 @@ Boucle while.
 
 function fizzBuzz3(number3: unknown): string[] {
   checkIsInteger(number3);
-  checkIsPositifNumber(number3);
+  checkIsPositiveNumber(number3);
 
   let arrayFizzBuzz3: string[] = [];
 
@@ -1101,7 +1090,7 @@ Boucle while inversé.
 
 function fizzBuzz4(number4: unknown): string[] {
   checkIsInteger(number4);
-  checkIsPositifNumber(number4);
+  checkIsPositiveNumber(number4);
 
   let arrayFizzBuzz4: string[] = [];
 
@@ -1131,7 +1120,7 @@ Boucle do while.
 
 function fizzBuzz5(number5: number): string[] {
   checkIsInteger(number5);
-  checkIsPositifNumber(number5);
+  checkIsPositiveNumber(number5);
 
   let arrayFizzBuzz5: string[] = [];
 
@@ -1161,7 +1150,7 @@ Boucle do while inversé.
 
 function fizzBuzz6(number6: number): string[] {
   checkIsInteger(number6);
-  checkIsPositifNumber(number6);
+  checkIsPositiveNumber(number6);
 
   let arrayFizzBuzz6: string[] = [];
 
