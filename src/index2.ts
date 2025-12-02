@@ -1230,6 +1230,6 @@ function checkPrimeNumber5(nbr5: unknown): string {
   return `Il s'agit d'un nombre premier`;
 }
 
-const nbr5: number = 20;
+const nbr5: number = 19;
 const primeNumber5: string = checkPrimeNumber5(nbr5);
 console.log(primeNumber5);
