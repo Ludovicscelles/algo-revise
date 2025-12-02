@@ -1296,3 +1296,35 @@ function isPrimeNumber(nbr7: unknown): boolean {
 const nbr7: number = 30;
 const primeNumber7: boolean = isPrimeNumber(nbr7);
 console.log(primeNumber7);
+
+{
+  /*
+  5v8. Nombre premier
+Écris une fonction qui vérifie si un nombre est premier (divisible uniquement par 1 et lui-même).
+Boucle for inversé.
+Boolean return.
+Limite des itérations à la racine carrée du nombre.
+*/
+}
+
+function isPrimeNumber2(nbr8: unknown): boolean {
+  checkIsInteger(nbr8);
+  checkIsPositiveNumber(nbr8);
+
+  if (nbr8 <= 1) {
+    return false;
+  }
+
+  const squareNbr8: number = Math.floor(Math.sqrt(nbr8));
+
+  for (let i = squareNbr8; i >= 2; i--) {
+    if (nbr8 % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const nbr8: number = 38;
+const primeNumber8: boolean = isPrimeNumber2(nbr8);
+console.log(primeNumber8);
