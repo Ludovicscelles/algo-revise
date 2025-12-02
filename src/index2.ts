@@ -1233,3 +1233,34 @@ function checkPrimeNumber5(nbr5: unknown): string {
 const nbr5: number = 19;
 const primeNumber5: string = checkPrimeNumber5(nbr5);
 console.log(primeNumber5);
+
+{
+  /*
+  5v6. Nombre premier
+Écris une fonction qui vérifie si un nombre est premier (divisible uniquement par 1 et lui-même).
+Boucle do while inversé.
+*/
+}
+
+function checkPrimeNumber6(nbr6: unknown): string {
+  checkIsInteger(nbr6);
+  checkIsPositiveNumber(nbr6);
+
+  if (nbr6 <= 1) {
+    return `Il ne s'agit pas d'un nombre premier`;
+  }
+
+  let i = nbr6 - 1;
+
+  do {
+    if (nbr6 % i === 0) {
+      return `Il ne s'agit pas d'un nombre premier`;
+    }
+    i--;
+  } while (i >= 2);
+  return `Il s'agit d'un nombre premier`;
+}
+
+const nbr6: number = 24;
+const primeNumber6: string = checkPrimeNumber6(nbr6);
+console.log(primeNumber6);
