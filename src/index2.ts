@@ -1366,7 +1366,7 @@ console.log(primeNumber9);
 
 {
   /*
-  5v9. Nombre premier
+  5v10. Nombre premier
 Écris une fonction qui vérifie si un nombre est premier (divisible uniquement par 1 et lui-même).
 Boucle while inversé.
 Boolean return.
@@ -1398,3 +1398,73 @@ function isPrimeNumber4(nbr10: unknown): boolean {
 const nbr10: number = 48;
 const primeNumber10: boolean = isPrimeNumber4(nbr10);
 console.log(primeNumber10);
+
+{
+  /*
+  5v11. Nombre premier
+Écris une fonction qui vérifie si un nombre est premier (divisible uniquement par 1 et lui-même).
+Boucle do while.
+Boolean return.
+Limite des itérations à la racine carrée du nombre.
+*/
+}
+
+function isPrimeNumber5(nbr11: unknown): boolean {
+  checkIsInteger(nbr11);
+  checkIsPositiveNumber(nbr11);
+
+  if (nbr11 <= 1) {
+    return false;
+  }
+
+  const sqrtNbr11: number = Math.sqrt(nbr11);
+
+  let i = 2;
+
+  do {
+    if (nbr11 % i === 0) {
+      return false;
+    }
+    i++;
+  } while (i <= sqrtNbr11);
+  return true;
+}
+
+const nbr11: number = 54;
+const primeNumber11: boolean = isPrimeNumber5(nbr11);
+console.log(primeNumber11);
+
+{
+  /*
+  5v12. Nombre premier
+Écris une fonction qui vérifie si un nombre est premier (divisible uniquement par 1 et lui-même).
+Boucle do while inversé.
+Boolean return.
+Limite des itérations à la racine carrée du nombre.
+*/
+}
+
+function isPrimeNumber6(nbr12: unknown): boolean {
+  checkIsInteger(nbr12);
+  checkIsPositiveNumber(nbr12);
+
+  if (nbr12 <= 1) {
+    return false;
+  }
+
+  const sqrtNbr12: number = Math.floor(Math.sqrt(nbr12));
+
+  let i = sqrtNbr12;
+
+  do {
+    if (nbr12 % i === 0) {
+      return false;
+    }
+    i--;
+  } while (i >= 2);
+  return true;
+}
+
+const nbr12: number = 59;
+const primeNumber12: boolean = isPrimeNumber6(nbr12);
+console.log(primeNumber12);
