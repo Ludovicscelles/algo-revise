@@ -1801,4 +1801,33 @@ const inputSentence3: string =
 const longestWord3: string = findTheLongestWord3(inputSentence3);
 console.log(longestWord3);
 
+{
+  /*
+  7v4. Mot le plus long
+Écris une fonction qui retourne le mot le plus long dans une phrase.
+Boucle while inversé.
+*/
+}
 
+function findTheLongestWord4(sentence: unknown): string {
+  checkIsString(sentence);
+
+  const words: string[] = sentence.split(" ");
+
+  let longestWord: string = "";
+
+  let i = words.length - 1;
+
+  while (i >= 0) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+    i--;
+  }
+  return longestWord;
+}
+
+const inputSentence4: string =
+  "Les algorithmes sont essentiels pour résoudre des problèmes complexes";
+const longestWord4: string = findTheLongestWord4(inputSentence4);
+console.log(longestWord4);
