@@ -29,9 +29,9 @@ export const checkIsPositiveNumber: (nb: number) => asserts nb is number = (
 // type guard to check if input is a positive number
 // throws an error if not
 // asserts nb is number tells TypeScript that after calling this function, nb can be treated as a number
-const checkIsPositiveNumberWithComments: (nb: number) => asserts nb is number = (
-  nb
-) => {
+const checkIsPositiveNumberWithComments: (
+  nb: number
+) => asserts nb is number = (nb) => {
   // check if the input is a positive number
   if (nb < 0) {
     // throw an error if not
@@ -58,6 +58,16 @@ const checkIsStringWithComments: (str: unknown) => asserts str is string = (
     // message in French: "Input must be a string."
     throw new Error(`La saisie d'entrée doit être une chaîne de caractères. `);
   }
+};
+
+export const cleanString: (str: string) => string = (str) => {
+  return str.replace(/[^\p{L}]/gu, "");
+};
+
+// function to clean a string by removing all non-letter characters but keeping accented letters.
+const cleanStringWithComments: (str: string) => string = (str) => {
+  // use regex to replace all non-letter characters with an empty string
+  return str.replace(/[^\p{L}]/gu, "");
 };
 
 export const checkMinArrayLength2: (

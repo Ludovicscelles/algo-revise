@@ -2,6 +2,7 @@ import {
   checkIsInteger,
   checkIsString,
   checkIsPositiveNumber,
+  cleanString,
 } from "./CheckFunctions";
 
 /*
@@ -1468,3 +1469,27 @@ function isPrimeNumber6(nbr12: unknown): boolean {
 const nbr12: number = 59;
 const primeNumber12: boolean = isPrimeNumber6(nbr12);
 console.log(primeNumber12);
+
+{
+  /*
+  6. Compter les lettres
+Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
+*/
+}
+
+function countLettersInAString(sentence: unknown): number {
+  checkIsString(sentence);
+
+  const normalizeSentence: string = cleanString(sentence);
+
+  let count: number = 0;
+
+  for (let i = 0; i < normalizeSentence.length; i++) {
+    count++;
+  }
+  return count;
+}
+
+const sentenceToCount: string = "Bonjour, ça va 123 ?";
+const letterCount: number = countLettersInAString(sentenceToCount);
+console.log(letterCount);
