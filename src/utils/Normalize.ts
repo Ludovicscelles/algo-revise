@@ -8,3 +8,24 @@ const cleanStringWithComments: (str: string) => string = (str) => {
   return str.replace(/[^\p{L}]/gu, "");
 };
 
+export const words: (str: string) => string[] = (str) => {
+  return str
+    .split(" ")
+    .map((word) => word.replace(/[^\p{L}\p{N}-]/gu, ""))
+    .filter((word) => word.length > 0);
+};
+
+// function to split a string into words, removing punctuation
+// keeps letters (including accented), numbers, and hyphens within words
+export const wordsWithComments: (str: string) => string[] = (str) => {
+  return (
+    str
+      // split the string by spaces to get individual words
+      .split(" ")
+      // clean each word by removing unwanted characters
+      // keep letters (including accented), numbers, and hyphens
+      .map((word) => word.replace(/[^\p{L}\p{N}-]/gu, ""))
+      // filter out any empty strings resulting from the cleaning process
+      .filter((word) => word.length > 0)
+  );
+};

@@ -4,7 +4,7 @@ import {
   checkIsPositiveNumber,
 } from "./utils/CheckFunctions";
 
-import { cleanString } from "./utils/Normalize";
+import { cleanString, words } from "./utils/Normalize";
 
 /*
   1. Nombre de chiffres
@@ -1726,13 +1726,13 @@ Boucle for.
 function findTheLongestWord(sentence: unknown): string {
   checkIsString(sentence);
 
-  const words: string[] = sentence.split(" ");
+  const wordsArray: string[] = words(sentence);
 
   let longestWord: string = "";
 
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+  for (let i = 0; i < wordsArray.length; i++) {
+    if (wordsArray[i].length > longestWord.length) {
+      longestWord = wordsArray[i];
     }
   }
   return longestWord;
@@ -1754,13 +1754,13 @@ Boucle for inversé.
 function findTheLongestWord2(sentence: unknown): string {
   checkIsString(sentence);
 
-  const words: string[] = sentence.split(" ");
+  const wordsArray: string[] = words(sentence);
 
   let longestWord: string = "";
 
-  for (let i = words.length - 1; i >= 0; i--) {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+  for (let i = wordsArray.length - 1; i >= 0; i--) {
+    if (wordsArray[i].length > longestWord.length) {
+      longestWord = wordsArray[i];
     }
   }
   return longestWord;
@@ -1782,15 +1782,15 @@ Boucle while.
 function findTheLongestWord3(sentence: unknown): string {
   checkIsString(sentence);
 
-  const words: string[] = sentence.split(" ");
+  const wordsArray: string[] = words(sentence);
 
   let longestWord: string = "";
 
   let i = 0;
 
-  while (i < words.length) {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+  while (i < wordsArray.length) {
+    if (wordsArray[i].length > longestWord.length) {
+      longestWord = wordsArray[i];
     }
     i++;
   }
@@ -1813,15 +1813,15 @@ Boucle while inversé.
 function findTheLongestWord4(sentence: unknown): string {
   checkIsString(sentence);
 
-  const words: string[] = sentence.split(" ");
+  const wordsArray: string[] = words(sentence);
 
   let longestWord: string = "";
 
-  let i = words.length - 1;
+  let i = wordsArray.length - 1;
 
   while (i >= 0) {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+    if (wordsArray[i].length > longestWord.length) {
+      longestWord = wordsArray[i];
     }
     i--;
   }
@@ -1844,18 +1844,18 @@ Boucle do while.
 function findTheLongestWord5(sentence: unknown): string {
   checkIsString(sentence);
 
-  const words: string[] = sentence.split(" ");
+  const wordsArray: string[] = words(sentence);
 
   let longestWord: string = "";
 
   let i = 0;
 
   do {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+    if (wordsArray[i].length > longestWord.length) {
+      longestWord = wordsArray[i];
     }
     i++;
-  } while (i < words.length);
+  } while (i < wordsArray.length);
   return longestWord;
 }
 
@@ -1874,15 +1874,15 @@ Boucle do while.
 function findTheLongestWord6(sentence: unknown): string {
   checkIsString(sentence);
 
-  const words: string[] = sentence.split(" ");
+  const wordsArray: string[] = words(sentence);
 
   let longestWord: string = "";
 
-  let i = words.length - 1;
+  let i = wordsArray.length - 1;
 
   do {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+    if (wordsArray[i].length > longestWord.length) {
+      longestWord = wordsArray[i];
     }
     i--;
   } while (i >= 0);
@@ -1902,21 +1902,14 @@ Boucle for ... of.
 */
 }
 
-const words: (str: string) => string[] = (str) => {
-  return str
-    .split(" ")
-    .map((word) => word.replace(/[^\p{L}\p{N}-]/gu, ""))
-    .filter((word) => word.length > 0);
-};
-
 function findTheLongestWord7(sentence: unknown): string {
   checkIsString(sentence);
 
-  const sentenceInWords: string[] = words(sentence);
+  const wordsArray: string[] = words(sentence);
 
   let longestWord: string = "";
 
-  for (let word of sentenceInWords) {
+  for (let word of wordsArray) {
     if (word.length > longestWord.length) {
       longestWord = word;
     }
