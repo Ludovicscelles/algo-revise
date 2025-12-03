@@ -1921,3 +1921,28 @@ const inputSentence7: string =
   "Si mon tonton tond ton tonton, ton tonton sera tondu.";
 const longestWord7: string = findTheLongestWord7(inputSentence7);
 console.log(longestWord7);
+
+{
+  /*
+  7v8. Mot le plus long
+Écris une fonction qui retourne le mot le plus long dans une phrase.
+Méthode reduce.
+*/
+}
+
+function findTheLongestWord8(sentence: unknown): string {
+  checkIsString(sentence);
+
+  const wordsArray: string[] = words(sentence);
+
+  const longestWord = wordsArray.reduce((longest, word) => {
+    if (word.length > longest.length) return word;
+    else return longest;
+  }, "");
+  return longestWord;
+}
+
+const inputSentence8: string =
+  "Je veux et j'exige du jasmin et des jasmins pour mon jardin.";
+const longestWord8: string = findTheLongestWord8(inputSentence8);
+console.log(longestWord8);
