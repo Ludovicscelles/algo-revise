@@ -1858,7 +1858,37 @@ function findTheLongestWord5(sentence: unknown): string {
   return longestWord;
 }
 
-const inputSentence5: string =
-  "Écartons ton carton car ton carton nous gêne."
+const inputSentence5: string = "Écartons ton carton car ton carton nous gêne.";
 const longestWord5: string = findTheLongestWord5(inputSentence5);
 console.log(longestWord5);
+
+{
+  /*
+  7v6. Mot le plus long
+Écris une fonction qui retourne le mot le plus long dans une phrase.
+Boucle do while.
+*/
+}
+
+function findTheLongestWord6(sentence: unknown): string {
+  checkIsString(sentence);
+
+  const words: string[] = sentence.split(" ");
+
+  let longestWord: string = "";
+
+  let i = words.length - 1;
+
+  do {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+    i--;
+  } while (i >= 0);
+  return longestWord;
+}
+
+const inputSentence6: string =
+  "Un chasseur sachant chasser doit savoir chasser sans son chien.";
+const longestWord6: string = findTheLongestWord6(inputSentence6);
+console.log(longestWord6);
