@@ -2,8 +2,9 @@ import {
   checkIsInteger,
   checkIsString,
   checkIsPositiveNumber,
-  cleanString,
-} from "./CheckFunctions";
+} from "./utils/CheckFunctions";
+
+import { cleanString } from "./utils/Normalize";
 
 /*
   1. Nombre de chiffres

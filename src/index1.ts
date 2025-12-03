@@ -3,7 +3,7 @@ import {
   checkIsPositiveNumber,
   checkIsString,
   checkMinArrayLength2,
-} from "./CheckFunctions";
+} from "./utils/CheckFunctions";
 
 {
   /*
