@@ -1550,7 +1550,7 @@ console.log(letterCount3);
 
 {
   /*
-  6v2. Compter les lettres
+  6v3. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Boucle while inversé.
 */
@@ -1575,3 +1575,31 @@ function countLettersInAString4(sentence: unknown): number {
 const sentenceToCount4: string = "Hey! Quoi de neuf 1010 ?";
 const letterCount4: number = countLettersInAString4(sentenceToCount4);
 console.log(letterCount4);
+
+{
+  /*
+  6v4. Compter les lettres
+Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
+Boucle do while.
+*/
+}
+
+function countLettersInAString5(sentence: unknown): number {
+  checkIsString(sentence);
+
+  const normalizeSentence: string = cleanString(sentence);
+
+  let count: number = 0;
+
+  let i = 0;
+
+  do {
+    count++;
+    i++;
+  } while (i < normalizeSentence.length);
+  return count;
+}
+
+const sentenceToCount5: string = "Salut! Tout baigne 1112 ?";
+const letterCount5: number = countLettersInAString5(sentenceToCount5);
+console.log(letterCount5);
