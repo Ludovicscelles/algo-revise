@@ -1631,3 +1631,85 @@ function countLettersInAString6(sentence: unknown): number {
 const sentenceToCount6: string = "Hello! Ça gaze 1314 ?";
 const letterCount6: number = countLettersInAString6(sentenceToCount6);
 console.log(letterCount6);
+
+{
+  /*
+  6v6. Compter les lettres
+Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
+Boucle for ... of .
+*/
+}
+
+function countLettersInAString7(sentence: unknown): number {
+  checkIsString(sentence);
+
+  const cleanStringArray: string[] = cleanString(sentence).split("");
+
+  let count: number = 0;
+
+  for (let string of cleanStringArray) {
+    count++;
+  }
+  return count;
+}
+
+const sentenceToCount7: string = "Yo! Quoi de beau 1516 ?";
+const letterCount7: number = countLettersInAString7(sentenceToCount7);
+console.log(letterCount7);
+
+{
+  /*
+  6v6. Compter les lettres
+Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
+Méthode reduce .
+*/
+}
+
+function countLettersInAString8(sentence: unknown): number {
+  checkIsString(sentence);
+
+  const cleanStringArray: string[] = cleanString(sentence).split("");
+
+  const count = cleanStringArray.reduce((total, character) => {
+    return total + 1;
+  }, 0);
+
+  return count;
+}
+
+const sentenceToCount8: string = "Salut! La vie est belle 1718 ?";
+const letterCount8: number = countLettersInAString8(sentenceToCount8);
+console.log(letterCount8);
+
+{
+  /*
+  6v6bis (avec commentaires). Compter les lettres
+Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
+Méthode reduce .
+*/
+}
+
+// function with comments for countLettersInAString8
+function countLettersInAString8WithCmments(sentence: unknown): number {
+  // Validate that the input is a string
+  checkIsString(sentence);
+
+  // Clean the string to remove unwanted characters and split it into an array of characters
+  const cleanStringArray: string[] = cleanString(sentence).split("");
+
+  // Use the reduce method to count the number of characters in the cleaned string array
+  // The reduce function iterates over each character and increments the total count by 1
+  const count = cleanStringArray.reduce((total, character) => {
+    // Increment the total count for each character
+    return total + 1;
+    // Initial value of total is set to 0
+  }, 0);
+
+  // Return the final count of letters
+  return count;
+}
+
+const sentenceToCount8Bis: string = "Salut! La vie est belle 1718 ?";
+const letterCount8Bis: number =
+  countLettersInAString8WithCmments(sentenceToCount8Bis);
+console.log(letterCount8Bis);
