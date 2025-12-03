@@ -1497,7 +1497,7 @@ console.log(letterCount);
 
 {
   /*
-  6v1. Compter les lettres
+  6v2. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Boucle for inversé.
 */
@@ -1522,7 +1522,7 @@ console.log(letterCount2);
 
 {
   /*
-  6v2. Compter les lettres
+  6v3. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Boucle while.
 */
@@ -1550,7 +1550,7 @@ console.log(letterCount3);
 
 {
   /*
-  6v3. Compter les lettres
+  6v4. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Boucle while inversé.
 */
@@ -1578,7 +1578,7 @@ console.log(letterCount4);
 
 {
   /*
-  6v4. Compter les lettres
+  6v5. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Boucle do while.
 */
@@ -1606,7 +1606,7 @@ console.log(letterCount5);
 
 {
   /*
-  6v5. Compter les lettres
+  6v6. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Boucle do while inversé.
 */
@@ -1634,7 +1634,7 @@ console.log(letterCount6);
 
 {
   /*
-  6v6. Compter les lettres
+  6v7. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Boucle for ... of .
 */
@@ -1659,7 +1659,7 @@ console.log(letterCount7);
 
 {
   /*
-  6v6. Compter les lettres
+  6v8. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Méthode reduce .
 */
@@ -1683,7 +1683,7 @@ console.log(letterCount8);
 
 {
   /*
-  6v6bis (avec commentaires). Compter les lettres
+  6v8bis (avec commentaires). Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
 Méthode reduce .
 */
@@ -1713,3 +1713,29 @@ const sentenceToCount8Bis: string = "Salut! La vie est belle 1718 ?";
 const letterCount8Bis: number =
   countLettersInAString8WithCmments(sentenceToCount8Bis);
 console.log(letterCount8Bis);
+
+{
+  /*
+  7. Mot le plus long
+Écris une fonction qui retourne le mot le plus long dans une phrase.
+*/
+}
+
+function findTheLongestWord(sentence: unknown): string {
+  checkIsString(sentence);
+
+  const words: string[] = sentence.split(" ");
+
+  let longestWord: string = "";
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+  }
+  return longestWord;
+}
+
+const inputSentence: string = "Chercher le mot le plus long dans cette phrase";
+const longestWord: string = findTheLongestWord(inputSentence);
+console.log(longestWord);
