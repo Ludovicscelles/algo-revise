@@ -1474,6 +1474,7 @@ console.log(primeNumber12);
   /*
   6. Compter les lettres
 Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
+Boucle for.
 */
 }
 
@@ -1493,3 +1494,28 @@ function countLettersInAString(sentence: unknown): number {
 const sentenceToCount: string = "Bonjour, ça va 123 ?";
 const letterCount: number = countLettersInAString(sentenceToCount);
 console.log(letterCount);
+
+{
+  /*
+  6v1. Compter les lettres
+Écris une fonction qui retourne le nombre de lettres dans une chaîne (en ignorant les espaces, chiffres, ponctuations).
+Boucle for inversé.
+*/
+}
+
+function countLettersInAString2(sentence: unknown): number {
+  checkIsString(sentence);
+
+  const normalizeSentence: string = cleanString(sentence);
+
+  let count: number = 0;
+
+  for (let i = normalizeSentence.length - 1; i >= 0; i--) {
+    count++;
+  }
+  return count;
+}
+
+const sentenceToCount2: string = "Salut! Comment ça va 456 ?";
+const letterCount2: number = countLettersInAString2(sentenceToCount2);
+console.log(letterCount2);
