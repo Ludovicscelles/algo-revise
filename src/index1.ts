@@ -2,6 +2,8 @@ import {
   checkIsInteger,
   checkIsPositiveNumber,
   checkIsString,
+  checkIsArray,
+  checkIsIntegersArray,
   checkMinArrayLength2,
 } from "./utils/CheckFunctions";
 
@@ -146,31 +148,6 @@ console.log(factorialOfANumber4);
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
 */
 }
-
-// type guard to check if input is an array
-// throws an error if not
-// asserts array is Array<unknown> tells TypeScript that after calling this function, array can be treated as an array
-const checkIsArray: (array: unknown) => asserts array is Array<unknown> = (
-  //  check if the input is an array
-  array
-) => {
-  // throw an error if not
-  if (!Array.isArray(array)) {
-    // message in French: "Input must be an array."
-    throw new Error(`La saisie d'entrée doit être un tableau.`);
-  }
-};
-
-// check fonction to ensure all elements in the array are integers
-// throws an error if not
-const checkIsIntegersArray = (array: unknown[]) => {
-  // check if all elements in the array are integers
-  if (!array.every((element) => Number.isInteger(element))) {
-    // throw an error if not
-    // message in French: "Each element of the array must be an integer."
-    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
-  }
-};
 
 function getMaxValue(numArray: unknown[]): number {
   checkIsArray(numArray);

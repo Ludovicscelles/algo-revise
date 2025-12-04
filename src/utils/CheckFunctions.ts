@@ -60,6 +60,30 @@ const checkIsStringWithComments: (str: unknown) => asserts str is string = (
   }
 };
 
+export const checkIsArray: (
+  array: unknown
+) => asserts array is Array<unknown> = (array) => {
+  if (!Array.isArray(array)) {
+    throw new Error(`La saisie d'entrée doit être un tableau.`);
+  }
+};
+
+// type guard to check if input is an array
+// throws an error if not
+// asserts array is Array<unknown> tells TypeScript that after calling this function, array can be treated as an array
+const checkIsArrayWithComments: (
+  array: unknown
+) => asserts array is Array<unknown> = (
+  //  check if the input is an array
+  array
+) => {
+  // throw an error if not
+  if (!Array.isArray(array)) {
+    // message in French: "Input must be an array."
+    throw new Error(`La saisie d'entrée doit être un tableau.`);
+  }
+};
+
 export const checkMinArrayLength2: (
   array: unknown[]
 ) => asserts array is unknown[] = (array) => {
@@ -77,5 +101,22 @@ const checkMinArrayLength2WithComments: (
   if (array.length < 2) {
     // throw an error if not
     throw new Error(`Le tableau doit contenir au minimum deux éléments.`);
+  }
+};
+
+export const checkIsIntegersArray = (array: unknown[]) => {
+  if (!array.every((element) => Number.isInteger(element))) {
+    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
+  }
+};
+
+// check fonction to ensure all elements in the array are integers
+// throws an error if not
+const checkIsIntegersArrayWithComments = (array: unknown[]) => {
+  // check if all elements in the array are integers
+  if (!array.every((element) => Number.isInteger(element))) {
+    // throw an error if not
+    // message in French: "Each element of the array must be an integer."
+    throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
   }
 };
