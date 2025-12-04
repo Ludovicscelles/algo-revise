@@ -2,6 +2,9 @@ import {
   checkIsInteger,
   checkIsString,
   checkIsPositiveNumber,
+  checkIsArray,
+  checkIsIntegersArray,
+  checkMinArrayLength2,
 } from "./utils/CheckFunctions";
 
 import { cleanString, words } from "./utils/Normalize";
@@ -1946,3 +1949,32 @@ const inputSentence8: string =
   "Je veux et j'exige du jasmin et des jasmins pour mon jardin.";
 const longestWord8: string = findTheLongestWord8(inputSentence8);
 console.log(longestWord8);
+
+{
+  /*
+  8. Filtrer les impairs
+Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
+Boucle for.
+*/
+}
+
+function filterOddNumbers(nbrArray: unknown[]): number[] {
+  checkIsArray(nbrArray);
+  checkMinArrayLength2(nbrArray);
+  checkIsIntegersArray(nbrArray);
+
+  const numbersArray = nbrArray as number[];
+
+  let oddNbrArray: number[] = [];
+
+  for (let i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 !== 0) {
+      oddNbrArray.push(numbersArray[i]);
+    }
+  }
+  return oddNbrArray;
+}
+
+const numbersArray = [7, 8, 16, 21, 31, 38, 43];
+const oddNbrArray = filterOddNumbers(numbersArray);
+console.log(oddNbrArray);
