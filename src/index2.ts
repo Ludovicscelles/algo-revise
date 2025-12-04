@@ -1978,3 +1978,32 @@ function filterOddNumbers(nbrArray: unknown[]): number[] {
 const numbersArray = [7, 8, 16, 21, 31, 38, 43];
 const oddNbrArray = filterOddNumbers(numbersArray);
 console.log(oddNbrArray);
+
+{
+  /*
+  8v2. Filtrer les impairs
+Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
+Boucle for inversé.
+*/
+}
+
+function filterOddNumbers2(nbrArray: unknown[]): number[] {
+  checkIsArray(nbrArray);
+  checkMinArrayLength2(nbrArray);
+  checkIsIntegersArray(nbrArray);
+
+  const numbersArray = nbrArray as number[];
+
+  let oddNbrArray: number[] = [];
+
+  for (let i = numbersArray.length - 1; i >= 0; i--) {
+    if (numbersArray[i] % 2 !== 0) {
+      oddNbrArray.push(numbersArray[i]);
+    }
+  }
+  return oddNbrArray;
+}
+
+const numbersArray2 = [10, 15, 22, 27, 34, 39, 44];
+const oddNbrArray2 = filterOddNumbers2(numbersArray2);
+console.log(oddNbrArray2);
