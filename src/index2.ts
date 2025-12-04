@@ -2001,7 +2001,7 @@ function filterOddNumbers2(nbrArray: unknown[]): number[] {
       oddNbrArray.push(numbersArray[i]);
     }
   }
-  return oddNbrArray;
+  return oddNbrArray.reverse();
 }
 
 const numbersArray2 = [10, 15, 22, 27, 34, 39, 44];
@@ -2039,3 +2039,35 @@ function filterOddNumbers3(nbrArray: unknown[]): number[] {
 const numbersArray3 = [5, 12, 19, 26, 33, 40, 47];
 const oddNbrArray3 = filterOddNumbers3(numbersArray3);
 console.log(oddNbrArray3);
+
+{
+  /*
+  8v4. Filtrer les impairs
+Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
+Boucle while inversé.
+*/
+}
+
+function filterOddNumbers4(nbrArray: unknown[]): number[] {
+  checkIsArray(nbrArray);
+  checkMinArrayLength2(nbrArray);
+  checkIsIntegersArray(nbrArray);
+
+  const numbersArray = nbrArray as number[];
+
+  let oddNbrArray: number[] = [];
+
+  let i = numbersArray.length - 1;
+
+  while (i >= 0) {
+    if (numbersArray[i] % 2 !== 0) {
+      oddNbrArray.push(numbersArray[i]);
+    }
+    i--;
+  }
+  return oddNbrArray.reverse();
+}
+
+const numbersArray4 = [2, 9, 14, 23, 28, 37, 50];
+const oddNbrArray4 = filterOddNumbers4(numbersArray4);
+console.log(oddNbrArray4);
