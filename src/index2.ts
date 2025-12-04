@@ -1,4 +1,4 @@
-import { func } from "joi";
+import { array, func } from "joi";
 import {
   checkIsInteger,
   checkIsString,
@@ -2165,3 +2165,76 @@ function filterOddNumbers7(nbrArray: unknown[]): number[] {
 const numbersArray7 = [3, 14, 17, 24, 35, 42, 55];
 const oddNbrArray7 = filterOddNumbers7(numbersArray7);
 console.log(oddNbrArray7);
+
+{
+  /*
+  8v8. Filtrer les impairs
+Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
+Méthode reduce.
+*/
+}
+
+function filterOddNumbers8(nbrArray: unknown[]): number[] {
+  checkIsArray(nbrArray);
+  checkMinArrayLength2(nbrArray);
+  checkIsIntegersArray(nbrArray);
+
+  const numbersArray = nbrArray as number[];
+
+  const oddNumbersArray: number[] = numbersArray.reduce(
+    (odd: number[], number: number) => {
+      if (number % 2 !== 0) {
+        odd.push(number);
+      }
+      return odd;
+    },
+    []
+  );
+  return oddNumbersArray;
+}
+
+const numbersArray8 = [9, 18, 27, 34, 41, 58, 63];
+const oddNbrArray8 = filterOddNumbers8(numbersArray8);
+console.log(oddNbrArray8);
+
+{
+  /*
+  8v8Bis (avec commentaires ). Filtrer les impairs
+Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
+Méthode reduce.
+*/
+}
+
+// function with comments for filterOddNumbers8
+function filterOddNumbers8WithComments(nbrArray: unknown[]): number[] {
+  // Validate that the input is an array
+  checkIsArray(nbrArray);
+  // Validate that the array has at least 2 elements
+  checkMinArrayLength2(nbrArray);
+  // Validate that all elements in the array are integers
+  checkIsIntegersArray(nbrArray);
+
+  // Cast the input array to an array of numbers
+  const numbersArray = nbrArray as number[];
+
+  // Use the reduce method to filter out odd numbers from the array
+  const oddNumbersArray: number[] = numbersArray.reduce(
+    (odd: number[], number: number) => {
+      // Check if the current number is odd
+      if (number % 2 !== 0) {
+        // If it is odd, add it to the accumulator array
+        odd.push(number);
+      }
+      // Return the accumulator for the next iteration
+      return odd;
+    },
+    // Initialize the accumulator as an empty array
+    []
+  );
+  // Return the array of odd numbers
+  return oddNumbersArray;
+}
+
+const numbersArray8Bis = [14, 23, 30, 47, 52, 69, 78];
+const oddNbrArray8Bis = filterOddNumbers8WithComments(numbersArray8Bis);
+console.log(oddNbrArray8Bis);
