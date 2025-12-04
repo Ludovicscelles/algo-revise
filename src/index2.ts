@@ -1,3 +1,4 @@
+import { func } from "joi";
 import {
   checkIsInteger,
   checkIsString,
@@ -2074,7 +2075,7 @@ console.log(oddNbrArray4);
 
 {
   /*
-  8v4. Filtrer les impairs
+  8v5. Filtrer les impairs
 Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
 Boucle do while.
 */
@@ -2103,3 +2104,35 @@ function filterOddNumbers5(nbrArray: unknown[]): number[] {
 const numbersArray5 = [1, 6, 13, 18, 25, 32, 49];
 const oddNbrArray5 = filterOddNumbers5(numbersArray5);
 console.log(oddNbrArray5);
+
+{
+  /*
+  8v6. Filtrer les impairs
+Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
+Boucle do while inversé.
+*/
+}
+
+function filterOddNumbers6(nbrArray: unknown): number[] {
+  checkIsArray(nbrArray);
+  checkMinArrayLength2(nbrArray);
+  checkIsIntegersArray(nbrArray);
+
+  const numbersArray = nbrArray as number[];
+
+  let oddNbrArray: number[] = [];
+
+  let i = numbersArray.length - 1;
+
+  do {
+    if (numbersArray[i] % 2 !== 0) {
+      oddNbrArray.push(numbersArray[i]);
+    }
+    i--;
+  } while (i >= 0);
+  return oddNbrArray.reverse();
+}
+
+const numbersArray6 = [4, 11, 20, 29, 36, 45, 52];
+const oddNbrArray6 = filterOddNumbers6(numbersArray6);
+console.log(oddNbrArray6);
