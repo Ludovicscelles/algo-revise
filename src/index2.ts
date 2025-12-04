@@ -2136,3 +2136,32 @@ function filterOddNumbers6(nbrArray: unknown): number[] {
 const numbersArray6 = [4, 11, 20, 29, 36, 45, 52];
 const oddNbrArray6 = filterOddNumbers6(numbersArray6);
 console.log(oddNbrArray6);
+
+{
+  /*
+  8v7. Filtrer les impairs
+Écris une fonction qui retourne un nouveau tableau contenant uniquement les nombres impairs.
+Boucle for ... of.
+*/
+}
+
+function filterOddNumbers7(nbrArray: unknown[]): number[] {
+  checkIsArray(nbrArray);
+  checkMinArrayLength2(nbrArray);
+  checkIsIntegersArray(nbrArray);
+
+  const numbersArray = nbrArray as number[];
+
+  let oddNbrArray: number[] = [];
+
+  for (let number of numbersArray) {
+    if (number % 2 !== 0) {
+      oddNbrArray.push(number);
+    }
+  }
+  return oddNbrArray;
+}
+
+const numbersArray7 = [3, 14, 17, 24, 35, 42, 55];
+const oddNbrArray7 = filterOddNumbers7(numbersArray7);
+console.log(oddNbrArray7);
