@@ -6,6 +6,7 @@ import {
   checkIsArray,
   checkIsIntegersArray,
   checkMinArrayLength2,
+  checkIsNumbersArray,
 } from "./utils/CheckFunctions";
 
 import { cleanString, words } from "./utils/Normalize";
@@ -2238,3 +2239,100 @@ function filterOddNumbers8WithComments(nbrArray: unknown[]): number[] {
 const numbersArray8Bis = [14, 23, 30, 47, 52, 69, 78];
 const oddNbrArray8Bis = filterOddNumbers8WithComments(numbersArray8Bis);
 console.log(oddNbrArray8Bis);
+
+{
+  /*
+  9. Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Double boucle for.
+ */
+}
+
+function getMostCommunValue(nbArray: unknown[]): number {
+  checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const numbersArray = nbArray as number[];
+
+  let maxCount: number = 0;
+  let mostFrequentValue: number = 0;
+
+  for (let i = 0; i < numbersArray.length; i++) {
+    let count: number = 0;
+    for (let j = 0; j < numbersArray.length; j++) {
+      if (numbersArray[i] === numbersArray[j]) {
+        count++;
+      }
+    }
+    if (
+      count > maxCount ||
+      (count === maxCount && numbersArray[i] > mostFrequentValue)
+    ) {
+      maxCount = count;
+      mostFrequentValue = numbersArray[i];
+    }
+  }
+  return mostFrequentValue;
+}
+
+const nbArray: number[] = [1, 3, 2, 3, 4, 2, 3, 5, 1, 2, 2, 3];
+const mostFrequentValue: number = getMostCommunValue(nbArray);
+console.log(mostFrequentValue);
+
+
+{
+  /*
+  9Bis (with comments). Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Double boucle for.
+ */
+}
+
+// function with comments for mostCommunValue
+function getMostCommunValueWithComments(nbArray: unknown[]): number {
+  // Validate that the input is an array
+  checkIsArray(nbArray);
+  // Validate that the array has at least 2 elements
+  checkMinArrayLength2(nbArray);
+  // Validate that all elements in the array are numbers
+  checkIsNumbersArray(nbArray);
+  
+  // Cast the input array to an array of numbers  
+  const numbersArray = nbArray as number[];
+
+  // Initialize variables to track the maximum count and the most frequent value
+  let maxCount: number = 0;
+  let mostFrequentValue: number = 0;
+
+  // Outer loop to iterate through each number in the array
+  for (let i = 0; i < numbersArray.length; i++) {
+    // Initialize a count for the current number
+    let count: number = 0;
+    // Inner loop to count occurrences of the current number
+    for (let j = 0; j < numbersArray.length; j++) {
+      // If the numbers match, increment the count
+      if (numbersArray[i] === numbersArray[j]) {
+        count++;
+      }
+    }
+    // Check if the current count is greater than the maximum count found so far
+    // or if it's equal but the current number is greater than the most frequent value
+    if (
+      count > maxCount ||
+      (count === maxCount && numbersArray[i] > mostFrequentValue)
+    ) {
+      // Update the maximum count and the most frequent value
+      maxCount = count;
+      mostFrequentValue = numbersArray[i];
+    }
+  }
+  // Return the most frequent value found in the array
+  return mostFrequentValue;
+}
+
+const nbArrayBis: number[] = [1, 3, 2, 3, 4, 2, 3, 5, 1, 2, 2, 3];
+const mostFrequentValueBis: number = getMostCommunValueWithComments(nbArrayBis);
+console.log(mostFrequentValueBis);
