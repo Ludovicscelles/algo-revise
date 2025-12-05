@@ -5,6 +5,7 @@ import {
   checkIsArray,
   checkIsIntegersArray,
   checkMinArrayLength2,
+  checkIsNumbersArray,
 } from "./utils/CheckFunctions";
 
 {
@@ -1607,11 +1608,7 @@ Boucle for et méthode de tri.
 */
 }
 
-const checkIsNumbersArray = (array: unknown[]) => {
-  if (!array.every((element) => typeof element === "number")) {
-    throw new Error(`Chaque élément du tableau doit être un nombre`);
-  }
-};
+
 
 function findDuplicate(nbArray: unknown[]): number[] {
   checkIsArray(nbArray);
