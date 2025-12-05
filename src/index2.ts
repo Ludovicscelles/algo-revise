@@ -2470,3 +2470,51 @@ function getMostCommunValue4(nbArray: unknown[]): number {
 const nbArray4: number[] = [8, 9, 8, 10, 11, 9, 8, 12, 13, 9, 8, 9];
 const mostCommonValue4: number = getMostCommunValue4(nbArray4);
 console.log(mostCommonValue4);
+
+{
+  /*
+  9v5. Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Double boucle do while.
+ */
+}
+
+function getMostCommunValue5(nbArray: unknown[]): number {
+  checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const numbersArray = nbArray as number[];
+
+  let maxCount: number = 0;
+
+  let mostCommonValue: number = 0;
+
+  let i = 0;
+
+  do {
+    let count: number = 0;
+    let j = 0;
+    do {
+      if (numbersArray[i] === numbersArray[j]) {
+        count++;
+      }
+    } while (j < numbersArray.length);
+    if (
+      count > maxCount ||
+      (count === maxCount && numbersArray[i] > mostCommonValue)
+    ) {
+      maxCount = count;
+      mostCommonValue = numbersArray[i];
+    }
+    i++;
+  } while (i < numbersArray.length);
+  return mostCommonValue;
+}
+
+const nbArray5: number[] = [
+  2.25, 3.5, 4.75, 2.25, 4.75, 5.0, 3.5, 2.25, 6.0, 4.75,
+];
+const mostCommonValue5: number = getMostCommunValue5(nbArray5);
+console.log(mostCommonValue5);
