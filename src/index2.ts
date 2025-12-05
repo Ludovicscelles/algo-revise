@@ -1,4 +1,4 @@
-import { array, func } from "joi";
+import { array, func, number } from "joi";
 import {
   checkIsInteger,
   checkIsString,
@@ -2258,7 +2258,7 @@ function getMostCommunValue(nbArray: unknown[]): number {
   const numbersArray = nbArray as number[];
 
   let maxCount: number = 0;
-  let mostCommonValue: number = 0;
+  let mostCommonValue: number = numbersArray[0];
 
   for (let i = 0; i < numbersArray.length; i++) {
     let count: number = 0;
@@ -2304,7 +2304,7 @@ function getMostCommunValueWithComments(nbArray: unknown[]): number {
 
   // Initialize variables to track the maximum count and the most frequent value
   let maxCount: number = 0;
-  let mostCommonValue: number = 0;
+  let mostCommonValue: number = numbersArray[0];
 
   // Outer loop to iterate through each number in the array
   for (let i = 0; i < numbersArray.length; i++) {
@@ -2353,7 +2353,7 @@ function getMostCommunValue2(nbArray: unknown[]): number {
   const numbersArray = nbArray as number[];
 
   let maxCount: number = 0;
-  let mostCommunValue: number = 0;
+  let mostCommunValue: number = numbersArray[0];
 
   for (let i = numbersArray.length - 1; i >= 0; i--) {
     let count: number = 0;
@@ -2395,7 +2395,7 @@ function getMostCommunValue3(nbArray: unknown[]): number {
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = 0;
+  let mostCommonValue: number = numbersArray[0];
 
   let i = 0;
 
@@ -2442,7 +2442,7 @@ function getMostCommunValue4(nbArray: unknown[]): number {
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = 0;
+  let mostCommonValue: number = numbersArray[0];
 
   let i = numbersArray.length - 1;
 
@@ -2489,7 +2489,7 @@ function getMostCommunValue5(nbArray: unknown[]): number {
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = 0;
+  let mostCommonValue: number = numbersArray[0];
 
   let i = 0;
 
@@ -2499,7 +2499,8 @@ function getMostCommunValue5(nbArray: unknown[]): number {
     do {
       if (numbersArray[i] === numbersArray[j]) {
         count++;
-      } j++;
+      }
+      j++;
     } while (j < numbersArray.length);
     if (
       count > maxCount ||
@@ -2537,7 +2538,7 @@ function getMostCommunValue6(nbArray: unknown[]): number {
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = 0;
+  let mostCommonValue: number = numbersArray[0];
 
   let i = numbersArray.length - 1;
 
@@ -2565,3 +2566,42 @@ function getMostCommunValue6(nbArray: unknown[]): number {
 const nbArray6: number[] = [5.5, 6.5, 5.5, 7.5, 8.5, 6.5, 5.5, 9.5];
 const mostCommonValue6: number = getMostCommunValue6(nbArray6);
 console.log(mostCommonValue6);
+
+{
+  /*
+  9v7. Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Double boucle for ... of.
+ */
+}
+
+function getMostCommunValue7(nbArray: unknown[]): number {
+  checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const numbersArray = nbArray as number[];
+
+  let maxCount: number = 0;
+
+  let mostCommonValue: number = numbersArray[0];
+
+  for (let number of numbersArray) {
+    let count: number = 0;
+    for (let otherNumber of numbersArray) {
+      if (number === otherNumber) {
+        count++;
+      }
+    }
+    if (count > maxCount || (count === maxCount && number > mostCommonValue)) {
+      maxCount = count;
+      mostCommonValue = number;
+    }
+  }
+  return mostCommonValue;
+}
+
+const nbArray7: number[] = [10, 11, 10, 12, 13, 11, 10, 14, 15, 11];
+const mostCommonValue7: number = getMostCommunValue7(nbArray7);
+console.log(mostCommonValue7);
