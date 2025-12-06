@@ -2632,15 +2632,12 @@ function getMostCommunValue8(nbArray: unknown[]): number {
   let mostCommonValue: number = numbersArray[0];
 
   for (let i = 0; i < lengthOfArray; i++) {
-    let count = (freq.get(numbersArray[i]) || 0) + 1;
     const value = numbersArray[i];
+    let count = (freq.get(value) || 0) + 1;
     freq.set(value, count);
-    if (
-      count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommonValue)
-    ) {
+    if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
       maxCount = count;
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = value;
     }
   }
   return mostCommonValue;
@@ -2690,17 +2687,17 @@ function getMostCommunValue8Bis(nbArray: unknown[]): number {
     const value = numbersArray[i];
     let count = (freq.get(value) || 0) + 1;
     // Update the frequency Map with the new count
-    freq.set(numbersArray[i], count);
+    freq.set(value, count);
     if (
       // Check if the current count is greater than the maximum count found so far
       count > maxCount ||
       // Or if the current count is equal to the maximum count but the current number is greater than the most common value
-      (count === maxCount && numbersArray[i] > mostCommonValue)
+      (count === maxCount && value > mostCommonValue)
     ) {
       // Update the maximum count and the most common value
       maxCount = count;
       // Update the most common value to the current number
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = value;
     }
   }
   return mostCommonValue;
@@ -2711,3 +2708,45 @@ const nbArray8Bis: number[] = [
 ];
 const mostCommonValue8Bis: number = getMostCommunValue8Bis(nbArray8Bis);
 console.log(mostCommonValue8Bis);
+
+{
+  /*
+  9v9. Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Methode structure de données avec un map
+Boucle for inversé.
+ */
+}
+
+function getMostCommunValue9(nbArray: unknown[]): number {
+  checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const numbersArray = nbArray as number[];
+
+  const lengthOfArray: number = nbArray.length;
+
+  let freq: Map<number, number> = new Map();
+
+  let maxCount: number = 0;
+
+  let mostCommonValue: number = numbersArray[0];
+
+  for (let i = lengthOfArray - 1; i >= 0; i--) {
+    const value: number = numbersArray[i];
+    let count: number = (freq.get(value) || 0) + 1;
+    freq.set(value, count);
+    if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
+      maxCount = count;
+      mostCommonValue = value;
+    }
+  }
+  return mostCommonValue;
+}
+
+const nbArray9: number[] = [30, 31, 30, 32, 33, 31, 30, 34, 35, 31, 30, 30];
+const mostCommonValue9: number = getMostCommunValue9(nbArray9);
+console.log(mostCommonValue9);
+
