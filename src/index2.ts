@@ -2605,3 +2605,109 @@ function getMostCommunValue7(nbArray: unknown[]): number {
 const nbArray7: number[] = [10, 11, 10, 12, 13, 11, 10, 14, 15, 11];
 const mostCommonValue7: number = getMostCommunValue7(nbArray7);
 console.log(mostCommonValue7);
+
+{
+  /*
+  9v8. Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Methode structure de données avec un map
+Boucle for.
+ */
+}
+
+function getMostCommunValue8(nbArray: unknown[]): number {
+  checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const numbersArray = nbArray as number[];
+
+  const lengthOfArray: number = numbersArray.length;
+
+  let freq: Map<number, number> = new Map();
+
+  let maxCount: number = 0;
+
+  let mostCommonValue: number = numbersArray[0];
+
+  for (let i = 0; i < lengthOfArray; i++) {
+    let count = (freq.get(numbersArray[i]) || 0) + 1;
+    const value = numbersArray[i];
+    freq.set(value, count);
+    if (
+      count > maxCount ||
+      (count === maxCount && numbersArray[i] > mostCommonValue)
+    ) {
+      maxCount = count;
+      mostCommonValue = numbersArray[i];
+    }
+  }
+  return mostCommonValue;
+}
+
+const nbArray8: number[] = [20, 21, 20, 22, 23, 21, 20, 24, 25, 21];
+const mostCommonValue8: number = getMostCommunValue8(nbArray8);
+console.log(mostCommonValue8);
+
+{
+  /*
+  9v8 - Bis (with comments). Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Methode structure de données avec un map
+Boucle for.
+ */
+}
+
+// function with comments for getMostCommunValue8
+function getMostCommunValue8Bis(nbArray: unknown[]): number {
+  // Validate that the input is an array
+  checkIsArray(nbArray);
+  // Validate that the array has at least 2 elements
+  checkMinArrayLength2(nbArray);
+  // Validate that all elements in the array are numbers
+  checkIsNumbersArray(nbArray);
+
+  // Cast the input array to an array of numbers
+  const numbersArray = nbArray as number[];
+
+  const lengthOfArray: number = numbersArray.length;
+
+  // Create a Map to store the frequency of each number
+  let freq: Map<number, number> = new Map();
+
+  // Initialize variable to track the maximum count
+  let maxCount: number = 0;
+
+  // Initialize variable to track the most common value
+  let mostCommonValue: number = numbersArray[0];
+
+  // Loop through each number in the array
+  for (let i = 0; i < lengthOfArray; i++) {
+    // Retrieve the current count for this number, or 0 if the number has not been seen yet
+    // Add 1 to this count to account for the current occurrence
+    const value = numbersArray[i];
+    let count = (freq.get(value) || 0) + 1;
+    // Update the frequency Map with the new count
+    freq.set(numbersArray[i], count);
+    if (
+      // Check if the current count is greater than the maximum count found so far
+      count > maxCount ||
+      // Or if the current count is equal to the maximum count but the current number is greater than the most common value
+      (count === maxCount && numbersArray[i] > mostCommonValue)
+    ) {
+      // Update the maximum count and the most common value
+      maxCount = count;
+      // Update the most common value to the current number
+      mostCommonValue = numbersArray[i];
+    }
+  }
+  return mostCommonValue;
+}
+
+const nbArray8Bis: number[] = [
+  19, 20, 21, 19, 20, 22, 19, 23, 21, 19, 20, 19, 24, 19, 19, 25, 21,
+];
+const mostCommonValue8Bis: number = getMostCommunValue8Bis(nbArray8Bis);
+console.log(mostCommonValue8Bis);
