@@ -2924,7 +2924,46 @@ function getMostCommunValue13(nbArray: unknown[]): number {
   return mostCommonValue;
 }
 
-
 const nbArray13: number[] = [70, 71, 70, 72, 73, 71, 70, 74, 75, 71];
 const mostCommonValue13: number = getMostCommunValue13(nbArray13);
 console.log(mostCommonValue13);
+
+{
+  /*
+  9v14. Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Méthode structure de données avec un map
+Méthode reduce.
+ */
+}
+
+function getMostCommunValue14(nbArray: unknown[]): number {
+  checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const numbersArray = nbArray as number[];
+
+  let freq: Map<number, number> = new Map();
+
+  let maxCount: number = 0;
+
+  let mostCommonValue: number = numbersArray[0];
+
+  numbersArray.reduce((_, value: number) => {
+    let count = (freq.get(value) || 0) + 1;
+    freq.set(value, count);
+    if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
+      maxCount = count;
+      mostCommonValue = value;
+    }
+    return _;
+  }, null);
+  return mostCommonValue;
+}
+
+const nbArray14: number[] = [-5, -4, -5, -3, -2, -4, -5, -1, 0, -4];
+const mostCommonValue14: number = getMostCommunValue14(nbArray14);
+console.log(mostCommonValue14);
+
