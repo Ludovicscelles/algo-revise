@@ -3015,6 +3015,7 @@ console.log(mostCommonValue15);
 Écris une fonction qui fusionne deux tableaux sans doublons.
 
 Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Boucle for
  */
 }
 
@@ -3045,3 +3046,41 @@ const numArr1: number[] = [1, 2, 3, 4, 5];
 const numArr2: number[] = [5, 6, 7, 8];
 const mergedArray: number[] = arraysFusion(numArr1, numArr2);
 console.log(mergedArray);
+
+{
+  /*
+  10v2. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Boucle for inversé.
+ */
+}
+
+function arraysFusion2(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  const lengthOfArray1: number = nbArray1.length;
+  const lengthOfArray2: number = nbArray2.length;
+
+  let mergedArray: number[] = [];
+
+  for (let i = lengthOfArray1 - 1; i >= 0; i--) {
+    if (!mergedArray.includes(nbArray1[i])) {
+      mergedArray.push(nbArray1[i]);
+    }
+  }
+
+  for (let i = lengthOfArray2 - 1; i >= 0; i--) {
+    if (!mergedArray.includes(nbArray2[i])) {
+      mergedArray.push(nbArray2[i]);
+    }
+  }
+  return mergedArray.sort((a, b) => a - b);
+}
+
+const numArr1v2: number[] = [10, 20, 30, 40, 50];
+const numArr2v2: number[] = [50, 60, 70, 80];
+const mergedArray2: number[] = arraysFusion2(numArr1v2, numArr2v2);
+console.log(mergedArray2);
