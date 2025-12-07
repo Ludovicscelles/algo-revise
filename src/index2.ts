@@ -2844,7 +2844,7 @@ console.log(mostCommonValue11);
 Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
 Exemple : [1, 2, 2, 3, 1, 2] → 2
 Methode structure de données avec un map
-Boucle while inversé.
+Boucle do while.
  */
 }
 
@@ -2878,6 +2878,53 @@ function getMostCommunValue12(nbArray: unknown): number {
   return mostCommonValue;
 }
 
-const nbArray12: number[] = [59,25, 60.5, 59.25, 61.75, 62.0, 60.5, 59.25, 63.5];
+const nbArray12: number[] = [
+  59, 25, 60.5, 59.25, 61.75, 62.0, 60.5, 59.25, 63.5,
+];
 const mostCommonValue12: number = getMostCommunValue12(nbArray12);
 console.log(mostCommonValue12);
+
+{
+  /*
+  9v13. Valeur la plus fréquente
+Écris une fonction qui retourne la valeur la plus présente dans un tableau de nombres.
+Exemple : [1, 2, 2, 3, 1, 2] → 2
+Methode structure de données avec un map
+Boucle do while inversé.
+ */
+}
+
+function getMostCommunValue13(nbArray: unknown[]): number {
+  checkIsArray(nbArray);
+  checkMinArrayLength2(nbArray);
+  checkIsNumbersArray(nbArray);
+
+  const numbersArray = nbArray as number[];
+
+  const lengthOfArray = numbersArray.length;
+
+  let freq: Map<number, number> = new Map();
+
+  let maxCount: number = 0;
+
+  let mostCommonValue: number = numbersArray[0];
+
+  let i = lengthOfArray - 1;
+
+  do {
+    const value: number = numbersArray[i];
+    let count = (freq.get(value) || 0) + 1;
+    freq.set(value, count);
+    if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
+      maxCount = count;
+      mostCommonValue = value;
+    }
+    i--;
+  } while (i >= 0);
+  return mostCommonValue;
+}
+
+
+const nbArray13: number[] = [70, 71, 70, 72, 73, 71, 70, 74, 75, 71];
+const mostCommonValue13: number = getMostCommunValue13(nbArray13);
+console.log(mostCommonValue13);
