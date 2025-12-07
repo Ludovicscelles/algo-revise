@@ -3116,3 +3116,40 @@ const numArr1v3: number[] = [100, 200, 300, 400];
 const numArr2v3: number[] = [400, 500, 600, 700];
 const mergedArray3: number[] = arraysFusion3(numArr1v3, numArr2v3);
 console.log(mergedArray3);
+
+{
+  /*
+  10v4. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Boucle while inversé.
+ */
+}
+
+function arraysFusion4(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  const lengthOfArray1: number = nbArray1.length;
+  const lengthOfArray2: number = nbArray2.length;
+
+  let mergedArray: number[] = [];
+
+  let i = lengthOfArray1 - 1;
+  while (i >= 0) {
+    if (!mergedArray.includes(nbArray1[i])) mergedArray.push(nbArray1[i]);
+    i--;
+  }
+  i = lengthOfArray2 - 1;
+  while (i >= 0) {
+    if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
+    i--;
+  }
+  return mergedArray.sort((a, b) => a - b);
+}
+
+const numArr1v4: number[] = [-15, -10, -5, 0];
+const numArr2v4: number[] = [0, 5, 10, 15];
+const mergedArray4: number[] = arraysFusion4(numArr1v4, numArr2v4);
+console.log(mergedArray4);
