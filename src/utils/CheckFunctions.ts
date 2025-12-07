@@ -1,3 +1,5 @@
+import { array } from "joi";
+
 export const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
   if (!Number.isInteger(nb)) {
     throw new Error(`La saisie doit être un nombre entier`);
@@ -101,6 +103,14 @@ const checkMinArrayLength2WithComments: (
   if (array.length < 2) {
     // throw an error if not
     throw new Error(`Le tableau doit contenir au minimum deux éléments.`);
+  }
+};
+
+export const checkMinArrayLength1: (
+  array: unknown[]
+) => asserts array is unknown[] = (array) => {
+  if (array.length < 1) {
+    throw new Error(`Le tableau doit contenir au mininum un élément`);
   }
 };
 

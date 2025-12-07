@@ -6,6 +6,7 @@ import {
   checkIsArray,
   checkIsIntegersArray,
   checkMinArrayLength2,
+  checkMinArrayLength1,
   checkIsNumbersArray,
 } from "./utils/CheckFunctions";
 
@@ -3006,3 +3007,19 @@ const nbArray15: number[] = [
 ];
 const mostCommonValue15: number = getMostCommonValue15(nbArray15);
 console.log(mostCommonValue15);
+
+{
+  /*
+  10. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+ */
+}
+
+function arraysFusion(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  checkIsArray(nbArray1);
+  checkIsArray(nbArray2);
+  checkMinArrayLength1(nbArray1);
+  checkMinArrayLength1(nbArray2);
+}
