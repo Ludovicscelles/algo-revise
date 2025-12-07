@@ -3067,15 +3067,10 @@ function arraysFusion2(nbArray1: unknown[], nbArray2: unknown[]): number[] {
   let mergedArray: number[] = [];
 
   for (let i = lengthOfArray1 - 1; i >= 0; i--) {
-    if (!mergedArray.includes(nbArray1[i])) {
-      mergedArray.push(nbArray1[i]);
-    }
+    if (!mergedArray.includes(nbArray1[i])) mergedArray.push(nbArray1[i]);
   }
-
   for (let i = lengthOfArray2 - 1; i >= 0; i--) {
-    if (!mergedArray.includes(nbArray2[i])) {
-      mergedArray.push(nbArray2[i]);
-    }
+    if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
   }
   return mergedArray.sort((a, b) => a - b);
 }
@@ -3084,3 +3079,40 @@ const numArr1v2: number[] = [10, 20, 30, 40, 50];
 const numArr2v2: number[] = [50, 60, 70, 80];
 const mergedArray2: number[] = arraysFusion2(numArr1v2, numArr2v2);
 console.log(mergedArray2);
+
+{
+  /*
+  10v3. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Boucle while.
+ */
+}
+
+function arraysFusion3(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  const lengthOfArray1: number = nbArray1.length;
+  const lengthOfArray2: number = nbArray2.length;
+
+  let mergedArray: number[] = [];
+
+  let i = 0;
+  while (i < lengthOfArray1) {
+    if (!mergedArray.includes(nbArray1[i])) mergedArray.push(nbArray1[i]);
+    i++;
+  }
+  i = 0;
+  while (i < lengthOfArray2) {
+    if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
+    i++;
+  }
+  return mergedArray;
+}
+
+const numArr1v3: number[] = [100, 200, 300, 400];
+const numArr2v3: number[] = [400, 500, 600, 700];
+const mergedArray3: number[] = arraysFusion3(numArr1v3, numArr2v3);
+console.log(mergedArray3);
