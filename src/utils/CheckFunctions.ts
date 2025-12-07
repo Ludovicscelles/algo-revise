@@ -1,4 +1,4 @@
-import { array } from "joi";
+import { array, number } from "joi";
 
 export const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
   if (!Number.isInteger(nb)) {
@@ -135,4 +135,12 @@ export const checkIsNumbersArray = (array: unknown[]) => {
   if (!array.every((element) => typeof element === "number")) {
     throw new Error(`Chaque élément du tableau doit être un nombre`);
   }
+};
+
+export const validateNumbersArray: (
+  array: unknown[]
+) => asserts array is number[] = (array) => {
+  checkIsArray(array);
+  checkMinArrayLength1(array);
+  checkIsNumbersArray(array);
 };

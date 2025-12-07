@@ -8,6 +8,7 @@ import {
   checkMinArrayLength2,
   checkMinArrayLength1,
   checkIsNumbersArray,
+  validateNumbersArray,
 } from "./utils/CheckFunctions";
 
 import { cleanString, words } from "./utils/Normalize";
@@ -3018,8 +3019,29 @@ Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
 }
 
 function arraysFusion(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  checkIsArray(nbArray1);
-  checkIsArray(nbArray2);
-  checkMinArrayLength1(nbArray1);
-  checkMinArrayLength1(nbArray2);
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  const lengthOfArray1: number = nbArray1.length;
+
+  const lengthOfArray2: number = nbArray2.length;
+
+  let mergedArray: number[] = [];
+
+  for (let i = 0; i < lengthOfArray1; i++) {
+    if (!mergedArray.includes(nbArray1[i])) {
+      mergedArray.push(nbArray1[i]);
+    }
+  }
+  for (let i = 0; i < lengthOfArray2; i++) {
+    if (!mergedArray.includes(nbArray2[i])) {
+      mergedArray.push(nbArray2[i]);
+    }
+  }
+  return mergedArray;
 }
+
+const numArr1: number[] = [1, 2, 3, 4, 5];
+const numArr2: number[] = [5, 6, 7, 8];
+const mergedArray: number[] = arraysFusion(numArr1, numArr2);
+console.log(mergedArray);
