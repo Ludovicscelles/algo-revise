@@ -3234,3 +3234,34 @@ const numArr1v6: number[] = [7.7, 8.8, 9.9];
 const numArr2v6: number[] = [9.9, 10.1, 11.11];
 const mergedArray6: number[] = arraysFusion6(numArr1v6, numArr2v6);
 console.log(mergedArray6);
+
+{
+  /*
+  10v7. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Boucle for ... of.
+ */
+}
+
+function arraysFusion7(nbArray1: unknown[], nbArray2: unknown[]) {
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  let mergedArray: number[] = [];
+
+  for (let nb of nbArray1) {
+    if (!mergedArray.includes(nb)) mergedArray.push(nb);
+  }
+
+  for (let nb of nbArray2) {
+    if (!mergedArray.includes(nb)) mergedArray.push(nb);
+  }
+  return mergedArray;
+}
+
+const numArr1v7: number[] = [12, 14, 16, 18];
+const numArr2v7: number[] = [18, 20, 22, 24];
+const mergedArray7: number[] = arraysFusion7(numArr1v7, numArr2v7);
+console.log(mergedArray7);
