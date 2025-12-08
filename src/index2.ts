@@ -3265,3 +3265,33 @@ const numArr1v7: number[] = [12, 14, 16, 18];
 const numArr2v7: number[] = [18, 20, 22, 24];
 const mergedArray7: number[] = arraysFusion7(numArr1v7, numArr2v7);
 console.log(mergedArray7);
+
+{
+  /*
+  10v8. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Méthode reduce.
+ */
+}
+
+function arraysFusion8(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  let mergedArray: number[] = [...nbArray1, ...nbArray2].reduce(
+    (acc: number[], val: number) => {
+      if (!acc.includes(val)) acc.push(val);
+
+      return acc;
+    },
+    []
+  );
+  return mergedArray;
+}
+
+const numArr1v8: number[] = [25, 30, 35];
+const numArr2v8: number[] = [35, 40, 45];
+const mergedArray8: number[] = arraysFusion8(numArr1v8, numArr2v8);
+console.log(mergedArray8);
