@@ -3153,3 +3153,44 @@ const numArr1v4: number[] = [-15, -10, -5, 0];
 const numArr2v4: number[] = [0, 5, 10, 15];
 const mergedArray4: number[] = arraysFusion4(numArr1v4, numArr2v4);
 console.log(mergedArray4);
+
+{
+  /*
+  10v5. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Boucle do while.
+ */
+}
+
+function arraysFusion5(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  const lengthOfArray1: number = nbArray1.length;
+  const lengthOfArray2: number = nbArray2.length;
+
+  let mergedArray: number[] = [];
+
+  let i = 0;
+
+  do {
+    if (!mergedArray.includes(nbArray1[i])) mergedArray.push(nbArray1[i]);
+    i++;
+  } while (i < lengthOfArray1);
+
+  i = 0;
+
+  do {
+    if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
+    i++;
+  } while (i < lengthOfArray2);
+  return mergedArray;
+}
+
+const numArr1v5: number[] = [3.3, 4.4, 5.5];
+const numArr2v5: number[] = [5.5, 6.6, 7.7];
+const mergedArray5: number[] = arraysFusion5(numArr1v5, numArr2v5);
+console.log(mergedArray5);
+
