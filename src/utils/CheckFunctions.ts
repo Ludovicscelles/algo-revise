@@ -1,5 +1,3 @@
-import { array, number } from "joi";
-
 export const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
   if (!Number.isInteger(nb)) {
     throw new Error(`La saisie doit être un nombre entier`);
