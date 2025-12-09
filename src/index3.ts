@@ -216,16 +216,43 @@ function evenDigitsSum8(integer: unknown): number {
 
   const integerAsString: string = Math.abs(integer).toString();
 
-  const sumOfDigits: number = integerAsString.split("").reduce(
-    (acc: number, val: string) => {
+  const sumOfDigits: number = integerAsString
+    .split("")
+    .reduce((acc: number, val: string) => {
       const digit: number = parseInt(val);
       if (digit % 2 === 0) acc += digit;
       return acc;
-    }, 0
-  );
+    }, 0);
   return sumOfDigits;
 }
 
 const integer8 = 123456;
 const sumOfEvenDigits8 = evenDigitsSum8(integer8);
 console.log(sumOfEvenDigits8);
+
+{
+  /*
+  🔢 1v9. Somme des chiffres pairs
+Écris une fonction qui prend un nombre entier et retourne la somme de ses chiffres pairs.
+📌 Exemple : 2489 → 2 + 4 + 8 = 14
+Méthode forEach.
+*/
+}
+
+function evenDigitsSum9(integer: unknown): number {
+  checkIsInteger(integer);
+
+  const intStrArray: string[] = Math.abs(integer).toString().split("");
+
+  let sumOfEvenDigits: number = 0;
+
+  intStrArray.forEach((char) => {
+    const digit: number = parseInt(char);
+    if (digit % 2 === 0) sumOfEvenDigits += digit;
+  });
+  return sumOfEvenDigits;
+}
+
+const integer9 = -86425;
+const sumOfEvenDigits9 = evenDigitsSum9(integer9);
+console.log(sumOfEvenDigits9);
