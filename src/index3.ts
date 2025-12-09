@@ -201,3 +201,31 @@ function evenDigitsSum7(integer: unknown): number {
 const integer7 = -11122;
 const sumOfEvenDigits7 = evenDigitsSum7(integer7);
 console.log(sumOfEvenDigits7);
+
+{
+  /*
+  🔢 1v8. Somme des chiffres pairs
+Écris une fonction qui prend un nombre entier et retourne la somme de ses chiffres pairs.
+📌 Exemple : 2489 → 2 + 4 + 8 = 14
+Méthode reduce.
+*/
+}
+
+function evenDigitsSum8(integer: unknown): number {
+  checkIsInteger(integer);
+
+  const integerAsString: string = Math.abs(integer).toString();
+
+  const sumOfDigits: number = integerAsString.split("").reduce(
+    (acc: number, val: string) => {
+      const digit: number = parseInt(val);
+      if (digit % 2 === 0) acc += digit;
+      return acc;
+    }, 0
+  );
+  return sumOfDigits;
+}
+
+const integer8 = 123456;
+const sumOfEvenDigits8 = evenDigitsSum8(integer8);
+console.log(sumOfEvenDigits8);
