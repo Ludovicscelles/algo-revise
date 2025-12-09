@@ -3295,3 +3295,61 @@ const numArr1v8: number[] = [25, 30, 35];
 const numArr2v8: number[] = [35, 40, 45];
 const mergedArray8: number[] = arraysFusion8(numArr1v8, numArr2v8);
 console.log(mergedArray8);
+
+{
+  /*
+  10v9. Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Méthode concat.
+ */
+}
+
+function arraysFusion9(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  const mergedArray: number[] = nbArray1
+    .concat(nbArray2)
+    .filter((value, pos, arr) => arr.indexOf(value) === pos);
+  return mergedArray;
+}
+
+const numArr1v9: number[] = [1000, 1000, 5000, 2000, 3000];
+const numArr2v9: number[] = [3000, 4000, 5000];
+const mergedArray9: number[] = arraysFusion9(numArr1v9, numArr2v9);
+console.log(mergedArray9);
+
+
+{
+  /*
+  10v9Bis (with comments). Fusion de tableaux
+Écris une fonction qui fusionne deux tableaux sans doublons.
+
+Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
+Méthode concat.
+ */
+}
+
+
+function arraysFusion9Bis(nbArray1: unknown[], nbArray2: unknown[]): number[] {
+  // Validate that both inputs are arrays of numbers
+  validateNumbersArray(nbArray1);
+  validateNumbersArray(nbArray2);
+
+  // Concatenate the two arrays
+  const mergedArray: number[] = nbArray1
+    .concat(nbArray2)
+    // Filter the concatenated array to remove duplicates
+    // The filter method checks if the index of the current value is the same as its first occurrence in the array
+    .filter((value, pos, arr) => arr.indexOf(value) === pos);
+  
+  // Return the merged array without duplicates
+  return mergedArray;
+}
+
+const numArr1v9Bis: number[] = [6000, 6000, 7000, 8000, 6000, 9000];
+const numArr2v9Bis: number[] = [8000, 10000, 11000];
+const mergedArray9Bis: number[] = arraysFusion9Bis(numArr1v9Bis, numArr2v9Bis);
+console.log(mergedArray9Bis);
