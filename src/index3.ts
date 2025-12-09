@@ -1,3 +1,4 @@
+import { func } from "joi";
 import { checkIsInteger } from "./utils/CheckFunctions";
 
 {
@@ -53,3 +54,33 @@ function evenDigitsSum2(integer: unknown): number {
 const integer2 = -2489;
 const sumOfEvenDigits2 = evenDigitsSum2(integer2);
 console.log(sumOfEvenDigits2);
+
+{
+  /*
+  🔢 1v3. Somme des chiffres pairs
+Écris une fonction qui prend un nombre entier et retourne la somme de ses chiffres pairs.
+📌 Exemple : 2489 → 2 + 4 + 8 = 14
+Boucle while.
+*/
+}
+
+function evenDigitsSum3(integer: unknown): number {
+  checkIsInteger(integer);
+
+  const integerAsString: string = Math.abs(integer).toString();
+
+  let sumOfEvenDigits: number = 0;
+
+  let i = 0;
+
+  while (i < integerAsString.length) {
+    const digit: number = parseInt(integerAsString[i]);
+    if (digit % 2 === 0) sumOfEvenDigits += digit;
+    i++;
+  }
+  return sumOfEvenDigits;
+}
+
+const integer3 = 13579;
+const sumOfEvenDigits3 = evenDigitsSum3(integer3);
+console.log(sumOfEvenDigits3);
