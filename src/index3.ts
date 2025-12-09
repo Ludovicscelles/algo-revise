@@ -174,3 +174,30 @@ function evenDigitsSum6(integer: unknown): number {
 const integer6 = 1357246849;
 const sumOfEvenDigits6 = evenDigitsSum6(integer6);
 console.log(sumOfEvenDigits6);
+
+{
+  /*
+  🔢 1v7. Somme des chiffres pairs
+Écris une fonction qui prend un nombre entier et retourne la somme de ses chiffres pairs.
+📌 Exemple : 2489 → 2 + 4 + 8 = 14
+Boucle for ... of.
+*/
+}
+
+function evenDigitsSum7(integer: unknown): number {
+  checkIsInteger(integer);
+
+  const integerAsString: string = Math.abs(integer).toString();
+
+  let sumOfDigits: number = 0;
+
+  for (const char of integerAsString) {
+    const digit: number = parseInt(char);
+    if (digit % 2 === 0) sumOfDigits += digit;
+  }
+  return sumOfDigits;
+}
+
+const integer7 = -11122;
+const sumOfEvenDigits7 = evenDigitsSum7(integer7);
+console.log(sumOfEvenDigits7);
