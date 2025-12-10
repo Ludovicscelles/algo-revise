@@ -343,3 +343,54 @@ function reverseANumber3(num: unknown): number {
 const num3 = 24680;
 const reversedNum3 = reverseANumber3(num3);
 console.log(reversedNum3);
+
+{
+  /*
+  🧮 3. PGCD (Plus Grand Commun Diviseur)
+Écris une fonction qui retourne le PGCD de deux nombres entiers.
+📌 Exemple : PGCD(48, 18) → 6
+  Boucle for.
+ */
+}
+
+function getGreatestCommonDivisor(int1: unknown, int2: unknown): number {
+  if (arguments.length !== 2) {
+    throw new Error(`La saisir doit contenir exactement deux arguments`);
+  }
+
+  checkIsInteger(int1);
+  checkIsInteger(int2);
+
+  let a: number = Math.abs(int1);
+  let b: number = Math.abs(int2);
+
+  if (a === 0 && b === 0) {
+    throw new Error(
+      `Il n'est pas possible de définir le plus grand diviseur commun avec deux arguments nulls`
+    );
+  }
+
+  if (a === 0) {
+    return b;
+  }
+
+  if (b === 0) {
+    return a;
+  }
+
+  const minArgument: number = Math.min(a, b);
+
+  let gcd: number = 1;
+
+  for (let i = 1; i <= minArgument; i++) {
+    if (a % i === 0 && b % i === 0) {
+      gcd = i;
+    }
+  }
+  return gcd;
+}
+
+const int1 = 48;
+const int2 = 18;
+const gcd = getGreatestCommonDivisor(int1, int2);
+console.log(gcd);
