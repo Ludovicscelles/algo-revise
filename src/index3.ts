@@ -288,7 +288,7 @@ console.log(reversedNum);
 
 {
   /*
-  🔁 2. Inverser un nombre
+  🔁 2v2. Inverser un nombre
 Écris une fonction qui prend un entier et retourne son inverse.
 📌 Exemple : 1234 → 4321
 (sans convertir en string si tu veux un vrai défi)
@@ -313,3 +313,33 @@ function reverseANumber2(num: unknown): number {
 const num2 = -67890;
 const reversedNum2 = reverseANumber2(num2);
 console.log(reversedNum2);
+
+{
+  /*
+  🔁 2v3. Inverser un nombre
+Écris une fonction qui prend un entier et retourne son inverse.
+📌 Exemple : 1234 → 4321
+(sans convertir en string si tu veux un vrai défi)
+Boucle do while inversé
+*/
+}
+
+function reverseANumber3(num: unknown): number {
+  checkIsInteger(num);
+
+  let sign = Math.sign(num);
+
+  let n: number = Math.abs(num);
+
+  let revNum: number = 0;
+
+  do {
+    revNum = revNum * 10 + (n % 10);
+    n = Math.floor(n / 10);
+  } while (n > 0);
+  return revNum * sign;
+}
+
+const num3 = 24680;
+const reversedNum3 = reverseANumber3(num3);
+console.log(reversedNum3);
