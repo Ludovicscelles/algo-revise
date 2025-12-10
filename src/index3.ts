@@ -256,3 +256,32 @@ function evenDigitsSum9(integer: unknown): number {
 const integer9 = -86425;
 const sumOfEvenDigits9 = evenDigitsSum9(integer9);
 console.log(sumOfEvenDigits9);
+
+{
+  /*
+  🔁 2. Inverser un nombre
+Écris une fonction qui prend un entier et retourne son inverse.
+📌 Exemple : 1234 → 4321
+(sans convertir en string si tu veux un vrai défi)
+Boucle while
+*/
+}
+
+function reverseANumber(num: unknown): number {
+  checkIsInteger(num);
+
+  let sign = Math.sign(num);
+  let numToReverse: number = Math.abs(num);
+
+  let revNum: number = 0;
+
+  while (numToReverse > 0) {
+    revNum = revNum * 10 + (numToReverse % 10);
+    numToReverse = Math.floor(numToReverse / 10);
+  }
+  return revNum * sign;
+}
+
+const num = -12345;
+const reversedNum = reverseANumber(num);
+console.log(reversedNum);
