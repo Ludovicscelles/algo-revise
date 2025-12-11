@@ -579,7 +579,7 @@ console.log(gcd5);
 
 {
   /*
-  🧮 3v5. PGCD (Plus Grand Commun Diviseur)
+  🧮 3v6. PGCD (Plus Grand Commun Diviseur)
 Écris une fonction qui retourne le PGCD de deux nombres entiers.
 📌 Exemple : PGCD(48, 18) → 6
   Boucle do while inversé.
@@ -621,3 +621,100 @@ const int11 = 81;
 const int12 = 27;
 const gcd6 = getGreatestCommonDivisor6(int11, int12);
 console.log(gcd6);
+
+{
+  /*
+  🧮 3v7. PGCD (Plus Grand Commun Diviseur)
+Écris une fonction qui retourne le PGCD de deux nombres entiers.
+📌 Exemple : PGCD(48, 18) → 6
+Méthode Euclyde.
+ */
+}
+
+function getGreatestCommonDivisor7(int1: unknown, int2: unknown): number {
+  if (arguments.length !== 2)
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
+
+  checkIsInteger(int1);
+  checkIsInteger(int2);
+
+  let a: number = Math.abs(int1);
+  let b: number = Math.abs(int2);
+
+  if (a === 0 && b === 0)
+    throw new Error(
+      `Il est impossible de définir le plus grand diviseur commun deux nombre nuls`
+    );
+
+  if (a === 0) return b;
+  if (b === 0) return a;
+
+  const remainder: number = a % b;
+
+  if (remainder === 0) {
+    return b;
+  } else {
+    return getGreatestCommonDivisor7(b, remainder);
+  }
+}
+
+const int13 = 1224;
+const int14 = 103;
+const gcd7 = getGreatestCommonDivisor7(int13, int14);
+console.log(gcd7);
+
+{
+  /*
+  🧮 3v7Bis (with comments). PGCD (Plus Grand Commun Diviseur)
+Écris une fonction qui retourne le PGCD de deux nombres entiers.
+📌 Exemple : PGCD(48, 18) → 6
+Méthode Euclyde.
+ */
+}
+
+// Added comments to explain the Euclidean algorithm
+// for finding the greatest common divisor (GCD) of two integers.
+function getGreatestCommonDivisor7Bis(int1: unknown, int2: unknown): number {
+  // Check if exactly two arguments are provided
+  if (arguments.length !== 2)
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
+
+  // Validate that both arguments are integers
+  checkIsInteger(int1);
+  checkIsInteger(int2);
+
+  // Work with absolute values to handle negative integers
+  let a: number = Math.abs(int1);
+  let b: number = Math.abs(int2);
+
+  // Handle edge case where both numbers are zero
+  if (a === 0 && b === 0)
+    throw new Error(
+      `Il est impossible de définir le plus grand diviseur commun deux nombre nuls`
+    );
+
+  // If one number is zero, return the other number as GCD
+  if (a === 0) return b;
+  if (b === 0) return a;
+
+  // Calculate the remainder of a divided by b
+  const remainder: number = a % b;
+
+  // If remainder is zero, b is the GCD
+  if (remainder === 0) {
+    return b;
+  } else {
+    // Recursively call the function with b and the remainder
+    // This continues until the remainder is zero
+    // at which point the current value of b is the GCD
+    // This is the essence of the Euclidean algorithm
+    // which efficiently finds the GCD through repeated division
+    return getGreatestCommonDivisor7Bis(b, remainder);
+  }
+}
+
+// Test the function with two integers
+const int15 = 1224;
+const int16 = 103;
+const gcd7Bis = getGreatestCommonDivisor7Bis(int15, int16);
+console.log(gcd7Bis);
