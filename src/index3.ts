@@ -576,3 +576,48 @@ const int9 = 81;
 const int10 = 27;
 const gcd5 = getGreatestCommonDivisor5(int9, int10);
 console.log(gcd5);
+
+{
+  /*
+  🧮 3v5. PGCD (Plus Grand Commun Diviseur)
+Écris une fonction qui retourne le PGCD de deux nombres entiers.
+📌 Exemple : PGCD(48, 18) → 6
+  Boucle do while inversé.
+ */
+}
+
+function getGreatestCommonDivisor6(int1: unknown, int2: unknown): number {
+  if (arguments.length !== 2)
+    throw new Error(`La saisie doit contenir précisément deux arguments`);
+
+  checkIsInteger(int1);
+  checkIsInteger(int2);
+
+  let a: number = Math.abs(int1);
+  let b: number = Math.abs(int2);
+
+  if (a === 0 && b === 0)
+    throw new Error(
+      `Il n'est pas possible de définir le plus grand diviseur commun de deux nombres nuls`
+    );
+
+  if (a === 0) return b;
+  if (b === 0) return a;
+
+  const minArgument: number = Math.min(a, b);
+
+  let gcd: number = 1;
+
+  let i = minArgument;
+
+  do {
+    if (a % i === 0 && b % i === 0) return i;
+    i--;
+  } while (i >= 1);
+  return gcd;
+}
+
+const int11 = 81;
+const int12 = 27;
+const gcd6 = getGreatestCommonDivisor6(int11, int12);
+console.log(gcd6);
