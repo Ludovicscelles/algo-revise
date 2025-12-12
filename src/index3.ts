@@ -836,3 +836,68 @@ const string3 = "triangle";
 const string4 = "integral";
 const areAnagrams2 = isAnagram2(string3, string4);
 console.log(areAnagrams2);
+
+
+{
+  /*
+  🔤 4v2Bis (with comments). Anagramme
+Écris une fonction qui vérifie si deux chaînes sont des anagrammes.
+📌 Exemple : "listen" et "silent" → ✅
+Méthode par comptage des occurrences des caractères.
+ */
+}
+
+function isAnagram2Bis(str1: unknown, str2: unknown): boolean {
+  // Check if both arguments are provided
+  if (str1 === undefined || str2 === undefined)
+    throw new Error(`Deux arguments sont requis`);
+
+  // Validate that both arguments are strings
+  checkIsString(str1);
+  checkIsString(str2);
+
+  const lengthStr1: number = str1.length;
+  const lengthStr2: number = str2.length;
+
+  // If lengths differ, they cannot be anagrams
+  if (lengthStr1 !== lengthStr2) return false;
+
+  // Create a map to count occurrences of each character in str1
+  let map: Map<string, number> = new Map();
+
+  // Count each character in str1
+  for (let i = 0; i < lengthStr1; i++) {
+    // Increment the count for the character at str1[i]
+    // If the character is not in the map, initialize its count to 0
+    // then add 1 to it
+    map.set(str1[i], (map.get(str1[i]) ?? 0) + 1);
+  }
+  // Decrease the count for each character found in str2
+  for (let i = 0; i < lengthStr2; i++) {
+    // If the character from str2 is not in the map,
+    // str2 cannot be an anagram of str1
+    if (!map.has(str2[i])) {
+      return false;
+    }
+    // Decrement the count for the character at str2[i]
+    // since we found a matching character
+    // the resulting count could go to zero to indicate a perfect match
+    map.set(str2[i], map.get(str2[i])! - 1);
+  }
+  // Check if all character counts are zero
+  for (let value of map.values()) {
+    // If any count is not zero, str2 has extra characters
+    // or is missing characters compared to str1
+    if (value !== 0) {
+      return false;
+    }
+  }
+  // If all counts are zero, str1 and str2 are anagrams
+  return true;
+}
+
+// Test the function with two strings
+const string5 = "triangle";
+const string6 = "integral";
+const areAnagrams2Bis = isAnagram2Bis(string5, string6);
+console.log(areAnagrams2Bis);
