@@ -627,13 +627,13 @@ console.log(gcd6);
   🧮 3v7. PGCD (Plus Grand Commun Diviseur)
 Écris une fonction qui retourne le PGCD de deux nombres entiers.
 📌 Exemple : PGCD(48, 18) → 6
-Méthode Euclyde.
+Méthode Euclyde récursive.
  */
 }
 
 function getGreatestCommonDivisor7(int1: unknown, int2: unknown): number {
   if (arguments.length !== 2)
-    throw new Error(`La saisie doit contenir exactement deux arguments`);
+    throw new Error(`La saisie doit contenir précisément deux arguments`);
 
   checkIsInteger(int1);
   checkIsInteger(int2);
@@ -643,7 +643,7 @@ function getGreatestCommonDivisor7(int1: unknown, int2: unknown): number {
 
   if (a === 0 && b === 0)
     throw new Error(
-      `Il est impossible de définir le plus grand diviseur commun deux nombre nuls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
 
   if (a === 0) return b;
@@ -659,7 +659,7 @@ function getGreatestCommonDivisor7(int1: unknown, int2: unknown): number {
 }
 
 const int13 = 1224;
-const int14 = 103;
+const int14 = 104;
 const gcd7 = getGreatestCommonDivisor7(int13, int14);
 console.log(gcd7);
 
@@ -668,7 +668,7 @@ console.log(gcd7);
   🧮 3v7Bis (with comments). PGCD (Plus Grand Commun Diviseur)
 Écris une fonction qui retourne le PGCD de deux nombres entiers.
 📌 Exemple : PGCD(48, 18) → 6
-Méthode Euclyde.
+Méthode Euclide.
  */
 }
 
@@ -718,3 +718,43 @@ const int15 = 1224;
 const int16 = 103;
 const gcd7Bis = getGreatestCommonDivisor7Bis(int15, int16);
 console.log(gcd7Bis);
+
+{
+  /*
+  🧮 3v8. PGCD (Plus Grand Commun Diviseur)
+Écris une fonction qui retourne le PGCD de deux nombres entiers.
+📌 Exemple : PGCD(48, 18) → 6
+Méthode Euclyde while.
+ */
+}
+
+function getGreatestCommonDivisor8(int1: unknown, int2: unknown): number {
+  if (arguments.length !== 2)
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
+
+  checkIsInteger(int1);
+  checkIsInteger(int2);
+
+  let a: number = Math.abs(int1);
+  let b: number = Math.abs(int2);
+
+  if (a === 0 && b === 0)
+    throw new Error(
+      `Il n'est pas possible de déterminer le plus grand diviseur commun de deux nombres nuls`
+    );
+
+  if (a === 0) return b;
+  if (b === 0) return a;
+
+  while (b !== 0) {
+    const remainder: number = a % b;
+    a = b;
+    b = remainder;
+  }
+  return a;
+}
+
+const int17 = 1224;
+const int18 = 118;
+const gcd8 = getGreatestCommonDivisor8(int17, int18);
+console.log(gcd8);
