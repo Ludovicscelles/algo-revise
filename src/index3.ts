@@ -788,3 +788,51 @@ const string1 = "listen";
 const string2 = "silent";
 const areAnagrams = isAnagram(string1, string2);
 console.log(areAnagrams);
+
+{
+  /*
+  🔤 4v2. Anagramme
+Écris une fonction qui vérifie si deux chaînes sont des anagrammes.
+📌 Exemple : "listen" et "silent" → ✅
+Méthode par comptage des occurrences des caractères.
+ */
+}
+
+function isAnagram2(str1: unknown, str2: unknown): boolean {
+  if (str1 === undefined || str2 === undefined)
+    throw new Error(`Deux arguments sont requis`);
+
+  checkIsString(str1);
+  checkIsString(str2);
+
+  const lengthStr1: number = str1.length;
+  const lengthStr2: number = str2.length;
+
+  if (lengthStr1 !== lengthStr2) return false;
+
+  let map: Map<string, number> = new Map();
+
+  for (let i = 0; i < lengthStr1; i++) {
+    map.set(str1[i], (map.get(str1[i]) ?? 0) + 1);
+  }
+
+  for (let i = 0; i < lengthStr2; i++) {
+    if (!map.has(str2[i])) {
+      return false;
+    }
+    map.set(str2[i], map.get(str2[i])! - 1);
+  }
+
+  for (let value of map.values()) {
+    if (value !== 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+const string3 = "triangle";
+const string4 = "integral";
+const areAnagrams2 = isAnagram2(string3, string4);
+console.log(areAnagrams2);
