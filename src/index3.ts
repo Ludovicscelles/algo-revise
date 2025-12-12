@@ -1,5 +1,5 @@
-import { func } from "joi";
 import { checkIsInteger, checkIsString } from "./utils/CheckFunctions";
+import { stringWithoutSpaces } from "./utils/Normalize";
 
 {
   /*
@@ -837,7 +837,6 @@ const string4 = "integral";
 const areAnagrams2 = isAnagram2(string3, string4);
 console.log(areAnagrams2);
 
-
 {
   /*
   🔤 4v2Bis (with comments). Anagramme
@@ -901,3 +900,60 @@ const string5 = "triangle";
 const string6 = "integral";
 const areAnagrams2Bis = isAnagram2Bis(string5, string6);
 console.log(areAnagrams2Bis);
+
+{
+  /*
+  🔤 4v3. Anagramme
+Écris une fonction qui vérifie si deux chaînes sont des anagrammes.
+📌 Exemple : "listen" et "silent" → ✅
+Méthode par comptage des occurrences des caractères.
+ */
+}
+
+// const checkIsString: (str: unknown) => asserts str is string = (str) => {
+//   if (typeof str !== "string") {
+//     throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
+//   }
+// };
+
+// const stringWithoutSpaces: (str: string) => string = (str) => {
+//   return str.replace(/\s+/g, "");
+// };
+
+function isAnagram3(str1: unknown, str2: unknown): boolean {
+  if (str1 === undefined || str2 === undefined)
+    throw new Error(`Deux arguments sont requis`);
+
+  checkIsString(str1);
+  checkIsString(str2);
+
+  const a: string = stringWithoutSpaces(str1).toLowerCase();
+  const b: string = stringWithoutSpaces(str2).toLowerCase();
+
+  const lengthA: number = a.length;
+  const lengthB: number = b.length;
+
+  if (lengthA !== lengthB) return false;
+
+  let count: Record<string, number> = {};
+
+  for (let char of a) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  for (let char of b) {
+    if (!count[char]) return false;
+    count[char]--;
+  }
+
+  for (let val of Object.values(count)) {
+    if (val !== 0) return false;
+  }
+
+  return true;
+}
+
+const string7 = "conversation";
+const string8 = "voices rant on";
+const areAnagrams3 = isAnagram3(string7, string8);
+console.log(areAnagrams3);

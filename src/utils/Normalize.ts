@@ -8,6 +8,16 @@ const cleanStringWithComments: (str: string) => string = (str) => {
   return str.replace(/[^\p{L}]/gu, "");
 };
 
+export const stringWithoutSpaces: (str: string) => string = (str) => {
+  return str.replace(/\s+/g, "");
+};
+
+// function to remove all spaces from a string
+export const stringWithoutSpacesWithComments: (str: string) => string = (str) => {
+  // use regex to replace all whitespace characters with an empty string
+  return str.replace(/\s+/g, "");
+};
+
 export const words: (str: string) => string[] = (str) => {
   return str
     .split(" ")
