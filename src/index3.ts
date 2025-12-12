@@ -910,15 +910,6 @@ Méthode par comptage des occurrences des caractères.
  */
 }
 
-// const checkIsString: (str: unknown) => asserts str is string = (str) => {
-//   if (typeof str !== "string") {
-//     throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
-//   }
-// };
-
-// const stringWithoutSpaces: (str: string) => string = (str) => {
-//   return str.replace(/\s+/g, "");
-// };
 
 function isAnagram3(str1: unknown, str2: unknown): boolean {
   if (str1 === undefined || str2 === undefined)
@@ -957,3 +948,70 @@ const string7 = "conversation";
 const string8 = "voices rant on";
 const areAnagrams3 = isAnagram3(string7, string8);
 console.log(areAnagrams3);
+
+{
+  /*
+  🔤 4v3Bis (with comments). Anagramme
+Écris une fonction qui vérifie si deux chaînes sont des anagrammes.
+📌 Exemple : "listen" et "silent" → ✅
+Méthode par comptage des occurrences des caractères avec normalisation et utilisation d'un objet pour le comptage.
+ */
+}
+
+function isAnagram3Bis(str1: unknown, str2: unknown): boolean {
+  // Check if both arguments are provided
+  if (str1 === undefined || str2 === undefined)
+    throw new Error(`Deux arguments sont requis`);
+
+  // Validate that both arguments are strings
+  checkIsString(str1);
+  checkIsString(str2);
+
+  // Normalize the strings by removing spaces and converting to lowercase
+  const a: string = stringWithoutSpaces(str1).toLowerCase();
+  const b: string = stringWithoutSpaces(str2).toLowerCase();
+
+  const lengthA: number = a.length;
+  const lengthB: number = b.length;
+
+  // If lengths differ after normalization, they cannot be anagrams
+  if (lengthA !== lengthB) return false;
+
+  // Create an object to count occurrences of each character in string a
+  let count: Record<string, number> = {};
+
+  // Count each character in a
+  for (let char of a) {
+    // Increment the count for the character at a[char]
+    // If the character is not in the object, initialize its count to 0
+    // then add 1 to it     
+    count[char] = (count[char] || 0) + 1;     
+  }
+
+  // Decrease the count for each character found in string b
+  for (let char of b) {
+    // If the character from b is not in the count object,
+    // b cannot be an anagram of a
+    if (!count[char]) return false;
+    // Decrement the count for the character at b[char]
+    // since we found a matching character
+    // the resulting count could go to zero to indicate a perfect match
+    count[char]--;
+  }
+
+  // Check if all character counts are zero
+  for (let val of Object.values(count)) {
+    // If any count is not zero, b has extra characters
+    // or is missing characters compared to a
+    if (val !== 0) return false;
+  }
+
+  // If all counts are zero, a and b are anagrams
+  return true;
+}
+
+// Test the function with two strings
+const string9 = "conversation";
+const string10 = "voices rant on";
+const areAnagrams3Bis = isAnagram3Bis(string9, string10);
+console.log(areAnagrams3Bis);
