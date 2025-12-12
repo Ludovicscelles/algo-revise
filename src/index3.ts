@@ -1,5 +1,5 @@
 import { func } from "joi";
-import { checkIsInteger } from "./utils/CheckFunctions";
+import { checkIsInteger, checkIsString } from "./utils/CheckFunctions";
 
 {
   /*
@@ -758,3 +758,33 @@ const int17 = 1224;
 const int18 = 118;
 const gcd8 = getGreatestCommonDivisor8(int17, int18);
 console.log(gcd8);
+
+{
+  /*
+  🔤 4. Anagramme
+Écris une fonction qui vérifie si deux chaînes sont des anagrammes.
+📌 Exemple : "listen" et "silent" → ✅
+ */
+}
+
+function isAnagram(str1: unknown, str2: unknown): boolean {
+  if (str1 === undefined || str2 === undefined)
+    throw new Error(`Deux arguments sont requis`);
+
+  checkIsString(str1);
+  checkIsString(str2);
+
+  if (str1.length !== str2.length) return false;
+
+  let sortedStr1: string = str1.split("").sort().join("");
+  let sortedStr2: string = str2.split("").sort().join("");
+
+  if (sortedStr1 !== sortedStr2) return false;
+
+  return true;
+}
+
+const string1 = "listen";
+const string2 = "silent";
+const areAnagrams = isAnagram(string1, string2);
+console.log(areAnagrams);
