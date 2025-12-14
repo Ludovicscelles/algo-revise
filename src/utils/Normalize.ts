@@ -13,7 +13,9 @@ export const stringWithoutSpaces: (str: string) => string = (str) => {
 };
 
 // function to remove all spaces from a string
-export const stringWithoutSpacesWithComments: (str: string) => string = (str) => {
+export const stringWithoutSpacesWithComments: (str: string) => string = (
+  str
+) => {
   // use regex to replace all whitespace characters with an empty string
   return str.replace(/\s+/g, "");
 };
@@ -38,4 +40,8 @@ export const wordsWithComments: (str: string) => string[] = (str) => {
       // filter out any empty strings resulting from the cleaning process
       .filter((word) => word.length > 0)
   );
+};
+
+export const wordsWithSpaces: (str: string) => string[] = (str) => {
+  return str.toLowerCase().trim().split(/\s+/);
 };

@@ -1,5 +1,5 @@
 import { checkIsInteger, checkIsString } from "./utils/CheckFunctions";
-import { stringWithoutSpaces } from "./utils/Normalize";
+import { stringWithoutSpaces, words, wordsWithSpaces } from "./utils/Normalize";
 
 {
   /*
@@ -828,14 +828,13 @@ function isAnagram2(str1: unknown, str2: unknown): boolean {
       return false;
     }
   }
-
   return true;
 }
 
 const string3 = "triangle";
 const string4 = "integral";
 const areAnagrams2 = isAnagram2(string3, string4);
-console.log(areAnagrams2);
+console.log(`4v2`, areAnagrams2);
 
 {
   /*
@@ -910,7 +909,6 @@ Méthode par comptage des occurrences des caractères.
  */
 }
 
-
 function isAnagram3(str1: unknown, str2: unknown): boolean {
   if (str1 === undefined || str2 === undefined)
     throw new Error(`Deux arguments sont requis`);
@@ -947,7 +945,7 @@ function isAnagram3(str1: unknown, str2: unknown): boolean {
 const string7 = "conversation";
 const string8 = "voices rant on";
 const areAnagrams3 = isAnagram3(string7, string8);
-console.log(areAnagrams3);
+console.log(`4v3`, areAnagrams3);
 
 {
   /*
@@ -984,8 +982,8 @@ function isAnagram3Bis(str1: unknown, str2: unknown): boolean {
   for (let char of a) {
     // Increment the count for the character at a[char]
     // If the character is not in the object, initialize its count to 0
-    // then add 1 to it     
-    count[char] = (count[char] || 0) + 1;     
+    // then add 1 to it
+    count[char] = (count[char] || 0) + 1;
   }
 
   // Decrease the count for each character found in string b
@@ -1015,3 +1013,27 @@ const string9 = "conversation";
 const string10 = "voices rant on";
 const areAnagrams3Bis = isAnagram3Bis(string9, string10);
 console.log(areAnagrams3Bis);
+
+{
+  /*
+🔤 🔠 5. Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+  */
+}
+
+function capitalizeWords(string: unknown): string {
+  checkIsString(string);
+
+  let wordsArray: string[] = wordsWithSpaces(string);
+
+  for (let i = 0; i < wordsArray.length; i++) {
+    wordsArray[i] =
+      wordsArray[i].charAt(0).toUpperCase() + wordsArray[i].slice(1);
+  }
+
+  return wordsArray.join(" ");
+}
+
+const str = "hello world";
+const capitalizedStr = capitalizeWords(str);
+console.log(capitalizedStr);
