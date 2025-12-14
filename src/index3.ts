@@ -1063,3 +1063,30 @@ function capitalizeWords2(string: unknown): string {
 const str2 = "GOOD MORNING everyone";
 const capitalizedStr2 = capitalizeWords2(str2);
 console.log(capitalizedStr2);
+
+{
+  /*
+🔤 🔠 5v3. Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Boucle do while.
+  */
+}
+
+function capitalizeWords3(string: unknown): string {
+  checkIsString(string);
+
+  let words: string[] = wordsWithSpaces(string);
+
+  let i = 0;
+
+  do {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    i++;
+  } while (i < words.length);
+  return words.join(" ");
+}
+
+const str3 = "have a nice day";
+const capitalizedStr3 = capitalizeWords3(str3);
+console.log(capitalizedStr3);
+
