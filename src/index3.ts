@@ -1165,3 +1165,27 @@ function capitalizeWords5(string: unknown): string {
 const str5 = "make every day count";
 const capitalizedStr5 = capitalizeWords5(str5);
 console.log(capitalizedStr5);
+
+{
+  /*
+🔤 🔠 5v6. Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Méthode map.
+  */
+}
+
+function capitalizeWords6(string: unknown): string {
+  checkIsString(string);
+
+  let words: string[] = wordsWithSpaces(string);
+
+  let capitalizeEachWord = words.map(
+    (word) => word.charAt(0).toUpperCase() + word.slice(1)
+  );
+
+  return capitalizeEachWord.join(" ");
+}
+
+const str6 = "seize the day";
+const capitalizedStr6 = capitalizeWords6(str6);
+console.log(capitalizedStr6);
