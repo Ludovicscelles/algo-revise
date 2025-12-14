@@ -45,3 +45,4 @@ export const wordsWithComments: (str: string) => string[] = (str) => {
 export const wordsWithSpaces: (str: string) => string[] = (str) => {
   return str.toLowerCase().trim().split(/\s+/);
 };
+

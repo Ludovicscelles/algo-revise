@@ -1018,22 +1018,48 @@ console.log(areAnagrams3Bis);
   /*
 🔤 🔠 5. Mettre en majuscules la première lettre de chaque mot
 📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Boucle for.
   */
 }
 
 function capitalizeWords(string: unknown): string {
   checkIsString(string);
 
-  let wordsArray: string[] = wordsWithSpaces(string);
+  let words: string[] = wordsWithSpaces(string);
 
-  for (let i = 0; i < wordsArray.length; i++) {
-    wordsArray[i] =
-      wordsArray[i].charAt(0).toUpperCase() + wordsArray[i].slice(1);
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
   }
 
-  return wordsArray.join(" ");
+  return words.join(" ");
 }
 
 const str = "hello world";
 const capitalizedStr = capitalizeWords(str);
 console.log(capitalizedStr);
+
+{
+  /*
+🔤 🔠 5v2. Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Boucle while.
+  */
+}
+
+function capitalizeWords2(string: unknown): string {
+  checkIsString(string);
+
+  let words: string[] = wordsWithSpaces(string);
+
+  let i = 0;
+
+  while (i < words.length) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    i++;
+  }
+  return words.join(" ");
+}
+
+const str2 = "GOOD MORNING everyone";
+const capitalizedStr2 = capitalizeWords2(str2);
+console.log(capitalizedStr2);
