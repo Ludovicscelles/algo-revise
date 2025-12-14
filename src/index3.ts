@@ -1,3 +1,4 @@
+import { idText } from "typescript";
 import { checkIsInteger, checkIsString } from "./utils/CheckFunctions";
 import { stringWithoutSpaces, words, wordsWithSpaces } from "./utils/Normalize";
 
@@ -1113,7 +1114,6 @@ const str4 = "welcome to the jungle";
 const capitalizedStr4 = capitalizeWords4(str4);
 console.log(capitalizedStr4);
 
-
 {
   /*
 🔤 🔠 5v4Bis (avec commentaires). Mettre en majuscules la première lettre de chaque mot
@@ -1140,5 +1140,28 @@ function capitalizeWords4Bis(string: unknown): string {
 }
 
 const str4Bis = "welcome to the jungle";
-const capitalizedStr4Bis = capitalizeWords4(str4Bis);
+const capitalizedStr4Bis = capitalizeWords4Bis(str4Bis);
 console.log(capitalizedStr4Bis);
+
+{
+  /*
+🔤 🔠 5v5. Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Méthode for each.
+  */
+}
+
+function capitalizeWords5(string: unknown): string {
+  checkIsString(string);
+
+  let words: string[] = wordsWithSpaces(string);
+
+  words.forEach((word, index) => {
+    words[index] = word.charAt(0).toUpperCase() + word.slice(1);
+  });
+  return words.join(" ");
+}
+
+const str5 = "make every day count";
+const capitalizedStr5 = capitalizeWords5(str5);
+console.log(capitalizedStr5);
