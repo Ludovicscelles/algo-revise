@@ -1090,3 +1090,55 @@ const str3 = "have a nice day";
 const capitalizedStr3 = capitalizeWords3(str3);
 console.log(capitalizedStr3);
 
+{
+  /*
+🔤 🔠 5v4. Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Boucle for of.
+  */
+}
+
+function capitalizeWords4(string: unknown): string {
+  checkIsString(string);
+
+  let words: string[] = wordsWithSpaces(string);
+
+  for (const [index, word] of words.entries()) {
+    words[index] = word.charAt(0).toUpperCase() + word.slice(1);
+  }
+  return words.join(" ");
+}
+
+const str4 = "welcome to the jungle";
+const capitalizedStr4 = capitalizeWords4(str4);
+console.log(capitalizedStr4);
+
+
+{
+  /*
+🔤 🔠 5v4Bis (avec commentaires). Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Boucle for of.
+  */
+}
+
+// Added comments to explain the logic of capitalizing the first letter of each word
+function capitalizeWords4Bis(string: unknown): string {
+  // Validate that the input is a string
+  checkIsString(string);
+
+  // Split the string into words based on spaces
+  let words: string[] = wordsWithSpaces(string);
+
+  // Iterate over each word using for...of with entries to get index and word
+  for (const [index, word] of words.entries()) {
+    // Capitalize the first letter of the word and concatenate it with the rest of the word
+    words[index] = word.charAt(0).toUpperCase() + word.slice(1);
+  }
+  // Join the capitalized words back into a single string with spaces
+  return words.join(" ");
+}
+
+const str4Bis = "welcome to the jungle";
+const capitalizedStr4Bis = capitalizeWords4(str4Bis);
+console.log(capitalizedStr4Bis);
