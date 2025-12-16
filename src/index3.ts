@@ -1,6 +1,9 @@
-import { idText } from "typescript";
-import { checkIsInteger, checkIsString } from "./utils/CheckFunctions";
-import { stringWithoutSpaces, words, wordsWithSpaces } from "./utils/Normalize";
+import {
+  checkIsInteger,
+  checkIsPositiveNumberMinOne,
+  checkIsString,
+} from "./utils/CheckFunctions";
+import { stringWithoutSpaces, wordsWithSpaces } from "./utils/Normalize";
 
 {
   /*
@@ -1260,6 +1263,8 @@ Boucle for.
 function multiplicationTablesUpTo(num: unknown): string[][] {
   checkIsInteger(num);
 
+  checkIsPositiveNumberMinOne(num);
+
   let table: string[][] = [];
 
   for (let i = 1; i <= num; i++) {
@@ -1286,6 +1291,8 @@ Boucle for inversé.
 
 function multiplicationTablesUpToV2(num: unknown): string[][] {
   checkIsInteger(num);
+
+  checkIsPositiveNumberMinOne(num);
 
   const table: string[][] = [];
 
@@ -1315,6 +1322,9 @@ Boucle for inversé.
 function multiplicationTablesUpTo2VBis(num: unknown): string[][] {
   // Validate that the input is an integer
   checkIsInteger(num);
+
+  // Ensure the input is a positive integer greater than or equal to 1
+  checkIsPositiveNumberMinOne(num);
 
   // Initialize an empty 2D array to hold the multiplication tables
   const table: string[][] = [];
@@ -1355,6 +1365,8 @@ Boucle while.
 
 function multiplicationTablesUpToV3(num: unknown): string[][] {
   checkIsInteger(num);
+
+  checkIsPositiveNumberMinOne(num);
 
   const table: string[][] = [];
 
