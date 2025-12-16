@@ -1189,3 +1189,62 @@ function capitalizeWords6(string: unknown): string {
 const str6 = "seize the day";
 const capitalizedStr6 = capitalizeWords6(str6);
 console.log(capitalizedStr6);
+
+{
+  /*
+🔤 🔠 5v6. Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Méthode reduce.
+  */
+}
+
+function capitalizeWords7(string: unknown): string {
+  checkIsString(string);
+
+  let words: string[] = wordsWithSpaces(string);
+
+  return words
+    .reduce((acc: string[], val: string) => {
+      return [...acc, val.charAt(0).toUpperCase() + val.slice(1)];
+    }, [])
+    .join(" ");
+}
+
+const str7 = "dream big";
+const capitalizedStr7 = capitalizeWords7(str7);
+console.log(capitalizedStr7);
+
+{
+  /*
+🔤 🔠 5v6Bis (avec commentaires). Mettre en majuscules la première lettre de chaque mot
+📌 Exemple : "bonjour ludovic" → "Bonjour Ludovic"
+   Méthode reduce.
+  */
+}
+
+// Added comments to explain the logic of capitalizing the first letter of each word using reduce
+function capitalizeWords7Bis(string: unknown): string {
+  // Validate that the input is a string
+  checkIsString(string);
+
+  // Split the string into words based on spaces
+  let words: string[] = wordsWithSpaces(string);
+
+  // Use reduce to iterate over each word and build a new array of capitalized words
+  return (
+    words
+      // The accumulator 'acc' starts as an empty array
+      // 'val' represents the current word being processed
+      .reduce((acc: string[], val: string) => {
+        // Capitalize the first letter of the current word and concatenate it with the rest of the word
+        // ... acc spreads the existing capitalized words into the new array
+        return [...acc, val.charAt(0).toUpperCase() + val.slice(1)];
+      }, [])
+      // Join the array of capitalized words back into a single string with spaces
+      .join(" ")
+  );
+}
+
+const str7Bis = "dream big";
+const capitalizedStr7Bis = capitalizeWords7Bis(str7Bis);
+console.log(capitalizedStr7Bis);
