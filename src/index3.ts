@@ -1284,7 +1284,7 @@ Boucle for inversé.
   */
 }
 
-function multiplicationTablesUpTo2(num: unknown): string[][] {
+function multiplicationTablesUpToV2(num: unknown): string[][] {
   checkIsInteger(num);
 
   const table: string[][] = [];
@@ -1300,7 +1300,7 @@ function multiplicationTablesUpTo2(num: unknown): string[][] {
 }
 
 const n2 = 3;
-const multiplicationTable2 = multiplicationTablesUpTo2(n2);
+const multiplicationTable2 = multiplicationTablesUpToV2(n2);
 console.log(multiplicationTable2);
 
 {
@@ -1312,12 +1312,10 @@ Boucle for inversé.
 }
 
 // Added comments to explain the logic of generating multiplication tables in reverse order
-function multiplicationTablesUpTo2Bis(num: unknown): string[][] {
-
+function multiplicationTablesUpTo2VBis(num: unknown): string[][] {
   // Validate that the input is an integer
   checkIsInteger(num);
 
-  
   // Initialize an empty 2D array to hold the multiplication tables
   const table: string[][] = [];
 
@@ -1344,5 +1342,36 @@ function multiplicationTablesUpTo2Bis(num: unknown): string[][] {
 
 // Test the function with an integer
 const n2Bis = 3;
-const multiplicationTable2Bis = multiplicationTablesUpTo2Bis(n2Bis);
+const multiplicationTable2Bis = multiplicationTablesUpTo2VBis(n2Bis);
 console.log(multiplicationTable2Bis);
+
+{
+  /*
+  🧠 6v3. Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Boucle while.
+  */
+}
+
+function multiplicationTablesUpToV3(num: unknown): string[][] {
+  checkIsInteger(num);
+
+  const table: string[][] = [];
+
+  let i = 1;
+  while (i <= num) {
+    const row: string[] = [];
+    let j = 1;
+    while (j <= 10) {
+      row.push(`${i} x ${j} = ${i * j}`);
+      j++;
+    }
+    table.push(row);
+    i++;
+  }
+  return table;
+}
+
+const n3 = 4;
+const multiplicationTable3 = multiplicationTablesUpToV3(n3);
+console.log(multiplicationTable3);
