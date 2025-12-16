@@ -1248,3 +1248,30 @@ function capitalizeWords7Bis(string: unknown): string {
 const str7Bis = "dream big";
 const capitalizedStr7Bis = capitalizeWords7Bis(str7Bis);
 console.log(capitalizedStr7Bis);
+
+{
+  /*
+  🧠 6. Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Boucle for.
+  */
+}
+
+function multiplicationTablesUpTo(num: unknown): string[][] {
+  checkIsInteger(num);
+
+  let table: string[][] = [];
+
+  for (let i = 1; i <= num; i++) {
+    const row: string[] = [];
+    for (let j = 1; j <= 10; j++) {
+      row.push(`${i} x ${j} = ${i * j}`);
+    }
+    table.push(row);
+  }
+  return table;
+}
+
+const n = 5;
+const multiplicationTable = multiplicationTablesUpTo(n);
+console.log(multiplicationTable);
