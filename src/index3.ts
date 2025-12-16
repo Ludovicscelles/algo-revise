@@ -1275,3 +1275,74 @@ function multiplicationTablesUpTo(num: unknown): string[][] {
 const n = 5;
 const multiplicationTable = multiplicationTablesUpTo(n);
 console.log(multiplicationTable);
+
+{
+  /*
+  🧠 6v1. Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Boucle for inversé.
+  */
+}
+
+function multiplicationTablesUpTo2(num: unknown): string[][] {
+  checkIsInteger(num);
+
+  const table: string[][] = [];
+
+  for (let i = num; i >= 1; i--) {
+    const row: string[] = [];
+    for (let j = 10; j >= 1; j--) {
+      row.unshift(`${i} x ${j} = ${i * j}`);
+    }
+    table.unshift(row);
+  }
+  return table;
+}
+
+const n2 = 3;
+const multiplicationTable2 = multiplicationTablesUpTo2(n2);
+console.log(multiplicationTable2);
+
+{
+  /*
+  🧠 6v1Bis (avec commentaires). Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Boucle for inversé.
+  */
+}
+
+// Added comments to explain the logic of generating multiplication tables in reverse order
+function multiplicationTablesUpTo2Bis(num: unknown): string[][] {
+
+  // Validate that the input is an integer
+  checkIsInteger(num);
+
+  
+  // Initialize an empty 2D array to hold the multiplication tables
+  const table: string[][] = [];
+
+  // Outer loop iterates from 'num' down to 1 to create rows for each integer
+  for (let i = num; i >= 1; i--) {
+    // Initialize an empty array to hold the current row of multiplication results
+    const row: string[] = [];
+    // Inner loop iterates from 10 down to 1 to create multiplication entries
+    for (let j = 10; j >= 1; j--) {
+      // Prepend the multiplication result to the current row
+      // Using unshift to maintain the correct order in the row
+      // Unshift adds the new entry at the beginning of the array, in contrast to push
+      row.unshift(`${i} x ${j} = ${i * j}`);
+    }
+
+    // Prepend the completed row to the table
+    // This ensures that the rows are added in reverse order
+    table.unshift(row);
+  }
+
+  // Return the completed 2D array representing the multiplication tables
+  return table;
+}
+
+// Test the function with an integer
+const n2Bis = 3;
+const multiplicationTable2Bis = multiplicationTablesUpTo2Bis(n2Bis);
+console.log(multiplicationTable2Bis);
