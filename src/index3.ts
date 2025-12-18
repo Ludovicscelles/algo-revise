@@ -1491,7 +1491,7 @@ console.log(multiplicationTable6);
   /*
   🧠 6v7. Table de multiplication améliorée
 Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
-Méthode de classe.
+Méthode de classe et boucles for imbriquées.
   */
 }
 
@@ -1518,3 +1518,51 @@ class MultiplicationTableUpTo {
 const n7 = 6;
 const multiplicationTable7 = new MultiplicationTableUpTo(n7);
 console.log("tables de mutiplication - classe",multiplicationTable7.generate());
+
+
+{
+  /*
+  🧠 6v7Bis (avec commentaires). Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Méthode de classe et boucles for imbriquées.
+  */
+}
+
+class MultiplicationTableUpToBis {
+  // The constructor takes a number 'n' which defines the range of multiplication tables
+  constructor(private n: number) {
+    // Validate that 'n' is an integer
+    checkIsInteger(n);
+    // Ensure 'n' is a positive integer greater than or equal to 1
+    checkIsPositiveNumberMinOne(n);
+  }
+
+  // Public method to generate the multiplication tables
+  public generate(): string[][] {
+    // Initialize an empty 2D array to hold the multiplication tables
+    const table: string[][] = [];
+
+    // Outer loop iterates from 1 to 'n' to create rows for each integer
+    for (let i = 1; i <= this.n; i++) {
+      // Initialize an empty array to hold the current row of multiplication results
+      const row: string[] = [];
+      // Inner loop iterates from 1 to 10 to create multiplication entries
+      for (let j = 1; j <= 10; j++) {
+        // Append the multiplication result to the current row
+        row.push(`${i} x ${j} = ${i * j}`);
+      }
+      // Add the completed row to the table
+      table.push(row);
+    }
+    // Return the completed 2D array representing the multiplication tables
+    return table;
+  }
+}
+
+// Test the class with an integer
+const n7Bis = 6;
+const multiplicationTable7Bis = new MultiplicationTableUpToBis(n7Bis);
+console.log(
+  "tables de mutiplication - classe avec commentaires",
+  multiplicationTable7Bis.generate()
+);
