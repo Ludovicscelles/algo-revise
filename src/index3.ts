@@ -1453,7 +1453,6 @@ const n5 = 7;
 const multiplicationTable5 = multiplicationTablesUpToV5(n5);
 console.log(multiplicationTable5);
 
-
 {
   /*
   🧠 6v6. Table de multiplication améliorée
@@ -1517,8 +1516,10 @@ class MultiplicationTableUpTo {
 
 const n7 = 6;
 const multiplicationTable7 = new MultiplicationTableUpTo(n7);
-console.log("tables de mutiplication - classe",multiplicationTable7.generate());
-
+console.log(
+  "tables de mutiplication - classe",
+  multiplicationTable7.generate()
+);
 
 {
   /*
@@ -1566,3 +1567,39 @@ console.log(
   "tables de mutiplication - classe avec commentaires",
   multiplicationTable7Bis.generate()
 );
+
+{
+  /*
+  🧠 6v8. Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Méthode de classe et boucles while imbriquées.
+  */
+}
+
+class MultiplicationTableUpToV2 {
+  constructor(private n: number) {
+    checkIsInteger(n);
+    checkIsPositiveNumberMinOne(n);
+  }
+
+  public generate(): string[][] {
+    const table: string[][] = [];
+
+    let i = 1;
+    while (i <= this.n) {
+      const row: string[] = [];
+      let j = 1;
+      while (j <= 10) {
+        row.push(`${i} x ${j} = ${i * j}`);
+        j++;
+      }
+      table.push(row);
+      i++;
+    }
+    return table;
+  }
+}
+
+const n8 = 7;
+const multiplicationTable8 = new MultiplicationTableUpToV2(n8).generate();
+console.log(multiplicationTable8);
