@@ -1486,3 +1486,35 @@ function multiplicationTablesUpToV6(n: unknown): string[][] {
 const n6 = 3;
 const multiplicationTable6 = multiplicationTablesUpToV6(n6);
 console.log(multiplicationTable6);
+
+{
+  /*
+  🧠 6v7. Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Méthode de classe.
+  */
+}
+
+class MultiplicationTableUpTo {
+  constructor(private n: number) {
+    checkIsInteger(n);
+    checkIsPositiveNumberMinOne(n);
+  }
+
+  public generate(): string[][] {
+    const table: string[][] = [];
+
+    for (let i = 1; i <= this.n; i++) {
+      const row: string[] = [];
+      for (let j = 1; j <= 10; j++) {
+        row.push(`${i} x ${j} = ${i * j}`);
+      }
+      table.push(row);
+    }
+    return table;
+  }
+}
+
+const n7 = 6;
+const multiplicationTable7 = new MultiplicationTableUpTo(n7);
+console.log("tables de mutiplication - classe",multiplicationTable7.generate());
