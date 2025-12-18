@@ -1603,3 +1603,39 @@ class MultiplicationTableUpToV2 {
 const n8 = 7;
 const multiplicationTable8 = new MultiplicationTableUpToV2(n8).generate();
 console.log(multiplicationTable8);
+
+{
+  /*
+  🧠 6v9. Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Méthode de classe et boucles do while imbriquées.
+  */
+}
+
+class MultiplicationTableUpToV3 {
+  constructor(private n: number) {
+    checkIsInteger(n);
+    checkIsPositiveNumberMinOne(n);
+  }
+
+  public generate(): string[][] {
+    const table: string[][] = [];
+
+    let i = 1;
+    do {
+      const row: string[] = [];
+      let j = 1;
+      do {
+        row.push(`${i} x ${j} = ${i * j}`);
+        j++;
+      } while (j <= 10);
+      table.push(row);
+      i++;
+    } while (i <= this.n);
+    return table;
+  }
+}
+
+const n9 = 10;
+const multiplicationTable9 = new MultiplicationTableUpToV3(n9).generate();
+console.log(multiplicationTable9);
