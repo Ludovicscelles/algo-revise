@@ -738,7 +738,9 @@ Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
 }
 
 class Table {
-  constructor(private n: number) {}
+  constructor(private n: number) {
+    checkIsInteger(n);
+  }
 
   // constructor (private n: number) {} is same as:
   // private n: number;
@@ -772,7 +774,10 @@ Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
 class TableWithComments {
   // Constructor to initialize the table with a specific number
   // The number for which the multiplication table will be generated
-  constructor(private n: number) {}
+  constructor(private n: number) {
+    // Validate that the input number is an integer
+    checkIsInteger(n);
+  }
 
   // Method to generate the multiplication table as a formatted string
   // This method creates the multiplication lines and formats them with a title and separator
@@ -3321,7 +3326,6 @@ const numArr2v9: number[] = [3000, 4000, 5000];
 const mergedArray9: number[] = arraysFusion9(numArr1v9, numArr2v9);
 console.log(mergedArray9);
 
-
 {
   /*
   10v9Bis (with comments). Fusion de tableaux
@@ -3331,7 +3335,6 @@ Exemple : [1, 2, 3] et [3, 4, 5] → [1, 2, 3, 4, 5]
 Méthode concat.
  */
 }
-
 
 function arraysFusion9Bis(nbArray1: unknown[], nbArray2: unknown[]): number[] {
   // Validate that both inputs are arrays of numbers
@@ -3344,7 +3347,7 @@ function arraysFusion9Bis(nbArray1: unknown[], nbArray2: unknown[]): number[] {
     // Filter the concatenated array to remove duplicates
     // The filter method checks if the index of the current value is the same as its first occurrence in the array
     .filter((value, pos, arr) => arr.indexOf(value) === pos);
-  
+
   // Return the merged array without duplicates
   return mergedArray;
 }

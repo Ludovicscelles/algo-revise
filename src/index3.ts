@@ -1419,3 +1419,36 @@ function multiplicationTablesUpToV4(num: unknown): string[][] {
 const n4 = 4;
 const multiplicationTable4 = multiplicationTablesUpToV4(n4);
 console.log(multiplicationTable4);
+
+{
+  /*
+  🧠 6v5. Table de multiplication améliorée
+Crée une fonction qui retourne la table de multiplication (jusqu’à 10) pour tous les entiers de 1 à n sous forme de tableau à 2 dimensions.
+Boucle do while.
+  */
+}
+
+function multiplicationTablesUpToV5(num: unknown): string[][] {
+  checkIsInteger(num);
+  checkIsPositiveNumberMinOne(num);
+
+  const table: string[][] = [];
+
+  let i = 1;
+
+  do {
+    const row: string[] = [];
+    let j = 1;
+    do {
+      row.push(`${i} x ${j} = ${i * j}`);
+      j++;
+    } while (j <= 10);
+    table.push(row);
+    i++;
+  } while (i <= num);
+  return table;
+}
+
+const n5 = 7;
+const multiplicationTable5 = multiplicationTablesUpToV5(n5);
+console.log(multiplicationTable5);
