@@ -158,6 +158,6 @@ export const validateMinTwoNumbersArray: (
   array: unknown[]
 ) => asserts array is number[] = (array) => {
   checkIsArray(array);
-  checkMinArrayLength1(array);
+  checkMinArrayLength2(array);
   checkIsNumbersArray(array);
 };

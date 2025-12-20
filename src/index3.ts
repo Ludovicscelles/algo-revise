@@ -1,7 +1,10 @@
 import {
+  checkIsArray,
   checkIsInteger,
+  checkIsNumbersArray,
   checkIsPositiveNumberMinOne,
   checkIsString,
+  validateMinTwoNumbersArray,
 } from "./utils/CheckFunctions";
 import { stringWithoutSpaces, wordsWithSpaces } from "./utils/Normalize";
 
@@ -1639,3 +1642,34 @@ class MultiplicationTableUpToV3 {
 const n9 = 10;
 const multiplicationTable9 = new MultiplicationTableUpToV3(n9).generate();
 console.log(multiplicationTable9);
+
+{
+  /*
+  📊 7. Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Boucle for.
+*/
+}
+
+function getAverage(numArray: unknown[]): number {
+  validateMinTwoNumbersArray(numArray);
+
+  const numbersArray = numArray;
+
+  const lengthNumArray: number = numbersArray.length;
+
+  let count: number = 0;
+
+  for (let i = 0; i < lengthNumArray; i++) {
+    const value: number = numbersArray[i];
+    count += value;
+  }
+
+  const average = count / lengthNumArray;
+  return Math.round(average * 100) / 100;
+}
+
+const numArray = [15.28, 15.2695, 14.5645, 17.45656];
+const average = getAverage(numArray);
+console.log(average);
