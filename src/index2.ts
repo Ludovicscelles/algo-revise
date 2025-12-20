@@ -1,4 +1,3 @@
-import { array, func, number } from "joi";
 import {
   checkIsInteger,
   checkIsString,
@@ -8,11 +7,10 @@ import {
   checkMinArrayLength2,
   checkMinArrayLength1,
   checkIsNumbersArray,
-  validateNumbersArray,
+  validateMinOneNumbersArray,
 } from "./utils/CheckFunctions";
 
 import { cleanString, words } from "./utils/Normalize";
-import { max } from "class-validator";
 
 /*
   1. Nombre de chiffres
@@ -3025,8 +3023,8 @@ Boucle for
 }
 
 function arraysFusion(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   const lengthOfArray1: number = nbArray1.length;
 
@@ -3063,8 +3061,8 @@ Boucle for inversé.
 }
 
 function arraysFusion2(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   const lengthOfArray1: number = nbArray1.length;
   const lengthOfArray2: number = nbArray2.length;
@@ -3096,8 +3094,8 @@ Boucle while.
 }
 
 function arraysFusion3(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   const lengthOfArray1: number = nbArray1.length;
   const lengthOfArray2: number = nbArray2.length;
@@ -3133,8 +3131,8 @@ Boucle while inversé.
 }
 
 function arraysFusion4(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   const lengthOfArray1: number = nbArray1.length;
   const lengthOfArray2: number = nbArray2.length;
@@ -3170,8 +3168,8 @@ Boucle do while.
 }
 
 function arraysFusion5(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   const lengthOfArray1: number = nbArray1.length;
   const lengthOfArray2: number = nbArray2.length;
@@ -3210,8 +3208,8 @@ Boucle reverse do while.
 }
 
 function arraysFusion6(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   const lengthOfArray1: number = nbArray1.length;
   const lengthOfArray2: number = nbArray2.length;
@@ -3251,8 +3249,8 @@ Boucle for ... of.
 }
 
 function arraysFusion7(nbArray1: unknown[], nbArray2: unknown[]) {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   let mergedArray: number[] = [];
 
@@ -3282,8 +3280,8 @@ Méthode reduce.
 }
 
 function arraysFusion8(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   let mergedArray: number[] = [...nbArray1, ...nbArray2].reduce(
     (acc: number[], val: number) => {
@@ -3312,8 +3310,8 @@ Méthode concat.
 }
 
 function arraysFusion9(nbArray1: unknown[], nbArray2: unknown[]): number[] {
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   const mergedArray: number[] = nbArray1
     .concat(nbArray2)
@@ -3338,8 +3336,8 @@ Méthode concat.
 
 function arraysFusion9Bis(nbArray1: unknown[], nbArray2: unknown[]): number[] {
   // Validate that both inputs are arrays of numbers
-  validateNumbersArray(nbArray1);
-  validateNumbersArray(nbArray2);
+  validateMinOneNumbersArray(nbArray1);
+  validateMinOneNumbersArray(nbArray2);
 
   // Concatenate the two arrays
   const mergedArray: number[] = nbArray1

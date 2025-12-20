@@ -146,7 +146,15 @@ export const checkIsNumbersArray = (array: unknown[]) => {
   }
 };
 
-export const validateNumbersArray: (
+export const validateMinOneNumbersArray: (
+  array: unknown[]
+) => asserts array is number[] = (array) => {
+  checkIsArray(array);
+  checkMinArrayLength1(array);
+  checkIsNumbersArray(array);
+};
+
+export const validateMinTwoNumbersArray: (
   array: unknown[]
 ) => asserts array is number[] = (array) => {
   checkIsArray(array);
