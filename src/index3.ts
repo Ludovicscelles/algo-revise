@@ -1673,3 +1673,35 @@ function getAverage(numArray: unknown[]): number {
 const numArray = [15.28, 15.2695, 14.5645, 17.45656];
 const average = getAverage(numArray);
 console.log(average);
+
+{
+  /*
+  📊 7. Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Boucle for inversé.
+*/
+}
+
+function getAverage2(numArray: unknown[]): number {
+  validateMinTwoNumbersArray(numArray);
+
+  const numbersArray = numArray;
+
+  const lengthNumArray: number = numbersArray.length;
+
+  let count: number = 0;
+
+  for (let i = lengthNumArray - 1; i >= 0; i--) {
+    const value: number = numbersArray[i];
+    count += value;
+  }
+
+  const average: number = count / lengthNumArray;
+
+  return Math.round(average * 100) / 100;
+}
+
+const numArray2 = [10.5, 20.3, 30.7, 40.2];
+const average2 = getAverage2(numArray2);
+console.log(average2);
