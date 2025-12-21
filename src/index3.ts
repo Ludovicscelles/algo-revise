@@ -1905,3 +1905,38 @@ function getAverage8(numArray: unknown[]): number {
 const numArray8 = [9.99, 8.88, 7.77, 6.66];
 const average8 = getAverage8(numArray8);
 console.log(average8);
+
+{
+  /*
+  📊 7v8. Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Méthode de Classe et boucle for.
+*/
+}
+
+class MathUtil {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public numbersAverage(): number {
+    const numberArray = this.numArray;
+    const lengthNumArray: number = numberArray.length;
+    let count: number = 0;
+
+    for (let i = 0; i < lengthNumArray; i++) {
+      const value: number = numberArray[i];
+      count += value;
+    }
+    const average: number = count / lengthNumArray;
+    return Math.round(average * 100) / 100;
+  }
+}
+
+const numArray9 = [50.5, 60.6, 70.7, 80.8];
+const mathUtil = new MathUtil(numArray9);
+const average9 = mathUtil.numbersAverage();
+console.log("moyenne - classe", average9);
