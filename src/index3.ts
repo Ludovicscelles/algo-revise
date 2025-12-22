@@ -1925,20 +1925,19 @@ class MathUtil {
   public numbersAverage(): number {
     const numberArray = this.numArray;
     const lengthNumArray: number = numberArray.length;
-    let count: number = 0;
+    let sum: number = 0;
 
     for (let i = 0; i < lengthNumArray; i++) {
       const value: number = numberArray[i];
-      count += value;
+      sum += value;
     }
-    const average: number = count / lengthNumArray;
+    const average: number = sum / lengthNumArray;
     return Math.round(average * 100) / 100;
   }
 }
 
 const numArray9 = [50.5, 60.6, 70.7, 80.8];
-const mathUtil = new MathUtil(numArray9);
-const average9 = mathUtil.numbersAverage();
+const average9 = new MathUtil(numArray9).numbersAverage();
 console.log("moyenne - classe", average9);
 
 {
@@ -1970,17 +1969,17 @@ class MathUtilBis {
     // Get the length of the number array
     const lengthNumArray: number = numbersArray.length;
     // Initialize a counter to accumulate the sum of the numbers
-    let count: number = 0;
+    let sum: number = 0;
 
     // Loop through each number in the array using a for loop
     for (let i = 0; i < lengthNumArray; i++) {
       // Get the current number at index i
       const value: number = numbersArray[i];
       // Add the current number to the count
-      count += value;
+      sum += value;
     }
     // Calculate the average by dividing the total count by the length of the array
-    const average: number = count / lengthNumArray;
+    const average: number = sum / lengthNumArray;
     // Return the average rounded to two decimal places
     return Math.round(average * 100) / 100;
   }
@@ -1988,8 +1987,7 @@ class MathUtilBis {
 
 // Test the MathUtilBis class with an array of numbers
 const numArray9Bis = [50.5, 60.6, 70.7, 80.8];
-const mathUtilBis = new MathUtilBis(numArray9Bis);
-const average9Bis = mathUtilBis.numbersAverage();
+const average9Bis = new MathUtilBis(numArray9Bis).numbersAverage();
 console.log("moyenne - classe", average9Bis);
 
 {
