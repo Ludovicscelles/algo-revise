@@ -1940,3 +1940,54 @@ const numArray9 = [50.5, 60.6, 70.7, 80.8];
 const mathUtil = new MathUtil(numArray9);
 const average9 = mathUtil.numbersAverage();
 console.log("moyenne - classe", average9);
+
+{
+  /*
+  📊 7v8Bis (avec commentaires). Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Méthode de Classe et boucle for.
+*/
+}
+
+// Added comments to explain the logic of calculating the average using a class
+class MathUtilBis {
+  // Private property to hold the array of numbers
+  private numArray: number[];
+  // Constructor takes an array of numbers and validates it
+  // Constructor is responsible for initializing the class instance
+  // Ensures that the array has at least two numbers
+  // and assigns it to the private property
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  // Public method to calculate the average of the numbers in the array
+  public numbersAverage(): number {
+    // Retrieve the array of numbers from the private property
+    const numberArray = this.numArray;
+    // Get the length of the number array
+    const lengthNumArray: number = numberArray.length;
+    // Initialize a counter to accumulate the sum of the numbers
+    let count: number = 0;
+
+    // Loop through each number in the array using a for loop
+    for (let i = 0; i < lengthNumArray; i++) {
+      // Get the current number at index i
+      const value: number = numberArray[i];
+      // Add the current number to the count
+      count += value;
+    }
+    // Calculate the average by dividing the total count by the length of the array
+    const average: number = count / lengthNumArray;
+    // Return the average rounded to two decimal places
+    return Math.round(average * 100) / 100;
+  }
+}
+
+// Test the MathUtilBis class with an array of numbers
+const numArray9Bis = [50.5, 60.6, 70.7, 80.8];
+const mathUtilBis = new MathUtilBis(numArray9Bis);
+const average9Bis = mathUtilBis.numbersAverage();
+console.log("moyenne - classe", average9Bis);
