@@ -1966,16 +1966,16 @@ class MathUtilBis {
   // Public method to calculate the average of the numbers in the array
   public numbersAverage(): number {
     // Retrieve the array of numbers from the private property
-    const numberArray = this.numArray;
+    const numbersArray = this.numArray;
     // Get the length of the number array
-    const lengthNumArray: number = numberArray.length;
+    const lengthNumArray: number = numbersArray.length;
     // Initialize a counter to accumulate the sum of the numbers
     let count: number = 0;
 
     // Loop through each number in the array using a for loop
     for (let i = 0; i < lengthNumArray; i++) {
       // Get the current number at index i
-      const value: number = numberArray[i];
+      const value: number = numbersArray[i];
       // Add the current number to the count
       count += value;
     }
@@ -1991,3 +1991,38 @@ const numArray9Bis = [50.5, 60.6, 70.7, 80.8];
 const mathUtilBis = new MathUtilBis(numArray9Bis);
 const average9Bis = mathUtilBis.numbersAverage();
 console.log("moyenne - classe", average9Bis);
+
+{
+  /*
+  📊 7v9. Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Méthode de Classe et boucle for inversé.
+*/
+}
+
+class MathUtilV2 {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public numbersAverage(): number {
+    const numbersArray = this.numArray;
+    const lengthNumArray: number = numbersArray.length;
+    let sum: number = 0;
+
+    for (let i = lengthNumArray - 1; i >= 0; i--) {
+      const value: number = numbersArray[i];
+      sum += value;
+    }
+
+    const average: number = sum / lengthNumArray;
+    return Math.round(average * 100) / 100;
+  }
+}
+
+const numArray10 = [105.99, 152.1584, 198.795, 500.25];
+const average10 = new MathUtilV2(numArray10).numbersAverage();
+console.log("moyenne class", average10);
