@@ -1909,7 +1909,7 @@ console.log(average8);
 
 {
   /*
-  📊 7v8. Calcul de la moyenne
+  📊 7v9. Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle for.
@@ -1943,7 +1943,7 @@ console.log("moyenne - classe", average9);
 
 {
   /*
-  📊 7v8Bis (avec commentaires). Calcul de la moyenne
+  📊 7v9Bis (avec commentaires). Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle for.
@@ -1993,7 +1993,7 @@ console.log("moyenne - classe", average9Bis);
 
 {
   /*
-  📊 7v9. Calcul de la moyenne
+  📊 7v10. Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle for inversé.
@@ -2028,7 +2028,7 @@ console.log("moyenne class", average10);
 
 {
   /*
-  📊 7v10. Calcul de la moyenne
+  📊 7v11. Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle while.
@@ -2064,7 +2064,7 @@ console.log(average11);
 
 {
   /*
-  📊 7v11. Calcul de la moyenne
+  📊 7v12. Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle while inversé.
@@ -2100,7 +2100,7 @@ console.log(average12);
 
 {
   /*
-  📊 7v12. Calcul de la moyenne
+  📊 7v13. Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle do while.
@@ -2137,7 +2137,7 @@ console.log(average13);
 
 {
   /*
-  📊 7v13. Calcul de la moyenne
+  📊 7v14. Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle do while inversé.
@@ -2174,7 +2174,7 @@ console.log(average14);
 
 {
   /*
-  📊 7v14. Calcul de la moyenne
+  📊 7v15. Calcul de la moyenne
 Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
 📌 Bonus : Arrondir à 2 décimales.
   Méthode de Classe et boucle for-of.
@@ -2204,3 +2204,35 @@ class MathUtilV7 {
 const numArray15 = [1.4645, 3.456465, 2.45654, 3.4566545];
 const average15 = new MathUtilV7(numArray15).averageNumbers();
 console.log(average15);
+
+{
+  /*
+  📊 7v16. Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Méthodes de Classe reduce.
+*/
+}
+
+class MathUtilV8 {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public averageNumbers(): number {
+    const numbersArray = this.numArray;
+    const lengthNumArray = numbersArray.length;
+
+    const sum: number = numbersArray.reduce((acc, val) => {
+      return acc + val;
+    }, 0);
+    const average: number = sum / lengthNumArray;
+    return Math.round(average * 100) / 100
+  }
+}
+
+const numArray16 = [23.45, 34.56, 45.67, 56.78];
+const average16 = new MathUtilV8(numArray16).averageNumbers();
+console.log(average16);
