@@ -2060,3 +2060,39 @@ class MathUtilV3 {
 const numArray11 = [1025.98, 1052.899, 1650.596, 1499.9856];
 const average11 = new MathUtilV3(numArray11).averageNumbers();
 console.log(average11);
+
+{
+  /*
+  📊 7v11. Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Méthode de Classe et boucle while inversé.
+*/
+}
+
+class MathUtilV4 {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public averageNumbers(): number {
+    const numbersArray = this.numArray;
+    const lengthNumArray: number = numbersArray.length;
+    let sum: number = 0;
+
+    let i = lengthNumArray - 1;
+    while (i >= 0) {
+      const value: number = numbersArray[i];
+      sum += value;
+      i--;
+    }
+    const average: number = sum / lengthNumArray;
+    return Math.round(average * 100) / 100;
+  }
+}
+
+const numArray12 = [49.2552, 56.8965, 52.4593, 85.7596];
+const average12 = new MathUtilV4(numArray12).averageNumbers();
+console.log(average12);
