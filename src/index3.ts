@@ -1,3 +1,4 @@
+import { number } from "joi";
 import {
   checkIsArray,
   checkIsInteger,
@@ -2133,3 +2134,40 @@ class MathUtilV5 {
 const numArray13 = [33.33, 44.44, 55.55, 66.66];
 const average13 = new MathUtilV5(numArray13).averageNumbers();
 console.log(average13);
+
+{
+  /*
+  📊 7v13. Calcul de la moyenne
+Écris une fonction qui prend un tableau de nombres et retourne la moyenne.
+📌 Bonus : Arrondir à 2 décimales.
+  Méthode de Classe et boucle do while inversé.
+*/
+}
+
+class MathUtilV6 {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public averageNumbers(): number {
+    const numbersArray = this.numArray;
+    const lengthNumArray: number = numbersArray.length;
+    let sum: number = 0;
+
+    let i = lengthNumArray - 1;
+    while (i >= 0) {
+      const value: number = numbersArray[i];
+      sum += value;
+      i--;
+    }
+    const average: number = sum / lengthNumArray;
+    return Math.round(average * 100) / 100;
+  }
+}
+
+
+const numArray14 = [88.88, 77.77, 66.66, 55.55];
+const average14 = new MathUtilV6(numArray14).averageNumbers();
+console.log(average14);
