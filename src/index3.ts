@@ -2157,16 +2157,16 @@ class MathUtilV6 {
     let sum: number = 0;
 
     let i = lengthNumArray - 1;
-    while (i >= 0) {
+    do {
       const value: number = numbersArray[i];
       sum += value;
       i--;
-    }
+    } while (i >= 0);
+    
     const average: number = sum / lengthNumArray;
     return Math.round(average * 100) / 100;
   }
 }
-
 
 const numArray14 = [88.88, 77.77, 66.66, 55.55];
 const average14 = new MathUtilV6(numArray14).averageNumbers();
