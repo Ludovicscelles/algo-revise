@@ -2249,6 +2249,10 @@ console.log(average16);
 function compressString(str: unknown): string {
   checkIsString(str);
 
+  if (str.length === 0) {
+    return "";
+  }
+
   let count: number = 1;
   let compressedString: string = "";
 
@@ -2274,11 +2278,16 @@ console.log(compressedString);
   📦 8v2. Compresser une chaîne (Run-length encoding)
 Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
 📌 Exemple : "aaabbc" → "a3b2c1"
+    Boucle while
 */
 }
 
 function compressString2(str: unknown): string {
   checkIsString(str);
+
+  if (str.length === 0) {
+    return "";
+  }
 
   let compressedString: string = "";
   let count: number = 1;
@@ -2301,22 +2310,43 @@ function compressString2(str: unknown): string {
 
 const stringV2: string = "wwwwaaadexxxxxx";
 const compressedString2 = compressString2(stringV2);
-console.log(compressedString2)
+console.log(compressedString2);
 
+{
+  /*
+  📦 8v3. Compresser une chaîne (Run-length encoding)
+Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+📌 Exemple : "aaabbc" → "a3b2c1"
+    Boucle do while.
+*/
+}
 
-// {
-//   /*
-//   📦 8v3. Compresser une chaîne (Run-length encoding)
-// Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
-// 📌 Exemple : "aaabbc" → "a3b2c1"
-// */
-// }
+function compressString3(str: unknown): string {
+  checkIsString(str);
 
-// function compressString(str: unknown): string{
-//   checkIsString(str);
+  if (str.length === 0) {
+    return "";
+  }
 
-//   let compressedString: string = "";
-//   let count: number = 1;
+  let compressedString: string = "";
+  let count: number = 1;
 
+  let i = 0;
 
-// }
+  do {
+    const current: string = str[i];
+    const next: string = str[i + 1];
+    if (current === next) {
+      count++;
+    } else {
+      compressedString += `${current}${count}`;
+      count = 1;
+    }
+    i++;
+  } while (i < str.length);
+  return compressedString;
+}
+
+const stringV3: string = "zzzzzzzzzzzyyyyyyyyyyyxxxxxxwwwwwwvvvvuuutttsssrrqqppp";
+const compressedString3 = compressString3(stringV3);
+console.log(compressedString3);
