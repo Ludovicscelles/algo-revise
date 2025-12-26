@@ -2468,7 +2468,6 @@ const stringV5: string = "hhhhhggggfffffeeeeddddccccbbbbaaa";
 const compressedString5 = compressString5(stringV5);
 console.log(compressedString5);
 
-
 {
   /*
   📦 8v5bis (avec commentaires). Compresser une chaîne (Run-length encoding)
@@ -2485,9 +2484,8 @@ function compressString5Bis(str: unknown): string {
 
   // Use a regular expression to find sequences of consecutive identical characters
   return str.replace(
-                
     /(.)\1*/g, // This regex matches any character (.) followed by zero or more occurrences of the same character (\1*)
-              //g is the global flag to find all matches in the string
+    //g is the global flag to find all matches in the string
 
     (match, char) => `${char}${match.length}` // For each match, return the character and the length of the match
   );
@@ -2497,3 +2495,37 @@ function compressString5Bis(str: unknown): string {
 const stringV5Bis: string = "hhhhhggggfffffeeeeddddccccbbbbaaa";
 const compressedString5Bis = compressString5Bis(stringV5Bis);
 console.log(compressedString5Bis);
+
+{
+  /*
+  🎯 9. Trouver le deuxième plus grand nombre
+Écris une fonction qui retourne le deuxième plus grand nombre dans un tableau.
+📌 Exemple : [4, 8, 15, 16, 23, 42] → 23
+*/
+}
+
+function getSecondBiggestNumber(numArr: unknown[]): number {
+  validateMinTwoNumbersArray(numArr);
+
+  let biggestNumber: number = numArr[0];
+  let secondBiggestNumber: number = -Infinity;
+
+  const lengthNumArray: number = numArr.length;
+
+  for (let i = 1; i < lengthNumArray; i++) {
+    if (numArr[i] > biggestNumber) {
+      secondBiggestNumber = biggestNumber;
+      biggestNumber = numArr[i];
+    } else if (numArr[i] < biggestNumber && numArr[i] > secondBiggestNumber) {
+      secondBiggestNumber = numArr[i];
+    }
+  }
+
+  if (secondBiggestNumber === -Infinity)
+    throw new Error(`Il n'existe pas de deuxième plus grand nombre distinct`);
+  return secondBiggestNumber;
+}
+
+const numbersArray: number[] = [4, 8, 15, 16, 23, 42];
+const secondBiggestNumber = getSecondBiggestNumber(numbersArray);
+console.log(secondBiggestNumber);
