@@ -1,4 +1,4 @@
-import { number } from "joi";
+import { binary, number } from "joi";
 import {
   checkIsArray,
   checkIsInteger,
@@ -2647,3 +2647,44 @@ function getSecondBiggestNumber4(numArr: unknown[]): number {
 const numbersArray4: number[] = [99, 150, 375, 200, 250, 300, 350];
 const secondBiggestNumber4 = getSecondBiggestNumber4(numbersArray4);
 console.log(secondBiggestNumber4);
+
+{
+  /*
+  🎯 9v5. Trouver le deuxième plus grand nombre
+Écris une fonction qui retourne le deuxième plus grand nombre dans un tableau.
+📌 Exemple : [4, 8, 15, 16, 23, 42] → 23
+Boucle do while.
+*/
+}
+
+function getSecondBiggestNumber5(numArr: unknown[]): number {
+  validateMinTwoNumbersArray(numArr);
+
+  const lengthNumArray: number = numArr.length;
+
+  let biggestNumber: number = numArr[0];
+
+  let secondBiggestNumber: number = -Infinity;
+
+  let i = 1;
+
+  do {
+    const current: number = numArr[i];
+    if (current > biggestNumber) {
+      secondBiggestNumber = biggestNumber;
+      biggestNumber = current;
+    } else if (current < biggestNumber && current > secondBiggestNumber) {
+      secondBiggestNumber = current;
+    }
+    i++;
+  } while (i < lengthNumArray);
+
+  if (secondBiggestNumber === -Infinity)
+    throw new Error(`Il n'y a pas de deuxième plus grand nombre distinct`);
+
+  return secondBiggestNumber;
+}
+
+const numbersArray5: number[] = [1055, 2045, 1500, 3000, 2500, 4000];
+const secondBiggestNumber5 = getSecondBiggestNumber5(numbersArray5);
+console.log(secondBiggestNumber5);
