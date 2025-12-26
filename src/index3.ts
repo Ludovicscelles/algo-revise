@@ -2384,6 +2384,9 @@ function compressString4(str: unknown): string {
       previous = char;
     }
   }
+
+  compressedString += `${previous}${count}`;
+
   return compressedString;
 }
 
@@ -2437,6 +2440,8 @@ function compressString4Bis(str: unknown): string {
     }
   }
 
+  // Append the last character and its count to the result
+  compressedString += `${previous}${count}`;
 
   // Return the final compressed string
   return compressedString;
