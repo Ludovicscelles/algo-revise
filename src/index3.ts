@@ -2762,3 +2762,62 @@ function getSecondBiggestNumber7(numArr: unknown[]): number {
 const numbersArray7: number[] = [1.78, 2.89, 3.45, 4.56, 5.67, 6.78];
 const secondBiggestNumber7 = getSecondBiggestNumber7(numbersArray7);
 console.log(secondBiggestNumber7);
+
+{
+  /*
+  🎯 9v8. Trouver le deuxième plus grand nombre
+Écris une fonction qui retourne le deuxième plus grand nombre dans un tableau.
+📌 Exemple : [4, 8, 15, 16, 23, 42] → 23
+Méthode de tri.
+*/
+}
+
+function getSecondBiggestNumber8(numArr: unknown[]): number {
+  validateMinTwoNumbersArray(numArr);
+
+  const lengthNumArray: number = numArr.length;
+
+  const sortedNumArray: number[] = [...numArr]
+  .filter((value, index, array) => array.indexOf(value) === index)
+  .sort((a, b) => a - b);
+
+  return sortedNumArray[lengthNumArray - 2];
+}
+
+const numbersArray8: number[] = [123, 456, 789, 1011, 1213, 1415];
+const secondBiggestNumber8 = getSecondBiggestNumber8(numbersArray8);
+console.log(secondBiggestNumber8);
+
+
+{
+  /*
+  🎯 9v8bis (avec commentaires). Trouver le deuxième plus grand nombre
+Écris une fonction qui retourne le deuxième plus grand nombre dans un tableau.
+📌 Exemple : [4, 8, 15, 16, 23, 42] → 23
+Méthode de tri.
+*/
+}
+
+// Added comments to explain the logic of finding the second biggest number using sorting
+function getSecondBiggestNumber8Bis(numArr: unknown[]): number {
+  // Validate that the input array has at least two numbers
+  validateMinTwoNumbersArray(numArr);
+
+  const lengthNumArray: number = numArr.length;
+
+  // Create a sorted array of unique numbers from the input array
+  const sortedNumArray: number[] = [...numArr]
+    // Filter to remove duplicates by checking the index of each value
+    // Keeps only the first occurrence of each value
+    .filter((value, index, array) => array.indexOf(value) === index)
+    // Sort the array in ascending order
+    .sort((a, b) => a - b);
+
+  // Return the second last element from the sorted unique array
+  return sortedNumArray[lengthNumArray - 2];
+}
+
+// Test the function with a sample array of numbers
+const numbersArray8Bis: number[] = [123, 456, 789, 1011, 1213, 1415];
+const secondBiggestNumber8Bis = getSecondBiggestNumber8Bis(numbersArray8Bis);
+console.log(secondBiggestNumber8Bis);
