@@ -2292,6 +2292,7 @@ function compressString2(str: unknown): string {
       count++;
     } else {
       compressedString += `${current}${count}`;
+      count = 1;
     }
     i++;
   }
@@ -2301,3 +2302,21 @@ function compressString2(str: unknown): string {
 const stringV2: string = "wwwwaaadexxxxxx";
 const compressedString2 = compressString2(stringV2);
 console.log(compressedString2)
+
+
+// {
+//   /*
+//   📦 8v3. Compresser une chaîne (Run-length encoding)
+// Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+// 📌 Exemple : "aaabbc" → "a3b2c1"
+// */
+// }
+
+// function compressString(str: unknown): string{
+//   checkIsString(str);
+
+//   let compressedString: string = "";
+//   let count: number = 1;
+
+
+// }
