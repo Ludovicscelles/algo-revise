@@ -2778,8 +2778,8 @@ function getSecondBiggestNumber8(numArr: unknown[]): number {
   const lengthNumArray: number = numArr.length;
 
   const sortedNumArray: number[] = [...numArr]
-  .filter((value, index, array) => array.indexOf(value) === index)
-  .sort((a, b) => a - b);
+    .filter((value, index, array) => array.indexOf(value) === index)
+    .sort((a, b) => a - b);
 
   return sortedNumArray[lengthNumArray - 2];
 }
@@ -2787,7 +2787,6 @@ function getSecondBiggestNumber8(numArr: unknown[]): number {
 const numbersArray8: number[] = [123, 456, 789, 1011, 1213, 1415];
 const secondBiggestNumber8 = getSecondBiggestNumber8(numbersArray8);
 console.log(secondBiggestNumber8);
-
 
 {
   /*
@@ -2821,3 +2820,41 @@ function getSecondBiggestNumber8Bis(numArr: unknown[]): number {
 const numbersArray8Bis: number[] = [123, 456, 789, 1011, 1213, 1415];
 const secondBiggestNumber8Bis = getSecondBiggestNumber8Bis(numbersArray8Bis);
 console.log(secondBiggestNumber8Bis);
+
+{
+  /*
+  🎯 9v9. Trouver le deuxième plus grand nombre
+Écris une fonction qui retourne le deuxième plus grand nombre dans un tableau.
+📌 Exemple : [4, 8, 15, 16, 23, 42] → 23
+Méthode Reduce.
+*/
+}
+
+function getSecondBiggestNumber9(numArr: unknown[]): number {
+  validateMinTwoNumbersArray(numArr);
+
+  const { biggestNumber, secondBiggestNumber } = numArr.reduce(
+    (acc, val) => {
+      if (val > acc.biggestNumber) {
+        return {
+          biggestNumber: val,
+          secondBiggestNumber: acc.biggestNumber,
+        };
+      }
+      if (val < acc.biggestNumber && val > acc.secondBiggestNumber) {
+        return { biggestNumber: acc.biggestNumber, secondBiggestNumber: val };
+      }
+      return acc;
+    },
+    { biggestNumber: -Infinity, secondBiggestNumber: -Infinity }
+  );
+
+  if (secondBiggestNumber === -Infinity)
+    throw new Error(`Il n'y a pas de deuxième plus grand nombre distinct`);
+
+  return secondBiggestNumber;
+}
+
+const numbersArray9: number[] = [875, 965, 432, 880, 654, 321, 789];
+const secondBiggestNumber9 = getSecondBiggestNumber9(numbersArray9);
+console.log(secondBiggestNumber9);
