@@ -2242,9 +2242,9 @@ console.log(average16);
   📦 8. Compresser une chaîne (Run-length encoding)
 Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
 📌 Exemple : "aaabbc" → "a3b2c1"
+    Boucle for
 */
 }
-
 
 function compressString(str: unknown): string {
   checkIsString(str);
@@ -2268,3 +2268,36 @@ function compressString(str: unknown): string {
 const string: string = "aaabbc";
 const compressedString = compressString(string);
 console.log(compressedString);
+
+{
+  /*
+  📦 8v2. Compresser une chaîne (Run-length encoding)
+Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+📌 Exemple : "aaabbc" → "a3b2c1"
+*/
+}
+
+function compressString2(str: unknown): string {
+  checkIsString(str);
+
+  let compressedString: string = "";
+  let count: number = 1;
+
+  let i = 0;
+
+  while (i < str.length) {
+    const current: string = str[i];
+    const next: string = str[i + 1];
+    if (current === next) {
+      count++;
+    } else {
+      compressedString += `${current}${count}`;
+    }
+    i++;
+  }
+  return compressedString;
+}
+
+const stringV2: string = "wwwwaaadexxxxxx";
+const compressedString2 = compressString2(stringV2);
+console.log(compressedString2)
