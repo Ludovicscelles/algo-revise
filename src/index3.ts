@@ -2728,3 +2728,37 @@ function getSecondBiggestNumber6(numArr: unknown[]): number {
 const numbersArray6: number[] = [500, 600, 700, 800, 900, 1000];
 const secondBiggestNumber6 = getSecondBiggestNumber6(numbersArray6);
 console.log(secondBiggestNumber6);
+
+{
+  /*
+  🎯 9v7. Trouver le deuxième plus grand nombre
+Écris une fonction qui retourne le deuxième plus grand nombre dans un tableau.
+📌 Exemple : [4, 8, 15, 16, 23, 42] → 23
+Boucle for-of.
+*/
+}
+
+function getSecondBiggestNumber7(numArr: unknown[]): number {
+  validateMinTwoNumbersArray(numArr);
+
+  let biggestNumber: number = numArr[0];
+  let secondBiggestNumber: number = -Infinity;
+
+  for (const number of numArr) {
+    if (number > biggestNumber) {
+      secondBiggestNumber = biggestNumber;
+      biggestNumber = number;
+    } else if (number < biggestNumber && number > secondBiggestNumber) {
+      secondBiggestNumber = number;
+    }
+  }
+
+  if (secondBiggestNumber === -Infinity)
+    throw new Error(`Il n'y a pas de deuxième nombre distinct`);
+
+  return secondBiggestNumber;
+}
+
+const numbersArray7: number[] = [1.78, 2.89, 3.45, 4.56, 5.67, 6.78];
+const secondBiggestNumber7 = getSecondBiggestNumber7(numbersArray7);
+console.log(secondBiggestNumber7);
