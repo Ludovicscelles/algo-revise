@@ -2858,3 +2858,54 @@ function getSecondBiggestNumber9(numArr: unknown[]): number {
 const numbersArray9: number[] = [875, 965, 432, 880, 654, 321, 789];
 const secondBiggestNumber9 = getSecondBiggestNumber9(numbersArray9);
 console.log(secondBiggestNumber9);
+
+
+{
+  /*
+  🎯 9v9bis (avec commentaires). Trouver le deuxième plus grand nombre
+Écris une fonction qui retourne le deuxième plus grand nombre dans un tableau.
+📌 Exemple : [4, 8, 15, 16, 23, 42] → 23
+Méthode Reduce.
+*/
+}
+// Added comments to explain the logic of finding the second biggest number using reduce
+function getSecondBiggestNumber9Bis(numArr: unknown[]): number {
+  // Validate that the input array has at least two numbers
+  validateMinTwoNumbersArray(numArr);
+
+  // Use reduce to iterate through the array and find the biggest and second biggest numbers
+  // Initialize the accumulator with -Infinity for both biggest and second biggest numbers
+  // destructure the result of reduce into biggestNumber and secondBiggestNumber
+  const { biggestNumber, secondBiggestNumber } = numArr.reduce(
+    (acc, val) => {
+      // If the current value is greater than the biggest number found so far
+      // we assign the current value to biggestNumber and the previous biggestNumber to secondBiggestNumber
+      if (val > acc.biggestNumber) {
+        return {
+          biggestNumber: val,
+          secondBiggestNumber: acc.biggestNumber,
+        };
+      }
+      // If the current value is less than the biggest number but greater than the second biggest number
+      // we update the second biggest number to the current value
+      if (val < acc.biggestNumber && val > acc.secondBiggestNumber) {
+        return { biggestNumber: acc.biggestNumber, secondBiggestNumber: val };
+      }
+      // If neither condition is met, return the accumulator unchanged
+      return acc;
+    },
+    { biggestNumber: -Infinity, secondBiggestNumber: -Infinity }
+  );
+
+  // If no second biggest number was found, throw an error
+  if (secondBiggestNumber === -Infinity)
+    throw new Error(`Il n'y a pas de deuxième plus grand nombre distinct`);
+
+  // Return the second biggest number found
+  return secondBiggestNumber;
+}
+
+// Test the function with a sample array of numbers
+const numbersArray9Bis: number[] = [875, 965, 432, 880, 654, 321, 789];
+const secondBiggestNumber9Bis = getSecondBiggestNumber9Bis(numbersArray9Bis);
+console.log(secondBiggestNumber9Bis);
