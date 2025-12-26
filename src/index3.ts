@@ -2229,10 +2229,42 @@ class MathUtilV8 {
       return acc + val;
     }, 0);
     const average: number = sum / lengthNumArray;
-    return Math.round(average * 100) / 100
+    return Math.round(average * 100) / 100;
   }
 }
 
 const numArray16 = [23.45, 34.56, 45.67, 56.78];
 const average16 = new MathUtilV8(numArray16).averageNumbers();
 console.log(average16);
+
+{
+  /*
+  📦 8. Compresser une chaîne (Run-length encoding)
+Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+📌 Exemple : "aaabbc" → "a3b2c1"
+*/
+}
+
+
+function compressString(str: unknown): string {
+  checkIsString(str);
+
+  let count: number = 1;
+  let compressedString: string = "";
+
+  for (let i = 0; i < str.length; i++) {
+    const current: string = str[i];
+    const next: string = str[i + 1];
+    if (current === next) {
+      count++;
+    } else {
+      compressedString += `${current}${count}`;
+      count = 1;
+    }
+  }
+  return compressedString;
+}
+
+const string: string = "aaabbc";
+const compressedString = compressString(string);
+console.log(compressedString);
