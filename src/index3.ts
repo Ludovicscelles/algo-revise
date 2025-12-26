@@ -8,6 +8,7 @@ import {
   validateMinTwoNumbersArray,
 } from "./utils/CheckFunctions";
 import { stringWithoutSpaces, wordsWithSpaces } from "./utils/Normalize";
+import e from "express";
 
 {
   /*
@@ -2347,6 +2348,101 @@ function compressString3(str: unknown): string {
   return compressedString;
 }
 
-const stringV3: string = "zzzzzzzzzzzyyyyyyyyyyyxxxxxxwwwwwwvvvvuuutttsssrrqqppp";
+const stringV3: string =
+  "zzzzzzzzzzzyyyyyyyyyyyxxxxxxwwwwwwvvvvuuutttsssrrqqppp";
 const compressedString3 = compressString3(stringV3);
 console.log(compressedString3);
+
+{
+  /*
+  📦 8v4. Compresser une chaîne (Run-length encoding)
+Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+📌 Exemple : "aaabbc" → "a3b2c1"
+    Boucle for-of.
+*/
+}
+
+function compressString4(str: unknown): string {
+  checkIsString(str);
+
+  if (str.length === 0) {
+    return "";
+  }
+
+  let compressedString: string = "";
+  let count: number = 1;
+  let previous: string | null = null;
+
+  for (let char of str) {
+    if (char === previous) {
+      count++;
+    } else {
+      if (previous !== null) {
+        compressedString += `${previous}${count}`;
+      }
+      count = 1;
+      previous = char;
+    }
+  }
+  return compressedString;
+}
+
+const stringV4: string = "ppppqqqqrrrrsssstttuuuvvvwwwxxxx";
+const compressedString4 = compressString4(stringV4);
+console.log(compressedString4);
+
+
+{
+  /*
+  📦 8v4Bis (avec commentaires). Compresser une chaîne (Run-length encoding)
+Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+📌 Exemple : "aaabbc" → "a3b2c1"
+    Boucle for-of.
+*/
+}
+
+// Added comments to explain the logic of run-length encoding using a for-of loop
+function compressString4Bis(str: unknown): string {
+  // Validate that the input is a string
+  checkIsString(str);
+
+  // Handle the edge case of an empty string
+  if (str.length === 0) {
+    return "";
+  }
+
+  // Initialize an empty string to hold the compressed result
+  let compressedString: string = "";
+  // Initialize a counter to track consecutive character occurrences
+  let count: number = 1;
+  // Variable to keep track of the previous character
+  let previous: string | null = null;
+
+  // Loop through each character in the string using a for-of loop
+  for (let char of str) {
+    // Check if the current character is the same as the previous one
+    if (char === previous) {
+      // If they are the same, increment the count
+      count++;
+    } else {
+      // If they are different and previous is not null, append the previous character and its count to the result
+      if (previous !== null) {
+        compressedString += `${previous}${count}`;  
+
+      }
+      // Reset the count for the new character
+      count = 1;
+      // Update the previous character to the current one
+      previous = char;
+    }
+  }
+
+
+  // Return the final compressed string
+  return compressedString;
+}
+
+// Test the function with a sample string
+const stringV4Bis: string = "ppppqqqqrrrrsssstttuuuvvvwwwxxxx";
+const compressedString4Bis = compressString4Bis(stringV4Bis);
+console.log(compressedString4Bis);
