@@ -2394,7 +2394,6 @@ const stringV4: string = "ppppqqqqrrrrsssstttuuuvvvwwwxxxx";
 const compressedString4 = compressString4(stringV4);
 console.log(compressedString4);
 
-
 {
   /*
   📦 8v4Bis (avec commentaires). Compresser une chaîne (Run-length encoding)
@@ -2430,8 +2429,7 @@ function compressString4Bis(str: unknown): string {
     } else {
       // If they are different and previous is not null, append the previous character and its count to the result
       if (previous !== null) {
-        compressedString += `${previous}${count}`;  
-
+        compressedString += `${previous}${count}`;
       }
       // Reset the count for the new character
       count = 1;
@@ -2451,3 +2449,51 @@ function compressString4Bis(str: unknown): string {
 const stringV4Bis: string = "ppppqqqqrrrrsssstttuuuvvvwwwxxxx";
 const compressedString4Bis = compressString4Bis(stringV4Bis);
 console.log(compressedString4Bis);
+
+{
+  /*
+  📦 8v5. Compresser une chaîne (Run-length encoding)
+Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+📌 Exemple : "aaabbc" → "a3b2c1"
+    Méthode d'encodage par longueur de série (RLE) utilisant une expression régulière avec rétro-référence.
+*/
+}
+
+function compressString5(str: unknown): string {
+  checkIsString(str);
+  return str.replace(/(.)\1*/g, (match, char) => `${char}${match.length}`);
+}
+
+const stringV5: string = "hhhhhggggfffffeeeeddddccccbbbbaaa";
+const compressedString5 = compressString5(stringV5);
+console.log(compressedString5);
+
+
+{
+  /*
+  📦 8v5bis (avec commentaires). Compresser une chaîne (Run-length encoding)
+Écris une fonction qui compresse une chaîne en comptant les caractères consécutifs.
+📌 Exemple : "aaabbc" → "a3b2c1"
+    Méthode d'encodage par longueur de série (RLE) utilisant une expression régulière avec rétro-référence.
+*/
+}
+
+// Added comments to explain the logic of run-length encoding using regex
+function compressString5Bis(str: unknown): string {
+  // Validate that the input is a string
+  checkIsString(str);
+
+  // Use a regular expression to find sequences of consecutive identical characters
+  return str.replace(
+                
+    /(.)\1*/g, // This regex matches any character (.) followed by zero or more occurrences of the same character (\1*)
+              //g is the global flag to find all matches in the string
+
+    (match, char) => `${char}${match.length}` // For each match, return the character and the length of the match
+  );
+}
+
+// Test the function with a sample string
+const stringV5Bis: string = "hhhhhggggfffffeeeeddddccccbbbbaaa";
+const compressedString5Bis = compressString5Bis(stringV5Bis);
+console.log(compressedString5Bis);
