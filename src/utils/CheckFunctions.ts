@@ -140,7 +140,9 @@ const checkIsIntegersArrayWithComments = (array: unknown[]) => {
   }
 };
 
-export const checkIsNumbersArray = (array: unknown[]) => {
+export const checkIsNumbersArray: (
+  array: unknown[]
+) => asserts array is number[] = (array) => {
   if (!array.every((element) => typeof element === "number")) {
     throw new Error(`Chaque élément du tableau doit être un nombre`);
   }
