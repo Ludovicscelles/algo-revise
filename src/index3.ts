@@ -8,8 +8,6 @@ import {
   validateMinTwoNumbersArray,
 } from "./utils/CheckFunctions";
 import { stringWithoutSpaces, wordsWithSpaces } from "./utils/Normalize";
-import e from "express";
-import { threadId } from "worker_threads";
 
 {
   /*
@@ -2775,13 +2773,14 @@ Méthode de tri.
 function getSecondBiggestNumber8(numArr: unknown[]): number {
   validateMinTwoNumbersArray(numArr);
 
-  const lengthNumArray: number = numArr.length;
-
   const sortedNumArray: number[] = [...numArr]
     .filter((value, index, array) => array.indexOf(value) === index)
     .sort((a, b) => a - b);
 
-  return sortedNumArray[lengthNumArray - 2];
+    if (sortedNumArray.length < 2)
+    throw new Error(`Il n'y a pas de deuxième plus grand nombre distinct`);
+
+  return sortedNumArray[sortedNumArray.length - 2];
 }
 
 const numbersArray8: number[] = [123, 456, 789, 1011, 1213, 1415];
@@ -2858,7 +2857,6 @@ function getSecondBiggestNumber9(numArr: unknown[]): number {
 const numbersArray9: number[] = [875, 965, 432, 880, 654, 321, 789];
 const secondBiggestNumber9 = getSecondBiggestNumber9(numbersArray9);
 console.log(secondBiggestNumber9);
-
 
 {
   /*
