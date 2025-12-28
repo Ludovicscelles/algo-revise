@@ -5,9 +5,8 @@ import {
   checkIsArray,
   checkIsIntegersArray,
   checkMinArrayLength2,
-  checkMinArrayLength1,
-  checkIsNumbersArray,
   validateMinOneNumbersArray,
+  validateMinTwoNumbersArray,
 } from "./utils/CheckFunctions";
 
 import { cleanString, words } from "./utils/Normalize";
@@ -2256,28 +2255,26 @@ Double boucle for.
 }
 
 function getMostCommunValue(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let maxCount: number = 0;
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
-  for (let i = 0; i < numbersArray.length; i++) {
+  const lengthNbArray: number = nbArray.length;
+
+  for (let i = 0; i < lengthNbArray; i++) {
     let count: number = 0;
-    for (let j = 0; j < numbersArray.length; j++) {
-      if (numbersArray[i] === numbersArray[j]) {
+    for (let j = 0; j < lengthNbArray; j++) {
+      if (nbArray[i] === nbArray[j]) {
         count++;
       }
     }
     if (
       count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommonValue)
+      (count === maxCount && nbArray[i] > mostCommonValue)
     ) {
       maxCount = count;
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = nbArray[i];
     }
   }
   return mostCommonValue;
@@ -2297,28 +2294,21 @@ Double boucle for.
 
 // function with comments for mostCommunValue
 function getMostCommunValueWithComments(nbArray: unknown[]): number {
-  // Validate that the input is an array
-  checkIsArray(nbArray);
-  // Validate that the array has at least 2 elements
-  checkMinArrayLength2(nbArray);
-  // Validate that all elements in the array are numbers
-  checkIsNumbersArray(nbArray);
-
-  // Cast the input array to an array of numbers
-  const numbersArray = nbArray as number[];
+  // Validate that the input is an array with at least two numbers
+  validateMinTwoNumbersArray(nbArray);
 
   // Initialize variables to track the maximum count and the most frequent value
   let maxCount: number = 0;
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   // Outer loop to iterate through each number in the array
-  for (let i = 0; i < numbersArray.length; i++) {
+  for (let i = 0; i < nbArray.length; i++) {
     // Initialize a count for the current number
     let count: number = 0;
     // Inner loop to count occurrences of the current number
-    for (let j = 0; j < numbersArray.length; j++) {
+    for (let j = 0; j < nbArray.length; j++) {
       // If the numbers match, increment the count
-      if (numbersArray[i] === numbersArray[j]) {
+      if (nbArray[i] === nbArray[j]) {
         count++;
       }
     }
@@ -2326,11 +2316,11 @@ function getMostCommunValueWithComments(nbArray: unknown[]): number {
     // or if it's equal but the current number is greater than the most frequent value
     if (
       count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommonValue)
+      (count === maxCount && nbArray[i] > mostCommonValue)
     ) {
       // Update the maximum count and the most frequent value
       maxCount = count;
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = nbArray[i];
     }
   }
   // Return the most frequent value found in the array
@@ -2351,28 +2341,26 @@ Double boucle for inversé.
 }
 
 function getMostCommunValue2(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let maxCount: number = 0;
-  let mostCommunValue: number = numbersArray[0];
+  let mostCommunValue: number = nbArray[0];
 
-  for (let i = numbersArray.length - 1; i >= 0; i--) {
+  const lengthNbArray: number = nbArray.length;
+
+  for (let i = lengthNbArray - 1; i >= 0; i--) {
     let count: number = 0;
-    for (let j = numbersArray.length - 1; j >= 0; j--) {
-      if (numbersArray[i] === numbersArray[j]) {
+    for (let j = lengthNbArray - 1; j >= 0; j--) {
+      if (nbArray[i] === nbArray[j]) {
         count++;
       }
     }
     if (
       count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommunValue)
+      (count === maxCount && nbArray[i] > mostCommunValue)
     ) {
       maxCount = count;
-      mostCommunValue = numbersArray[i];
+      mostCommunValue = nbArray[i];
     }
   }
   return mostCommunValue;
@@ -2392,33 +2380,31 @@ Double boucle while.
 }
 
 function getMostCommunValue3(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
+
+  const lengthNbArray: number = nbArray.length;
 
   let i = 0;
 
-  while (i < numbersArray.length) {
+  while (i < lengthNbArray) {
     let count: number = 0;
     let j = 0;
-    while (j < numbersArray.length) {
-      if (numbersArray[i] === numbersArray[j]) {
+    while (j < lengthNbArray) {
+      if (nbArray[i] === nbArray[j]) {
         count++;
       }
       j++;
     }
     if (
       count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommonValue)
+      (count === maxCount && nbArray[i] > mostCommonValue)
     ) {
       maxCount = count;
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = nbArray[i];
     }
     i++;
   }
@@ -2439,33 +2425,31 @@ Double boucle reverse while.
 }
 
 function getMostCommunValue4(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
-  let i = numbersArray.length - 1;
+  const lengthNbArray: number = nbArray.length;
+
+  let i = lengthNbArray - 1;
 
   while (i >= 0) {
     let count: number = 0;
-    let j = numbersArray.length - 1;
+    let j = lengthNbArray - 1;
     while (j >= 0) {
-      if (numbersArray[i] === numbersArray[j]) {
+      if (nbArray[i] === nbArray[j]) {
         count++;
       }
       j--;
     }
     if (
       count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommonValue)
+      (count === maxCount && nbArray[i] > mostCommonValue)
     ) {
       maxCount = count;
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = nbArray[i];
     }
     i--;
   }
@@ -2486,15 +2470,13 @@ Double boucle do while.
 }
 
 function getMostCommunValue5(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
+
+  const lengthNbArray: number = nbArray.length;
 
   let i = 0;
 
@@ -2502,20 +2484,20 @@ function getMostCommunValue5(nbArray: unknown[]): number {
     let count: number = 0;
     let j = 0;
     do {
-      if (numbersArray[i] === numbersArray[j]) {
+      if (nbArray[i] === nbArray[j]) {
         count++;
       }
       j++;
-    } while (j < numbersArray.length);
+    } while (j < lengthNbArray);
     if (
       count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommonValue)
+      (count === maxCount && nbArray[i] > mostCommonValue)
     ) {
       maxCount = count;
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = nbArray[i];
     }
     i++;
-  } while (i < numbersArray.length);
+  } while (i < lengthNbArray);
   return mostCommonValue;
 }
 
@@ -2535,33 +2517,31 @@ Double boucle reverse do while.
 }
 
 function getMostCommunValue6(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
-  let i = numbersArray.length - 1;
+  const lengthNbArray: number = nbArray.length;
+
+  let i = lengthNbArray - 1;
 
   do {
     let count: number = 0;
-    let j = numbersArray.length - 1;
+    let j = lengthNbArray - 1;
     do {
-      if (numbersArray[i] === numbersArray[j]) {
+      if (nbArray[i] === nbArray[j]) {
         count++;
       }
       j--;
     } while (j >= 0);
     if (
       count > maxCount ||
-      (count === maxCount && numbersArray[i] > mostCommonValue)
+      (count === maxCount && nbArray[i] > mostCommonValue)
     ) {
       maxCount = count;
-      mostCommonValue = numbersArray[i];
+      mostCommonValue = nbArray[i];
     }
     i--;
   } while (i >= 0);
@@ -2582,19 +2562,15 @@ Double boucle for ... of.
 }
 
 function getMostCommunValue7(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
-  for (let number of numbersArray) {
+  for (let number of nbArray) {
     let count: number = 0;
-    for (let otherNumber of numbersArray) {
+    for (let otherNumber of nbArray) {
       if (number === otherNumber) {
         count++;
       }
@@ -2622,22 +2598,18 @@ Boucle for.
 }
 
 function getMostCommunValue8(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
+  validateMinTwoNumbersArray(nbArray);
 
-  const numbersArray = nbArray as number[];
-
-  const lengthOfArray: number = numbersArray.length;
+  const lengthOfArray: number = nbArray.length;
 
   let freq: Map<number, number> = new Map();
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   for (let i = 0; i < lengthOfArray; i++) {
-    const value = numbersArray[i];
+    const value = nbArray[i];
     let count = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
@@ -2664,17 +2636,11 @@ Boucle for.
 
 // function with comments for getMostCommunValue8
 function getMostCommunValue8Bis(nbArray: unknown[]): number {
-  // Validate that the input is an array
-  checkIsArray(nbArray);
-  // Validate that the array has at least 2 elements
-  checkMinArrayLength2(nbArray);
-  // Validate that all elements in the array are numbers
-  checkIsNumbersArray(nbArray);
+  // Validate that the input is an array with at least two numbers
+  validateMinTwoNumbersArray(nbArray);
 
-  // Cast the input array to an array of numbers
-  const numbersArray = nbArray as number[];
-
-  const lengthOfArray: number = numbersArray.length;
+  // Get the length of the input array
+  const lengthOfArray: number = nbArray.length;
 
   // Create a Map to store the frequency of each number
   let freq: Map<number, number> = new Map();
@@ -2683,13 +2649,13 @@ function getMostCommunValue8Bis(nbArray: unknown[]): number {
   let maxCount: number = 0;
 
   // Initialize variable to track the most common value
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   // Loop through each number in the array
   for (let i = 0; i < lengthOfArray; i++) {
     // Retrieve the current count for this number, or 0 if the number has not been seen yet
     // Add 1 to this count to account for the current occurrence
-    const value = numbersArray[i];
+    const value = nbArray[i];
     let count = (freq.get(value) || 0) + 1;
     // Update the frequency Map with the new count
     freq.set(value, count);
@@ -2725,11 +2691,7 @@ Boucle for inversé.
 }
 
 function getMostCommunValue9(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   const lengthOfArray: number = nbArray.length;
 
@@ -2737,10 +2699,10 @@ function getMostCommunValue9(nbArray: unknown[]): number {
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   for (let i = lengthOfArray - 1; i >= 0; i--) {
-    const value: number = numbersArray[i];
+    const value: number = nbArray[i];
     let count: number = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
@@ -2765,25 +2727,21 @@ Boucle while.
  */
 }
 
-function getMostCommunValue10(nbArray: unknown): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
+function getMostCommunValue10(nbArray: unknown[]): number {
+  validateMinTwoNumbersArray(nbArray);
 
-  const numbersArray = nbArray as number[];
-
-  const lengthOfArray: number = numbersArray.length;
+  const lengthOfArray: number = nbArray.length;
 
   let freq: Map<number, number> = new Map();
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   let i = 0;
 
   while (i < lengthOfArray) {
-    const value: number = numbersArray[i];
+    const value: number = nbArray[i];
     let count: number = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
@@ -2810,24 +2768,20 @@ Boucle while inversé.
 }
 
 function getMostCommunValue11(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
+  validateMinTwoNumbersArray(nbArray);
 
-  const numbersArray = nbArray as number[];
-
-  const lengthOfArray: number = numbersArray.length;
+  const lengthOfArray: number = nbArray.length;
 
   let freq: Map<number, number> = new Map();
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   let i = lengthOfArray - 1;
 
   while (i >= 0) {
-    const value: number = numbersArray[i];
+    const value: number = nbArray[i];
     let count = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
@@ -2853,25 +2807,21 @@ Boucle do while.
  */
 }
 
-function getMostCommunValue12(nbArray: unknown): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
+function getMostCommunValue12(nbArray: unknown[]): number {
+  validateMinTwoNumbersArray(nbArray);
 
-  const numbersArray = nbArray as number[];
-
-  const lengthOfArray: number = numbersArray.length;
+  const lengthOfArray: number = nbArray.length;
 
   let freq: Map<number, number> = new Map();
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   let i = 0;
 
   do {
-    const value: number = numbersArray[i];
+    const value: number = nbArray[i];
     let count = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
@@ -2900,24 +2850,20 @@ Boucle do while inversé.
 }
 
 function getMostCommunValue13(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
+  validateMinTwoNumbersArray(nbArray);
 
-  const numbersArray = nbArray as number[];
-
-  const lengthOfArray = numbersArray.length;
+  const lengthOfArray = nbArray.length;
 
   let freq: Map<number, number> = new Map();
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
   let i = lengthOfArray - 1;
 
   do {
-    const value: number = numbersArray[i];
+    const value: number = nbArray[i];
     let count = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
@@ -2944,19 +2890,15 @@ Méthode reduce.
 }
 
 function getMostCommunValue14(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let freq: Map<number, number> = new Map();
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
-  numbersArray.reduce((_, value: number) => {
+  nbArray.reduce((_, value: number) => {
     let count = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
@@ -2983,19 +2925,15 @@ Boucle for ... of.
 }
 
 function getMostCommonValue15(nbArray: unknown[]): number {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
-
-  const numbersArray = nbArray as number[];
+  validateMinTwoNumbersArray(nbArray);
 
   let freq: Map<number, number> = new Map();
 
   let maxCount: number = 0;
 
-  let mostCommonValue: number = numbersArray[0];
+  let mostCommonValue: number = nbArray[0];
 
-  for (let value of numbersArray) {
+  for (let value of nbArray) {
     let count = (freq.get(value) || 0) + 1;
     freq.set(value, count);
     if (count > maxCount || (count === maxCount && value > mostCommonValue)) {
