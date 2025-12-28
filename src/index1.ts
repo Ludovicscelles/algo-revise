@@ -6,6 +6,7 @@ import {
   checkIsIntegersArray,
   checkMinArrayLength2,
   checkIsNumbersArray,
+  validateMinTwoNumbersArray,
 } from "./utils/CheckFunctions";
 
 {
@@ -1608,20 +1609,16 @@ Boucle for et méthode de tri.
 */
 }
 
-
-
 function findDuplicate(nbArray: unknown[]): number[] {
-  checkIsArray(nbArray);
-  checkMinArrayLength2(nbArray);
-  checkIsNumbersArray(nbArray);
+  validateMinTwoNumbersArray(nbArray);
 
-  const arr = nbArray as number[];
-
-  const sortedNbArray: number[] = [...arr].sort((a, b) => a - b);
+  const sortedNbArray: number[] = [...nbArray].sort((a, b) => a - b);
 
   let duplicateNumbers: number[] = [];
 
-  for (let i = 0; i < sortedNbArray.length - 1; i++) {
+  const lengthNbArray: number = sortedNbArray.length;
+
+  for (let i = 0; i < lengthNbArray - 1; i++) {
     if (
       sortedNbArray[i] === sortedNbArray[i + 1] &&
       !duplicateNumbers.includes(sortedNbArray[i])
@@ -1645,17 +1642,15 @@ Boucle for inversé et méthode de tri.
 }
 
 function findDuplicate2(nbArray2: unknown[]): number[] {
-  checkIsArray(nbArray2);
-  checkMinArrayLength2(nbArray2);
-  checkIsNumbersArray(nbArray2);
+  validateMinTwoNumbersArray(nbArray2);
 
-  const arr2 = nbArray2 as number[];
-
-  const sortedNbArray2: number[] = [...arr2].sort((a, b) => a - b);
+  const sortedNbArray2: number[] = [...nbArray2].sort((a, b) => a - b);
 
   let duplicateNumbers2: number[] = [];
 
-  for (let i = sortedNbArray2.length - 1; i >= 1; i--) {
+  const lengthNbArray2: number = sortedNbArray2.length;
+
+  for (let i = lengthNbArray2 - 1; i >= 1; i--) {
     if (
       sortedNbArray2[i] === sortedNbArray2[i - 1] &&
       !duplicateNumbers2.includes(sortedNbArray2[i])
@@ -1679,22 +1674,20 @@ Double boucle while.
 }
 
 function findDuplicate3(nbArray3: unknown[]): number[] {
-  checkIsArray(nbArray3);
-  checkMinArrayLength2(nbArray3);
-  checkIsNumbersArray(nbArray3);
-
-  const arr3 = nbArray3 as number[];
+  validateMinTwoNumbersArray(nbArray3);
 
   let duplicateNumbers3: number[] = [];
 
+  const lengthNbArray3: number = nbArray3.length;
+
   let i = 0;
 
-  while (i < arr3.length) {
+  while (i < lengthNbArray3) {
     let j = i + 1;
-    while (j < arr3.length) {
-      if (arr3[i] === arr3[j]) {
-        if (!duplicateNumbers3.includes(arr3[i])) {
-          duplicateNumbers3.push(arr3[i]);
+    while (j < lengthNbArray3) {
+      if (nbArray3[i] === nbArray3[j]) {
+        if (!duplicateNumbers3.includes(nbArray3[i])) {
+          duplicateNumbers3.push(nbArray3[i]);
         }
       }
       j++;
@@ -1717,22 +1710,20 @@ Double boucle while inversé.
 }
 
 function findDuplicate4(nbArray4: unknown[]): number[] {
-  checkIsArray(nbArray4);
-  checkMinArrayLength2(nbArray4);
-  checkIsNumbersArray(nbArray4);
-
-  const arr4 = nbArray4 as number[];
+  validateMinTwoNumbersArray(nbArray4);
 
   let duplicateNumbers4: number[] = [];
 
-  let i = arr4.length - 1;
+  const lengthNbArray4: number = nbArray4.length;
+
+  let i = lengthNbArray4 - 1;
 
   while (i >= 0) {
     let j = i - 1;
     while (j >= 0) {
-      if (arr4[i] === arr4[j]) {
-        if (!duplicateNumbers4.includes(arr4[i])) {
-          duplicateNumbers4.push(arr4[i]);
+      if (nbArray4[i] === nbArray4[j]) {
+        if (!duplicateNumbers4.includes(nbArray4[i])) {
+          duplicateNumbers4.push(nbArray4[i]);
         }
       }
       j--;
@@ -1755,15 +1746,13 @@ Boucle do while avec une méthode de tri.
 }
 
 function findDuplicate5(nbArray5: unknown[]): number[] {
-  checkIsArray(nbArray5);
-  checkMinArrayLength2(nbArray5);
-  checkIsNumbersArray(nbArray5);
+  validateMinTwoNumbersArray(nbArray5);
 
-  const arr5 = nbArray5 as number[];
-
-  let sortedNbArray5 = [...arr5].sort((a, b) => a - b);
+  let sortedNbArray5 = [...nbArray5].sort((a, b) => a - b);
 
   let duplicateNumbers5: number[] = [];
+
+  const lengthNbArray5: number = sortedNbArray5.length;
 
   let i = 0;
 
@@ -1775,7 +1764,7 @@ function findDuplicate5(nbArray5: unknown[]): number[] {
       duplicateNumbers5.push(sortedNbArray5[i]);
     }
     i++;
-  } while (i < nbArray5.length);
+  } while (i < lengthNbArray5 - 1);
   return duplicateNumbers5;
 }
 
@@ -1792,17 +1781,15 @@ Boucle do while inversé avec une méthode de tri.
 }
 
 function findDuplicate6(nbArray6: unknown[]): number[] {
-  checkIsArray(nbArray6);
-  checkMinArrayLength2(nbArray6);
-  checkIsNumbersArray(nbArray6);
+  validateMinTwoNumbersArray(nbArray6);
 
-  const arr6 = nbArray6 as number[];
-
-  const sortedNbArray6: number[] = [...arr6].sort((a, b) => a - b);
+  const sortedNbArray6: number[] = [...nbArray6].sort((a, b) => a - b);
 
   let duplicateNumbers6: number[] = [];
 
-  let i = sortedNbArray6.length - 1;
+  const lengthNbArray6: number = sortedNbArray6.length;
+
+  let i = lengthNbArray6 - 1;
 
   do {
     if (
@@ -1829,15 +1816,13 @@ Boucle for ... of.
 }
 
 function findDuplicate7(nbArray7: unknown[]): number[] {
-  checkIsArray(nbArray7), checkIsNumbersArray(nbArray7);
-  checkMinArrayLength2(nbArray7);
-  const arr7 = nbArray7 as number[];
+  validateMinTwoNumbersArray(nbArray7);
 
   let justOnce: number[] = [];
 
   let duplicates: number[] = [];
 
-  for (let num of arr7) {
+  for (let num of nbArray7) {
     if (justOnce.includes(num) && !duplicates.includes(num)) {
       duplicates.push(num);
     }
@@ -1859,18 +1844,14 @@ Boucle for ... in.
 }
 
 function findDuplicate8(nbArray8: unknown[]): number[] {
-  checkIsArray(nbArray8);
-  checkMinArrayLength2(nbArray8);
-  checkIsNumbersArray(nbArray8);
-
-  const arr8 = nbArray8 as number[];
+  validateMinTwoNumbersArray(nbArray8);
 
   let justOnce: number[] = [];
 
   let duplicates: number[] = [];
 
-  for (let index in arr8) {
-    const num = arr8[index];
+  for (let index in nbArray8) {
+    const num = nbArray8[index];
     if (justOnce.includes(num) && !duplicates.includes(num)) {
       duplicates.push(num);
     }
