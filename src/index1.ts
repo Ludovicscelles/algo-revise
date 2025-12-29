@@ -17,7 +17,7 @@ import {
   */
 }
 
-export function evenOrOdd(nbr: unknown): boolean {
+function evenOrOdd(nbr: unknown): boolean {
   checkIsInteger(nbr);
   if (nbr % 2 !== 0) {
     return false;
