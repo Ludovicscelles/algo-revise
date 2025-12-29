@@ -3072,3 +3072,23 @@ function getThreeOrFiveMultiples6(number: unknown): number[] {
 const number6 = 35;
 const threeOrFiveMultiples6 = getThreeOrFiveMultiples6(number6);
 console.log(threeOrFiveMultiples6);
+
+{
+  /*
+  🧩 10v6. Trouver tous les multiples de 3 ou 5 jusqu'à n
+📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
+Méthode Generateur.
+ */
+}
+
+function* getThreeOrFiveMultiples7(number: unknown): Generator<number> {
+  checkIsInteger(number);
+  checkIsPositiveNumberMinOne(number);
+  for (let i = 3; i <= number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) yield i;
+  }
+}
+
+const number7 = 50;
+const threeOrFiveMultiples7 = [...getThreeOrFiveMultiples7(number7)];
+console.log(threeOrFiveMultiples7);
