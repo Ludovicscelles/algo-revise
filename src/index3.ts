@@ -2933,7 +2933,7 @@ console.log(threeOrFiveMultiples);
 
 {
   /*
-  🧩 10. Trouver tous les multiples de 3 ou 5 jusqu'à n
+  🧩 10v2. Trouver tous les multiples de 3 ou 5 jusqu'à n
 📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
 Boucle for inversé
  */
@@ -2956,3 +2956,32 @@ function getThreeOrFiveMultiples2(number: unknown): number[] {
 const number2 = 15;
 const threeOrFiveMultiples2 = getThreeOrFiveMultiples2(number2);
 console.log(threeOrFiveMultiples2);
+
+{
+  /*
+  🧩 10v3. Trouver tous les multiples de 3 ou 5 jusqu'à n
+📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
+Boucle while.
+ */
+}
+
+function getThreeOrFiveMultiples3(number: unknown): number[] {
+  checkIsInteger(number);
+  checkIsPositiveNumberMinOne(number);
+
+  const threeOrFiveMultiples: number[] = [];
+
+  let i = 3;
+
+  while (i <= number) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      threeOrFiveMultiples.push(i);
+    }
+    i++;
+  }
+  return threeOrFiveMultiples;
+}
+
+const number3 = 20;
+const threeOrFiveMultiples3 = getThreeOrFiveMultiples3(number3);
+console.log(threeOrFiveMultiples3);
