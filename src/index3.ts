@@ -3092,3 +3092,40 @@ function* getThreeOrFiveMultiples7(number: unknown): Generator<number> {
 const number7 = 50;
 const threeOrFiveMultiples7 = [...getThreeOrFiveMultiples7(number7)];
 console.log(threeOrFiveMultiples7);
+
+
+{
+  /*
+  🧩 10v6Bis (avec commentaires). Trouver tous les multiples de 3 ou 5 jusqu'à n
+📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
+Méthode Generateur.
+ */
+}
+
+// Added comments to explain the logic of finding multiples of 3 or 5 using a generator function
+function* getThreeOrFiveMultiples7Bis(
+  number: unknown
+): Generator<number> {
+  // Validate that the input is an integer
+  checkIsInteger(number);
+  // Validate that the input is a positive number greater than or equal to one
+  checkIsPositiveNumberMinOne(number);
+
+  // Loop from 3 to the specified number
+  for (let i = 3; i <= number; i++) {
+    // Check if the current number is a multiple of 3 or 5
+    if (i % 3 === 0 || i % 5 === 0) {
+      // Yield the number if it is a multiple of 3 or 5
+      // Yield allows the function to produce a sequence of values over time
+      // Yield means the function is a generator and can be iterated over
+      yield i;
+    }
+  }
+}
+
+// Test the generator function with a sample number
+const number7Bis = 50;
+const threeOrFiveMultiples7Bis = [
+  ...getThreeOrFiveMultiples7Bis(number7Bis),
+];
+console.log(threeOrFiveMultiples7Bis);
