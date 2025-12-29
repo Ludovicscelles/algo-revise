@@ -2985,3 +2985,32 @@ function getThreeOrFiveMultiples3(number: unknown): number[] {
 const number3 = 20;
 const threeOrFiveMultiples3 = getThreeOrFiveMultiples3(number3);
 console.log(threeOrFiveMultiples3);
+
+{
+  /*
+  🧩 10v3. Trouver tous les multiples de 3 ou 5 jusqu'à n
+📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
+Boucle while inversé.
+ */
+}
+
+function getThreeOrFiveMultiples4(number: unknown): number[] {
+  checkIsInteger(number);
+  checkIsPositiveNumberMinOne(number);
+
+  const threeOrFiveMultiples: number[] = [];
+
+  let i = number;
+
+  while (i >= 3) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      threeOrFiveMultiples.unshift(i);
+    }
+    i--;
+  }
+  return threeOrFiveMultiples;
+}
+
+const number4 = 25;
+const threeOrFiveMultiples4 = getThreeOrFiveMultiples4(number4);
+console.log(threeOrFiveMultiples4);
