@@ -1,8 +1,5 @@
-import { binary, number } from "joi";
 import {
-  checkIsArray,
   checkIsInteger,
-  checkIsNumbersArray,
   checkIsPositiveNumberMinOne,
   checkIsString,
   validateMinTwoNumbersArray,
@@ -2777,7 +2774,7 @@ function getSecondBiggestNumber8(numArr: unknown[]): number {
     .filter((value, index, array) => array.indexOf(value) === index)
     .sort((a, b) => a - b);
 
-    if (sortedNumArray.length < 2)
+  if (sortedNumArray.length < 2)
     throw new Error(`Il n'y a pas de deuxième plus grand nombre distinct`);
 
   return sortedNumArray[sortedNumArray.length - 2];
@@ -2907,3 +2904,29 @@ function getSecondBiggestNumber9Bis(numArr: unknown[]): number {
 const numbersArray9Bis: number[] = [875, 965, 432, 880, 654, 321, 789];
 const secondBiggestNumber9Bis = getSecondBiggestNumber9Bis(numbersArray9Bis);
 console.log(secondBiggestNumber9Bis);
+
+{
+  /*
+  🧩 10. Trouver tous les multiples de 3 ou 5 jusqu'à n
+📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
+Boucle for
+ */
+}
+
+function get3Or5Multiples(number: unknown): number[] {
+  checkIsInteger(number);
+  checkIsPositiveNumberMinOne(number);
+
+  const threeOrFiveMultiples: number[] = [];
+
+  for (let i = 3; i <= number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      threeOrFiveMultiples.push(i);
+    }
+  }
+  return threeOrFiveMultiples;
+}
+
+const number = 10;
+const threeOrFiveMultiples = get3Or5Multiples(number);
+console.log(threeOrFiveMultiples);
