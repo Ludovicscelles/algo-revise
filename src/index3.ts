@@ -3078,7 +3078,7 @@ console.log(threeOrFiveMultiples6);
   /*
   🧩 10v6. Trouver tous les multiples de 3 ou 5 jusqu'à n
 📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
-Méthode Generateur.
+Méthode Generateur avec boucle for.
  */
 }
 
@@ -3130,7 +3130,7 @@ console.log(threeOrFiveMultiples7Bis);
   /*
   🧩 10v6. Trouver tous les multiples de 3 ou 5 jusqu'à n
 📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
-Méthode Generateur et boucle for inversé.
+Méthode Generateur avec boucle for inversé.
  */
 }
 
@@ -3151,3 +3151,28 @@ function* getThreeOrFiveMultiples8(number: unknown): Generator<number> {
 const number8 = 55;
 const threeOrFiveMultiples8 = [...getThreeOrFiveMultiples8(number8)];
 console.log(threeOrFiveMultiples8);
+
+{
+  /*
+  🧩 10v6. Trouver tous les multiples de 3 ou 5 jusqu'à n
+📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
+Méthode Generateur avec boucle while.
+ */
+}
+
+function* getThreeOrFiveMultiples9(number: unknown): Generator<number> {
+  checkIsInteger(number);
+  checkIsPositiveNumberMinOne(number);
+
+  let i = 3;
+  while (i <= number) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      yield i;
+    }
+    i++;
+  }
+}
+
+const number9 = 60;
+const threeOrFiveMultiples9 = [...getThreeOrFiveMultiples9(number9)];
+console.log(threeOrFiveMultiples9);
