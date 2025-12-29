@@ -1,3 +1,4 @@
+import { get } from "http";
 import {
   checkIsInteger,
   checkIsPositiveNumberMinOne,
@@ -3093,7 +3094,6 @@ const number7 = 50;
 const threeOrFiveMultiples7 = [...getThreeOrFiveMultiples7(number7)];
 console.log(threeOrFiveMultiples7);
 
-
 {
   /*
   🧩 10v6Bis (avec commentaires). Trouver tous les multiples de 3 ou 5 jusqu'à n
@@ -3103,9 +3103,7 @@ Méthode Generateur.
 }
 
 // Added comments to explain the logic of finding multiples of 3 or 5 using a generator function
-function* getThreeOrFiveMultiples7Bis(
-  number: unknown
-): Generator<number> {
+function* getThreeOrFiveMultiples7Bis(number: unknown): Generator<number> {
   // Validate that the input is an integer
   checkIsInteger(number);
   // Validate that the input is a positive number greater than or equal to one
@@ -3125,7 +3123,31 @@ function* getThreeOrFiveMultiples7Bis(
 
 // Test the generator function with a sample number
 const number7Bis = 50;
-const threeOrFiveMultiples7Bis = [
-  ...getThreeOrFiveMultiples7Bis(number7Bis),
-];
+const threeOrFiveMultiples7Bis = [...getThreeOrFiveMultiples7Bis(number7Bis)];
 console.log(threeOrFiveMultiples7Bis);
+
+{
+  /*
+  🧩 10v6. Trouver tous les multiples de 3 ou 5 jusqu'à n
+📌 Exemple : n = 10 → [3, 5, 6, 9, 10]
+Méthode Generateur et boucle for inversé.
+ */
+}
+
+function* getThreeOrFiveMultiples8(number: unknown): Generator<number> {
+  checkIsInteger(number);
+  checkIsPositiveNumberMinOne(number);
+
+  const threeOrFiveMultiples: number[] = [];
+
+  for (let i = number; i >= 3; i--) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      threeOrFiveMultiples.unshift(i);
+    }
+  }
+  yield* threeOrFiveMultiples;
+}
+
+const number8 = 55;
+const threeOrFiveMultiples8 = [...getThreeOrFiveMultiples8(number8)];
+console.log(threeOrFiveMultiples8);
