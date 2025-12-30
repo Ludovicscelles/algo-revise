@@ -1,5 +1,20 @@
 import { validateMinTwoIntegersArray } from "../utils/CheckFunctions";
 
+export function getMaxValue(numArray: unknown[]): number {
+  validateMinTwoIntegersArray(numArray);
+
+  const lengthNumArray: number = numArray.length;
+
+  let maxValue: number = numArray[0];
+
+  for (let i = 0; i < lengthNumArray; i++) {
+    if (numArray[i] > maxValue) {
+      maxValue = numArray[i];
+    }
+  }
+  return maxValue;
+}
+
 export function getMaxValue4(numArray4: unknown[]): number {
   validateMinTwoIntegersArray(numArray4);
 
