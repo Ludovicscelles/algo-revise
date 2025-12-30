@@ -1,0 +1,20 @@
+// tsconfig.build.json
+// TypeScript configuration for building the project
+{
+  // Inherit settings from the base tsconfig.json
+  "extends": "./tsconfig.json",
+  // Compiler options specific to the build process
+  "compilerOptions": {
+    // Ensure that files are emitted during the build
+    "noEmit": false,
+    // Set the module system to CommonJS for compatibility
+    "module": "commonjs",
+    // Use Node.js style module resolution
+    "moduleResolution": "node",
+    // Specify the output directory for compiled files
+    "outDir": "./dist",
+    // Define the root directory of source files
+    "rootDir": "./src"
+  },
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "src/tests/**"]
+}

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "start1": "tsc && node dist/index1.js",
     "start2": "tsc && node dist/index2.js",
     "start3": "tsc && node dist/index3.js"
