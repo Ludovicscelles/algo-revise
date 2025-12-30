@@ -98,7 +98,7 @@ export const checkMinArrayLength2: (
   array: unknown[]
 ) => asserts array is unknown[] = (array) => {
   if (array.length < 2) {
-    throw new Error(`La tableau doit contenir au minimum deux éléments`);
+    throw new Error(`Le tableau doit contenir au minimum deux éléments`);
   }
 };
 
@@ -122,7 +122,9 @@ export const checkMinArrayLength1: (
   }
 };
 
-export const checkIsIntegersArray = (array: unknown[]) => {
+export const checkIsIntegersArray: (
+  array: unknown[]
+) => asserts array is number[] = (array) => {
   if (!array.every((element) => Number.isInteger(element))) {
     throw new Error(`Chaque élément du tableau doit être un nombre entier.`);
   }
