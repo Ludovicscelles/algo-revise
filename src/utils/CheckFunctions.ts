@@ -1,3 +1,5 @@
+import { array } from "joi";
+
 export const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
   if (!Number.isInteger(nb)) {
     throw new Error(`La saisie doit être un nombre entier`);
@@ -26,8 +28,6 @@ export const checkIsPositiveNumber: (nb: number) => asserts nb is number = (
   }
 };
 
-
-
 // type guard to check if input is a positive number
 // throws an error if not
 // asserts nb is number tells TypeScript that after calling this function, nb can be treated as a number
@@ -42,14 +42,13 @@ const checkIsPositiveNumberWithComments: (
   }
 };
 
-export const checkIsPositiveNumberMinOne: (nb: number) => asserts nb is number = (
-  nb
-) => {
+export const checkIsPositiveNumberMinOne: (
+  nb: number
+) => asserts nb is number = (nb) => {
   if (nb < 1) {
     throw new Error(`Le nombre saisi doit être supérieur ou égal à un.`);
   }
 };
-
 
 export const checkIsString: (str: unknown) => asserts str is string = (str) => {
   if (typeof str !== "string") {
@@ -162,4 +161,12 @@ export const validateMinTwoNumbersArray: (
   checkIsArray(array);
   checkMinArrayLength2(array);
   checkIsNumbersArray(array);
+};
+
+export const validateMinTwoIntegersArray: (
+  array: unknown[]
+) => asserts array is number[] = (array) => {
+  checkIsArray(array);
+  checkMinArrayLength2(array);
+  checkIsIntegersArray(array);
 };

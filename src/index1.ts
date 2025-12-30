@@ -5,8 +5,8 @@ import {
   checkIsArray,
   checkIsIntegersArray,
   checkMinArrayLength2,
-  checkIsNumbersArray,
   validateMinTwoNumbersArray,
+  validateMinTwoIntegersArray,
 } from "./utils/CheckFunctions";
 
 {
@@ -152,9 +152,7 @@ console.log(factorialOfANumber4);
 }
 
 function getMaxValue(numArray: unknown[]): number {
-  checkIsArray(numArray);
-  checkMinArrayLength2(numArray);
-  checkIsIntegersArray(numArray);
+  validateMinTwoIntegersArray(numArray);
 
   const arr = numArray as number[];
 
@@ -180,9 +178,7 @@ console.log(maxValue);
 }
 
 function getMaxValue2(numArray2: unknown[]): number {
-  checkIsArray(numArray2);
-  checkMinArrayLength2(numArray2);
-  checkIsIntegersArray(numArray2);
+  validateMinTwoIntegersArray(numArray2);
 
   const arr2 = numArray2 as number[];
 
@@ -208,9 +204,7 @@ console.log(maxValue2);
 }
 
 function getMaxValue3(numArray3: unknown[]): number {
-  checkIsArray(numArray3);
-  checkMinArrayLength2(numArray3);
-  checkIsIntegersArray(numArray3);
+  validateMinTwoIntegersArray(numArray3);
 
   const arr3 = numArray3 as number[];
 
@@ -239,9 +233,7 @@ console.log(maxValue3);
 }
 
 function getMaxValue4(numArray4: unknown[]): number {
-  checkIsArray(numArray4);
-  checkMinArrayLength2(numArray4);
-  checkIsIntegersArray(numArray4);
+  validateMinTwoIntegersArray(numArray4);
 
   const arr4 = numArray4 as number[];
   let maxValue4: number = arr4[arr4.length - 1];
@@ -269,9 +261,7 @@ console.log(maxValue4);
 }
 
 function getMaxValue5(numArray5: unknown[]): number {
-  checkIsArray(numArray5);
-  checkMinArrayLength2(numArray5);
-  checkIsIntegersArray(numArray5);
+  validateMinTwoIntegersArray(numArray5);
 
   const arr5 = numArray5 as number[];
 
@@ -297,9 +287,7 @@ console.log(maxValue5);
 }
 
 function getMaxValue6(numArray6: unknown[]): number {
-  checkIsArray(numArray6);
-  checkMinArrayLength2(numArray6);
-  checkIsIntegersArray(numArray6);
+  validateMinTwoIntegersArray(numArray6);
 
   const arr6 = numArray6 as number[];
 
@@ -328,9 +316,7 @@ console.log(maxValue6);
 }
 
 function getMaxValue7(numArray7: unknown[]): number {
-  checkIsArray(numArray7);
-  checkMinArrayLength2(numArray7);
-  checkIsIntegersArray(numArray7);
+  validateMinTwoIntegersArray(numArray7);
 
   const arr7 = numArray7 as number[];
   let maxValue7: number = arr7[arr7.length - 1];
