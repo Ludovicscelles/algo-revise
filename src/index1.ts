@@ -3,7 +3,6 @@ import {
   checkIsPositiveNumber,
   checkIsString,
   checkIsArray,
-  checkIsIntegersArray,
   checkMinArrayLength2,
   validateMinTwoNumbersArray,
   validateMinTwoIntegersArray,
@@ -148,19 +147,20 @@ console.log(factorialOfANumber4);
   /*
   3v1. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+Boucle for.
 */
 }
 
 function getMaxValue(numArray: unknown[]): number {
   validateMinTwoIntegersArray(numArray);
 
-  const arr = numArray as number[];
+  const lengthNumArray: number = numArray.length;
 
-  let maxValue: number = arr[0];
+  let maxValue: number = numArray[0];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > maxValue) {
-      maxValue = arr[i];
+  for (let i = 0; i < lengthNumArray; i++) {
+    if (numArray[i] > maxValue) {
+      maxValue = numArray[i];
     }
   }
   return maxValue;
@@ -174,19 +174,20 @@ console.log(maxValue);
   /*
   3v2. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+Boucle for inversée.
 */
 }
 
 function getMaxValue2(numArray2: unknown[]): number {
   validateMinTwoIntegersArray(numArray2);
 
-  const arr2 = numArray2 as number[];
+  const lengthNumArray2: number = numArray2.length;
 
-  let maxValue2: number = arr2[arr2.length - 1];
+  let maxValue2: number = numArray[lengthNumArray2 - 1];
 
-  for (let i = arr2.length - 2; i >= 0; i--) {
-    if (arr2[i] > maxValue2) {
-      maxValue2 = arr2[i];
+  for (let i = lengthNumArray2 - 2; i >= 0; i--) {
+    if (numArray2[i] > maxValue2) {
+      maxValue2 = numArray2[i];
     }
   }
   return maxValue2;
@@ -200,21 +201,22 @@ console.log(maxValue2);
   /*
   3v3. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+Boucle while.
 */
 }
 
 function getMaxValue3(numArray3: unknown[]): number {
   validateMinTwoIntegersArray(numArray3);
 
-  const arr3 = numArray3 as number[];
+  let maxValue3: number = numArray3[0];
 
-  let maxValue3: number = arr3[0];
+  const lengthNumArray3: number = numArray3.length;
 
   let i = 1;
 
-  while (i < arr3.length) {
-    if (arr3[i] > maxValue3) {
-      maxValue3 = arr3[i];
+  while (i < lengthNumArray3) {
+    if (numArray3[i] > maxValue3) {
+      maxValue3 = numArray3[i];
     }
     i++;
   }
@@ -229,20 +231,21 @@ console.log(maxValue3);
   /*
   3v4. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+Boucle while inversée.
 */
 }
 
 function getMaxValue4(numArray4: unknown[]): number {
   validateMinTwoIntegersArray(numArray4);
 
-  const arr4 = numArray4 as number[];
-  let maxValue4: number = arr4[arr4.length - 1];
+  const lengthNumArray4: number = numArray4.length;
+  let maxValue4: number = numArray4[lengthNumArray4 - 1];
 
-  let i = arr4.length - 2;
+  let i = lengthNumArray4 - 2;
 
   while (i >= 0) {
-    if (arr4[i] > maxValue4) {
-      maxValue4 = arr4[i];
+    if (numArray4[i] > maxValue4) {
+      maxValue4 = numArray4[i];
     }
     i--;
   }
@@ -257,17 +260,16 @@ console.log(maxValue4);
   /*
   3v5. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+Boucle for ... of .
 */
 }
 
 function getMaxValue5(numArray5: unknown[]): number {
   validateMinTwoIntegersArray(numArray5);
 
-  const arr5 = numArray5 as number[];
+  let maxValue5: number = numArray5[0];
 
-  let maxValue5: number = arr5[0];
-
-  for (let num of arr5) {
+  for (let num of numArray5) {
     if (num > maxValue5) {
       maxValue5 = num;
     }
@@ -283,24 +285,25 @@ console.log(maxValue5);
   /*
   3v6. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+Boucle do while.
 */
 }
 
 function getMaxValue6(numArray6: unknown[]): number {
   validateMinTwoIntegersArray(numArray6);
 
-  const arr6 = numArray6 as number[];
+  const lengthNumArray6: number = numArray6.length;
 
-  let maxValue6: number = arr6[0];
+  let maxValue6: number = numArray6[0];
 
   let i = 1;
 
   do {
-    if (arr6[i] > maxValue6) {
-      maxValue6 = arr6[i];
+    if (numArray6[i] > maxValue6) {
+      maxValue6 = numArray6[i];
     }
     i++;
-  } while (i < arr6.length);
+  } while (i < lengthNumArray6);
   return maxValue6;
 }
 
@@ -312,20 +315,21 @@ console.log(maxValue6);
   /*
   3v7. Plus grand élément d’un tableau
 Écris un algorithme qui retourne le plus grand nombre dans un tableau d’entiers.
+Boucle do while inversée.
 */
 }
 
 function getMaxValue7(numArray7: unknown[]): number {
   validateMinTwoIntegersArray(numArray7);
 
-  const arr7 = numArray7 as number[];
-  let maxValue7: number = arr7[arr7.length - 1];
+  const lengthNumArray7: number = numArray7.length;
+  let maxValue7: number = numArray7[lengthNumArray7 - 1];
 
-  let i = arr7.length - 2;
+  let i = lengthNumArray7 - 2;
 
   do {
-    if (arr7[i] > maxValue7) {
-      maxValue7 = arr7[i];
+    if (numArray7[i] > maxValue7) {
+      maxValue7 = numArray7[i];
     }
     i--;
   } while (i >= 0);
