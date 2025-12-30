@@ -13,6 +13,7 @@ import {
 
   1v1. Pair ou impair
 Écris un programme qui prend un nombre entier et affiche s’il est pair ou impair.
+Retourne un booléen: true si pair, false si impair.
   */
 }
 
@@ -33,6 +34,7 @@ console.log(isEven);
 
   1v2. Pair ou impair
 Écris un programme qui prend un nombre entier et affiche s’il est pair ou impair.
+Retourne une chaîne de caractères: "Ce nombre est pair." ou "Ce nombre est impair."
   */
 }
 
@@ -52,6 +54,7 @@ console.log(isEven2);
   /*
   2v1. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
+Boucle for.
 */
 }
 
@@ -73,6 +76,7 @@ console.log(factorialOfANumber);
   /*
   2v2. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
+  Boucle for inversée.
 */
 }
 
@@ -95,6 +99,7 @@ console.log(factorialOfANumber2);
   /*
   2v3. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
+  Boucle while.
 */
 }
 
@@ -121,6 +126,7 @@ console.log(factorialOfANumber3);
   /*
   2v4. Factorielle
 Écris une fonction qui calcule la factorielle d’un nombre entier n (par exemple, factorielle(5) = 120).
+  Boucle while inversée.
 */
 }
 
@@ -344,6 +350,7 @@ console.log(maxValue7);
   /*
   4v1. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+Boucle for.
 */
 }
 
@@ -383,6 +390,7 @@ console.log(isPalindrome);
   /*
   4bis. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+Boucle for.
 */
 }
 
@@ -418,6 +426,7 @@ console.log(isPalindromeBis);
   /*
   4v2. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+Boucle for inversée.
 */
 }
 
@@ -441,6 +450,7 @@ console.log(isPalindrome2);
   /*
   4v3. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+  Boucle while.
 */
 }
 
@@ -467,6 +477,7 @@ console.log(isPalindrome3);
   /*
   4v4. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+  Boucle while inversée.
 */
 }
 
@@ -493,6 +504,7 @@ console.log(isPalindrome4);
   /*
   4v5. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+  Boucle do while.
 */
 }
 
@@ -520,6 +532,7 @@ console.log(isPalindrome5);
   /*
   4v6. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+  Boucle do while inversée.
 */
 }
 
@@ -546,6 +559,7 @@ console.log(isPalindrome6);
   /*
   4v7. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+  Boucle for ... of .
 */
 }
 
@@ -577,6 +591,7 @@ console.log(isPalindrome7);
   /*
   4v7Bis. Palindrome
 Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « radar »).
+  Boucle for ... of .
 */
 }
 
