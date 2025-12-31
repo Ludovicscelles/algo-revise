@@ -8,6 +8,25 @@ const cleanStringWithComments: (str: string) => string = (str) => {
   return str.replace(/[^\p{L}]/gu, "");
 };
 
+export const normalizedStr = (str: string): string =>
+  str
+    .toLocaleLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+
+const normalizedStrWithComments = (str: string): string =>
+  // normalize the input string
+  str
+    // convert to lowercase
+    .toLocaleLowerCase()
+    // remove accents by normalizing to NFD form, NFD means Normalization Form Decomposition
+    .normalize("NFD")
+    // remove diacritical marks, diatritical means accent marks
+    .replace(/[\u0300-\u036f]/g, "")
+    // remove non-alphanumeric characters
+    .replace(/[^a-z0-9]/g, "");
+
 export const stringWithoutSpaces: (str: string) => string = (str) => {
   return str.replace(/\s+/g, "");
 };

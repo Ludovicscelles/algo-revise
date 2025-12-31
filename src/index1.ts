@@ -8,6 +8,8 @@ import {
   validateMinTwoIntegersArray,
 } from "./utils/CheckFunctions";
 
+import { normalizedStr } from "./utils/Normalize";
+
 {
   /*
 
@@ -353,22 +355,6 @@ Vérifie si une chaîne de caractères est un palindrome (ex : « kayak », « r
 Boucle for.
 */
 }
-
-// helper function to normalize a string
-// removes accents, converts to lowercase, and removes non-alphanumeric characters
-const normalizedStr = (str: string): string =>
-  // normalize the input string
-  str
-    // convert to lowercase
-    .toLocaleLowerCase()
-    // remove accents by normalizing to NFD form, NFD means Normalization Form Decomposition
-    .normalize("NFD")
-    // remove diacritical marks, diatritical means accent marks
-    .replace(/[\u0300-\u036f]/g, "")
-    // remove non-alphanumeric characters
-    .replace(/[^a-z0-9]/g, "");
-
-// ************
 
 function checkPalindrome(str1: unknown): string {
   checkIsString(str1);
