@@ -6,6 +6,7 @@ import {
   checkMinArrayLength2,
   validateMinTwoNumbersArray,
   validateMinTwoIntegersArray,
+  checkIsPositiveNumberMinOne,
 } from "./utils/CheckFunctions";
 
 import { normalizedStr } from "./utils/Normalize";
@@ -463,7 +464,7 @@ function checkPalindrome3(str3: unknown): string {
 
   while (i < halfLength3) {
     if (normalizedStr3[i] !== normalizedStr3[lengthNormalizedStr3 - 1 - i]) {
-      return `Ceci n'est pas un palindrome.`; 
+      return `Ceci n'est pas un palindrome.`;
     }
     i++;
   }
@@ -658,6 +659,7 @@ Boucle for.
 
 function sumOfNumbers(nbr: unknown): number {
   checkIsInteger(nbr);
+  checkIsPositiveNumberMinOne(nbr);
 
   let total: number = 0;
 
@@ -681,6 +683,7 @@ Boucle for inversée.
 
 function sumOfNumbers2(nbr2: unknown): number {
   checkIsInteger(nbr2);
+  checkIsPositiveNumberMinOne(nbr2);
 
   let total: number = 0;
 
@@ -704,6 +707,7 @@ Boucle while.
 
 function sumOfNumbers3(nbr3: unknown): number {
   checkIsInteger(nbr3);
+  checkIsPositiveNumberMinOne(nbr3);
 
   let total: number = 0;
 
@@ -730,6 +734,7 @@ Boucle while inversée.
 
 function sumOfNumbers4(nbr4: unknown): number {
   checkIsInteger(nbr4);
+  checkIsPositiveNumberMinOne(nbr4);
 
   let total: number = 0;
 
@@ -756,6 +761,7 @@ Boucle do while.
 
 function sumOfNumbers5(nbr5: unknown): number {
   checkIsInteger(nbr5);
+  checkIsPositiveNumberMinOne(nbr5);
 
   let total: number = 0;
 
@@ -782,6 +788,7 @@ Boucle do while.
 
 function sumOfNumbers6(nbr6: unknown): number {
   checkIsInteger(nbr6);
+  checkIsPositiveNumberMinOne(nbr6);
 
   let total: number = 0;
 
