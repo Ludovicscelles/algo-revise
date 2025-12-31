@@ -365,10 +365,10 @@ function checkPalindrome(str1: unknown): string {
 
   for (let i = 0; i < halfLength; i++) {
     if (normalizedStr1[i] !== normalizedStr1[lengthNormalizedStr1 - 1 - i]) {
-      return `Ce n'est pas un palindrome.`;
+      return `Ceci n'est pas un palindrome.`;
     }
   }
-  return `C'est un palindrome.`;
+  return `Il s'agit bien d'un palindrome.`;
 }
 
 let str1 = "Tu l'as trop écrasé César, ce Port-Salut !";
@@ -406,11 +406,11 @@ function checkPalindromeWithComments(strBis: unknown): string {
       normalizedStrBis[i] !== normalizedStrBis[lengthNormalizedStrBis - 1 - i]
     ) {
       // if characters do not match, it's not a palindrome
-      return `Ce n'est pas un palindrome.`;
+      return `Ceci n'est pas un palindrome.`;
     }
   }
   // if all characters match, it is a palindrome
-  return `C'est un palindrome.`;
+  return `Il s'agit bien d'un palindrome.`;
 }
 
 let strBis = "Tu l'as trop écrasé César, ce Port-Salut !";
@@ -434,10 +434,10 @@ function checkPalindrome2(str2: unknown): string {
 
   for (let i = normalizedStr2.length - 1; i >= halfLength2; i--) {
     if (normalizedStr2[i] !== normalizedStr2[lengthNormalizedStr2 - 1 - i]) {
-      return `Ce n'est pas un palindrome.`;
+      return `Ceci n'est pas un palindrome.`;
     }
   }
-  return `C'est un palindrome.`;
+  return `Il s'agit bien d'un palindrome.`;
 }
 
 let str2 = "Et la marine va venir à Malte";
@@ -463,7 +463,7 @@ function checkPalindrome3(str3: unknown): string {
 
   while (i < halfLength3) {
     if (normalizedStr3[i] !== normalizedStr3[lengthNormalizedStr3 - 1 - i]) {
-      return `Ce n'est pas un palindrome.`;
+      return `Ceci n'est pas un palindrome.`; 
     }
     i++;
   }
@@ -558,7 +558,7 @@ function checkPalindrome6(str6: unknown): string {
     }
     i--;
   } while (i >= halfLength6);
-  return `Ceci est un palindrome.`;
+  return `Il s'agit bien d'un palindrome.`;
 }
 
 let str6 = "La mère Gide digère mal";
