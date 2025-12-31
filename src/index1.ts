@@ -360,8 +360,11 @@ function checkPalindrome(str1: unknown): string {
   checkIsString(str1);
   const normalizedStr1: string = normalizedStr(str1);
 
-  for (let i = 0; i < normalizedStr1.length / 2; i++) {
-    if (normalizedStr1[i] !== normalizedStr1[normalizedStr1.length - 1 - i]) {
+  const lengthNormalizedStr1: number = normalizedStr1.length;
+  const halfLength: number = Math.floor(lengthNormalizedStr1 / 2);
+
+  for (let i = 0; i < halfLength; i++) {
+    if (normalizedStr1[i] !== normalizedStr1[lengthNormalizedStr1 - 1 - i]) {
       return `Ce n'est pas un palindrome.`;
     }
   }
@@ -390,11 +393,17 @@ function checkPalindromeWithComments(strBis: unknown): string {
   // we use a helper function for this
   const normalizedStrBis: string = normalizedStr(strBis);
 
+  // initialize halfLength for loop limit
+  const lengthNormalizedStrBis: number = normalizedStrBis.length;
+
+  // calculate half the length of the normalized string
+  const halfLength: number = Math.floor(lengthNormalizedStrBis / 2);
+
   // check if the normalized string is a palindrome using a for loop
-  for (let i = 0; i < normalizedStrBis.length / 2; i++) {
+  for (let i = 0; i < halfLength; i++) {
     // compare characters from the start and end of the string
     if (
-      normalizedStrBis[i] !== normalizedStrBis[normalizedStrBis.length - 1 - i]
+      normalizedStrBis[i] !== normalizedStrBis[lengthNormalizedStrBis - 1 - i]
     ) {
       // if characters do not match, it's not a palindrome
       return `Ce n'est pas un palindrome.`;
@@ -420,8 +429,11 @@ function checkPalindrome2(str2: unknown): string {
   checkIsString(str2);
   const normalizedStr2: string = normalizedStr(str2);
 
-  for (let i = normalizedStr2.length - 1; i >= normalizedStr2.length / 2; i--) {
-    if (normalizedStr2[i] !== normalizedStr2[normalizedStr2.length - 1 - i]) {
+  const lengthNormalizedStr2: number = normalizedStr2.length;
+  const halfLength2: number = Math.floor(lengthNormalizedStr2 / 2);
+
+  for (let i = normalizedStr2.length - 1; i >= halfLength2; i--) {
+    if (normalizedStr2[i] !== normalizedStr2[lengthNormalizedStr2 - 1 - i]) {
       return `Ce n'est pas un palindrome.`;
     }
   }
@@ -444,10 +456,13 @@ function checkPalindrome3(str3: unknown): string {
   checkIsString(str3);
   const normalizedStr3: string = normalizedStr(str3);
 
+  const lengthNormalizedStr3: number = normalizedStr3.length;
+  const halfLength3: number = Math.floor(lengthNormalizedStr3 / 2);
+
   let i = 0;
 
-  while (i < normalizedStr3.length / 2) {
-    if (normalizedStr3[i] !== normalizedStr3[normalizedStr3.length - 1 - i]) {
+  while (i < halfLength3) {
+    if (normalizedStr3[i] !== normalizedStr3[lengthNormalizedStr3 - 1 - i]) {
       return `Ce n'est pas un palindrome.`;
     }
     i++;
@@ -471,10 +486,13 @@ function checkPalindrome4(str4: unknown): string {
   checkIsString(str4);
   const normalizedStr4: string = normalizedStr(str4);
 
-  let i = normalizedStr4.length - 1;
+  const lengthNormalizedStr4: number = normalizedStr4.length;
+  const halfLength4: number = Math.floor(lengthNormalizedStr4 / 2);
 
-  while (i >= normalizedStr4.length / 2) {
-    if (normalizedStr4[i] !== normalizedStr4[normalizedStr4.length - 1 - i]) {
+  let i = lengthNormalizedStr4 - 1;
+
+  while (i >= halfLength4) {
+    if (normalizedStr4[i] !== normalizedStr4[lengthNormalizedStr4 - 1 - i]) {
       return `Ceci n'est pas un palindrome.`;
     }
     i--;
@@ -498,14 +516,17 @@ function checkPalindrome5(str5: unknown): string {
   checkIsString(str5);
   const normalizedStr5: string = normalizedStr(str5);
 
+  const lengthNormalizedStr5: number = normalizedStr5.length;
+  const halfLength5: number = Math.floor(lengthNormalizedStr5 / 2);
+
   let i = 0;
 
   do {
-    if (normalizedStr5[i] !== normalizedStr5[normalizedStr5.length - 1 - i]) {
+    if (normalizedStr5[i] !== normalizedStr5[lengthNormalizedStr5 - 1 - i]) {
       return `Ceci n'est pas un palindrome.`;
     }
     i++;
-  } while (i < normalizedStr5.length / 2);
+  } while (i < halfLength5);
 
   return `Il s'agit bien d'un palindrome.`;
 }
@@ -526,14 +547,17 @@ function checkPalindrome6(str6: unknown): string {
   checkIsString(str6);
   const normalizedStr6: string = normalizedStr(str6);
 
-  let i = normalizedStr6.length - 1;
+  const lengthNormalizedStr6: number = normalizedStr6.length;
+  const halfLength6: number = Math.floor(lengthNormalizedStr6 / 2);
+
+  let i = lengthNormalizedStr6 - 1;
 
   do {
-    if (normalizedStr6[i] !== normalizedStr6[normalizedStr6.length - 1 - i]) {
+    if (normalizedStr6[i] !== normalizedStr6[lengthNormalizedStr6 - 1 - i]) {
       return `Ceci n'est pas un palindrome.`;
     }
     i--;
-  } while (i >= normalizedStr6.length / 2);
+  } while (i >= halfLength6);
   return `Ceci est un palindrome.`;
 }
 
@@ -553,10 +577,12 @@ function checkPalindrome7(str7: unknown): string {
   checkIsString(str7);
   const normalizedStr7: string = normalizedStr(str7);
 
+  const lengthNormalizedStr7: number = normalizedStr7.length;
+
   let i = 0;
 
   for (let str of normalizedStr7) {
-    let oppositeI = normalizedStr7.length - 1 - i;
+    let oppositeI = lengthNormalizedStr7 - 1 - i;
 
     if (i >= oppositeI) break;
 
@@ -590,6 +616,9 @@ function checkPalindrome7WithComments(str7Bis: unknown): string {
   // we use a helper function for this
   const normalizedStr7Bis: string = normalizedStr(str7Bis);
 
+  // get the length of the normalized string
+  const lengthNormalizedStr7Bis: number = normalizedStr7Bis.length;
+
   // initialize index variable
   let i = 0;
 
@@ -597,7 +626,7 @@ function checkPalindrome7WithComments(str7Bis: unknown): string {
   // we use a for...of loop to access each character directly
   for (let str of normalizedStr7Bis) {
     // calculate the index of the character from the opposite end of the string
-    let oppositeI = normalizedStr7Bis.length - 1 - i;
+    let oppositeI = lengthNormalizedStr7Bis - 1 - i;
 
     // if the current index has reached or passed the opposite index, we can stop checking
     if (i >= oppositeI) break;
