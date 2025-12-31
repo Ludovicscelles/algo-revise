@@ -1,8 +1,7 @@
-import { array } from "joi";
 
 export const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
   if (!Number.isInteger(nb)) {
-    throw new Error(`La saisie doit être un nombre entier`);
+    throw new Error(`La saisie doit être un nombre entier.`);
   }
 };
 
@@ -52,7 +51,7 @@ export const checkIsPositiveNumberMinOne: (
 
 export const checkIsString: (str: unknown) => asserts str is string = (str) => {
   if (typeof str !== "string") {
-    throw new Error(`La saisie d'entrée doit être une chaîne de caractères`);
+    throw new Error(`La saisie d'entrée doit être une chaîne de caractères.`);
   }
 };
 
@@ -98,7 +97,7 @@ export const checkMinArrayLength2: (
   array: unknown[]
 ) => asserts array is unknown[] = (array) => {
   if (array.length < 2) {
-    throw new Error(`Le tableau doit contenir au minimum deux éléments`);
+    throw new Error(`Le tableau doit contenir au minimum deux éléments.`);
   }
 };
 
@@ -118,7 +117,7 @@ export const checkMinArrayLength1: (
   array: unknown[]
 ) => asserts array is unknown[] = (array) => {
   if (array.length < 1) {
-    throw new Error(`Le tableau doit contenir au mininum un élément`);
+    throw new Error(`Le tableau doit contenir au mininum un élément.`);
   }
 };
 
@@ -145,7 +144,7 @@ export const checkIsNumbersArray: (
   array: unknown[]
 ) => asserts array is number[] = (array) => {
   if (!array.every((element) => typeof element === "number")) {
-    throw new Error(`Chaque élément du tableau doit être un nombre`);
+    throw new Error(`Chaque élément du tableau doit être un nombre.`);
   }
 };
 
