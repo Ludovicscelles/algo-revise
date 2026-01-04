@@ -9,7 +9,7 @@ import {
   checkIsPositiveNumberMinOne,
 } from "./utils/CheckFunctions";
 
-import { normalizedStr } from "./utils/Normalize";
+import { normalizedStr, vowels } from "./utils/Normalize";
 
 {
   /*
@@ -812,15 +812,6 @@ console.log(totalOfNumbers6);
 Boucle for.
  */
 }
-
-const vowels: string =
-  `aeiouyAEIOUY` +
-  `àáâãäåÀÁÂÃÄÅ` +
-  `èéêëÈÉÊË` +
-  `ìíîïÌÍÎÏ` +
-  `òóôõöÒÓÔÕÖ` +
-  `ùúûüÙÚÛÜ` +
-  `ÿŸ`;
 
 function countVowels(string: unknown): number {
   checkIsString(string);
