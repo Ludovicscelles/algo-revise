@@ -8,9 +8,9 @@
     "test:watch": "vitest",
     "test:verbose": "vitest run --reporter verbose",
     "build": "tsc -p tsconfig.build.json",
-    "start1": "tsc && node dist/index1.js",
-    "start2": "tsc && node dist/index2.js",
-    "start3": "tsc && node dist/index3.js"
+    "start1": "npm run build && node dist/index1.js",
+    "start2": "npm run build && node dist/index2.js",
+    "start3": "npm run build && node dist/index3.js"
   },
   "keywords": [],
   "author": "",

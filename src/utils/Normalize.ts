@@ -65,3 +65,11 @@ export const wordsWithSpaces: (str: string) => string[] = (str) => {
   return str.toLowerCase().trim().split(/\s+/);
 };
 
+export const vowels: string =
+  `aeiouyAEIOUY` +
+  `àáâãäåÀÁÂÃÄÅ` +
+  `èéêëÈÉÊË` +
+  `ìíîïÌÍÎÏ` +
+  `òóôõöÒÓÔÕÖ` +
+  `ùúûüÙÚÛÜ` +
+  `ÿŸ`;
