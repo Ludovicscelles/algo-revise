@@ -989,10 +989,9 @@ Boucle for ... of .
 function countVowels7(string7: unknown): number {
   checkIsString(string7);
 
-  const string = string7.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   let count: number = 0;
 
-  for (let str of string) {
+  for (let str of string7) {
     if (vowels.includes(str)) {
       count++;
     }
@@ -1002,7 +1001,7 @@ function countVowels7(string7: unknown): number {
 
 const sentence7: string = `À bientôt`;
 const totalOfVowels7: number = countVowels7(sentence7);
-console.log("totalOfVowels71 :", totalOfVowels7);
+console.log("totalOfVowels7 :", totalOfVowels7);
 
 {
   /*
