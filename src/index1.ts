@@ -747,10 +747,11 @@ function sumOfNumbers4(nbr4: unknown): number {
   return total;
 }
 
+console.log("avant appel sumOfNumbers4");
+
 let nb4: number = 5;
 let totalOfNumbers4: number = sumOfNumbers4(nb4);
-console.log(totalOfNumbers4);
-
+console.log("totalOfNumbers4 :", totalOfNumbers4);
 {
   /*
     5v5. Somme des nombres de 1 à n
@@ -801,7 +802,7 @@ function sumOfNumbers6(nbr6: unknown): number {
   return total;
 }
 
-let nb6: number = 8;
+let nb6: number = 9;
 let totalOfNumbers6: number = sumOfNumbers6(nb6);
 console.log(totalOfNumbers6);
 
@@ -966,7 +967,7 @@ function countVowels6(string6: unknown): number {
 
 const sentence6: string = `La mouche rousse touche la mousse`;
 const totalOfVowels6: number = countVowels6(sentence6);
-console.log(totalOfVowels6);
+console.log("totalOfVowels6 :", totalOfVowels6);
 
 {
   /*
@@ -989,9 +990,9 @@ function countVowels7(string7: unknown): number {
   return count;
 }
 
-const sentence7: string = `Une bête noire se baigne dans une baignoire noire`;
+const sentence7: string = `À bientôt`;
 const totalOfVowels7: number = countVowels7(sentence7);
-console.log(totalOfVowels7);
+console.log("totalOfVowels7 :", totalOfVowels7);
 
 {
   /*
