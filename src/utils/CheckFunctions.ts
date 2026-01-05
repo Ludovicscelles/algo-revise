@@ -1,4 +1,3 @@
-
 export const checkIsInteger: (nb: unknown) => asserts nb is number = (nb) => {
   if (!Number.isInteger(nb)) {
     throw new Error(`La saisie doit être un nombre entier.`);
@@ -144,7 +143,9 @@ export const checkIsStringsArray: (
   array: unknown[]
 ) => asserts array is string[] = (array) => {
   if (!array.every((element) => typeof element === "string")) {
-    throw new Error(`Chaque élément du tableau doit être une chaîne de caractères.`);
+    throw new Error(
+      `Chaque élément du tableau doit être une chaîne de caractères.`
+    );
   }
 };
 
@@ -155,7 +156,6 @@ export const checkIsNumbersArray: (
     throw new Error(`Chaque élément du tableau doit être un nombre.`);
   }
 };
-
 
 export const validateMinOneNumbersArray: (
   array: unknown[]
@@ -181,10 +181,29 @@ export const validateMinTwoIntegersArray: (
   checkIsIntegersArray(array);
 };
 
+// export const validateMinTwoStringsArray: (
+//   array: unknown[]
+// ) => asserts array is string[] = (array) => {
+//   checkIsArray(array);
+//   checkMinArrayLength2(array);
+//   checkIsStringsArray(array);
+// };
+
+const ERR_MIN_TWO_STRINGS_ARRAY =
+  "La saisie doit être un tableau contenant au moins deux chaînes de caractères.";
+
 export const validateMinTwoStringsArray: (
-  array: unknown[]
-) => asserts array is string[] = (array) => {
-  checkIsArray(array);
-  checkMinArrayLength2(array);
-  checkIsStringsArray(array);
+  input: unknown
+) => asserts input is string[] = (input) => {
+  if (!Array.isArray(input)) {
+    throw new Error(ERR_MIN_TWO_STRINGS_ARRAY);
+  }
+
+  if (input.length < 2) {
+    throw new Error(ERR_MIN_TWO_STRINGS_ARRAY);
+  }
+
+  if (!input.every((x) => typeof x === "string")) {
+    throw new Error(ERR_MIN_TWO_STRINGS_ARRAY);
+  }
 };
