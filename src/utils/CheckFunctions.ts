@@ -181,14 +181,6 @@ export const validateMinTwoIntegersArray: (
   checkIsIntegersArray(array);
 };
 
-// export const validateMinTwoStringsArray: (
-//   array: unknown[]
-// ) => asserts array is string[] = (array) => {
-//   checkIsArray(array);
-//   checkMinArrayLength2(array);
-//   checkIsStringsArray(array);
-// };
-
 const ERR_MIN_TWO_STRINGS_ARRAY =
   "La saisie doit être un tableau contenant au moins deux chaînes de caractères.";
 
