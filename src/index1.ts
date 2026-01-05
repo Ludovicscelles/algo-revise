@@ -1182,12 +1182,11 @@ Boucle for.
 function reverseArray(stArr: unknown[]): string[] {
   validateMinTwoStringsArray(stArr);
 
-  const arr = stArr as string[];
-
+  const lengthArr: number = stArr.length;
   let newStArr: string[] = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    newStArr[i] = arr[arr.length - i - 1];
+  for (let i = 0; i < lengthArr; i++) {
+    newStArr[i] = stArr[lengthArr - i - 1];
   }
   return newStArr;
 }
@@ -1207,12 +1206,11 @@ Boucle for inversée.
 function reverseArray2(stArr2: unknown[]): string[] {
   validateMinTwoStringsArray(stArr2);
 
-  const arr2 = stArr2 as string[];
-
+  const lengthArr2: number = stArr2.length;
   let newStArr2: string[] = [];
 
-  for (let i = arr2.length - 1; i >= 0; i--) {
-    newStArr2.push(arr2[i]);
+  for (let i = lengthArr2 - 1; i >= 0; i--) {
+    newStArr2.push(stArr2[i]);
   }
   return newStArr2;
 }
@@ -1232,14 +1230,13 @@ Boucle while.
 function reverseArray3(stArr3: unknown[]): string[] {
   validateMinTwoStringsArray(stArr3);
 
-  const arr3 = stArr3 as string[];
-
+  const lengthArr3: number = stArr3.length;
   let newStArr3: string[] = [];
 
   let i = 0;
 
-  while (i < arr3.length) {
-    newStArr3[i] = arr3[arr3.length - i - 1];
+  while (i < lengthArr3) {
+    newStArr3[i] = stArr3[lengthArr3 - i - 1];
     i++;
   }
   return newStArr3;
@@ -1260,14 +1257,13 @@ Boucle while inversé.
 function reverseArray4(stArr4: unknown[]): string[] {
   validateMinTwoStringsArray(stArr4);
 
-  let arr4 = stArr4 as string[];
-
+  const lengthArr4: number = stArr4.length;
   let newStArr4: string[] = [];
 
-  let i = arr4.length - 1;
+  let i = lengthArr4 - 1;
 
   while (i >= 0) {
-    newStArr4.push(arr4[i]);
+    newStArr4.push(stArr4[i]);
     i--;
   }
   return newStArr4;
@@ -1288,16 +1284,15 @@ Boucle do while .
 function reverseArray5(stArr5: unknown[]): string[] {
   validateMinTwoStringsArray(stArr5);
 
-  const arr5 = stArr5 as string[];
-
+  const lengthArr5: number = stArr5.length;
   let newStArr5: string[] = [];
 
   let i = 0;
 
   do {
-    newStArr5[i] = arr5[arr5.length - i - 1];
+    newStArr5[i] = stArr5[lengthArr5 - i - 1];
     i++;
-  } while (i < arr5.length);
+  } while (i < lengthArr5);
   return newStArr5;
 }
 
@@ -1318,14 +1313,13 @@ function reverseArray6(stArr6: unknown[]): string[] {
 
   checkIsStringsArray(stArr6);
 
-  const arr6 = stArr6 as string[];
-
+  const lengthArr6: number = stArr6.length;
   let newStArr6: string[] = [];
 
-  let i = arr6.length - 1;
+  let i = lengthArr6 - 1;
 
   do {
-    newStArr6.push(arr6[i]);
+    newStArr6.push(stArr6[i]);
     i--;
   } while (i >= 0);
   return newStArr6;
@@ -1344,16 +1338,15 @@ Boucle for ... of.
 }
 
 function reverseArray7(stArr7: unknown[]): string[] {
- validateMinTwoStringsArray(stArr7);
+  validateMinTwoStringsArray(stArr7);
 
-  const arr7 = stArr7 as string[];
-
+  const lengthArr7: number = stArr7.length;
   let newStArr7: string[] = [];
 
   let i = 0;
 
-  for (let element of arr7) {
-    newStArr7[arr7.length - 1 - i] = element;
+  for (let element of stArr7) {
+    newStArr7[lengthArr7 - 1 - i] = element;
     i++;
   }
   return newStArr7;
@@ -1374,13 +1367,12 @@ Boucle for ... of inversé.
 function reverseArray8(stArr8: unknown[]): string[] {
   validateMinTwoStringsArray(stArr8);
 
-  const arr8 = stArr8 as string[];
-
+  const lengthArr8: number = stArr8.length;
   let newStArr8: string[] = [];
 
-  let i = arr8.length - 1;
+  let i = lengthArr8 - 1;
 
-  for (let element of arr8) {
+  for (let element of stArr8) {
     newStArr8[i] = element;
     i--;
   }
