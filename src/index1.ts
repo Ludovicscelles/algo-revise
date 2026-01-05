@@ -1004,7 +1004,7 @@ Boucle for.
 
 function fizzBuzz(number: unknown): string[] {
   checkIsInteger(number);
-  checkIsPositiveNumber(number);
+  checkIsPositiveNumberMinOne(number);
 
   let arrayFizzBuzz: string[] = [];
 
@@ -1031,7 +1031,7 @@ Boucle for inversé.
 
 function fizzBuzz2(number2: number): string[] {
   checkIsInteger(number2);
-  checkIsPositiveNumber(number2);
+  checkIsPositiveNumberMinOne(number2);
 
   let arrayFizzBuzz2: string[] = [];
 
@@ -1058,7 +1058,7 @@ Boucle while.
 
 function fizzBuzz3(number3: unknown): string[] {
   checkIsInteger(number3);
-  checkIsPositiveNumber(number3);
+  checkIsPositiveNumberMinOne(number3);
 
   let arrayFizzBuzz3: string[] = [];
 
@@ -1088,7 +1088,7 @@ Boucle while inversé.
 
 function fizzBuzz4(number4: unknown): string[] {
   checkIsInteger(number4);
-  checkIsPositiveNumber(number4);
+  checkIsPositiveNumberMinOne(number4);
 
   let arrayFizzBuzz4: string[] = [];
 
@@ -1118,7 +1118,7 @@ Boucle do while.
 
 function fizzBuzz5(number5: number): string[] {
   checkIsInteger(number5);
-  checkIsPositiveNumber(number5);
+  checkIsPositiveNumberMinOne(number5);
 
   let arrayFizzBuzz5: string[] = [];
 
@@ -1148,7 +1148,7 @@ Boucle do while inversé.
 
 function fizzBuzz6(number6: number): string[] {
   checkIsInteger(number6);
-  checkIsPositiveNumber(number6);
+  checkIsPositiveNumberMinOne(number6);
 
   let arrayFizzBuzz6: string[] = [];
 
