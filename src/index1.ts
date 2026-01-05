@@ -1,4 +1,3 @@
-import { valid } from "joi";
 import {
   checkIsInteger,
   checkIsPositiveNumber,
@@ -1403,6 +1402,7 @@ Boucle for.
 
 function multiplicationTable(nb: unknown): string {
   checkIsInteger(nb);
+  checkIsPositiveNumberMinOne(nb);
 
   let result: string = "";
 
@@ -1426,6 +1426,7 @@ Boucle for inversé.
 
 function multiplicationTable2(nb2: unknown): string {
   checkIsInteger(nb2);
+  checkIsPositiveNumberMinOne(nb2);
 
   let result2: string[] = [];
 
@@ -1449,6 +1450,7 @@ Boucle while.
 
 function multiplicationTable3(nb3: unknown): string {
   checkIsInteger(nb3);
+  checkIsPositiveNumberMinOne(nb3);
 
   let result3: string = "";
 
@@ -1475,6 +1477,7 @@ Boucle while inversé.
 
 function multiplicationTable4(nb4: unknown): string {
   checkIsInteger(nb4);
+  checkIsPositiveNumberMinOne(nb4);
 
   let result4: string[] = [];
 
@@ -1501,6 +1504,7 @@ Boucle do while.
 
 function multiplicationTable5(nb5: unknown): string {
   checkIsInteger(nb5);
+  checkIsPositiveNumberMinOne(nb5);
 
   let result5: string = "";
 
@@ -1527,6 +1531,7 @@ Boucle do while inversé.
 
 function multiplicationTable6(nb6: unknown): string {
   checkIsInteger(nb6);
+  checkIsPositiveNumberMinOne(nb6);
 
   let result6: string[] = [];
 
@@ -1535,7 +1540,7 @@ function multiplicationTable6(nb6: unknown): string {
   do {
     result6.push(`${nb6} x ${i} = ${nb6 * i}`);
     i--;
-  } while (i >= 0);
+  } while (i >= 1);
   return result6.reverse().join(`\n`);
 }
 
@@ -1553,6 +1558,7 @@ Boucle for ... of .
 
 function multiplicationTable7(nb7: unknown): string {
   checkIsInteger(nb7);
+  checkIsPositiveNumberMinOne(nb7);
 
   let result7: string = "";
   let valueArray: number[] = Array.from({ length: 10 }, (_, i) => i + 1);
@@ -1577,6 +1583,7 @@ Boucle for ... in.
 
 function multiplicationTable8(nb8: unknown): string {
   checkIsInteger(nb8);
+  checkIsPositiveNumberMinOne(nb8);
 
   let result8: string = "";
 
