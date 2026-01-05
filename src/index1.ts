@@ -1,3 +1,4 @@
+import { valid } from "joi";
 import {
   checkIsInteger,
   checkIsPositiveNumber,
@@ -7,7 +8,8 @@ import {
   validateMinTwoNumbersArray,
   validateMinTwoIntegersArray,
   checkIsPositiveNumberMinOne,
-  checkIsStringsArray
+  checkIsStringsArray,
+  validateMinTwoStringsArray,
 } from "./utils/CheckFunctions";
 
 import { normalizedStr, vowels } from "./utils/Normalize";
@@ -1178,9 +1180,7 @@ Boucle for.
 }
 
 function reverseArray(stArr: unknown[]): string[] {
-  checkIsArray(stArr);
-  checkMinArrayLength2(stArr);
-  checkIsStringsArray(stArr);
+  validateMinTwoStringsArray(stArr);
 
   const arr = stArr as string[];
 
@@ -1205,9 +1205,7 @@ Boucle for inversée.
 }
 
 function reverseArray2(stArr2: unknown[]): string[] {
-  checkIsArray(stArr2);
-  checkMinArrayLength2(stArr2);
-  checkIsStringsArray(stArr2);
+  validateMinTwoStringsArray(stArr2);
 
   const arr2 = stArr2 as string[];
 
@@ -1232,9 +1230,7 @@ Boucle while.
 }
 
 function reverseArray3(stArr3: unknown[]): string[] {
-  checkIsArray(stArr3);
-  checkMinArrayLength2(stArr3);
-  checkIsStringsArray(stArr3);
+  validateMinTwoStringsArray(stArr3);
 
   const arr3 = stArr3 as string[];
 
@@ -1262,9 +1258,7 @@ Boucle while inversé.
 }
 
 function reverseArray4(stArr4: unknown[]): string[] {
-  checkIsArray(stArr4);
-  checkMinArrayLength2(stArr4);
-  checkIsStringsArray(stArr4);
+  validateMinTwoStringsArray(stArr4);
 
   let arr4 = stArr4 as string[];
 
@@ -1292,9 +1286,7 @@ Boucle do while .
 }
 
 function reverseArray5(stArr5: unknown[]): string[] {
-  checkIsArray(stArr5);
-  checkMinArrayLength2(stArr5);
-  checkIsStringsArray(stArr5);
+  validateMinTwoStringsArray(stArr5);
 
   const arr5 = stArr5 as string[];
 
@@ -1322,8 +1314,8 @@ Boucle do while inversé.
 }
 
 function reverseArray6(stArr6: unknown[]): string[] {
-  checkIsArray(stArr6);
-  checkMinArrayLength2(stArr6);
+  validateMinTwoStringsArray(stArr6);
+
   checkIsStringsArray(stArr6);
 
   const arr6 = stArr6 as string[];
@@ -1352,9 +1344,7 @@ Boucle for ... of.
 }
 
 function reverseArray7(stArr7: unknown[]): string[] {
-  checkIsArray(stArr7);
-  checkMinArrayLength2(stArr7);
-  checkIsStringsArray(stArr7);
+ validateMinTwoStringsArray(stArr7);
 
   const arr7 = stArr7 as string[];
 
@@ -1381,10 +1371,8 @@ Boucle for ... of inversé.
 */
 }
 
-function reverseArray8(stArr8: unknown): string[] {
-  checkIsArray(stArr8);
-  checkMinArrayLength2(stArr8);
-  checkIsStringsArray(stArr8);
+function reverseArray8(stArr8: unknown[]): string[] {
+  validateMinTwoStringsArray(stArr8);
 
   const arr8 = stArr8 as string[];
 

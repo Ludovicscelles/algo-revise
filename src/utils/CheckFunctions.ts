@@ -180,3 +180,11 @@ export const validateMinTwoIntegersArray: (
   checkMinArrayLength2(array);
   checkIsIntegersArray(array);
 };
+
+export const validateMinTwoStringsArray: (
+  array: unknown[]
+) => asserts array is string[] = (array) => {
+  checkIsArray(array);
+  checkMinArrayLength2(array);
+  checkIsStringsArray(array);
+};
