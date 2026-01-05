@@ -140,6 +140,14 @@ const checkIsIntegersArrayWithComments = (array: unknown[]) => {
   }
 };
 
+export const checkIsStringsArray: (
+  array: unknown[]
+) => asserts array is string[] = (array) => {
+  if (!array.every((element) => typeof element === "string")) {
+    throw new Error(`Chaque élément du tableau doit être une chaîne de caractères.`);
+  }
+};
+
 export const checkIsNumbersArray: (
   array: unknown[]
 ) => asserts array is number[] = (array) => {
@@ -147,6 +155,7 @@ export const checkIsNumbersArray: (
     throw new Error(`Chaque élément du tableau doit être un nombre.`);
   }
 };
+
 
 export const validateMinOneNumbersArray: (
   array: unknown[]
