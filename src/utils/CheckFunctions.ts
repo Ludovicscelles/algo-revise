@@ -166,7 +166,7 @@ export const validateMinOneNumbersArray: (
 };
 
 const ERR_MIN_TWO_NUMBERS_ARRAY =
-  "Le tableau doit contenir au minimum deux nombres.";
+  "La saisie doit être un tableau contenant strictement des nombres et au moins deux éléments.";
 
 export const validateMinTwoNumbersArray: (
   input: unknown
