@@ -1,5 +1,5 @@
-import { checkIsString } from "../utils/CheckFunctions";
-import { normalizedStr } from "../utils/Normalize";
+import { checkIsString } from "../../utils/CheckFunctions";
+import { normalizedStr } from "../../utils/Normalize";
 
 export function checkPalindrome(str1: unknown): string {
   checkIsString(str1);

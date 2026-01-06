@@ -3,8 +3,7 @@ import {
   reverseArray4,
   reverseArray5,
   reverseArray7,
-} from "../algo/reverseArray";
-
+} from "../../algo/algo1/reverseArray";
 
 describe.each([
   ["reverseArray4", reverseArray4],

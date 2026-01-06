@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { fizzBuzz3, fizzBuzz5 } from "../algo/fizzBuzz";
+import { fizzBuzz3, fizzBuzz5 } from "../../algo/algo1/fizzBuzz";
 
 describe.each([
   ["fizzBuzz3", fizzBuzz3],

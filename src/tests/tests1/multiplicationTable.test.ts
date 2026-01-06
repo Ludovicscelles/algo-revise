@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { multiplicationTable, multiplicationTable7 } from "../algo/multiplicationTable";
+import {
+  multiplicationTable,
+  multiplicationTable7,
+} from "../../algo/algo1/multiplicationTable";
 
 describe.each([
   ["multiplicationTable", multiplicationTable],
@@ -21,9 +24,7 @@ describe.each([
   });
 
   it("should throw an error if input is not an integer", () => {
-    expect(() => fn(5.5)).toThrowError(
-      "La saisie doit être un nombre entier."
-    );
+    expect(() => fn(5.5)).toThrowError("La saisie doit être un nombre entier.");
     expect(() => fn(-3)).toThrowError(
       "Le nombre saisi doit être supérieur ou égal à un."
     );
@@ -39,8 +40,6 @@ describe.each([
     expect(() => fn(undefined)).toThrowError(
       "La saisie doit être un nombre entier."
     );
-    expect(() => fn({})).toThrowError(
-      "La saisie doit être un nombre entier."
-    );
+    expect(() => fn({})).toThrowError("La saisie doit être un nombre entier.");
   });
 });

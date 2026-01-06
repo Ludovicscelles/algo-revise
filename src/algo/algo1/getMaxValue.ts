@@ -1,4 +1,4 @@
-import { validateMinTwoIntegersArray } from "../utils/CheckFunctions";
+import { validateMinTwoIntegersArray } from "../../utils/CheckFunctions";
 
 export function getMaxValue(numArray: unknown[]): number {
   validateMinTwoIntegersArray(numArray);

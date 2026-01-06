@@ -1,5 +1,5 @@
-import { checkIsString } from "../utils/CheckFunctions";
-import { vowels } from "../utils/Normalize";
+import { checkIsString } from "../../utils/CheckFunctions";
+import { vowels } from "../../utils/Normalize";
 
 export function countVowels(string: unknown): number {
   checkIsString(string);

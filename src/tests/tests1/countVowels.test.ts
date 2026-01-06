@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { countVowels, countVowels7 } from "../algo/countVowels";
+import { countVowels, countVowels7 } from "../../algo/algo1/countVowels";
 
 // Tests for countVowels and countVowels7 functions
 

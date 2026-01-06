@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { sumOfNumbers, sumOfNumbers5 } from "../algo/sumOfNumbers";
+import { sumOfNumbers, sumOfNumbers5 } from "../../algo/algo1/sumOfNumbers";
 
 describe.each([
   ["sumOfNumbers", sumOfNumbers],
@@ -14,8 +14,12 @@ describe.each([
 
   it("should throw an error if input is not a valid integer", () => {
     expect(() => fn(5.5)).toThrowError("La saisie doit être un nombre entier.");
-    expect(() => fn(-3)).toThrowError("Le nombre saisi doit être supérieur ou égal à un.");
-    expect(() => fn(0)).toThrowError("Le nombre saisi doit être supérieur ou égal à un.");
+    expect(() => fn(-3)).toThrowError(
+      "Le nombre saisi doit être supérieur ou égal à un."
+    );
+    expect(() => fn(0)).toThrowError(
+      "Le nombre saisi doit être supérieur ou égal à un."
+    );
     expect(() => fn("10")).toThrowError(
       "La saisie doit être un nombre entier."
     );
