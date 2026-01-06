@@ -1,4 +1,4 @@
-import { checkIsInteger, checkIsPositiveNumber } from "../utils/CheckFunctions";
+import { checkIsInteger, checkIsPositiveNumber } from "../../utils/CheckFunctions";
 
 {
   /*

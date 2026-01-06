@@ -3,7 +3,7 @@ import {
   checkPalindrome,
   checkPalindrome4,
   checkPalindrome7,
-} from "../algo/checkPalindrome";
+} from "../../algo/algo1/checkPalindrome";
 
 // Tests for checkPalindrome, checkPalindrome4 and checkPalindrome7 functions
 

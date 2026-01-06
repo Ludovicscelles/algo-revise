@@ -4,7 +4,7 @@ import {
   factorial2,
   factorial3,
   factorial4,
-} from "../algo/factorial";
+} from "../../algo/algo1/factorial";
 
 describe("factorial", () => {
   it("should return 120 for input 5", () => {

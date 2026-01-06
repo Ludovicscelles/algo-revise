@@ -1,6 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getMaxValue, getMaxValue4 } from "../algo/getMaxValue";
-
+import { getMaxValue, getMaxValue4 } from "../../algo/algo1/getMaxValue";
 
 // Tests for getMaxValue and getMaxValue4 functions
 // use each to run the same tests for both implementations
