@@ -165,12 +165,23 @@ export const validateMinOneNumbersArray: (
   checkIsNumbersArray(array);
 };
 
+const ERR_MIN_TWO_NUMBERS_ARRAY =
+  "Le tableau doit contenir au minimum deux nombres.";
+
 export const validateMinTwoNumbersArray: (
-  array: unknown[]
-) => asserts array is number[] = (array) => {
-  checkIsArray(array);
-  checkMinArrayLength2(array);
-  checkIsNumbersArray(array);
+  input: unknown
+) => asserts input is number[] = (input) => {
+  if (!Array.isArray(input)) {
+    throw new Error(ERR_MIN_TWO_NUMBERS_ARRAY);
+  }
+
+  if (input.length < 2) {
+    throw new Error(ERR_MIN_TWO_NUMBERS_ARRAY);
+  }
+
+  if (!input.every((x) => typeof x === "number")) {
+    throw new Error(ERR_MIN_TWO_NUMBERS_ARRAY);
+  }
 };
 
 export const validateMinTwoIntegersArray: (
