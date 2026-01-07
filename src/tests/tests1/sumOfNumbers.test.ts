@@ -2,9 +2,9 @@ import { describe, it, expect } from "vitest";
 import { sumOfNumbers, sumOfNumbers5 } from "../../algo/algo1/sumOfNumbers";
 
 describe.each([
-  { func: sumOfNumbers, name: "sumOfNumbers" },
-  { func: sumOfNumbers5, name: "sumOfNumbers5" },
-])("$name", ({ func: fn }) => {
+  { fn: sumOfNumbers, name: "sumOfNumbers" },
+  { fn: sumOfNumbers5, name: "sumOfNumbers5" },
+])("$name", ({ fn }) => {
   it("should return the sum of numbers from 1 to n", () => {
     expect(fn(5)).toBe(15);
     expect(fn(10)).toBe(55);

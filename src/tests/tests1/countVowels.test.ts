@@ -4,9 +4,9 @@ import { countVowels, countVowels7 } from "../../algo/algo1/countVowels";
 // Tests for countVowels and countVowels7 functions
 
 describe.each([
-  { func: countVowels, name: "countVowels" },
-  { func: countVowels7, name: "countVowels7" },
-])("$name", ({ func: fn }) => {
+  { fn: countVowels, name: "countVowels" },
+  { fn: countVowels7, name: "countVowels7" },
+])("$name", ({ fn }) => {
   it("should count vowels correctly", () => {
     expect(fn("Hello World")).toBe(3);
     expect(fn("École")).toBe(3);
