@@ -6,10 +6,10 @@ import {
 } from "../../algo/algo1/reverseArray";
 
 describe.each([
-  ["reverseArray4", reverseArray4],
-  ["reverseArray5", reverseArray5],
-  ["reverseArray7", reverseArray7],
-])("%s", (_name, fn) => {
+  { func: reverseArray4, name: "reverseArray4" },
+  { func: reverseArray5, name: "reverseArray5" },
+  { func: reverseArray7, name: "reverseArray7" },
+])("$name", ({ func: fn }) => {
   it("should reverse array correctly", () => {
     expect(fn(["a", "b", "c", "d"])).toEqual(["d", "c", "b", "a"]);
     expect(fn(["hello", "world"])).toEqual(["world", "hello"]);

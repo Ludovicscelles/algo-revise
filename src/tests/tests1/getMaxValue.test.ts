@@ -4,12 +4,12 @@ import { getMaxValue, getMaxValue4 } from "../../algo/algo1/getMaxValue";
 // Tests for getMaxValue and getMaxValue4 functions
 // use each to run the same tests for both implementations
 describe.each([
-  // Pair of function name and function reference
-  ["getMaxValue", getMaxValue],
-  ["getMaxValue4", getMaxValue4],
-  // placeholder "%s" will be replaced by the first element of each sub-array
-  // fn will refer to the function being tested
-])("%s", (_name, fn) => {
+  // Pairing function names with their implementations
+{ func: getMaxValue, name: "getMaxValue" },
+{ func: getMaxValue4, name: "getMaxValue4" },
+  // placeholder "$name" will be replaced by the function name
+  // function implementation will be passed as "fn"
+])("$name", ({ func: fn }) => {
   // Test cases - common for both functions with fn
   it("should return max value from a integers array", () => {
     expect(fn([15, 25, 96, 112, 88])).toBe(112);
