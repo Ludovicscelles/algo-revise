@@ -229,8 +229,9 @@ function reverseAString(string: unknown): string {
   checkIsString(string);
 
   let reversedString: string = "";
+  const strLength: number = string.length;
 
-  for (let i = 0; i < string.length; i++) {
+  for (let i = 0; i < strLength; i++) {
     reversedString = string[i] + reversedString;
   }
   return reversedString;
@@ -254,8 +255,9 @@ function reverseAString2(string2: unknown): string {
   checkIsString(string2);
 
   let reversedString2: string = "";
+  const strLength2: number = string2.length;
 
-  for (let i = string2.length - 1; i >= 0; i--) {
+  for (let i = strLength2 - 1; i >= 0; i--) {
     reversedString2 += string2[i];
   }
   return reversedString2;
@@ -279,10 +281,11 @@ function reverseAString3(string3: unknown): string {
   checkIsString(string3);
 
   let reversedString3: string = "";
+  const strLength3: number = string3.length;
 
   let i = 0;
 
-  while (i < string3.length) {
+  while (i < strLength3) {
     reversedString3 = string3[i] + reversedString3;
     i++;
   }
@@ -307,8 +310,9 @@ function reverseAString4(string4: unknown): string {
   checkIsString(string4);
 
   let reversedString4: string = "";
+  const strLength4: number = string4.length;
 
-  let i = string4.length - 1;
+  let i = strLength4 - 1;
 
   while (i >= 0) {
     reversedString4 = reversedString4 + string4[i];
@@ -335,13 +339,14 @@ function reverseAString5(string5: unknown): string {
   checkIsString(string5);
 
   let reversedString5: string = "";
+  const strLength5: number = string5.length;
 
   let i = 0;
 
   do {
     reversedString5 = string5[i] + reversedString5;
     i++;
-  } while (i < string5.length);
+  } while (i < strLength5);
   return reversedString5;
 }
 
@@ -363,8 +368,9 @@ function reverseAString6(string6: unknown): string {
   checkIsString(string6);
 
   let reversedString6: string = "";
+  const strLength6: number = string6.length;
 
-  let i = string6.length - 1;
+  let i = strLength6 - 1;
 
   do {
     reversedString6 = reversedString6 + string6[i];
