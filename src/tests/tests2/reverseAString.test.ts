@@ -6,10 +6,10 @@ import {
 } from "../../algo/algo2/reverseAString";
 
 describe.each([
-  ["reverseAString", reverseAString],
-  ["reverseAString2", reverseAString2],
-  ["reverseAString7", reverseAString7],
-])("%s", (_name, fn) => {
+  { fn: reverseAString, name: "reverseAString" },
+  { fn: reverseAString2, name: "reverseAString2" },
+  { fn: reverseAString7, name: "reverseAString7" },
+])("$name", ({ fn }) => {
   it("should return the reversed string for a valid input string", () => {
     expect(fn("hello")).toBe("olleh");
     expect(fn("")).toBe("");

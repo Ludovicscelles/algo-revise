@@ -7,11 +7,11 @@ import {
 } from "../../algo/algo1/factorial";
 
 describe.each([
-  { func: factorial, name: "factorial" },
-  { func: factorial2, name: "factorial2" },
-  { func: factorial3, name: "factorial3" },
-  { func: factorial4, name: "factorial4" },
-])("$name", ({ func: fn }) => {
+  { fn: factorial, name: "factorial" },
+  { fn: factorial2, name: "factorial2" },
+  { fn: factorial3, name: "factorial3" },
+  { fn: factorial4, name: "factorial4" },
+])("$name", ({ fn }) => {
   it("should return the factorial of a positive integer", () => {
     expect(fn(5)).toBe(120);
     expect(fn(0)).toBe(1);

@@ -5,11 +5,11 @@ import {
 } from "../../algo/algo2/displayMultiplicationTables";
 
 describe.each([
-  { func: displayMultiplicationTables, name: "displayMultiplicationTables" },
-  { func: displayMultiplicationTables5, name: "displayMultiplicationTables5" },
-])("$name", ({ func }) => {
+  { fn: displayMultiplicationTables, name: "displayMultiplicationTables" },
+  { fn: displayMultiplicationTables5, name: "displayMultiplicationTables5" },
+])("$name", ({ fn }) => {
   it("should return formated multiplication tables up to the given number", () => {
-    const result = func(3);
+    const result = fn(3);
     const expectedOutput =
       "Table de 1\n" +
       "-----------------\n" +
@@ -54,19 +54,19 @@ describe.each([
   });
 
   it("should throw an error for non-integer inputs", () => {
-    expect(() => func(2.5)).toThrowError(
+    expect(() => fn(2.5)).toThrowError(
       "La saisie doit être un nombre entier."
     );
-    expect(() => func("string")).toThrowError(
+    expect(() => fn("string")).toThrowError(
       "La saisie doit être un nombre entier."
     );
-    expect(() => func(null)).toThrowError(
+    expect(() => fn(null)).toThrowError(
       "La saisie doit être un nombre entier."
     );
-    expect(() => func(undefined)).toThrowError(
+    expect(() => fn(undefined)).toThrowError(
       "La saisie doit être un nombre entier."
     );
-    expect(() => func({})).toThrowError(
+    expect(() => fn({})).toThrowError(
       "La saisie doit être un nombre entier."
     );
   });

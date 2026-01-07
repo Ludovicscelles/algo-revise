@@ -5,11 +5,11 @@ import { getMaxValue, getMaxValue4 } from "../../algo/algo1/getMaxValue";
 // use each to run the same tests for both implementations
 describe.each([
   // Pairing function names with their implementations
-{ func: getMaxValue, name: "getMaxValue" },
-{ func: getMaxValue4, name: "getMaxValue4" },
+{ fn: getMaxValue, name: "getMaxValue" },
+{ fn: getMaxValue4, name: "getMaxValue4" },
   // placeholder "$name" will be replaced by the function name
   // function implementation will be passed as "fn"
-])("$name", ({ func: fn }) => {
+])("$name", ({ fn }) => {
   // Test cases - common for both functions with fn
   it("should return max value from a integers array", () => {
     expect(fn([15, 25, 96, 112, 88])).toBe(112);

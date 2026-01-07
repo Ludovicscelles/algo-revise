@@ -6,10 +6,10 @@ import {
 } from "../../algo/algo2/getDigitCount";
 
 describe.each([
-  ["getDigitCount", getDigitCount],
-  ["getDigitCount2", getDigitCount2],
-  ["getDigitCount5", getDigitCount5],
-])("%s", (_name, fn) => {
+  { fn: getDigitCount, name: "getDigitCount" },
+  { fn: getDigitCount2, name: "getDigitCount2" },
+  { fn: getDigitCount5, name: "getDigitCount5" },
+])("$name", ({ fn }) => {
   it("should return correct digit count for positive integers", () => {
     expect(fn(12345)).toBe(5);
     expect(fn(0)).toBe(1);
