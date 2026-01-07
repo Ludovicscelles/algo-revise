@@ -740,7 +740,7 @@ Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
 */
 }
 
-class Table {
+class Tables {
   constructor(private n: number) {
     checkIsInteger(n);
   }
@@ -751,17 +751,23 @@ class Table {
   //   this.n = n;
   // }
 
-  generate(): string {
+  private generateSingleTable(value: number): string {
     const lines = Array.from(
       { length: 10 },
-      (_, i) => `${this.n} x ${i + 1} = ${this.n * (i + 1)}`
+      (_, i) => `${value} x ${i + 1} = ${value * (i + 1)}`
     ).join(`\n`);
-    return `Table de ${this.n}\n-----------------\n${lines}`;
+    return `Table de ${value}\n-----------------\n${lines}`;
+  }
+
+  generate(): string {
+    return Array.from({ length: this.n }, (_, i) =>
+      this.generateSingleTable(i + 1)
+    ).join(`\n\n`);
   }
 }
 
-const table5 = new Table(5);
-console.log(table5.generate());
+const table5 = new Tables(5);
+console.log("table 5:" + table5.generate());
 
 {
   /*
@@ -773,35 +779,32 @@ Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
 */
 }
 
-// class with comments for TableWithComments
-class TableWithComments {
-  // Constructor to initialize the table with a specific number
-  // The number for which the multiplication table will be generated
+// class with comments for Tables
+class TablesBis {
   constructor(private n: number) {
-    // Validate that the input number is an integer
     checkIsInteger(n);
   }
 
-  // Method to generate the multiplication table as a formatted string
-  // This method creates the multiplication lines and formats them with a title and separator
-  generate(): string {
-    // Create an array of multiplication lines using Array.from
-    // The array has 10 elements, each representing a multiplication from 1 to 10
+  // constructor (private n: number) {} is same as:
+  // private n: number;
+  // constructor(n: number) {
+  //   this.n = n;
+  // }
+
+  private generateSingleTable(value: number): string {
     const lines = Array.from(
-      // Create an array with 10 elements
-      //  The underscore (_) is a placeholder for the unused first argument (the current element)
       { length: 10 },
-      // For each index (i), generate the multiplication line in the format "n x (i+1) = result"
-      (_, i) => `${this.n} x ${i + 1} = ${this.n * (i + 1)}`
-      // Join the array of lines into a single string with newline characters between each line
+      (_, i) => `${value} x ${i + 1} = ${value * (i + 1)}`
     ).join(`\n`);
-    // Return the complete formatted multiplication table with title and separator
-    return `Table de ${this.n}\n-----------------\n${lines}`;
+    return `Table de ${value}\n-----------------\n${lines}`;
+  }
+
+  generate(): string {
+    return Array.from({ length: this.n }, (_, i) =>
+      this.generateSingleTable(i + 1)
+    ).join(`\n\n`);
   }
 }
-
-const table5Bis = new TableWithComments(5);
-console.log(table5Bis.generate());
 
 {
   /*
