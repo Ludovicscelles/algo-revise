@@ -2,9 +2,9 @@ import { describe, it, expect } from "vitest";
 import { fizzBuzz3, fizzBuzz5 } from "../../algo/algo1/fizzBuzz";
 
 describe.each([
-  ["fizzBuzz3", fizzBuzz3],
-  ["fizzBuzz5", fizzBuzz5],
-])("%s", (_name, fn) => {
+  { func: fizzBuzz3, name: "fizzBuzz3" },
+  { func: fizzBuzz5, name: "fizzBuzz5" },
+])("$name", ({ func: fn }) => {
   it("should return correct FizzBuzz array for input 15", () => {
     const result = fn(15);
     expect(result).toEqual([

@@ -10,10 +10,10 @@ const sorted= (arr: number[]): number[] => {
 };
 
 describe.each([
-  ["findDuplicate3", findDuplicate3],
-  ["findDuplicate5", findDuplicate5],
-  ["findDuplicate7", findDuplicate7],
-])("%s", (_name, fn) => {
+  { func: findDuplicate3, name: "findDuplicate3" },
+  { func: findDuplicate5, name: "findDuplicate5" },
+  { func: findDuplicate7, name: "findDuplicate7" },
+])("$name", ({ func: fn }) => {
   it("should return correct duplicate numbers for array with duplicates", () => {
     const result = fn([1, 2, 3, 2, 4, 5, 3, 6, 1]);
     expect(sorted(result)).toEqual([1, 2, 3]);

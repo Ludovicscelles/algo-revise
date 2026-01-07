@@ -8,10 +8,10 @@ import {
 // Tests for checkPalindrome, checkPalindrome4 and checkPalindrome7 functions
 
 describe.each([
-  ["checkPalindrome", checkPalindrome],
-  ["checkPalindrome4", checkPalindrome4],
-  ["checkPalindrome7", checkPalindrome7],
-])("%s", (_name, fn) => {
+  { func: checkPalindrome, name: "checkPalindrome" },
+  { func: checkPalindrome4, name: "checkPalindrome4" },
+  { func: checkPalindrome7, name: "checkPalindrome7" },
+])("$name", ({ func: fn }) => {
   it("should identify palindromes correctly", () => {
     expect(fn("Anna")).toBe("Il s'agit bien d'un palindrome.");
     expect(fn("Élu par cette crapule")).toBe("Il s'agit bien d'un palindrome.");

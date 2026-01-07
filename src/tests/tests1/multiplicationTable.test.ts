@@ -5,9 +5,9 @@ import {
 } from "../../algo/algo1/multiplicationTable";
 
 describe.each([
-  ["multiplicationTable", multiplicationTable],
-  ["multiplicationTable7", multiplicationTable7],
-])("%s", (_name, fn) => {
+  { func: multiplicationTable, name: "multiplicationTable" },
+  { func: multiplicationTable7, name: "multiplicationTable7" },
+])("$name", ({ func: fn }) => {
   it("should return correct multiplication table for input 5", () => {
     const expectedOutput =
       "5 x 1 = 5\n" +
