@@ -7,6 +7,7 @@ import {
   checkMinArrayLength2,
   validateMinOneNumbersArray,
   validateMinTwoNumbersArray,
+  checkIsPositiveNumberMinOne,
 } from "./utils/CheckFunctions";
 
 import { cleanString, words } from "./utils/Normalize";
@@ -760,9 +761,11 @@ class Tables {
   }
 
   generate(): string {
-    return Array.from({ length: this.n }, (_, i) =>
-      this.generateSingleTable(i + 1)
-    ).join(`\n\n`) + `\n`;
+    return (
+      Array.from({ length: this.n }, (_, i) =>
+        this.generateSingleTable(i + 1)
+      ).join(`\n\n`) + `\n`
+    );
   }
 }
 
@@ -812,14 +815,16 @@ class TablesBis {
   // Public method to generate multiplication tables from 1 to n
   generate(): string {
     // Create an array of multiplication tables for each number from 1 to n
-    return Array.from(
-      // Create an array with n elements
-      { length: this.n },
-      // For each element, generate the multiplication table using the private method
-      //  i is the index, so i + 1 gives the number from 1 to n
-      (_, i) => this.generateSingleTable(i + 1)
-      // join all tables with double newlines for separation
-    ).join(`\n\n`) + `\n`;
+    return (
+      Array.from(
+        // Create an array with n elements
+        { length: this.n },
+        // For each element, generate the multiplication table using the private method
+        //  i is the index, so i + 1 gives the number from 1 to n
+        (_, i) => this.generateSingleTable(i + 1)
+        // join all tables with double newlines for separation
+      ).join(`\n\n`) + `\n`
+    );
   }
 }
 
@@ -1136,11 +1141,7 @@ Boucle for.
 
 function checkPrimeNumber(nbr: unknown): string {
   checkIsInteger(nbr);
-  checkIsPositiveNumber(nbr);
-
-  if (nbr <= 1) {
-    return `Il ne s'agit pas d'un nombre premier`;
-  }
+  checkIsPositiveNumberMinOne(nbr);
 
   for (let i = 2; i < nbr; i++) {
     if (nbr % i === 0) {
@@ -1152,7 +1153,7 @@ function checkPrimeNumber(nbr: unknown): string {
 
 const nbr: number = 7;
 const primeNumber: string = checkPrimeNumber(nbr);
-console.log(primeNumber);
+console.log("primeNumber:", primeNumber);
 
 {
   /*
@@ -1164,11 +1165,7 @@ Boucle for inversé.
 
 function checkPrimeNumber2(nbr2: unknown): string {
   checkIsInteger(nbr2);
-  checkIsPositiveNumber(nbr2);
-
-  if (nbr2 <= 1) {
-    return `Il s'agit pas d'un nombre premier`;
-  }
+  checkIsPositiveNumberMinOne(nbr2);
 
   for (let i = nbr2 - 1; i >= 2; i--) {
     if (nbr2 % i === 0) {
@@ -1180,7 +1177,7 @@ function checkPrimeNumber2(nbr2: unknown): string {
 
 const nbr2: number = 11;
 const primeNumber2: string = checkPrimeNumber2(nbr2);
-console.log(primeNumber2);
+console.log("primeNumber2:", primeNumber2);
 
 {
   /*
@@ -1192,11 +1189,7 @@ Boucle while.
 
 function checkPrimeNumber3(nbr3: unknown): string {
   checkIsInteger(nbr3);
-  checkIsPositiveNumber(nbr3);
-
-  if (nbr3 <= 1) {
-    return `Il ne s'agit pas d'un nombre premier`;
-  }
+  checkIsPositiveNumberMinOne(nbr3);
 
   let i = 2;
 
@@ -1211,7 +1204,7 @@ function checkPrimeNumber3(nbr3: unknown): string {
 
 const nbr3: number = 13;
 const primeNumber3: string = checkPrimeNumber3(nbr3);
-console.log(primeNumber3);
+console.log("primeNumber3:", primeNumber3);
 
 {
   /*
@@ -1223,11 +1216,7 @@ Boucle while inversé.
 
 function checkPrimeNumber4(nbr4: unknown): string {
   checkIsInteger(nbr4);
-  checkIsPositiveNumber(nbr4);
-
-  if (nbr4 <= 1) {
-    return `Il ne s'agit pas d'un nombre premier`;
-  }
+  checkIsPositiveNumberMinOne(nbr4);
 
   let i = nbr4 - 1;
 
@@ -1242,7 +1231,7 @@ function checkPrimeNumber4(nbr4: unknown): string {
 
 const nbr4: number = 18;
 const primeNumber4: string = checkPrimeNumber4(nbr4);
-console.log(primeNumber4);
+console.log("primeNumber4:", primeNumber4);
 
 {
   /*
@@ -1254,11 +1243,7 @@ Boucle do while.
 
 function checkPrimeNumber5(nbr5: unknown): string {
   checkIsInteger(nbr5);
-  checkIsPositiveNumber(nbr5);
-
-  if (nbr5 <= 1) {
-    return `Il ne s'agit pas d'un nombre premier`;
-  }
+  checkIsPositiveNumberMinOne(nbr5);
 
   let i = 2;
 
@@ -1273,8 +1258,7 @@ function checkPrimeNumber5(nbr5: unknown): string {
 
 const nbr5: number = 19;
 const primeNumber5: string = checkPrimeNumber5(nbr5);
-console.log(primeNumber5);
-
+console.log("primeNumber5:", primeNumber5);
 {
   /*
   5v6. Nombre premier
@@ -1285,11 +1269,7 @@ Boucle do while inversé.
 
 function checkPrimeNumber6(nbr6: unknown): string {
   checkIsInteger(nbr6);
-  checkIsPositiveNumber(nbr6);
-
-  if (nbr6 <= 1) {
-    return `Il ne s'agit pas d'un nombre premier`;
-  }
+  checkIsPositiveNumberMinOne(nbr6);
 
   let i = nbr6 - 1;
 
@@ -1304,7 +1284,7 @@ function checkPrimeNumber6(nbr6: unknown): string {
 
 const nbr6: number = 24;
 const primeNumber6: string = checkPrimeNumber6(nbr6);
-console.log(primeNumber6);
+console.log("primeNumber6:", primeNumber6);
 
 {
   /*
@@ -1318,11 +1298,7 @@ Limite des itérations à la racine carrée du nombre.
 
 function isPrimeNumber(nbr7: unknown): boolean {
   checkIsInteger(nbr7);
-  checkIsPositiveNumber(nbr7);
-
-  if (nbr7 <= 1) {
-    return false;
-  }
+  checkIsPositiveNumberMinOne(nbr7);
 
   const squareNbr7: number = Math.sqrt(nbr7);
 
@@ -1336,7 +1312,7 @@ function isPrimeNumber(nbr7: unknown): boolean {
 
 const nbr7: number = 30;
 const primeNumber7: boolean = isPrimeNumber(nbr7);
-console.log(primeNumber7);
+console.log("primeNumber7:", primeNumber7);
 
 {
   /*
@@ -1350,11 +1326,7 @@ Limite des itérations à la racine carrée du nombre.
 
 function isPrimeNumber2(nbr8: unknown): boolean {
   checkIsInteger(nbr8);
-  checkIsPositiveNumber(nbr8);
-
-  if (nbr8 <= 1) {
-    return false;
-  }
+  checkIsPositiveNumberMinOne(nbr8);
 
   const squareNbr8: number = Math.floor(Math.sqrt(nbr8));
 
@@ -1368,7 +1340,7 @@ function isPrimeNumber2(nbr8: unknown): boolean {
 
 const nbr8: number = 38;
 const primeNumber8: boolean = isPrimeNumber2(nbr8);
-console.log(primeNumber8);
+console.log("primeNumber8:", primeNumber8);
 
 {
   /*
@@ -1382,11 +1354,7 @@ Limite des itérations à la racine carrée du nombre.
 
 function isPrimeNumber3(nbr9: unknown): boolean {
   checkIsInteger(nbr9);
-  checkIsPositiveNumber(nbr9);
-
-  if (nbr9 <= 1) {
-    return false;
-  }
+  checkIsPositiveNumberMinOne(nbr9);
 
   const sqrtNbr9: number = Math.sqrt(nbr9);
 
@@ -1403,7 +1371,7 @@ function isPrimeNumber3(nbr9: unknown): boolean {
 
 const nbr9: number = 42;
 const primeNumber9: boolean = isPrimeNumber3(nbr9);
-console.log(primeNumber9);
+console.log("primeNumber9:", primeNumber9);
 
 {
   /*
@@ -1417,11 +1385,7 @@ Limite des itérations à la racine carrée du nombre.
 
 function isPrimeNumber4(nbr10: unknown): boolean {
   checkIsInteger(nbr10);
-  checkIsPositiveNumber(nbr10);
-
-  if (nbr10 <= 1) {
-    return false;
-  }
+  checkIsPositiveNumberMinOne(nbr10);
 
   const sqrtNbr10: number = Math.floor(Math.sqrt(nbr10));
 
@@ -1438,7 +1402,7 @@ function isPrimeNumber4(nbr10: unknown): boolean {
 
 const nbr10: number = 48;
 const primeNumber10: boolean = isPrimeNumber4(nbr10);
-console.log(primeNumber10);
+console.log("primeNumber10:", primeNumber10);
 
 {
   /*
@@ -1452,11 +1416,7 @@ Limite des itérations à la racine carrée du nombre.
 
 function isPrimeNumber5(nbr11: unknown): boolean {
   checkIsInteger(nbr11);
-  checkIsPositiveNumber(nbr11);
-
-  if (nbr11 <= 1) {
-    return false;
-  }
+  checkIsPositiveNumberMinOne(nbr11);
 
   const sqrtNbr11: number = Math.sqrt(nbr11);
 
@@ -1473,7 +1433,7 @@ function isPrimeNumber5(nbr11: unknown): boolean {
 
 const nbr11: number = 54;
 const primeNumber11: boolean = isPrimeNumber5(nbr11);
-console.log(primeNumber11);
+console.log("primeNumber11:", primeNumber11);
 
 {
   /*
@@ -1487,11 +1447,7 @@ Limite des itérations à la racine carrée du nombre.
 
 function isPrimeNumber6(nbr12: unknown): boolean {
   checkIsInteger(nbr12);
-  checkIsPositiveNumber(nbr12);
-
-  if (nbr12 <= 1) {
-    return false;
-  }
+  checkIsPositiveNumberMinOne(nbr12);
 
   const sqrtNbr12: number = Math.floor(Math.sqrt(nbr12));
 
@@ -1508,7 +1464,7 @@ function isPrimeNumber6(nbr12: unknown): boolean {
 
 const nbr12: number = 59;
 const primeNumber12: boolean = isPrimeNumber6(nbr12);
-console.log(primeNumber12);
+console.log("primeNumber12:", primeNumber12);
 
 {
   /*
