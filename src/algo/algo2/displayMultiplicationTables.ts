@@ -48,6 +48,12 @@ export class Tables {
     checkIsInteger(n);
   }
 
+  // constructor (private n: number) {} is same as:
+  // private n: number;
+  // constructor(n: number) {
+  //   this.n = n;
+  // }
+
   private generateSingleTable(value: number): string {
     const lines = Array.from(
       { length: 10 },
@@ -57,8 +63,10 @@ export class Tables {
   }
 
   generate(): string {
-    return Array.from({ length: this.n }, (_, i) =>
-      this.generateSingleTable(i + 1)
-    ).join(`\n\n`);
+    return (
+      Array.from({ length: this.n }, (_, i) =>
+        this.generateSingleTable(i + 1)
+      ).join(`\n\n`) + `\n`
+    );
   }
 }
