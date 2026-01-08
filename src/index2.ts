@@ -760,9 +760,11 @@ class Tables {
   }
 
   generate(): string {
-    return Array.from({ length: this.n }, (_, i) =>
-      this.generateSingleTable(i + 1)
-    ).join(`\n\n`);
+    return (
+      Array.from({ length: this.n }, (_, i) =>
+        this.generateSingleTable(i + 1)
+      ).join(`\n\n`) + `\n`
+    );
   }
 }
 
@@ -802,9 +804,12 @@ class TablesBis {
   generate(): string {
     return Array.from({ length: this.n }, (_, i) =>
       this.generateSingleTable(i + 1)
-    ).join(`\n\n`);
+    ).join(`\n\n`) + `\n`;
   }
 }
+
+const table5Bis = new TablesBis(5);
+console.log("table 3 bis:" + table5Bis.generate());
 
 {
   /*
