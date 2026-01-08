@@ -1172,7 +1172,7 @@ function checkPrimeNumber2(nbr2: unknown): string {
       return `Il ne s'agit pas d'un nombre premier`;
     }
   }
-  return `Il ne s'agit d'un nombre premier`;
+  return `Il s'agit d'un nombre premier`;
 }
 
 const nbr2: number = 11;
