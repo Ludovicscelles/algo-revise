@@ -1328,6 +1328,10 @@ function isPrimeNumber(nbr7: unknown): boolean {
   checkIsInteger(nbr7);
   checkIsPositiveNumberMinOne(nbr7);
 
+  if (nbr7 === 1) {
+    return false;
+  }
+
   const squareNbr7: number = Math.sqrt(nbr7);
 
   for (let i = 2; i <= squareNbr7; i++) {
@@ -1356,6 +1360,10 @@ function isPrimeNumber2(nbr8: unknown): boolean {
   checkIsInteger(nbr8);
   checkIsPositiveNumberMinOne(nbr8);
 
+  if (nbr8 === 1) {
+    return false;
+  }
+
   const squareNbr8: number = Math.floor(Math.sqrt(nbr8));
 
   for (let i = squareNbr8; i >= 2; i--) {
@@ -1383,6 +1391,10 @@ Limite des itérations à la racine carrée du nombre.
 function isPrimeNumber3(nbr9: unknown): boolean {
   checkIsInteger(nbr9);
   checkIsPositiveNumberMinOne(nbr9);
+
+  if (nbr9 === 1) {
+    return false;
+  }
 
   const sqrtNbr9: number = Math.sqrt(nbr9);
 
@@ -1415,6 +1427,10 @@ function isPrimeNumber4(nbr10: unknown): boolean {
   checkIsInteger(nbr10);
   checkIsPositiveNumberMinOne(nbr10);
 
+  if (nbr10 === 1) {
+    return false;
+  }
+
   const sqrtNbr10: number = Math.floor(Math.sqrt(nbr10));
 
   let i = sqrtNbr10;
@@ -1446,6 +1462,10 @@ function isPrimeNumber5(nbr11: unknown): boolean {
   checkIsInteger(nbr11);
   checkIsPositiveNumberMinOne(nbr11);
 
+  if (nbr11 <= 3) {
+    return nbr11 === 1 ? false : true;
+  }
+
   const sqrtNbr11: number = Math.sqrt(nbr11);
 
   let i = 2;
@@ -1476,6 +1496,10 @@ Limite des itérations à la racine carrée du nombre.
 function isPrimeNumber6(nbr12: unknown): boolean {
   checkIsInteger(nbr12);
   checkIsPositiveNumberMinOne(nbr12);
+
+  if (nbr12 <= 3) {
+    return nbr12 === 1 ? false : true;
+  }
 
   const sqrtNbr12: number = Math.floor(Math.sqrt(nbr12));
 
