@@ -760,16 +760,14 @@ class Tables {
   }
 
   generate(): string {
-    return (
-      Array.from({ length: this.n }, (_, i) =>
-        this.generateSingleTable(i + 1)
-      ).join(`\n\n`) + `\n`
-    );
+    return Array.from({ length: this.n }, (_, i) =>
+      this.generateSingleTable(i + 1)
+    ).join(`\n\n`) + `\n`;
   }
 }
 
 const table5 = new Tables(5);
-console.log("table 5:" + table5.generate());
+console.log("tables 5:" + table5.generate());
 
 {
   /*
@@ -784,6 +782,7 @@ Chaque ligne doit être affichée sous la forme : 5 x 3 = 15
 // class with comments for Tables
 class TablesBis {
   constructor(private n: number) {
+    // Validate that the input is an integer
     checkIsInteger(n);
   }
 
@@ -793,23 +792,39 @@ class TablesBis {
   //   this.n = n;
   // }
 
+  // Private method to generate a single multiplication table for a given value
+  // value: The number for which the multiplication table is generated
+  // Returns the formatted multiplication table as a string
   private generateSingleTable(value: number): string {
+    // Create an array of multiplication lines from 1 to 10
     const lines = Array.from(
+      // Create an array with 10 elements
       { length: 10 },
+      // For each element, generate the multiplication line
+      // i is the index, so i + 1 gives the multiplier from 1 to 10
       (_, i) => `${value} x ${i + 1} = ${value * (i + 1)}`
+      // Join the lines with newline characters to form the complete table
     ).join(`\n`);
+    // Return the complete multiplication table with title and separator
     return `Table de ${value}\n-----------------\n${lines}`;
   }
 
+  // Public method to generate multiplication tables from 1 to n
   generate(): string {
-    return Array.from({ length: this.n }, (_, i) =>
-      this.generateSingleTable(i + 1)
+    // Create an array of multiplication tables for each number from 1 to n
+    return Array.from(
+      // Create an array with n elements
+      { length: this.n },
+      // For each element, generate the multiplication table using the private method
+      //  i is the index, so i + 1 gives the number from 1 to n
+      (_, i) => this.generateSingleTable(i + 1)
+      // join all tables with double newlines for separation
     ).join(`\n\n`) + `\n`;
   }
 }
 
-const table5Bis = new TablesBis(5);
-console.log("table 3 bis:" + table5Bis.generate());
+const table5Bis = new TablesBis(3);
+console.log("table 5 bis:" + table5Bis.generate());
 
 {
   /*
