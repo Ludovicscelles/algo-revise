@@ -17,7 +17,6 @@ export function displayMultiplicationTables(number: unknown): string {
   return displayTimesTables;
 }
 
-
 export function displayMultiplicationTables5(number5: unknown): string {
   checkIsInteger(number5);
 
@@ -42,4 +41,24 @@ export function displayMultiplicationTables5(number5: unknown): string {
     i++;
   } while (i <= number5);
   return displayTimesTables5;
+}
+
+export class Tables {
+  constructor(private n: number) {
+    checkIsInteger(n);
+  }
+
+  private generateSingleTable(value: number): string {
+    const lines = Array.from(
+      { length: 10 },
+      (_, i) => `${value} x ${i + 1} = ${value * (i + 1)}`
+    ).join(`\n`);
+    return `Table de ${value}\n-----------------\n${lines}`;
+  }
+
+  generate(): string {
+    return Array.from({ length: this.n }, (_, i) =>
+      this.generateSingleTable(i + 1)
+    ).join(`\n\n`);
+  }
 }
