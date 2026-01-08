@@ -45,3 +45,20 @@ export function digitsSum8(integer8: unknown): number {
   }
   return sum8;
 }
+
+export class DigitsSumUtils {
+  constructor(private integer: number) {
+    checkIsInteger(integer);
+  }
+
+  sum(): number {
+    let sum: number = 0;
+    let integerAsString: string = Math.abs(this.integer).toString();
+
+    for (let str of integerAsString) {
+      const digit: number = Number(parseInt(str));
+      sum += digit;
+    }
+    return sum;
+  }
+}
