@@ -184,12 +184,24 @@ export const validateMinTwoNumbersArray: (
   }
 };
 
+
+const ERR_MIN_TWO_INTEGERS_ARRAY =
+  "La saisie doit être un tableau contenant au moins deux nombres entiers.";
+
 export const validateMinTwoIntegersArray: (
-  array: unknown[]
-) => asserts array is number[] = (array) => {
-  checkIsArray(array);
-  checkMinArrayLength2(array);
-  checkIsIntegersArray(array);
+  input: unknown
+) => asserts input is number[] = (input) => {
+  if (!Array.isArray(input)) {
+    throw new Error(ERR_MIN_TWO_INTEGERS_ARRAY);
+  }
+
+  if (input.length < 2) {
+    throw new Error(ERR_MIN_TWO_INTEGERS_ARRAY);
+  }
+
+  if (!input.every((x) => Number.isInteger(x))) {
+    throw new Error(ERR_MIN_TWO_INTEGERS_ARRAY);
+  }
 };
 
 const ERR_MIN_TWO_STRINGS_ARRAY =
