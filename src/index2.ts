@@ -1,3 +1,4 @@
+import { valid } from "joi";
 import {
   checkIsInteger,
   checkIsString,
@@ -8,6 +9,7 @@ import {
   validateMinOneNumbersArray,
   validateMinTwoNumbersArray,
   checkIsPositiveNumberMinOne,
+  validateMinTwoIntegersArray,
 } from "./utils/CheckFunctions";
 
 import { cleanString, words } from "./utils/Normalize";
@@ -2011,9 +2013,7 @@ Boucle for.
 }
 
 function filterOddNumbers(nbrArray: unknown[]): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2040,9 +2040,7 @@ Boucle for inversé.
 }
 
 function filterOddNumbers2(nbrArray: unknown[]): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2069,9 +2067,7 @@ Boucle while.
 }
 
 function filterOddNumbers3(nbrArray: unknown[]): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2101,9 +2097,7 @@ Boucle while inversé.
 }
 
 function filterOddNumbers4(nbrArray: unknown[]): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2133,9 +2127,7 @@ Boucle do while.
 }
 
 function filterOddNumbers5(nbrArray: unknown[]): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2165,9 +2157,7 @@ Boucle do while inversé.
 }
 
 function filterOddNumbers6(nbrArray: unknown): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2197,9 +2187,7 @@ Boucle for ... of.
 }
 
 function filterOddNumbers7(nbrArray: unknown[]): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2226,9 +2214,7 @@ Méthode reduce.
 }
 
 function filterOddNumbers8(nbrArray: unknown[]): number[] {
-  checkIsArray(nbrArray);
-  checkMinArrayLength2(nbrArray);
-  checkIsIntegersArray(nbrArray);
+  validateMinTwoIntegersArray(nbrArray);
 
   const numbersArray = nbrArray as number[];
 
@@ -2258,12 +2244,8 @@ Méthode reduce.
 
 // function with comments for filterOddNumbers8
 function filterOddNumbers8WithComments(nbrArray: unknown[]): number[] {
-  // Validate that the input is an array
-  checkIsArray(nbrArray);
-  // Validate that the array has at least 2 elements
-  checkMinArrayLength2(nbrArray);
-  // Validate that all elements in the array are integers
-  checkIsIntegersArray(nbrArray);
+  // Validate that the input is an array with at least two integers
+  validateMinTwoIntegersArray(nbrArray);
 
   // Cast the input array to an array of numbers
   const numbersArray = nbrArray as number[];
