@@ -41,24 +41,18 @@ export const stringWithoutSpacesWithComments: (str: string) => string = (
 
 export const words: (str: string) => string[] = (str) => {
   return str
-    .split(" ")
-    .map((word) => word.replace(/[^\p{L}\p{N}-]/gu, ""))
-    .filter((word) => word.length > 0);
+    .split(/[^\p{L}\p{N}-]+/gu)
+    .filter(Boolean);
 };
 
 // function to split a string into words, removing punctuation
-// keeps letters (including accented), numbers, and hyphens within words
+// and filtering out empty strings
 export const wordsWithComments: (str: string) => string[] = (str) => {
-  return (
-    str
-      // split the string by spaces to get individual words
-      .split(" ")
-      // clean each word by removing unwanted characters
-      // keep letters (including accented), numbers, and hyphens
-      .map((word) => word.replace(/[^\p{L}\p{N}-]/gu, ""))
-      // filter out any empty strings resulting from the cleaning process
-      .filter((word) => word.length > 0)
-  );
+  // split the string using regex to match non-letter, non-number, non-hyphen characters
+  return str
+    .split(/[^\p{L}\p{N}-]+/gu)
+    // filter out any empty strings from the resulting array
+    .filter(Boolean);
 };
 
 export const wordsWithSpaces: (str: string) => string[] = (str) => {
