@@ -16,8 +16,8 @@ describe.each([
 ])("$name", ({ fn }) => {
   it("should return correct letter count for valid strings", () => {
     expect(fn("Hello World")).toBe(10);
-    expect(fn("   Leading and trailing spaces   ")).toBe(27);
-    expect(fn("Special characters! @#$%^&*()")).toBe(25);
+    expect(fn("   Leading and trailing spaces   ")).toBe(24);
+    expect(fn("Special characters! @#$%^&*()")).toBe(17);
     expect(fn("")).toBe(0);
     expect(fn("     ")).toBe(0);
   });
