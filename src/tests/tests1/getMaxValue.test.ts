@@ -5,8 +5,8 @@ import { getMaxValue, getMaxValue4 } from "../../algo/algo1/getMaxValue";
 // use each to run the same tests for both implementations
 describe.each([
   // Pairing function names with their implementations
-{ fn: getMaxValue, name: "getMaxValue" },
-{ fn: getMaxValue4, name: "getMaxValue4" },
+  { fn: getMaxValue, name: "getMaxValue" },
+  { fn: getMaxValue4, name: "getMaxValue4" },
   // placeholder "$name" will be replaced by the function name
   // function implementation will be passed as "fn"
 ])("$name", ({ fn }) => {
@@ -22,24 +22,24 @@ describe.each([
   });
   it("should throw an error if array has less than two elements", () => {
     expect(() => fn([42])).toThrowError(
-      "Le tableau doit contenir au minimum deux éléments"
+      "La saisie doit être un tableau contenant strictement des nombres entiers et au moins deux éléments."
     );
     expect(() => fn([])).toThrowError(
-      "Le tableau doit contenir au minimum deux éléments"
+      "La saisie doit être un tableau contenant strictement des nombres entiers et au moins deux éléments."
     );
   });
   it("should throw an error if array contains non-integer values", () => {
     expect(() => fn([15, 25, 96.5, 112, 88])).toThrowError(
-      "Chaque élément du tableau doit être un nombre entier."
+      "La saisie doit être un tableau contenant strictement des nombres entiers et au moins deux éléments."
     );
     expect(() => fn([15, "25", 96, 112, 88])).toThrowError(
-      "Chaque élément du tableau doit être un nombre entier."
+      "La saisie doit être un tableau contenant strictement des nombres entiers et au moins deux éléments."
     );
     expect(() => fn([15, null, 96, 112, 88])).toThrowError(
-      "Chaque élément du tableau doit être un nombre entier."
+      "La saisie doit être un tableau contenant strictement des nombres entiers et au moins deux éléments."
     );
     expect(() => fn([15, undefined, 96, 112, 88])).toThrowError(
-      "Chaque élément du tableau doit être un nombre entier."
+      "La saisie doit être un tableau contenant strictement des nombres entiers et au moins deux éléments."
     );
   });
 });
