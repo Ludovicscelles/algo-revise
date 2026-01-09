@@ -1778,7 +1778,7 @@ function findTheLongestWord(sentence: unknown): string {
   let longestWord: string = "";
 
   for (let i = 0; i < wordsArray.length; i++) {
-    if (wordsArray[i].length > longestWord.length) {
+    if (wordsArray[i].length >= longestWord.length) {
       longestWord = wordsArray[i];
     }
   }
@@ -1806,7 +1806,7 @@ function findTheLongestWord2(sentence: unknown): string {
   let longestWord: string = "";
 
   for (let i = wordsArray.length - 1; i >= 0; i--) {
-    if (wordsArray[i].length > longestWord.length) {
+    if (wordsArray[i].length >= longestWord.length) {
       longestWord = wordsArray[i];
     }
   }
@@ -1836,7 +1836,7 @@ function findTheLongestWord3(sentence: unknown): string {
   let i = 0;
 
   while (i < wordsArray.length) {
-    if (wordsArray[i].length > longestWord.length) {
+    if (wordsArray[i].length >= longestWord.length) {
       longestWord = wordsArray[i];
     }
     i++;
@@ -1867,7 +1867,7 @@ function findTheLongestWord4(sentence: unknown): string {
   let i = wordsArray.length - 1;
 
   while (i >= 0) {
-    if (wordsArray[i].length > longestWord.length) {
+    if (wordsArray[i].length >= longestWord.length) {
       longestWord = wordsArray[i];
     }
     i--;
@@ -1893,12 +1893,16 @@ function findTheLongestWord5(sentence: unknown): string {
 
   const wordsArray: string[] = words(sentence);
 
+  if (wordsArray.length === 0) {
+    return "";
+  }
+
   let longestWord: string = "";
 
   let i = 0;
 
   do {
-    if (wordsArray[i].length > longestWord.length) {
+    if (wordsArray[i].length >= longestWord.length) {
       longestWord = wordsArray[i];
     }
     i++;
@@ -1925,10 +1929,14 @@ function findTheLongestWord6(sentence: unknown): string {
 
   let longestWord: string = "";
 
+  if (wordsArray.length === 0) {
+    return "";
+  }
+
   let i = wordsArray.length - 1;
 
   do {
-    if (wordsArray[i].length > longestWord.length) {
+    if (wordsArray[i].length >= longestWord.length) {
       longestWord = wordsArray[i];
     }
     i--;
@@ -1957,7 +1965,7 @@ function findTheLongestWord7(sentence: unknown): string {
   let longestWord: string = "";
 
   for (let word of wordsArray) {
-    if (word.length > longestWord.length) {
+    if (word.length >= longestWord.length) {
       longestWord = word;
     }
   }
@@ -1983,7 +1991,7 @@ function findTheLongestWord8(sentence: unknown): string {
   const wordsArray: string[] = words(sentence);
 
   const longestWord = wordsArray.reduce((longest, word) => {
-    if (word.length > longest.length) return word;
+    if (word.length >= longest.length) return word;
     else return longest;
   }, "");
   return longestWord;
