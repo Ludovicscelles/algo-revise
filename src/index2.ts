@@ -3007,13 +3007,16 @@ function arraysFusion(nbArray1: unknown[], nbArray2: unknown[]): number[] {
       mergedArray.push(nbArray2[i]);
     }
   }
-  return mergedArray;
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1: number[] = [1, 2, 3, 4, 5];
 const numArr2: number[] = [5, 6, 7, 8];
 const mergedArray: number[] = arraysFusion(numArr1, numArr2);
-console.log(mergedArray);
+console.log("final merged array:", mergedArray);
 
 {
   /*
@@ -3040,13 +3043,16 @@ function arraysFusion2(nbArray1: unknown[], nbArray2: unknown[]): number[] {
   for (let i = lengthOfArray2 - 1; i >= 0; i--) {
     if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
   }
-  return mergedArray.sort((a, b) => a - b);
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1v2: number[] = [10, 20, 30, 40, 50];
 const numArr2v2: number[] = [50, 60, 70, 80];
 const mergedArray2: number[] = arraysFusion2(numArr1v2, numArr2v2);
-console.log(mergedArray2);
+console.log("final merged array v2:", mergedArray2);
 
 {
   /*
@@ -3077,13 +3083,16 @@ function arraysFusion3(nbArray1: unknown[], nbArray2: unknown[]): number[] {
     if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
     i++;
   }
-  return mergedArray;
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1v3: number[] = [100, 200, 300, 400];
 const numArr2v3: number[] = [400, 500, 600, 700];
 const mergedArray3: number[] = arraysFusion3(numArr1v3, numArr2v3);
-console.log(mergedArray3);
+console.log("final merged array v3:", mergedArray3);
 
 {
   /*
@@ -3114,13 +3123,16 @@ function arraysFusion4(nbArray1: unknown[], nbArray2: unknown[]): number[] {
     if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
     i--;
   }
-  return mergedArray.sort((a, b) => a - b);
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1v4: number[] = [-15, -10, -5, 0];
 const numArr2v4: number[] = [0, 5, 10, 15];
 const mergedArray4: number[] = arraysFusion4(numArr1v4, numArr2v4);
-console.log(mergedArray4);
+console.log("final merged array v4:", mergedArray4);
 
 {
   /*
@@ -3154,13 +3166,16 @@ function arraysFusion5(nbArray1: unknown[], nbArray2: unknown[]): number[] {
     if (!mergedArray.includes(nbArray2[i])) mergedArray.push(nbArray2[i]);
     i++;
   } while (i < lengthOfArray2);
-  return mergedArray;
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1v5: number[] = [3.3, 4.4, 5.5];
 const numArr2v5: number[] = [5.5, 6.6, 7.7];
 const mergedArray5: number[] = arraysFusion5(numArr1v5, numArr2v5);
-console.log(mergedArray5);
+console.log("final merged array v5:", mergedArray5);
 
 {
   /*
@@ -3195,13 +3210,15 @@ function arraysFusion6(nbArray1: unknown[], nbArray2: unknown[]): number[] {
     i--;
   } while (i >= 0);
 
-  return mergedArray.sort((a, b) => a - b);
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1v6: number[] = [7.7, 8.8, 9.9];
 const numArr2v6: number[] = [9.9, 10.1, 11.11];
 const mergedArray6: number[] = arraysFusion6(numArr1v6, numArr2v6);
-console.log(mergedArray6);
+console.log("final merged array v6:", mergedArray6);
 
 {
   /*
@@ -3226,13 +3243,16 @@ function arraysFusion7(nbArray1: unknown[], nbArray2: unknown[]) {
   for (let nb of nbArray2) {
     if (!mergedArray.includes(nb)) mergedArray.push(nb);
   }
-  return mergedArray;
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1v7: number[] = [12, 14, 16, 18];
 const numArr2v7: number[] = [18, 20, 22, 24];
 const mergedArray7: number[] = arraysFusion7(numArr1v7, numArr2v7);
-console.log(mergedArray7);
+console.log("final merged array v7:", mergedArray7);
 
 {
   /*
@@ -3256,13 +3276,16 @@ function arraysFusion8(nbArray1: unknown[], nbArray2: unknown[]): number[] {
     },
     []
   );
-  return mergedArray;
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+
+  return sortedMergedArray;
 }
 
 const numArr1v8: number[] = [25, 30, 35];
 const numArr2v8: number[] = [35, 40, 45];
 const mergedArray8: number[] = arraysFusion8(numArr1v8, numArr2v8);
-console.log(mergedArray8);
+console.log("final merged array v8:", mergedArray8);
 
 {
   /*
@@ -3281,13 +3304,15 @@ function arraysFusion9(nbArray1: unknown[], nbArray2: unknown[]): number[] {
   const mergedArray: number[] = nbArray1
     .concat(nbArray2)
     .filter((value, pos, arr) => arr.indexOf(value) === pos);
-  return mergedArray;
+
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+  return sortedMergedArray;
 }
 
 const numArr1v9: number[] = [1000, 1000, 5000, 2000, 3000];
 const numArr2v9: number[] = [3000, 4000, 5000];
 const mergedArray9: number[] = arraysFusion9(numArr1v9, numArr2v9);
-console.log(mergedArray9);
+console.log("final merged array v9:", mergedArray9);
 
 {
   /*
@@ -3311,11 +3336,13 @@ function arraysFusion9Bis(nbArray1: unknown[], nbArray2: unknown[]): number[] {
     // The filter method checks if the index of the current value is the same as its first occurrence in the array
     .filter((value, pos, arr) => arr.indexOf(value) === pos);
 
-  // Return the merged array without duplicates
-  return mergedArray;
+  // Sort the merged array in ascending order
+  const sortedMergedArray: number[] = mergedArray.sort((a, b) => a - b);
+  // Return the sorted merged array without duplicates
+  return sortedMergedArray;
 }
 
 const numArr1v9Bis: number[] = [6000, 6000, 7000, 8000, 6000, 9000];
 const numArr2v9Bis: number[] = [8000, 10000, 11000];
 const mergedArray9Bis: number[] = arraysFusion9Bis(numArr1v9Bis, numArr2v9Bis);
-console.log(mergedArray9Bis);
+console.log("final merged array v9 bis:", mergedArray9Bis);
