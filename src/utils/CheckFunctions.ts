@@ -157,12 +157,23 @@ export const checkIsNumbersArray: (
   }
 };
 
+const ERR_MIN_ONE_NUMBERS_ARRAY =
+  "La saisie doit être un tableau contenant strictement un ou plusieurs nombres";
+
 export const validateMinOneNumbersArray: (
-  array: unknown[]
-) => asserts array is number[] = (array) => {
-  checkIsArray(array);
-  checkMinArrayLength1(array);
-  checkIsNumbersArray(array);
+  input: unknown
+) => asserts input is number[] = (input) => {
+  if (!Array.isArray(input)) {
+    throw new Error(ERR_MIN_ONE_NUMBERS_ARRAY);
+  }
+
+  if (input.length < 1) {
+    throw new Error(ERR_MIN_ONE_NUMBERS_ARRAY);
+  }
+
+  if (!input.every((x) => typeof x === "number")) {
+    throw new Error(ERR_MIN_ONE_NUMBERS_ARRAY);
+  }
 };
 
 const ERR_MIN_TWO_NUMBERS_ARRAY =
@@ -183,7 +194,6 @@ export const validateMinTwoNumbersArray: (
     throw new Error(ERR_MIN_TWO_NUMBERS_ARRAY);
   }
 };
-
 
 const ERR_MIN_TWO_INTEGERS_ARRAY =
   "La saisie doit être un tableau contenant strictement des nombres entiers et au moins deux éléments.";
