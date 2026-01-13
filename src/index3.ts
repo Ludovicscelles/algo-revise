@@ -1,4 +1,3 @@
-import { get } from "http";
 import {
   checkIsInteger,
   checkIsPositiveNumberMinOne,
@@ -290,7 +289,7 @@ function reverseANumber(num: unknown): number {
 
 const num = -12345;
 const reversedNum = reverseANumber(num);
-console.log(reversedNum);
+console.log("reverseANumber:", reversedNum);
 
 {
   /*
@@ -318,8 +317,7 @@ function reverseANumber2(num: unknown): number {
 
 const num2 = -67890;
 const reversedNum2 = reverseANumber2(num2);
-console.log(reversedNum2);
-
+console.log("reverseANumber2:", reversedNum2);
 {
   /*
   🔁 2v3. Inverser un nombre
@@ -346,9 +344,9 @@ function reverseANumber3(num: unknown): number {
   return revNum * sign;
 }
 
-const num3 = 24680;
+const num3 = 100;
 const reversedNum3 = reverseANumber3(num3);
-console.log(reversedNum3);
+console.log("reverseANumber3:", reversedNum3);
 
 {
   /*
