@@ -35,16 +35,12 @@ describe.each([
     expect(fn(0)).toBe(0); // 0 is considered an even digit
   });
 
-  it("should throw an error for non-integer inputs", () => {
-    expect(() => fn(12.34)).toThrowError(
-      "La saisie doit être un nombre entier."
-    );
-    expect(() => fn("123")).toThrow("La saisie doit être un nombre entier.");
-    expect(() => fn(null)).toThrow("La saisie doit être un nombre entier.");
-    expect(() => fn(undefined)).toThrow(
-      "La saisie doit être un nombre entier."
-    );
-    expect(() => fn([])).toThrow("La saisie doit être un nombre entier.");
-    expect(() => fn({})).toThrow("La saisie doit être un nombre entier.");
-  });
+  it.each([12.34, "123", null, undefined, [], {}, () => {}])(
+    "should throw an error for non-integer inputs: %p",
+    (input) => {
+      expect(() => (fn as any)(input)).toThrowError(
+        "La saisie doit être un nombre entier"
+      );
+    }
+  );
 });
