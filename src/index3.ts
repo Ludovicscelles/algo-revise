@@ -397,7 +397,7 @@ function getGreatestCommonDivisor(int1: unknown, int2: unknown): number {
 const int1 = 48;
 const int2 = 18;
 const gcd = getGreatestCommonDivisor(int1, int2);
-console.log(gcd);
+console.log(`Le PGCD de ${int1} et ${int2} est :`, gcd);
 
 {
   /*
@@ -443,7 +443,7 @@ function getGreatestCommonDivisor2(int1: unknown, int2: unknown): number {
 const int3 = 48;
 const int4 = 18;
 const gcd2 = getGreatestCommonDivisor2(int3, int4);
-console.log(gcd2);
+console.log(`Le PGCD de ${int3} et ${int4} est :`, gcd2);
 
 {
   /*
@@ -489,7 +489,7 @@ function getGreatestCommonDivisor3(int1: unknown, int2: unknown): number {
 const int5 = 1224;
 const int6 = 102;
 const gcd3 = getGreatestCommonDivisor3(int5, int6);
-console.log(gcd3);
+console.log(`Le PGCD de ${int5} et ${int6} est :`, gcd3);
 
 {
   /*
@@ -534,7 +534,7 @@ function getGreatestCommonDivisor4(int1: unknown, int2: unknown): number {
 const int7 = 1224;
 const int8 = 102;
 const gcd4 = getGreatestCommonDivisor4(int7, int8);
-console.log(gcd4);
+console.log(`Le PGCD de ${int7} et ${int8} est :`, gcd4);
 
 {
   /*
@@ -579,7 +579,7 @@ function getGreatestCommonDivisor5(int1: unknown, int2: unknown): number {
 const int9 = 81;
 const int10 = 27;
 const gcd5 = getGreatestCommonDivisor5(int9, int10);
-console.log(gcd5);
+console.log(`Le PGCD de ${int9} et ${int10} est :`, gcd5);
 
 {
   /*
@@ -624,7 +624,7 @@ function getGreatestCommonDivisor6(int1: unknown, int2: unknown): number {
 const int11 = 81;
 const int12 = 27;
 const gcd6 = getGreatestCommonDivisor6(int11, int12);
-console.log(gcd6);
+console.log(`Le PGCD de ${int11} et ${int12} est :`, gcd6);
 
 {
   /*
@@ -665,7 +665,7 @@ function getGreatestCommonDivisor7(int1: unknown, int2: unknown): number {
 const int13 = 1224;
 const int14 = 104;
 const gcd7 = getGreatestCommonDivisor7(int13, int14);
-console.log(gcd7);
+console.log(`Le PGCD de ${int13} et ${int14} est :`, gcd7);
 
 {
   /*
@@ -721,7 +721,7 @@ function getGreatestCommonDivisor7Bis(int1: unknown, int2: unknown): number {
 const int15 = 1224;
 const int16 = 103;
 const gcd7Bis = getGreatestCommonDivisor7Bis(int15, int16);
-console.log(gcd7Bis);
+console.log(`Le PGCD de ${int15} et ${int16} est :`, gcd7Bis);
 
 {
   /*
@@ -761,7 +761,7 @@ function getGreatestCommonDivisor8(int1: unknown, int2: unknown): number {
 const int17 = 1224;
 const int18 = 118;
 const gcd8 = getGreatestCommonDivisor8(int17, int18);
-console.log(gcd8);
+console.log(`Le PGCD de ${int17} et ${int18} est :`, gcd8);
 
 {
   /*
