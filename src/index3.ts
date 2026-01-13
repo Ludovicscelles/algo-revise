@@ -358,8 +358,8 @@ console.log("reverseANumber3:", reversedNum3);
 }
 
 function getGreatestCommonDivisor(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2) {
-    throw new Error(`La saisir doit contenir exactement deux arguments`);
+  if (int1 === undefined || int2 === undefined) {
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
   }
 
   checkIsInteger(int1);
@@ -370,7 +370,7 @@ function getGreatestCommonDivisor(int1: unknown, int2: unknown): number {
 
   if (a === 0 && b === 0) {
     throw new Error(
-      `Il n'est pas possible de définir le plus grand diviseur commun avec deux arguments nulls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
   }
 
@@ -409,8 +409,8 @@ console.log(`Le PGCD de ${int1} et ${int2} est :`, gcd);
 }
 
 function getGreatestCommonDivisor2(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2) {
-    throw new Error(`La saisir doit contenir exactement deux arguments`);
+  if (int1 === undefined || int2 === undefined) {
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
   }
 
   checkIsInteger(int1);
@@ -421,7 +421,7 @@ function getGreatestCommonDivisor2(int1: unknown, int2: unknown): number {
 
   if (a === 0 && b === 0)
     throw new Error(
-      `Il est impossible de définir le PGCD de deux nombres nuls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
 
   if (a === 0) return b;
@@ -455,8 +455,9 @@ console.log(`Le PGCD de ${int3} et ${int4} est :`, gcd2);
 }
 
 function getGreatestCommonDivisor3(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2)
+  if (int1 === undefined || int2 === undefined) {
     throw new Error(`La saisie doit contenir exactement deux arguments`);
+  }
 
   checkIsInteger(int1);
   checkIsInteger(int2);
@@ -501,8 +502,9 @@ console.log(`Le PGCD de ${int5} et ${int6} est :`, gcd3);
 }
 
 function getGreatestCommonDivisor4(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2)
-    throw new Error(`La saisie doit contenir précisément deux arguments`);
+  if (int1 === undefined || int2 === undefined) {
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
+  }
 
   checkIsInteger(int1);
   checkIsInteger(int2);
@@ -512,7 +514,7 @@ function getGreatestCommonDivisor4(int1: unknown, int2: unknown): number {
 
   if (a === 0 && b === 0)
     throw new Error(
-      `Il n'est pas possible de définir le plus grand diviseur commun de deux nombres nuls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
 
   if (a === 0) return b;
@@ -546,8 +548,9 @@ console.log(`Le PGCD de ${int7} et ${int8} est :`, gcd4);
 }
 
 function getGreatestCommonDivisor5(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2)
-    throw new Error(`La saisie doit contenir précisément deux arguments`);
+  if (int1 === undefined || int2 === undefined) {
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
+  }
 
   checkIsInteger(int1);
   checkIsInteger(int2);
@@ -557,7 +560,7 @@ function getGreatestCommonDivisor5(int1: unknown, int2: unknown): number {
 
   if (a === 0 && b === 0)
     throw new Error(
-      `Il n'est pas possible de définir le plus grand diviseur commun de deux nombres nuls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
 
   if (a === 0) return b;
@@ -591,8 +594,9 @@ console.log(`Le PGCD de ${int9} et ${int10} est :`, gcd5);
 }
 
 function getGreatestCommonDivisor6(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2)
-    throw new Error(`La saisie doit contenir précisément deux arguments`);
+  if (int1 === undefined || int2 === undefined) {
+    throw new Error(`La saisie doit contenir exactement deux arguments`);
+  }
 
   checkIsInteger(int1);
   checkIsInteger(int2);
@@ -602,7 +606,7 @@ function getGreatestCommonDivisor6(int1: unknown, int2: unknown): number {
 
   if (a === 0 && b === 0)
     throw new Error(
-      `Il n'est pas possible de définir le plus grand diviseur commun de deux nombres nuls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
 
   if (a === 0) return b;
@@ -636,8 +640,9 @@ Méthode Euclyde récursive.
 }
 
 function getGreatestCommonDivisor7(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2)
+  if (int1 === undefined || int2 === undefined) {
     throw new Error(`La saisie doit contenir précisément deux arguments`);
+  }
 
   checkIsInteger(int1);
   checkIsInteger(int2);
@@ -679,9 +684,10 @@ Méthode Euclide.
 // Added comments to explain the Euclidean algorithm
 // for finding the greatest common divisor (GCD) of two integers.
 function getGreatestCommonDivisor7Bis(int1: unknown, int2: unknown): number {
-  // Check if exactly two arguments are provided
-  if (arguments.length !== 2)
+  // Check if both arguments are provided
+  if (int1 === undefined || int2 === undefined) {
     throw new Error(`La saisie doit contenir exactement deux arguments`);
+  }
 
   // Validate that both arguments are integers
   checkIsInteger(int1);
@@ -694,7 +700,7 @@ function getGreatestCommonDivisor7Bis(int1: unknown, int2: unknown): number {
   // Handle edge case where both numbers are zero
   if (a === 0 && b === 0)
     throw new Error(
-      `Il est impossible de définir le plus grand diviseur commun deux nombre nuls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
 
   // If one number is zero, return the other number as GCD
@@ -733,8 +739,9 @@ Méthode Euclyde while.
 }
 
 function getGreatestCommonDivisor8(int1: unknown, int2: unknown): number {
-  if (arguments.length !== 2)
+  if (int1 === undefined || int2 === undefined) {
     throw new Error(`La saisie doit contenir exactement deux arguments`);
+  }
 
   checkIsInteger(int1);
   checkIsInteger(int2);
@@ -744,7 +751,7 @@ function getGreatestCommonDivisor8(int1: unknown, int2: unknown): number {
 
   if (a === 0 && b === 0)
     throw new Error(
-      `Il n'est pas possible de déterminer le plus grand diviseur commun de deux nombres nuls`
+      `Il est impossible de déterminer le plus grand diviseur commun de deux nombres nuls`
     );
 
   if (a === 0) return b;
