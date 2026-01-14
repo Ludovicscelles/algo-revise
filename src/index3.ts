@@ -785,12 +785,18 @@ function isAnagram(str1: unknown, str2: unknown): boolean {
   checkIsString(str1);
   checkIsString(str2);
 
-  if (str1.length !== str2.length) return false;
+  const s1: string = stringWithoutSpaces(str1).toLowerCase();
+  const s2: string = stringWithoutSpaces(str2).toLowerCase();
 
-  let sortedStr1: string = str1.split("").sort().join("");
-  let sortedStr2: string = str2.split("").sort().join("");
+  const lengthS1: number = s1.length;
+  const lengthS2: number = s2.length;
 
-  if (sortedStr1 !== sortedStr2) return false;
+  if (lengthS1 !== lengthS2) return false;
+
+  let sortedS1: string = s1.split("").sort().join("");
+  let sortedS2: string = s2.split("").sort().join("");
+
+  if (sortedS1 !== sortedS2) return false;
 
   return true;
 }
@@ -798,7 +804,7 @@ function isAnagram(str1: unknown, str2: unknown): boolean {
 const string1 = "listen";
 const string2 = "silent";
 const areAnagrams = isAnagram(string1, string2);
-console.log(areAnagrams);
+console.log("IsAnagram:", areAnagrams);
 
 {
   /*
@@ -816,22 +822,25 @@ function isAnagram2(str1: unknown, str2: unknown): boolean {
   checkIsString(str1);
   checkIsString(str2);
 
-  const lengthStr1: number = str1.length;
-  const lengthStr2: number = str2.length;
+  const s1: string = stringWithoutSpaces(str1).toLowerCase();
+  const s2: string = stringWithoutSpaces(str2).toLowerCase();
 
-  if (lengthStr1 !== lengthStr2) return false;
+  const lengthS1: number = s1.length;
+  const lengthS2: number = s2.length;
+
+  if (lengthS1 !== lengthS2) return false;
 
   let map: Map<string, number> = new Map();
 
-  for (let i = 0; i < lengthStr1; i++) {
-    map.set(str1[i], (map.get(str1[i]) ?? 0) + 1);
+  for (let i = 0; i < lengthS1; i++) {
+    map.set(s1[i], (map.get(s1[i]) ?? 0) + 1);
   }
 
-  for (let i = 0; i < lengthStr2; i++) {
-    if (!map.has(str2[i])) {
+  for (let i = 0; i < lengthS2; i++) {
+    if (!map.has(s2[i])) {
       return false;
     }
-    map.set(str2[i], map.get(str2[i])! - 1);
+    map.set(s2[i], map.get(s2[i])! - 1);
   }
 
   for (let value of map.values()) {
@@ -845,7 +854,7 @@ function isAnagram2(str1: unknown, str2: unknown): boolean {
 const string3 = "triangle";
 const string4 = "integral";
 const areAnagrams2 = isAnagram2(string3, string4);
-console.log(`4v2`, areAnagrams2);
+console.log(`IsAnagram2:`, areAnagrams2);
 
 {
   /*
@@ -856,6 +865,8 @@ Méthode par comptage des occurrences des caractères.
  */
 }
 
+// Added comments to explain the character counting method
+// for determining if two strings are anagrams.
 function isAnagram2Bis(str1: unknown, str2: unknown): boolean {
   // Check if both arguments are provided
   if (str1 === undefined || str2 === undefined)
@@ -865,43 +876,52 @@ function isAnagram2Bis(str1: unknown, str2: unknown): boolean {
   checkIsString(str1);
   checkIsString(str2);
 
-  const lengthStr1: number = str1.length;
-  const lengthStr2: number = str2.length;
+  // Normalize the strings by removing spaces and converting to lowercase
+  const s1: string = stringWithoutSpaces(str1).toLowerCase();
+  const s2: string = stringWithoutSpaces(str2).toLowerCase();
 
-  // If lengths differ, they cannot be anagrams
-  if (lengthStr1 !== lengthStr2) return false;
+  // Get the lengths of both normalized strings
+  const lengthS1: number = s1.length;
+  const lengthS2: number = s2.length;
 
-  // Create a map to count occurrences of each character in str1
+  // If lengths differ after normalization, they cannot be anagrams
+  if (lengthS1 !== lengthS2) return false;
+
+  // Create a map to count occurrences of each character in s1
+  // The key is the character, and the value is the count of occurrences
   let map: Map<string, number> = new Map();
 
-  // Count each character in str1
-  for (let i = 0; i < lengthStr1; i++) {
-    // Increment the count for the character at str1[i]
+  // Count each character in s1
+  for (let i = 0; i < lengthS1; i++) {
+    // Increment the count for the character at s1[i]
     // If the character is not in the map, initialize its count to 0
     // then add 1 to it
-    map.set(str1[i], (map.get(str1[i]) ?? 0) + 1);
+    map.set(s1[i], (map.get(s1[i]) ?? 0) + 1);
   }
-  // Decrease the count for each character found in str2
-  for (let i = 0; i < lengthStr2; i++) {
-    // If the character from str2 is not in the map,
-    // str2 cannot be an anagram of str1
-    if (!map.has(str2[i])) {
+
+  // Decrease the count for each character found in s2
+  for (let i = 0; i < lengthS2; i++) {
+    // If the character from s2 is not in the map,
+    // s2 cannot be an anagram of s1
+    if (!map.has(s2[i])) {
       return false;
     }
-    // Decrement the count for the character at str2[i]
+    // Decrement the count for the character at s2[i]
     // since we found a matching character
     // the resulting count could go to zero to indicate a perfect match
-    map.set(str2[i], map.get(str2[i])! - 1);
+    map.set(s2[i], map.get(s2[i])! - 1);
   }
+
   // Check if all character counts are zero
   for (let value of map.values()) {
-    // If any count is not zero, str2 has extra characters
-    // or is missing characters compared to str1
+    // If any count is not zero, s2 has extra characters
+    // or is missing characters compared to s1
+    // we return false in that case
     if (value !== 0) {
       return false;
     }
   }
-  // If all counts are zero, str1 and str2 are anagrams
+  // If all counts are zero, s1 and s2 are anagrams
   return true;
 }
 
@@ -909,7 +929,7 @@ function isAnagram2Bis(str1: unknown, str2: unknown): boolean {
 const string5 = "triangle";
 const string6 = "integral";
 const areAnagrams2Bis = isAnagram2Bis(string5, string6);
-console.log(areAnagrams2Bis);
+console.log(`IsAnagram2Bis:`, areAnagrams2Bis);
 
 {
   /*
@@ -927,21 +947,21 @@ function isAnagram3(str1: unknown, str2: unknown): boolean {
   checkIsString(str1);
   checkIsString(str2);
 
-  const a: string = stringWithoutSpaces(str1).toLowerCase();
-  const b: string = stringWithoutSpaces(str2).toLowerCase();
+  const s1: string = stringWithoutSpaces(str1).toLowerCase();
+  const s2: string = stringWithoutSpaces(str2).toLowerCase();
 
-  const lengthA: number = a.length;
-  const lengthB: number = b.length;
+  const lengthS1: number = s1.length;
+  const lengthS2: number = s2.length;
 
-  if (lengthA !== lengthB) return false;
+  if (lengthS1 !== lengthS2) return false;
 
   let count: Record<string, number> = {};
 
-  for (let char of a) {
+  for (let char of s1) {
     count[char] = (count[char] || 0) + 1;
   }
 
-  for (let char of b) {
+  for (let char of s2) {
     if (!count[char]) return false;
     count[char]--;
   }
@@ -956,7 +976,7 @@ function isAnagram3(str1: unknown, str2: unknown): boolean {
 const string7 = "conversation";
 const string8 = "voices rant on";
 const areAnagrams3 = isAnagram3(string7, string8);
-console.log(`4v3`, areAnagrams3);
+console.log(`IsAnagram3:`, areAnagrams3);
 
 {
   /*
@@ -967,6 +987,8 @@ Méthode par comptage des occurrences des caractères avec normalisation et util
  */
 }
 
+// Added comments to explain the character counting method
+// for determining if two strings are anagrams using an object for counting.
 function isAnagram3Bis(str1: unknown, str2: unknown): boolean {
   // Check if both arguments are provided
   if (str1 === undefined || str2 === undefined)
@@ -977,45 +999,40 @@ function isAnagram3Bis(str1: unknown, str2: unknown): boolean {
   checkIsString(str2);
 
   // Normalize the strings by removing spaces and converting to lowercase
-  const a: string = stringWithoutSpaces(str1).toLowerCase();
-  const b: string = stringWithoutSpaces(str2).toLowerCase();
+  const s1: string = stringWithoutSpaces(str1).toLowerCase();
+  const s2: string = stringWithoutSpaces(str2).toLowerCase();
 
-  const lengthA: number = a.length;
-  const lengthB: number = b.length;
+  // Get the lengths of both normalized strings
+  const lengthS1: number = s1.length;
+  const lengthS2: number = s2.length;
 
   // If lengths differ after normalization, they cannot be anagrams
-  if (lengthA !== lengthB) return false;
+  if (lengthS1 !== lengthS2) return false;
 
-  // Create an object to count occurrences of each character in string a
+  // Create an object to count occurrences of each character in s1
+  // The key is the character, and the value is the count of occurrences
   let count: Record<string, number> = {};
 
-  // Count each character in a
-  for (let char of a) {
-    // Increment the count for the character at a[char]
-    // If the character is not in the object, initialize its count to 0
-    // then add 1 to it
+  // Count each character in s1
+  for (let char of s1) {
     count[char] = (count[char] || 0) + 1;
   }
 
-  // Decrease the count for each character found in string b
-  for (let char of b) {
-    // If the character from b is not in the count object,
-    // b cannot be an anagram of a
+  // Decrease the count for each character found in s2
+  for (let char of s2) {
     if (!count[char]) return false;
-    // Decrement the count for the character at b[char]
-    // since we found a matching character
-    // the resulting count could go to zero to indicate a perfect match
     count[char]--;
   }
 
   // Check if all character counts are zero
+  // If any count is not zero, s2 has extra characters
+  // or is missing characters compared to s1
+  // we return false in that case
   for (let val of Object.values(count)) {
-    // If any count is not zero, b has extra characters
-    // or is missing characters compared to a
     if (val !== 0) return false;
   }
 
-  // If all counts are zero, a and b are anagrams
+  // If all counts are zero, s1 and s2 are anagrams
   return true;
 }
 
@@ -1023,8 +1040,7 @@ function isAnagram3Bis(str1: unknown, str2: unknown): boolean {
 const string9 = "conversation";
 const string10 = "voices rant on";
 const areAnagrams3Bis = isAnagram3Bis(string9, string10);
-console.log(areAnagrams3Bis);
-
+console.log(`IsAnagram3Bis:`, areAnagrams3Bis);
 {
   /*
 🔤 🔠 5. Mettre en majuscules la première lettre de chaque mot
