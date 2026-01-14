@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 
 import { isAnagram, isAnagram2, isAnagram3 } from "../../algo/algo3/isAnagram";
-import exp from "constants";
 
 describe.each([
   { fn: isAnagram, name: "isAnagram" },
@@ -22,20 +21,28 @@ describe.each([
     expect(fn("example", "samples")).toBe(false);
   });
 
-  it("should throw error for invalid inputs", () => {
-    expect(() => fn(undefined, "test")).toThrow("Deux arguments sont requis");
-    expect(() => fn("test", undefined)).toThrow("Deux arguments sont requis");
-    expect(() => fn(123, "test")).toThrow(
-      "La saisie d'entrée doit être une chaîne de caractères"
-    );
-    expect(() => fn("test", null)).toThrow(
-      "La saisie d'entrée doit être une chaîne de caractères"
-    );
-    expect(() => fn([], {})).toThrow(
-      "La saisie d'entrée doit être une chaîne de caractères"
-    );
-    expect(() => fn("valid", 456)).toThrow(
-      "La saisie d'entrée doit être une chaîne de caractères"
-    );
-  });
+  it.each([
+    [undefined, "test"],
+    ["test", undefined],
+    [undefined, undefined],
+  ])(
+    "should throw an error when one or both arguments are undefined: %p, %p",
+    (str1, str2) => {
+      expect(() => fn(str1 as any, str2 as any)).toThrow(
+        "Deux arguments sont requis"
+      );
+    }
+  );
+
+  it.each([null, 123, {}, [], true, false])(
+    "throws an error for non-string input: %p",
+    (input) => {
+      expect(() => fn(input as any, "test")).toThrow(
+        "La saisie d'entrée doit être une chaîne de caractères."
+      );
+      expect(() => fn("test", input as any)).toThrow(
+        "La saisie d'entrée doit être une chaîne de caractères."
+      );
+    }
+  );
 });
