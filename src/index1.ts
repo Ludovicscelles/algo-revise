@@ -32,7 +32,7 @@ function evenOrOdd(nbr: unknown): boolean {
 
 let nbr = 15;
 let isEven: boolean = evenOrOdd(nbr);
-console.log(isEven);
+console.log(`Est-ce que ${nbr} est un nombre pair ? :`, isEven);
 
 {
   /*
@@ -53,7 +53,7 @@ function evenOrOdd2(nbr2: unknown): string {
 
 let nbr2 = 27;
 let isEven2: string = evenOrOdd2(nbr2);
-console.log(isEven2);
+console.log(`Est-ce que ${nbr2} est un nombre pair ou impair ? :`, isEven2);
 
 {
   /*
@@ -75,7 +75,7 @@ function factorial(number: unknown): number {
 
 let number = 5;
 let factorialOfANumber: number = factorial(number);
-console.log(factorialOfANumber);
+console.log(`La factorielle de ${number} est :`, factorialOfANumber);
 
 {
   /*
@@ -98,7 +98,7 @@ function factorial2(number2: unknown): number {
 
 let number2 = 5;
 let factorialOfANumber2: number = factorial2(number2);
-console.log(factorialOfANumber2);
+console.log(`La factorielle de ${number2} est :`, factorialOfANumber2);
 
 {
   /*
@@ -125,8 +125,7 @@ function factorial3(number3: unknown): number {
 
 let number3 = 5;
 let factorialOfANumber3: number = factorial3(number3);
-console.log(factorialOfANumber3);
-
+console.log(`La factorielle de ${number3} est :`, factorialOfANumber3);
 {
   /*
   2v4. Factorielle
@@ -152,8 +151,7 @@ function factorial4(number4: unknown): number {
 
 let number4 = 5;
 let factorialOfANumber4: number = factorial4(number4);
-console.log(factorialOfANumber4);
-
+console.log(`La factorielle de ${number4} est :`, factorialOfANumber4);
 {
   /*
   3v1. Plus grand élément d’un tableau
@@ -179,8 +177,7 @@ function getMaxValue(numArray: unknown[]): number {
 
 let numArray = [51, 55, 58, 42, 43];
 let maxValue = getMaxValue(numArray);
-console.log(maxValue);
-
+console.log(`Le plus grand élément de [${numArray}] est :`, maxValue);
 {
   /*
   3v2. Plus grand élément d’un tableau
@@ -206,7 +203,7 @@ function getMaxValue2(numArray2: unknown[]): number {
 
 let numArray2 = [109, 112, 125, 98, 56];
 let maxValue2 = getMaxValue2(numArray2);
-console.log(maxValue2);
+console.log(`Le plus grand élément de [${numArray2}] est :`, maxValue2);
 
 {
   /*
@@ -236,7 +233,7 @@ function getMaxValue3(numArray3: unknown[]): number {
 
 let numArray3 = [209, 224, 512, 301, 98];
 let maxValue3 = getMaxValue3(numArray3);
-console.log(maxValue3);
+console.log(`Le plus grand élément de [${numArray3}] est :`, maxValue3);
 
 {
   /*
@@ -265,8 +262,7 @@ function getMaxValue4(numArray4: unknown[]): number {
 
 let numArray4 = [1025, 1030, 1350, 1052, 999];
 let maxValue4 = getMaxValue4(numArray4);
-console.log(maxValue4);
-
+console.log(`Le plus grand élément de [${numArray4}] est :`, maxValue4);
 {
   /*
   3v5. Plus grand élément d’un tableau
@@ -290,7 +286,7 @@ function getMaxValue5(numArray5: unknown[]): number {
 
 let numArray5 = [201, 263, 298, 152, 175];
 let maxValue5 = getMaxValue5(numArray5);
-console.log(maxValue5);
+console.log(`Le plus grand élément de [${numArray5}] est :`, maxValue5);
 
 {
   /*
@@ -320,7 +316,7 @@ function getMaxValue6(numArray6: unknown[]): number {
 
 let numArray6 = [302, 352, 369, 301, 300];
 let maxValue6 = getMaxValue6(numArray6);
-console.log(maxValue6);
+console.log(`Le plus grand élément de [${numArray6}] est :`, maxValue6);
 
 {
   /*
@@ -349,8 +345,7 @@ function getMaxValue7(numArray7: unknown[]): number {
 
 let numArray7 = [505, 518, 596, 501, 499];
 let maxValue7 = getMaxValue7(numArray7);
-console.log(maxValue7);
-
+console.log(`Le plus grand élément de [${numArray7}] est :`, maxValue7);
 {
   /*
   4v1. Palindrome
@@ -376,7 +371,7 @@ function checkPalindrome(str1: unknown): string {
 
 let str1 = "Tu l'as trop écrasé César, ce Port-Salut !";
 let isPalindrome = checkPalindrome(str1);
-console.log(isPalindrome);
+console.log(`Est-ce que ${str1} est un palindrome ? :`, isPalindrome);
 
 {
   /*
@@ -418,7 +413,7 @@ function checkPalindromeWithComments(strBis: unknown): string {
 
 let strBis = "Tu l'as trop écrasé César, ce Port-Salut !";
 let isPalindromeBis = checkPalindromeWithComments(strBis);
-console.log(isPalindromeBis);
+console.log(`Est-ce que ${strBis} est un palindrome ? :`, isPalindromeBis);
 
 {
   /*
@@ -445,7 +440,7 @@ function checkPalindrome2(str2: unknown): string {
 
 let str2 = "Et la marine va venir à Malte";
 let isPalindrome2: string = checkPalindrome2(str2);
-console.log(isPalindrome2);
+console.log(`Est-ce que ${str2} est un palindrome ? :`, isPalindrome2);
 
 {
   /*
@@ -475,7 +470,7 @@ function checkPalindrome3(str3: unknown): string {
 
 let str3 = "À l'étape, épate-la";
 let isPalindrome3: string = checkPalindrome3(str3);
-console.log(isPalindrome3);
+console.log(`Est-ce que ${str3} est un palindrome ? :`, isPalindrome3);
 
 {
   /*
@@ -505,8 +500,7 @@ function checkPalindrome4(str4: unknown): string {
 
 let str4 = "Engage le jeu que je le gagne";
 let isPalindrome4: string = checkPalindrome4(str4);
-console.log(isPalindrome4);
-
+console.log(`Est-ce que ${str4} est un palindrome ? :`, isPalindrome4);
 {
   /*
   4v5. Palindrome
@@ -536,8 +530,7 @@ function checkPalindrome5(str5: unknown): string {
 
 let str5 = "À révéler mon nom, mon nom relèvera.";
 let isPalindrome5: string = checkPalindrome5(str5);
-console.log(isPalindrome5);
-
+console.log(`Est-ce que ${str5} est un palindrome ? :`, isPalindrome5);
 {
   /*
   4v6. Palindrome
@@ -566,7 +559,7 @@ function checkPalindrome6(str6: unknown): string {
 
 let str6 = "La mère Gide digère mal";
 let isPalindrome6 = checkPalindrome6(str6);
-console.log(isPalindrome6);
+console.log(`Est-ce que ${str6} est un palindrome ? :`, isPalindrome6);
 
 {
   /*
@@ -600,7 +593,7 @@ function checkPalindrome7(str7: unknown): string {
 
 let str7 = "Et la marine va venir à Malte";
 let isPalindrome7 = checkPalindrome7(str7);
-console.log(isPalindrome7);
+console.log(`Est-ce que ${str7} est un palindrome ? :`, isPalindrome7);
 
 {
   /*
@@ -649,8 +642,7 @@ function checkPalindrome7WithComments(str7Bis: unknown): string {
 // test the function with a sample string
 let str7Bis = "Et la marine va venir à Malte";
 let isPalindrome7Bis = checkPalindrome7(str7Bis);
-console.log(isPalindrome7Bis);
-
+console.log(`Est-ce que ${str7Bis} est un palindrome ? :`, isPalindrome7Bis);
 {
   /*
     5. Somme des nombres de 1 à n
@@ -673,8 +665,7 @@ function sumOfNumbers(nbr: unknown): number {
 
 let nb: number = 5;
 let totalOfNumbers: number = sumOfNumbers(nb);
-console.log(totalOfNumbers);
-
+console.log(`La somme des nombres de 1 à ${nb} est :`, totalOfNumbers);
 {
   /*
     5v2. Somme des nombres de 1 à n
@@ -697,8 +688,7 @@ function sumOfNumbers2(nbr2: unknown): number {
 
 let nb2: number = 4;
 let totalOfNumbers2: number = sumOfNumbers2(nb2);
-console.log(totalOfNumbers2);
-
+console.log(`La somme des nombres de 1 à ${nb2} est :`, totalOfNumbers2);
 {
   /*
     5v3. Somme des nombres de 1 à n
@@ -724,8 +714,7 @@ function sumOfNumbers3(nbr3: unknown): number {
 
 let nb3: number = 5;
 let totalOfNumbers3: number = sumOfNumbers3(nb3);
-console.log(totalOfNumbers3);
-
+console.log(`La somme des nombres de 1 à ${nb3} est :`, totalOfNumbers3);
 {
   /*
     5v4. Somme des nombres de 1 à n
@@ -753,7 +742,7 @@ console.log("avant appel sumOfNumbers4");
 
 let nb4: number = 5;
 let totalOfNumbers4: number = sumOfNumbers4(nb4);
-console.log("totalOfNumbers4 :", totalOfNumbers4);
+console.log(`La somme des nombres de 1 à ${nb4} est :`, totalOfNumbers4);
 {
   /*
     5v5. Somme des nombres de 1 à n
@@ -779,7 +768,7 @@ function sumOfNumbers5(nbr5: unknown): number {
 
 let nb5: number = 7;
 let totalOfNumbers5: number = sumOfNumbers5(nb5);
-console.log(totalOfNumbers5);
+console.log(`La somme des nombres de 1 à ${nb5} est :`, totalOfNumbers5);
 
 {
   /*
@@ -806,8 +795,7 @@ function sumOfNumbers6(nbr6: unknown): number {
 
 let nb6: number = 9;
 let totalOfNumbers6: number = sumOfNumbers6(nb6);
-console.log(totalOfNumbers6);
-
+console.log(`La somme des nombres de 1 à ${nb6} est :`, totalOfNumbers6);
 {
   /*
   6. Compter les voyelles
@@ -831,7 +819,7 @@ function countVowels(string: unknown): number {
 
 const sentence: string = `Je m'appelle Ludovic`;
 const totalOfVowels: number = countVowels(sentence);
-console.log(totalOfVowels);
+console.log(`Dans la phrase "${sentence}", il y a ${totalOfVowels} voyelles.`);
 
 {
   /*
@@ -856,7 +844,9 @@ function countVowels2(string2: unknown): number {
 
 const sentence2: string = "Je m'appelle Ludovic Scelles";
 const totalOfVowels2: number = countVowels2(sentence2);
-console.log(totalOfVowels2);
+console.log(
+  `Dans la phrase "${sentence2}", il y a ${totalOfVowels2} voyelles.`
+);
 
 {
   /*
@@ -884,7 +874,9 @@ function countVowels3(string3: unknown): number {
 
 const sentence3: string = `Hello Everybody`;
 const totalOfVowels3: number = countVowels3(sentence3);
-console.log(totalOfVowels3);
+console.log(
+  `Dans la phrase "${sentence3}", il y a ${totalOfVowels3} voyelles.`
+);
 
 {
   /*
@@ -912,7 +904,9 @@ function countVowels4(string4: unknown): number {
 
 const sentence4: string = `Hello Everyone`;
 const totalOfVowels4: number = countVowels4(sentence4);
-console.log(totalOfVowels4);
+console.log(
+  `Dans la phrase "${sentence4}", il y a ${totalOfVowels4} voyelles.`
+);
 
 {
   /*
@@ -941,7 +935,9 @@ function countVowels5(string5: unknown): number {
 
 const sentence5: string = `Angèle et Gilles en gilet gèlent.`;
 const totalOfVowels5: number = countVowels5(sentence5);
-console.log(totalOfVowels5);
+console.log(
+  `Dans la phrase "${sentence5}", il y a ${totalOfVowels5} voyelles.`
+);
 
 {
   /*
@@ -969,7 +965,9 @@ function countVowels6(string6: unknown): number {
 
 const sentence6: string = `La mouche rousse touche la mousse`;
 const totalOfVowels6: number = countVowels6(sentence6);
-console.log("totalOfVowels6 :", totalOfVowels6);
+console.log(
+  `Dans la phrase "${sentence6}", il y a ${totalOfVowels6} voyelles.`
+);
 
 {
   /*
@@ -994,7 +992,9 @@ function countVowels7(string7: unknown): number {
 
 const sentence7: string = `À bientôt`;
 const totalOfVowels7: number = countVowels7(sentence7);
-console.log("totalOfVowels7 :", totalOfVowels7);
+console.log(
+  `Dans la phrase "${sentence7}", il y a ${totalOfVowels7} voyelles.`
+);
 
 {
   /*
@@ -1021,7 +1021,7 @@ function fizzBuzz(number: unknown): string[] {
 
 const numberFB: number = 100;
 const arrayFizzBuzz = fizzBuzz(numberFB);
-console.log(arrayFizzBuzz);
+console.log(`Voici le FizzBuzz jusqu'à ${numberFB} :`, arrayFizzBuzz);
 
 {
   /*
@@ -1048,7 +1048,7 @@ function fizzBuzz2(number2: number): string[] {
 
 const numberFB2: number = 50;
 const arrayFizzBuzz2 = fizzBuzz2(numberFB2);
-console.log(arrayFizzBuzz2);
+console.log(`Voici le FizzBuzz jusqu'à ${numberFB2} :`, arrayFizzBuzz2);
 
 {
   /*
@@ -1078,7 +1078,7 @@ function fizzBuzz3(number3: unknown): string[] {
 
 const numberFB3: number = 40;
 const arrayFizzBuzz3 = fizzBuzz3(numberFB3);
-console.log(arrayFizzBuzz3);
+console.log(`Voici le FizzBuzz jusqu'à ${numberFB3} :`, arrayFizzBuzz3);
 
 {
   /*
@@ -1108,7 +1108,7 @@ function fizzBuzz4(number4: unknown): string[] {
 
 const numberFB4: number = 60;
 const arrayFizzBuzz4 = fizzBuzz4(numberFB4);
-console.log(arrayFizzBuzz4);
+console.log(`Voici le FizzBuzz jusqu'à ${numberFB4} :`, arrayFizzBuzz4);
 
 {
   /*
@@ -1138,7 +1138,7 @@ function fizzBuzz5(number5: number): string[] {
 
 const numberFB5: number = 30;
 const arrayFizzBuzz5 = fizzBuzz5(numberFB5);
-console.log(arrayFizzBuzz5);
+console.log(`Voici le FizzBuzz jusqu'à ${numberFB5} :`, arrayFizzBuzz5);
 
 {
   /*
@@ -1168,7 +1168,7 @@ function fizzBuzz6(number6: number): string[] {
 
 const numberFB6: number = 70;
 const arrayFizzBuzz6 = fizzBuzz6(numberFB6);
-console.log(arrayFizzBuzz6);
+console.log(`Voici le FizzBuzz jusqu'à ${numberFB6} :`, arrayFizzBuzz6);
 
 {
   /*
@@ -1192,7 +1192,7 @@ function reverseArray(stArr: unknown[]): string[] {
 
 const stArr = ["aa", "bb", "cc", "dd"];
 const revArr: string[] = reverseArray(stArr);
-console.log(revArr);
+console.log(`Le tableau inversé de [${stArr}] est :`, revArr);
 
 {
   /*
@@ -1216,7 +1216,7 @@ function reverseArray2(stArr2: unknown[]): string[] {
 
 const stArr2 = ["AA", "BB", "CC", "DD", "EE"];
 const revArr2: string[] = reverseArray2(stArr2);
-console.log(revArr2);
+console.log(`Le tableau inversé de [${stArr2}] est :`, revArr2);
 
 {
   /*
@@ -1243,7 +1243,7 @@ function reverseArray3(stArr3: unknown[]): string[] {
 
 const stArr3 = ["Zora", "Mathilde", "Léna", "Clélia", "Anna"];
 const revArr3: string[] = reverseArray3(stArr3);
-console.log(revArr3);
+console.log(`Le tableau inversé de [${stArr3}] est :`, revArr3);
 
 {
   /*
@@ -1270,7 +1270,7 @@ function reverseArray4(stArr4: unknown[]): string[] {
 
 const stArr4 = ["Zoran", "Mathis", "Hélios", "Clélio", "Anakin"];
 const revArr4: string[] = reverseArray4(stArr4);
-console.log(revArr4);
+console.log(`Le tableau inversé de [${stArr4}] est :`, revArr4);
 
 {
   /*
@@ -1297,7 +1297,7 @@ function reverseArray5(stArr5: unknown[]): string[] {
 
 const stArr5 = ["Zoro", "Minnie", "Mickey", "Donald", "Aladdin"];
 const revArr5: string[] = reverseArray5(stArr5);
-console.log(revArr5);
+console.log(`Le tableau inversé de [${stArr5}] est :`, revArr5);
 
 {
   /*
@@ -1326,7 +1326,7 @@ function reverseArray6(stArr6: unknown[]): string[] {
 
 let stArr6 = ["Zambi", "Maroc", "Hongrie", "Chine", "Afrique du Sud"];
 let revArr6: string[] = reverseArray6(stArr6);
-console.log(revArr6);
+console.log(`Le tableau inversé de [${stArr6}] est :`, revArr6);
 
 {
   /*
@@ -1353,7 +1353,7 @@ function reverseArray7(stArr7: unknown[]): string[] {
 
 const stArr7 = ["Allemagne", "Belgique", "France", "Espagne", "Italie"];
 const revArr7: string[] = reverseArray7(stArr7);
-console.log(revArr7);
+console.log(`Le tableau inversé de [${stArr7}] est :`, revArr7);
 
 {
   /*
@@ -1390,7 +1390,7 @@ const stArr8 = [
 
 const revArr8: string[] = reverseArray8(stArr8);
 
-console.log(revArr8);
+console.log(`Le tableau inversé de [${stArr8}] est :`, revArr8);
 
 {
   /*
@@ -1414,7 +1414,9 @@ function multiplicationTable(nb: unknown): string {
 
 let nbToMultiply: number = 12;
 let timesTable: string = multiplicationTable(nbToMultiply);
-console.log(timesTable);
+console.log(
+  `\nLa table de multiplication de ${nbToMultiply} jusqu'à 10 est :\n${timesTable}\n`
+);
 
 {
   /*
@@ -1433,12 +1435,14 @@ function multiplicationTable2(nb2: unknown): string {
   for (let i = 10; i >= 1; i--) {
     result2.push(`${nb2} x ${i} = ${nb2 * i}\n`);
   }
-  return result2.reverse().join(`\n`);
+  return result2.reverse().join("");
 }
 
 const nbToMultiply2: number = 11;
 const timesTable2: string = multiplicationTable2(nbToMultiply2);
-console.log(timesTable2);
+console.log(
+  `La table de multiplication de ${nbToMultiply2} jusqu'à 10 est :\n${timesTable2}\n`
+);
 
 {
   /*
@@ -1465,7 +1469,9 @@ function multiplicationTable3(nb3: unknown): string {
 
 const nbToMultiply3: number = 10;
 const timesTable3: string = multiplicationTable3(nbToMultiply3);
-console.log(timesTable3);
+console.log(
+  `La table de multiplication de ${nbToMultiply3} jusqu'à 10 est :\n${timesTable3}\n`
+);
 
 {
   /*
@@ -1492,7 +1498,9 @@ function multiplicationTable4(nb4: unknown): string {
 
 const nbToMultiply4: number = 8;
 const timesTable4: string = multiplicationTable4(nbToMultiply4);
-console.log(timesTable4);
+console.log(
+  `La table de multiplication de ${nbToMultiply4} jusqu'à 10 est :\n${timesTable4}\n`
+);
 
 {
   /*
@@ -1519,7 +1527,9 @@ function multiplicationTable5(nb5: unknown): string {
 
 const nbToMultiply5: number = 20;
 const timesTable5: string = multiplicationTable5(nbToMultiply5);
-console.log(timesTable5);
+console.log(
+  `La table de multiplication de ${nbToMultiply5} jusqu'à 10 est :\n${timesTable5}\n`
+);
 
 {
   /*
@@ -1546,7 +1556,9 @@ function multiplicationTable6(nb6: unknown): string {
 
 const nbToMultiply6: number = 7;
 const timesTable6: string = multiplicationTable6(nbToMultiply6);
-console.log(timesTable6);
+console.log(
+  `La table de multiplication de ${nbToMultiply6} jusqu'à 10 est :\n${timesTable6}\n`
+);
 
 {
   /*
@@ -1571,7 +1583,9 @@ function multiplicationTable7(nb7: unknown): string {
 
 const nbToMultiply7: number = 9;
 const timesTable7: string = multiplicationTable7(nbToMultiply7);
-console.log(timesTable7);
+console.log(
+  `La table de multiplication de ${nbToMultiply7} jusqu'à 10 est :\n${timesTable7}\n`
+);
 
 {
   /*
@@ -1598,7 +1612,9 @@ function multiplicationTable8(nb8: unknown): string {
 
 const nbToMultiply8: number = 14;
 const timesTable8: string = multiplicationTable8(nbToMultiply8);
-console.log(timesTable8);
+console.log(
+  `La table de multiplication de ${nbToMultiply8} jusqu'à 10 est :\n${timesTable8}\n`
+);
 
 {
   /*
@@ -1630,7 +1646,10 @@ function findDuplicate(nbArray: unknown[]): number[] {
 
 const nbArray = [15, 27, 27, 15, 28, 29, 27, 31];
 const duplicateNumbers = findDuplicate(nbArray);
-console.log(duplicateNumbers);
+console.log(
+  `Les nombres en doublon dans [${nbArray}] sont :`,
+  duplicateNumbers
+);
 
 {
   /*
@@ -1662,7 +1681,10 @@ function findDuplicate2(nbArray2: unknown[]): number[] {
 
 const nbArray2 = [101, 123, 104, 101, 123, 123, 100, 101, 104, 108];
 const duplicateNumbers2 = findDuplicate2(nbArray2);
-console.log(duplicateNumbers2);
+console.log(
+  `Les nombres en doublon dans [${nbArray2}] sont :`,
+  duplicateNumbers2
+);
 
 {
   /*
@@ -1698,7 +1720,10 @@ function findDuplicate3(nbArray3: unknown[]): number[] {
 
 const nbArray3 = [50, 51, 55, 51, 52, 51, 48, 46, 47, 48];
 const duplicateNumbers3 = findDuplicate3(nbArray3);
-console.log(duplicateNumbers3);
+console.log(
+  `Les nombres en doublon dans [${nbArray3}] sont :`,
+  duplicateNumbers3
+);
 
 {
   /*
@@ -1734,7 +1759,10 @@ function findDuplicate4(nbArray4: unknown[]): number[] {
 
 const nbArray4 = [1, 4, 8, 8, 7, 8, 4, 2, 3];
 const duplicateNumbers4 = findDuplicate4(nbArray4);
-console.log(duplicateNumbers4);
+console.log(
+  `Les nombres en doublon dans [${nbArray4}] sont :`,
+  duplicateNumbers4
+);
 
 {
   /*
@@ -1769,7 +1797,10 @@ function findDuplicate5(nbArray5: unknown[]): number[] {
 
 const nbArray5 = [2.15, 2.12, 2.17, 2.12, 2.18, 2.21, 2.12, 2.18];
 const duplicateNumbers5 = findDuplicate5(nbArray5);
-console.log(duplicateNumbers5);
+console.log(
+  `Les nombres en doublon dans [${nbArray5}] sont :`,
+  duplicateNumbers5
+);
 
 {
   /*
@@ -1804,7 +1835,10 @@ function findDuplicate6(nbArray6: unknown[]): number[] {
 
 const nbArray6 = [5.289, 5.872, 5.289, 6.233, 6.512, 5.289, 6.988];
 const duplicateNumbers6 = findDuplicate6(nbArray6);
-console.log(duplicateNumbers6);
+console.log(
+  `Les nombres en doublon dans [${nbArray6}] sont :`,
+  duplicateNumbers6
+);
 
 {
   /*
@@ -1832,7 +1866,10 @@ function findDuplicate7(nbArray7: unknown[]): number[] {
 
 let nbArray7 = [15.15, 18.15, 15.15, 24.12, 17.155, 18.15, 18.15];
 let duplicateNumbers7: number[] = findDuplicate7(nbArray7);
-console.log(duplicateNumbers7);
+console.log(
+  `Les nombres en doublon dans [${nbArray7}] sont :`,
+  duplicateNumbers7
+);
 
 {
   /*
@@ -1861,4 +1898,7 @@ function findDuplicate8(nbArray8: unknown[]): number[] {
 
 const nbArray8 = [1080, 1012, 2080, 1080, 1080, 1012, 512, 524, 512];
 const duplicateNumbers8: number[] = findDuplicate8(nbArray8);
-console.log(duplicateNumbers8);
+console.log(
+  `Les nombres en doublon dans [${nbArray8}] sont :`,
+  duplicateNumbers8
+);
