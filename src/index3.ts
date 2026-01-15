@@ -31,7 +31,7 @@ function evenDigitsSum(integer: unknown): number {
 
 const integer = 2021;
 const sumOfEvenDigits = evenDigitsSum(integer);
-console.log(sumOfEvenDigits);
+console.log(`La somme des chiffres pairs de ${integer} est :`, sumOfEvenDigits);
 
 {
   /*
@@ -58,8 +58,10 @@ function evenDigitsSum2(integer: unknown): number {
 
 const integer2 = -2489;
 const sumOfEvenDigits2 = evenDigitsSum2(integer2);
-console.log(sumOfEvenDigits2);
-
+console.log(
+  `La somme des chiffres pairs de ${integer2} est :`,
+  sumOfEvenDigits2
+);
 {
   /*
   🔢 1v3. Somme des chiffres pairs
@@ -88,8 +90,10 @@ function evenDigitsSum3(integer: unknown): number {
 
 const integer3 = 13579;
 const sumOfEvenDigits3 = evenDigitsSum3(integer3);
-console.log(sumOfEvenDigits3);
-
+console.log(
+  `La somme des chiffres pairs de ${integer3} est :`,
+  sumOfEvenDigits3
+);
 {
   /*
   🔢 1v4. Somme des chiffres pairs
@@ -118,7 +122,10 @@ function evenDigitsSum4(integer: unknown): number {
 
 const integer4 = 24681;
 const sumOfEvenDigits4 = evenDigitsSum4(integer4);
-console.log(sumOfEvenDigits4);
+console.log(
+  `La somme des chiffres pairs de ${integer4} est :`,
+  sumOfEvenDigits4
+);
 
 {
   /*
@@ -148,7 +155,10 @@ function evenDigitsSum5(integer: unknown): number {
 
 const integer5 = -24689;
 const sumOfEvenDigits5 = evenDigitsSum5(integer5);
-console.log(sumOfEvenDigits5);
+console.log(
+  `La somme des chiffres pairs de ${integer5} est :`,
+  sumOfEvenDigits5
+);
 
 {
   /*
@@ -178,8 +188,10 @@ function evenDigitsSum6(integer: unknown): number {
 
 const integer6 = 1357246849;
 const sumOfEvenDigits6 = evenDigitsSum6(integer6);
-console.log(sumOfEvenDigits6);
-
+console.log(
+  `La somme des chiffres pairs de ${integer6} est :`,
+  sumOfEvenDigits6
+);
 {
   /*
   🔢 1v7. Somme des chiffres pairs
@@ -205,7 +217,10 @@ function evenDigitsSum7(integer: unknown): number {
 
 const integer7 = -11122;
 const sumOfEvenDigits7 = evenDigitsSum7(integer7);
-console.log(sumOfEvenDigits7);
+console.log(
+  `La somme des chiffres pairs de ${integer7} est :`,
+  sumOfEvenDigits7
+);
 
 {
   /*
@@ -233,8 +248,10 @@ function evenDigitsSum8(integer: unknown): number {
 
 const integer8 = 123456;
 const sumOfEvenDigits8 = evenDigitsSum8(integer8);
-console.log(sumOfEvenDigits8);
-
+console.log(
+  `La somme des chiffres pairs de ${integer8} est :`,
+  sumOfEvenDigits8
+);
 {
   /*
   🔢 1v9. Somme des chiffres pairs
@@ -260,7 +277,10 @@ function evenDigitsSum9(integer: unknown): number {
 
 const integer9 = -86425;
 const sumOfEvenDigits9 = evenDigitsSum9(integer9);
-console.log(sumOfEvenDigits9);
+console.log(
+  `La somme des chiffres pairs de ${integer9} est :`,
+  sumOfEvenDigits9
+);
 
 {
   /*
@@ -289,7 +309,7 @@ function reverseANumber(num: unknown): number {
 
 const num = -12345;
 const reversedNum = reverseANumber(num);
-console.log("reverseANumber:", reversedNum);
+console.log(`L'inverse du nombre ${num} est :`, reversedNum);
 
 {
   /*
@@ -317,7 +337,7 @@ function reverseANumber2(num: unknown): number {
 
 const num2 = -67890;
 const reversedNum2 = reverseANumber2(num2);
-console.log("reverseANumber2:", reversedNum2);
+console.log(`L'inverse du nombre ${num2} est :`, reversedNum2);
 {
   /*
   🔁 2v3. Inverser un nombre
@@ -346,8 +366,7 @@ function reverseANumber3(num: unknown): number {
 
 const num3 = 100;
 const reversedNum3 = reverseANumber3(num3);
-console.log("reverseANumber3:", reversedNum3);
-
+console.log(`L'inverse du nombre ${num3} est :`, reversedNum3);
 {
   /*
   🧮 3. PGCD (Plus Grand Commun Diviseur)
@@ -804,7 +823,10 @@ function isAnagram(str1: unknown, str2: unknown): boolean {
 const string1 = "listen";
 const string2 = "silent";
 const areAnagrams = isAnagram(string1, string2);
-console.log("IsAnagram:", areAnagrams);
+console.log(
+  `Est-ce que "${string1}" et "${string2}" sont des anagrammes ?`,
+  areAnagrams
+);
 
 {
   /*
@@ -854,7 +876,10 @@ function isAnagram2(str1: unknown, str2: unknown): boolean {
 const string3 = "triangle";
 const string4 = "integral";
 const areAnagrams2 = isAnagram2(string3, string4);
-console.log(`IsAnagram2:`, areAnagrams2);
+console.log(
+  `Est-ce que "${string3}" et "${string4}" sont des anagrammes ?`,
+  areAnagrams2
+);
 
 {
   /*
@@ -929,8 +954,10 @@ function isAnagram2Bis(str1: unknown, str2: unknown): boolean {
 const string5 = "triangle";
 const string6 = "integral";
 const areAnagrams2Bis = isAnagram2Bis(string5, string6);
-console.log(`IsAnagram2Bis:`, areAnagrams2Bis);
-
+console.log(
+  `Est-ce que "${string5}" et "${string6}" sont des anagrammes ?`,
+  areAnagrams2Bis
+);
 {
   /*
   🔤 4v3. Anagramme
@@ -976,8 +1003,10 @@ function isAnagram3(str1: unknown, str2: unknown): boolean {
 const string7 = "conversation";
 const string8 = "voices rant on";
 const areAnagrams3 = isAnagram3(string7, string8);
-console.log(`IsAnagram3:`, areAnagrams3);
-
+console.log(
+  `Est-ce que "${string7}" et "${string8}" sont des anagrammes ?`,
+  areAnagrams3
+);
 {
   /*
   🔤 4v3Bis (with comments). Anagramme
@@ -1040,7 +1069,10 @@ function isAnagram3Bis(str1: unknown, str2: unknown): boolean {
 const string9 = "conversation";
 const string10 = "voices rant on";
 const areAnagrams3Bis = isAnagram3Bis(string9, string10);
-console.log(`IsAnagram3Bis:`, areAnagrams3Bis);
+console.log(
+  `Est-ce que "${string9}" et "${string10}" sont des anagrammes ?`,
+  areAnagrams3Bis
+);
 {
   /*
 🔤 🔠 5. Mettre en majuscules la première lettre de chaque mot
@@ -1063,7 +1095,7 @@ function capitalizeWords(string: unknown): string {
 
 const str = "hello world";
 const capitalizedStr = capitalizeWords(str);
-console.log(capitalizedStr);
+console.log(`${str} -> ${capitalizedStr}`);
 
 {
   /*
@@ -1089,7 +1121,7 @@ function capitalizeWords2(string: unknown): string {
 
 const str2 = "GOOD MORNING everyone";
 const capitalizedStr2 = capitalizeWords2(str2);
-console.log(capitalizedStr2);
+console.log(`${str2} -> ${capitalizedStr2}`);
 
 {
   /*
@@ -1115,7 +1147,7 @@ function capitalizeWords3(string: unknown): string {
 
 const str3 = "have a nice day";
 const capitalizedStr3 = capitalizeWords3(str3);
-console.log(capitalizedStr3);
+console.log(`${str3} -> ${capitalizedStr3}`);
 
 {
   /*
@@ -1138,8 +1170,7 @@ function capitalizeWords4(string: unknown): string {
 
 const str4 = "welcome to the jungle";
 const capitalizedStr4 = capitalizeWords4(str4);
-console.log(capitalizedStr4);
-
+console.log(`${str4} -> ${capitalizedStr4}`);
 {
   /*
 🔤 🔠 5v4Bis (avec commentaires). Mettre en majuscules la première lettre de chaque mot
@@ -1167,7 +1198,7 @@ function capitalizeWords4Bis(string: unknown): string {
 
 const str4Bis = "welcome to the jungle";
 const capitalizedStr4Bis = capitalizeWords4Bis(str4Bis);
-console.log(capitalizedStr4Bis);
+console.log(`${str4Bis} -> ${capitalizedStr4Bis}`);
 
 {
   /*
@@ -1190,8 +1221,7 @@ function capitalizeWords5(string: unknown): string {
 
 const str5 = "make every day count";
 const capitalizedStr5 = capitalizeWords5(str5);
-console.log(capitalizedStr5);
-
+console.log(`${str5} -> ${capitalizedStr5}`);
 {
   /*
 🔤 🔠 5v6. Mettre en majuscules la première lettre de chaque mot
@@ -1214,7 +1244,7 @@ function capitalizeWords6(string: unknown): string {
 
 const str6 = "seize the day";
 const capitalizedStr6 = capitalizeWords6(str6);
-console.log(capitalizedStr6);
+console.log(`${str6} -> ${capitalizedStr6}`);
 
 {
   /*
@@ -1238,7 +1268,7 @@ function capitalizeWords7(string: unknown): string {
 
 const str7 = "dream big";
 const capitalizedStr7 = capitalizeWords7(str7);
-console.log(capitalizedStr7);
+console.log(`${str7} -> ${capitalizedStr7}`);
 
 {
   /*
@@ -1273,7 +1303,7 @@ function capitalizeWords7Bis(string: unknown): string {
 
 const str7Bis = "dream big";
 const capitalizedStr7Bis = capitalizeWords7Bis(str7Bis);
-console.log(capitalizedStr7Bis);
+console.log(`${str7Bis} -> ${capitalizedStr7Bis}`);
 
 {
   /*
@@ -1302,7 +1332,10 @@ function multiplicationTablesUpTo(num: unknown): string[][] {
 
 const n = 5;
 const multiplicationTable = multiplicationTablesUpTo(n);
-console.log(multiplicationTable);
+console.log(
+  `La table de multiplication jusqu'à ${n} est :`,
+  multiplicationTable
+);
 
 {
   /*
@@ -1331,7 +1364,10 @@ function multiplicationTablesUpToV2(num: unknown): string[][] {
 
 const n2 = 3;
 const multiplicationTable2 = multiplicationTablesUpToV2(n2);
-console.log(multiplicationTable2);
+console.log(
+  `La table de multiplication jusqu'à ${n2} est :`,
+  multiplicationTable2
+);
 
 {
   /*
@@ -1376,7 +1412,10 @@ function multiplicationTablesUpTo2VBis(num: unknown): string[][] {
 // Test the function with an integer
 const n2Bis = 3;
 const multiplicationTable2Bis = multiplicationTablesUpTo2VBis(n2Bis);
-console.log(multiplicationTable2Bis);
+console.log(
+  `La table de multiplication jusqu'à ${n2Bis} est :`,
+  multiplicationTable2Bis
+);
 
 {
   /*
@@ -1409,7 +1448,10 @@ function multiplicationTablesUpToV3(num: unknown): string[][] {
 
 const n3 = 4;
 const multiplicationTable3 = multiplicationTablesUpToV3(n3);
-console.log(multiplicationTable3);
+console.log(
+  `La table de multiplication jusqu'à ${n3} est :`,
+  multiplicationTable3
+);
 
 {
   /*
@@ -1441,7 +1483,10 @@ function multiplicationTablesUpToV4(num: unknown): string[][] {
 
 const n4 = 4;
 const multiplicationTable4 = multiplicationTablesUpToV4(n4);
-console.log(multiplicationTable4);
+console.log(
+  `La table de multiplication jusqu'à ${n4} est :`,
+  multiplicationTable4
+);
 
 {
   /*
@@ -1474,7 +1519,10 @@ function multiplicationTablesUpToV5(num: unknown): string[][] {
 
 const n5 = 7;
 const multiplicationTable5 = multiplicationTablesUpToV5(n5);
-console.log(multiplicationTable5);
+console.log(
+  `La table de multiplication jusqu'à ${n5} est :`,
+  multiplicationTable5
+);
 
 {
   /*
@@ -1507,7 +1555,10 @@ function multiplicationTablesUpToV6(n: unknown): string[][] {
 
 const n6 = 3;
 const multiplicationTable6 = multiplicationTablesUpToV6(n6);
-console.log(multiplicationTable6);
+console.log(
+  `La table de multiplication jusqu'à ${n6} est :`,
+  multiplicationTable6
+);
 
 {
   /*
@@ -1540,7 +1591,7 @@ class MultiplicationTableUpTo {
 const n7 = 6;
 const multiplicationTable7 = new MultiplicationTableUpTo(n7);
 console.log(
-  "tables de mutiplication - classe",
+  `La table de multiplication jusqu'à ${n7} genérée par la classe MultiplicationTableUpTo est :`,
   multiplicationTable7.generate()
 );
 
@@ -1587,7 +1638,7 @@ class MultiplicationTableUpToBis {
 const n7Bis = 6;
 const multiplicationTable7Bis = new MultiplicationTableUpToBis(n7Bis);
 console.log(
-  "tables de mutiplication - classe avec commentaires",
+  `La table de multiplication jusqu'à ${n7Bis} genérée par la classe MultiplicationTableUpToBis est :`,
   multiplicationTable7Bis.generate()
 );
 
@@ -1625,8 +1676,10 @@ class MultiplicationTableUpToV2 {
 
 const n8 = 7;
 const multiplicationTable8 = new MultiplicationTableUpToV2(n8).generate();
-console.log(multiplicationTable8);
-
+console.log(
+  `La table de multiplication jusqu'à ${n8} genérée par la classe MultiplicationTableUpToV2 est :`,
+  multiplicationTable8
+);
 {
   /*
   🧠 6v9. Table de multiplication améliorée
@@ -1661,7 +1714,10 @@ class MultiplicationTableUpToV3 {
 
 const n9 = 10;
 const multiplicationTable9 = new MultiplicationTableUpToV3(n9).generate();
-console.log(multiplicationTable9);
+console.log(
+  `La table de multiplication jusqu'à ${n9} genérée par la classe MultiplicationTableUpToV3 est :`,
+  multiplicationTable9
+);
 
 {
   /*
@@ -1692,7 +1748,7 @@ function getAverage(numArray: unknown[]): number {
 
 const numArray = [15.28, 15.2695, 14.5645, 17.45656];
 const average = getAverage(numArray);
-console.log(average);
+console.log(`La moyenne des nombres dans [${numArray}] est de :`, average);
 
 {
   /*
@@ -1724,8 +1780,7 @@ function getAverage2(numArray: unknown[]): number {
 
 const numArray2 = [10.5, 20.3, 30.7, 40.2];
 const average2 = getAverage2(numArray2);
-console.log(average2);
-
+console.log(`La moyenne des nombres dans [${numArray2}] est de :`, average2);
 {
   /*
   📊 7v3. Calcul de la moyenne
@@ -1759,7 +1814,7 @@ function getAverage3(numArray: unknown[]): number {
 
 const numArray3 = [5.75, 15.25, 25.5, 35.0];
 const average3 = getAverage3(numArray3);
-console.log(average3);
+console.log(`La moyenne des nombres dans [${numArray3}] est de :`, average3);
 
 {
   /*
@@ -1794,7 +1849,7 @@ function getAverage4(numArray: unknown[]): number {
 
 const numArray4 = [12.34, 23.45, 34.56, 45.67];
 const average4 = getAverage4(numArray4);
-console.log(average4);
+console.log(`La moyenne des nombres dans [${numArray4}] est de :`, average4);
 
 {
   /*
@@ -1829,7 +1884,7 @@ function getAverage5(numArray: unknown[]): number {
 
 const numArray5 = [7.89, 8.76, 9.65, 10.54];
 const average5 = getAverage5(numArray5);
-console.log(average5);
+console.log(`La moyenne des nombres dans [${numArray5}] est de :`, average5);
 
 {
   /*
@@ -1864,7 +1919,7 @@ function getAverage6(numArray: unknown[]): number {
 
 const numArray6 = [11.11, 22.22, 33.33, 44.44];
 const average6 = getAverage6(numArray6);
-console.log(average6);
+console.log(`La moyenne des nombres dans [${numArray6}] est de :`, average6);
 
 {
   /*
@@ -1895,7 +1950,7 @@ function getAverage7(numArray: unknown[]): number {
 
 const numArray7 = [100.1, 200.2, 300.3, 400.4];
 const average7 = getAverage7(numArray7);
-console.log(average7);
+console.log(`La moyenne des nombres dans [${numArray7}] est de :`, average7);
 
 {
   /*
@@ -1924,8 +1979,7 @@ function getAverage8(numArray: unknown[]): number {
 
 const numArray8 = [9.99, 8.88, 7.77, 6.66];
 const average8 = getAverage8(numArray8);
-console.log(average8);
-
+console.log(`La moyenne des nombres dans [${numArray8}] est de :`, average8);
 {
   /*
   📊 7v9. Calcul de la moyenne
@@ -1958,7 +2012,7 @@ class MathUtil {
 
 const numArray9 = [50.5, 60.6, 70.7, 80.8];
 const average9 = new MathUtil(numArray9).numbersAverage();
-console.log("moyenne - classe", average9);
+console.log(`La moyenne des nombres dans [${numArray9}] est de :`, average9);
 
 {
   /*
@@ -2008,7 +2062,10 @@ class MathUtilBis {
 // Test the MathUtilBis class with an array of numbers
 const numArray9Bis = [50.5, 60.6, 70.7, 80.8];
 const average9Bis = new MathUtilBis(numArray9Bis).numbersAverage();
-console.log("moyenne - classe", average9Bis);
+console.log(
+  `La moyenne des nombres dans [${numArray9Bis}] est de :`,
+  average9Bis
+);
 
 {
   /*
@@ -2043,7 +2100,7 @@ class MathUtilV2 {
 
 const numArray10 = [105.99, 152.1584, 198.795, 500.25];
 const average10 = new MathUtilV2(numArray10).numbersAverage();
-console.log("moyenne class", average10);
+console.log(`La moyenne des nombres dans [${numArray10}] est de :`, average10);
 
 {
   /*
@@ -2079,7 +2136,7 @@ class MathUtilV3 {
 
 const numArray11 = [1025.98, 1052.899, 1650.596, 1499.9856];
 const average11 = new MathUtilV3(numArray11).averageNumbers();
-console.log(average11);
+console.log(`La moyenne des nombres dans [${numArray11}] est de :`, average11);
 
 {
   /*
@@ -2115,7 +2172,7 @@ class MathUtilV4 {
 
 const numArray12 = [49.2552, 56.8965, 52.4593, 85.7596];
 const average12 = new MathUtilV4(numArray12).averageNumbers();
-console.log(average12);
+console.log(`La moyenne des nombres dans [${numArray12}] est de :`, average12);
 
 {
   /*
@@ -2152,7 +2209,7 @@ class MathUtilV5 {
 
 const numArray13 = [33.33, 44.44, 55.55, 66.66];
 const average13 = new MathUtilV5(numArray13).averageNumbers();
-console.log(average13);
+console.log(`La moyenne des nombres dans [${numArray13}] est de :`, average13);
 
 {
   /*
@@ -2189,7 +2246,7 @@ class MathUtilV6 {
 
 const numArray14 = [88.88, 77.77, 66.66, 55.55];
 const average14 = new MathUtilV6(numArray14).averageNumbers();
-console.log(average14);
+console.log(`La moyenne des nombres dans [${numArray14}] est de :`, average14);
 
 {
   /*
@@ -2222,7 +2279,7 @@ class MathUtilV7 {
 
 const numArray15 = [1.4645, 3.456465, 2.45654, 3.4566545];
 const average15 = new MathUtilV7(numArray15).averageNumbers();
-console.log(average15);
+console.log(`La moyenne des nombres dans [${numArray15}] est de :`, average15);
 
 {
   /*
@@ -2254,7 +2311,7 @@ class MathUtilV8 {
 
 const numArray16 = [23.45, 34.56, 45.67, 56.78];
 const average16 = new MathUtilV8(numArray16).averageNumbers();
-console.log(average16);
+console.log(`La moyenne des nombres dans [${numArray16}] est de :`, average16);
 
 {
   /*
@@ -2290,7 +2347,7 @@ function compressString(str: unknown): string {
 
 const string: string = "aaabbc";
 const compressedString = compressString(string);
-console.log(compressedString);
+console.log(`${string} compressé devient :`, compressedString);
 
 {
   /*
@@ -2329,8 +2386,7 @@ function compressString2(str: unknown): string {
 
 const stringV2: string = "wwwwaaadexxxxxx";
 const compressedString2 = compressString2(stringV2);
-console.log(compressedString2);
-
+console.log(`${stringV2} compressé devient :`, compressedString2);
 {
   /*
   📦 8v3. Compresser une chaîne (Run-length encoding)
@@ -2369,7 +2425,7 @@ function compressString3(str: unknown): string {
 const stringV3: string =
   "zzzzzzzzzzzyyyyyyyyyyyxxxxxxwwwwwwvvvvuuutttsssrrqqppp";
 const compressedString3 = compressString3(stringV3);
-console.log(compressedString3);
+console.log(`${stringV3} compressé devient :`, compressedString3);
 
 {
   /*
@@ -2410,7 +2466,7 @@ function compressString4(str: unknown): string {
 
 const stringV4: string = "ppppqqqqrrrrsssstttuuuvvvwwwxxxx";
 const compressedString4 = compressString4(stringV4);
-console.log(compressedString4);
+console.log(`${stringV4} compressé devient :`, compressedString4);
 
 {
   /*
@@ -2466,7 +2522,7 @@ function compressString4Bis(str: unknown): string {
 // Test the function with a sample string
 const stringV4Bis: string = "ppppqqqqrrrrsssstttuuuvvvwwwxxxx";
 const compressedString4Bis = compressString4Bis(stringV4Bis);
-console.log(compressedString4Bis);
+console.log(`${stringV4Bis} compressé devient :`, compressedString4Bis);
 
 {
   /*
@@ -2484,8 +2540,7 @@ function compressString5(str: unknown): string {
 
 const stringV5: string = "hhhhhggggfffffeeeeddddccccbbbbaaa";
 const compressedString5 = compressString5(stringV5);
-console.log(compressedString5);
-
+console.log(`${stringV5} compressé devient :`, compressedString5);
 {
   /*
   📦 8v5bis (avec commentaires). Compresser une chaîne (Run-length encoding)
@@ -2512,7 +2567,7 @@ function compressString5Bis(str: unknown): string {
 // Test the function with a sample string
 const stringV5Bis: string = "hhhhhggggfffffeeeeddddccccbbbbaaa";
 const compressedString5Bis = compressString5Bis(stringV5Bis);
-console.log(compressedString5Bis);
+console.log(`${stringV5Bis} compressé devient :`, compressedString5Bis);
 
 {
   /*
@@ -2547,7 +2602,10 @@ function getSecondBiggestNumber(numArr: unknown[]): number {
 
 const numbersArray: number[] = [4, 8, 15, 16, 23, 42];
 const secondBiggestNumber = getSecondBiggestNumber(numbersArray);
-console.log(secondBiggestNumber);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray}] est :`,
+  secondBiggestNumber
+);
 
 {
   /*
@@ -2582,7 +2640,10 @@ function getSecondBiggestNumber2(numArr: unknown[]): number {
 
 const numbersArray2: number[] = [10, 20, 30, 40, 50, 60];
 const secondBiggestNumber2 = getSecondBiggestNumber2(numbersArray2);
-console.log(secondBiggestNumber2);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray2}] est :`,
+  secondBiggestNumber2
+);
 
 {
   /*
@@ -2622,7 +2683,10 @@ function getSecondBiggestNumber3(numArr: unknown[]): number {
 
 const numbersArray3: number[] = [2.5, 3.5, 4.75, 5.0, 6.25, 7.5];
 const secondBiggestNumber3 = getSecondBiggestNumber3(numbersArray3);
-console.log(secondBiggestNumber3);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray3}] est :`,
+  secondBiggestNumber3
+);
 
 {
   /*
@@ -2663,7 +2727,10 @@ function getSecondBiggestNumber4(numArr: unknown[]): number {
 
 const numbersArray4: number[] = [99, 150, 375, 200, 250, 300, 350];
 const secondBiggestNumber4 = getSecondBiggestNumber4(numbersArray4);
-console.log(secondBiggestNumber4);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray4}] est :`,
+  secondBiggestNumber4
+);
 
 {
   /*
@@ -2704,7 +2771,10 @@ function getSecondBiggestNumber5(numArr: unknown[]): number {
 
 const numbersArray5: number[] = [1055, 2045, 1500, 3000, 2500, 4000];
 const secondBiggestNumber5 = getSecondBiggestNumber5(numbersArray5);
-console.log(secondBiggestNumber5);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray5}] est :`,
+  secondBiggestNumber5
+);
 
 {
   /*
@@ -2744,7 +2814,10 @@ function getSecondBiggestNumber6(numArr: unknown[]): number {
 
 const numbersArray6: number[] = [500, 600, 700, 800, 900, 1000];
 const secondBiggestNumber6 = getSecondBiggestNumber6(numbersArray6);
-console.log(secondBiggestNumber6);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray6}] est :`,
+  secondBiggestNumber6
+);
 
 {
   /*
@@ -2778,7 +2851,10 @@ function getSecondBiggestNumber7(numArr: unknown[]): number {
 
 const numbersArray7: number[] = [1.78, 2.89, 3.45, 4.56, 5.67, 6.78];
 const secondBiggestNumber7 = getSecondBiggestNumber7(numbersArray7);
-console.log(secondBiggestNumber7);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray7}] est :`,
+  secondBiggestNumber7
+);
 
 {
   /*
@@ -2804,8 +2880,10 @@ function getSecondBiggestNumber8(numArr: unknown[]): number {
 
 const numbersArray8: number[] = [123, 456, 789, 1011, 1213, 1415];
 const secondBiggestNumber8 = getSecondBiggestNumber8(numbersArray8);
-console.log(secondBiggestNumber8);
-
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray8}] est :`,
+  secondBiggestNumber8
+);
 {
   /*
   🎯 9v8bis (avec commentaires). Trouver le deuxième plus grand nombre
@@ -2837,7 +2915,10 @@ function getSecondBiggestNumber8Bis(numArr: unknown[]): number {
 // Test the function with a sample array of numbers
 const numbersArray8Bis: number[] = [123, 456, 789, 1011, 1213, 1415];
 const secondBiggestNumber8Bis = getSecondBiggestNumber8Bis(numbersArray8Bis);
-console.log(secondBiggestNumber8Bis);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray8Bis}] est :`,
+  secondBiggestNumber8Bis
+);
 
 {
   /*
@@ -2875,7 +2956,10 @@ function getSecondBiggestNumber9(numArr: unknown[]): number {
 
 const numbersArray9: number[] = [875, 965, 432, 880, 654, 321, 789];
 const secondBiggestNumber9 = getSecondBiggestNumber9(numbersArray9);
-console.log(secondBiggestNumber9);
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray9}] est :`,
+  secondBiggestNumber9
+);
 
 {
   /*
@@ -2925,8 +3009,10 @@ function getSecondBiggestNumber9Bis(numArr: unknown[]): number {
 // Test the function with a sample array of numbers
 const numbersArray9Bis: number[] = [875, 965, 432, 880, 654, 321, 789];
 const secondBiggestNumber9Bis = getSecondBiggestNumber9Bis(numbersArray9Bis);
-console.log(secondBiggestNumber9Bis);
-
+console.log(
+  `Le deuxième plus grand nombre dans [${numbersArray9Bis}] est :`,
+  secondBiggestNumber9Bis
+);
 {
   /*
   🧩 10. Trouver tous les multiples de 3 ou 5 jusqu'à n
@@ -2951,7 +3037,10 @@ function getThreeOrFiveMultiples(number: unknown): number[] {
 
 const number = 10;
 const threeOrFiveMultiples = getThreeOrFiveMultiples(number);
-console.log(threeOrFiveMultiples);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number} sont :`,
+  threeOrFiveMultiples
+);
 
 {
   /*
@@ -2977,7 +3066,10 @@ function getThreeOrFiveMultiples2(number: unknown): number[] {
 
 const number2 = 15;
 const threeOrFiveMultiples2 = getThreeOrFiveMultiples2(number2);
-console.log(threeOrFiveMultiples2);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number2} sont :`,
+  threeOrFiveMultiples2
+);
 
 {
   /*
@@ -3006,7 +3098,10 @@ function getThreeOrFiveMultiples3(number: unknown): number[] {
 
 const number3 = 20;
 const threeOrFiveMultiples3 = getThreeOrFiveMultiples3(number3);
-console.log(threeOrFiveMultiples3);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number3} sont :`,
+  threeOrFiveMultiples3
+);
 
 {
   /*
@@ -3035,7 +3130,10 @@ function getThreeOrFiveMultiples4(number: unknown): number[] {
 
 const number4 = 25;
 const threeOrFiveMultiples4 = getThreeOrFiveMultiples4(number4);
-console.log(threeOrFiveMultiples4);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number4} sont :`,
+  threeOrFiveMultiples4
+);
 
 {
   /*
@@ -3064,7 +3162,10 @@ function getThreeOrFiveMultiples5(number: unknown): number[] {
 
 const number5 = 30;
 const threeOrFiveMultiples5 = getThreeOrFiveMultiples5(number5);
-console.log(threeOrFiveMultiples5);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number5} sont :`,
+  threeOrFiveMultiples5
+);
 
 {
   /*
@@ -3093,7 +3194,10 @@ function getThreeOrFiveMultiples6(number: unknown): number[] {
 
 const number6 = 35;
 const threeOrFiveMultiples6 = getThreeOrFiveMultiples6(number6);
-console.log(threeOrFiveMultiples6);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number6} sont :`,
+  threeOrFiveMultiples6
+);
 
 {
   /*
@@ -3113,7 +3217,10 @@ function* getThreeOrFiveMultiples7(number: unknown): Generator<number> {
 
 const number7 = 50;
 const threeOrFiveMultiples7 = [...getThreeOrFiveMultiples7(number7)];
-console.log(threeOrFiveMultiples7);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number7} sont :`,
+  threeOrFiveMultiples7
+);
 
 {
   /*
@@ -3145,7 +3252,10 @@ function* getThreeOrFiveMultiples7Bis(number: unknown): Generator<number> {
 // Test the generator function with a sample number
 const number7Bis = 50;
 const threeOrFiveMultiples7Bis = [...getThreeOrFiveMultiples7Bis(number7Bis)];
-console.log(threeOrFiveMultiples7Bis);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number7Bis} sont :`,
+  threeOrFiveMultiples7Bis
+);
 
 {
   /*
@@ -3171,7 +3281,10 @@ function* getThreeOrFiveMultiples8(number: unknown): Generator<number> {
 
 const number8 = 55;
 const threeOrFiveMultiples8 = [...getThreeOrFiveMultiples8(number8)];
-console.log(threeOrFiveMultiples8);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number8} sont :`,
+  threeOrFiveMultiples8
+);
 
 {
   /*
@@ -3196,7 +3309,10 @@ function* getThreeOrFiveMultiples9(number: unknown): Generator<number> {
 
 const number9 = 60;
 const threeOrFiveMultiples9 = [...getThreeOrFiveMultiples9(number9)];
-console.log(threeOrFiveMultiples9);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number9} sont :`,
+  threeOrFiveMultiples9
+);
 
 {
   /*
@@ -3225,8 +3341,10 @@ function* getThreeOrFiveMultiples10(number: unknown): Generator<number> {
 
 const number10 = 28;
 const threeOrFiveMultiples10 = [...getThreeOrFiveMultiples10(number10)];
-console.log(threeOrFiveMultiples10);
-
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number10} sont :`,
+  threeOrFiveMultiples10
+);
 {
   /*
   🧩 10v11. Trouver tous les multiples de 3 ou 5 jusqu'à n
@@ -3251,7 +3369,10 @@ function* getThreeOrFiveMultiples11(number: unknown): Generator<number> {
 
 const number11 = 33;
 const threeOrFiveMultiples11 = [...getThreeOrFiveMultiples11(number11)];
-console.log(threeOrFiveMultiples11);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number11} sont :`,
+  threeOrFiveMultiples11
+);
 
 {
   /*
@@ -3280,4 +3401,7 @@ function* getThreeOrFiveMultiples12(number: unknown): Generator<number> {
 
 const number12 = 40;
 const threeOrFiveMultiples12 = [...getThreeOrFiveMultiples12(number12)];
-console.log(threeOrFiveMultiples12);
+console.log(
+  `Les multiples de 3 ou 5 jusqu'à ${number12} sont :`,
+  threeOrFiveMultiples12
+);
