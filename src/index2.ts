@@ -1,11 +1,6 @@
-import { valid } from "joi";
 import {
   checkIsInteger,
   checkIsString,
-  checkIsPositiveNumber,
-  checkIsArray,
-  checkIsIntegersArray,
-  checkMinArrayLength2,
   validateMinOneNumbersArray,
   validateMinTwoNumbersArray,
   checkIsPositiveNumberMinOne,
@@ -35,7 +30,7 @@ function getDigitCount(int: unknown): number {
 
 const int = 12345;
 const digitCount: number = getDigitCount(int);
-console.log(digitCount);
+console.log(`${int} contient ${digitCount} chiffres.`);
 
 /*
   1v2. Nombre de chiffres
@@ -59,7 +54,7 @@ function getDigitCount2(int2: unknown): number {
 
 const int2 = 1991;
 const digitCount2: number = getDigitCount2(int2);
-console.log(digitCount2);
+console.log(`${int2} contient ${digitCount2} chiffres.`);
 
 /*
   1v3. Nombre de chiffres
@@ -86,8 +81,7 @@ function getDigitCount3(int3: unknown): number {
 
 const int3 = 222332;
 const digitCount3: number = getDigitCount3(int3);
-console.log(digitCount3);
-
+console.log(`${int3} contient ${digitCount3} chiffres.`);
 /*
   1v4. Nombre de chiffres
 Écris une fonction qui retourne le nombre de chiffres dans un entier donné.
@@ -113,7 +107,7 @@ function getDigitCount4(int4: unknown): number {
 
 const int4 = 5269854;
 const digitCount4: number = getDigitCount4(int4);
-console.log(digitCount4);
+console.log(`${int4} contient ${digitCount4} chiffres.`);
 
 /*
   1v5. Nombre de chiffres
@@ -140,7 +134,7 @@ function getDigitCount5(int5: unknown): number {
 
 const int5 = 285;
 const digitCount5: number = getDigitCount5(int5);
-console.log(digitCount5);
+console.log(`${int5} contient ${digitCount5} chiffres.`);
 
 /*
   1v6. Nombre de chiffres
@@ -167,7 +161,7 @@ function getDigitCount6(int6: unknown): number {
 
 const int6 = 10000000;
 const digitCount6: number = getDigitCount6(int6);
-console.log(digitCount6);
+console.log(`${int6} contient ${digitCount6} chiffres.`);
 
 /*
   1v7. Nombre de chiffres
@@ -191,7 +185,7 @@ function getDigitCount7(int7: unknown): number {
 
 const int7 = 1231;
 const digitCount7 = getDigitCount7(int7);
-console.log(digitCount7);
+console.log(`${int7} contient ${digitCount7} chiffres.`);
 
 /*
   1v8. Nombre de chiffres
@@ -216,7 +210,7 @@ function getDigitCount8(int8: unknown): number {
 
 const int8 = 15559;
 const digitCount8 = getDigitCount8(int8);
-console.log(digitCount8);
+console.log(`${int8} contient ${digitCount8} chiffres.`);
 
 {
   /*
@@ -242,8 +236,9 @@ function reverseAString(string: unknown): string {
 
 const stringToReverse: string = "civoduL";
 const reversedString = reverseAString(stringToReverse);
-console.log(reversedString);
-
+console.log(
+  `La chaîne inversée de "${stringToReverse}" est "${reversedString}".`
+);
 {
   /*
   2v2. Inverser une chaîne
@@ -268,7 +263,9 @@ function reverseAString2(string2: unknown): string {
 
 const stringToReverse2: string = "oduL";
 const reversedString2 = reverseAString2(stringToReverse2);
-console.log(reversedString2);
+console.log(
+  `La chaîne inversée de "${stringToReverse2}" est "${reversedString2}".`
+);
 
 {
   /*
@@ -297,7 +294,9 @@ function reverseAString3(string3: unknown): string {
 
 const stringToReverse3: string = "12345";
 const reversedString3 = reverseAString3(stringToReverse3);
-console.log(reversedString3);
+console.log(
+  `La chaîne inversée de "${stringToReverse3}" est "${reversedString3}".`
+);
 
 {
   /*
@@ -326,7 +325,9 @@ function reverseAString4(string4: unknown): string {
 
 const stringToReverse4: string = "ruojnoB";
 const reversedString4 = reverseAString4(stringToReverse4);
-console.log(reversedString4);
+console.log(
+  `La chaîne inversée de "${stringToReverse4}" est "${reversedString4}".`
+);
 
 {
   /*
@@ -355,7 +356,9 @@ function reverseAString5(string5: unknown): string {
 
 const stringToReverse5: string = "esreveR";
 const reversedString5 = reverseAString5(stringToReverse5);
-console.log(reversedString5);
+console.log(
+  `La chaîne inversée de "${stringToReverse5}" est "${reversedString5}".`
+);
 
 {
   /*
@@ -384,7 +387,9 @@ function reverseAString6(string6: unknown): string {
 
 const stringToReverse6: string = "gnirtS";
 const reversedString6 = reverseAString6(stringToReverse6);
-console.log(reversedString6);
+console.log(
+  `La chaîne inversée de "${stringToReverse6}" est "${reversedString6}".`
+);
 
 {
   /*
@@ -409,7 +414,9 @@ function reverseAString7(string7: unknown): string {
 
 const stringToReverse7: string = "olleH";
 const reversedString7 = reverseAString7(stringToReverse7);
-console.log(reversedString7);
+console.log(
+  `La chaîne inversée de "${stringToReverse7}" est "${reversedString7}".`
+);
 
 {
   /*
@@ -431,7 +438,9 @@ function reverseAString8(string8: unknown): string {
 
 const stringToReverse8: string = "dlroW ,olleH";
 const reversedString8 = reverseAString8(stringToReverse8);
-console.log(reversedString8);
+console.log(
+  `La chaîne inversée de "${stringToReverse8}" est "${reversedString8}".`
+);
 
 {
   /*
@@ -463,7 +472,9 @@ function displayMultiplicationTables(number: unknown): string {
 const numberOfTables: number = 5;
 const multiplicationTables: string =
   displayMultiplicationTables(numberOfTables);
-console.log(multiplicationTables);
+console.log(
+  `\nTables de multiplication de 1 jusqu'à ${numberOfTables}:\n\n${multiplicationTables}`
+);
 
 {
   /*
@@ -503,7 +514,9 @@ function displayMultiplicationTables2(number2: unknown): string {
 const numberOfTables2: number = 3;
 const multiplicationTables2: string =
   displayMultiplicationTables2(numberOfTables2);
-console.log(multiplicationTables2);
+console.log(
+  `Tables de multiplication de 1 jusqu'à ${numberOfTables2}:\n\n${multiplicationTables2}`
+);
 
 {
   /*
@@ -564,7 +577,9 @@ function displayMultiplicationTables2WithComments(number2Bis: unknown): string {
 const numberOfTables2Bis: number = 3;
 const multiplicationTables2Bis: string =
   displayMultiplicationTables2WithComments(numberOfTables2Bis);
-console.log(multiplicationTables2Bis);
+console.log(
+  `Tables de multiplication de 1 jusqu'à ${numberOfTables2Bis}:\n\n${multiplicationTables2Bis}`
+);
 
 {
   /*
@@ -600,7 +615,9 @@ function displayMultiplicationTables3(number3: unknown): string {
 const numberOfTables3: number = 4;
 const multiplicationTables3: string =
   displayMultiplicationTables3(numberOfTables3);
-console.log(multiplicationTables3);
+console.log(
+  `Tables de multiplication de 1 jusqu'à ${numberOfTables3}:\n\n${multiplicationTables3}`
+);
 
 {
   /*
@@ -642,7 +659,9 @@ function displayMultiplicationTables4(number4: unknown): string {
 const numberOfTables4: number = 2;
 const multiplicationTables4: string =
   displayMultiplicationTables4(numberOfTables4);
-console.log(multiplicationTables4);
+console.log(
+  `Tables de multiplication de 1 jusqu'à ${numberOfTables4}:\n\n${multiplicationTables4}`
+);
 
 {
   /*
@@ -683,7 +702,9 @@ function displayMultiplicationTables5(number5: unknown): string {
 const numberOfTables5: number = 6;
 const multiplicationTables5: string =
   displayMultiplicationTables5(numberOfTables5);
-console.log(multiplicationTables5);
+console.log(
+  `Tables de multiplication de 1 jusqu'à ${numberOfTables5}:\n\n${multiplicationTables5}`
+);
 
 {
   /*
@@ -731,7 +752,9 @@ function displayMultiplicationTables6(number6: unknown): string {
 const numberOfTables6: number = 2;
 const multiplicationTables6: string =
   displayMultiplicationTables6(numberOfTables6);
-console.log(multiplicationTables6);
+console.log(
+  `Tables de multiplication de 1 jusqu'à ${numberOfTables6}:\n\n${multiplicationTables6}`
+);
 
 {
   /*
@@ -772,7 +795,9 @@ class Tables {
 }
 
 const table5 = new Tables(5);
-console.log("tables 5:" + table5.generate());
+console.log(
+  `Tables de multiplication de 1 jusqu'à 5, genérées avec la classe Tables:\n\n${table5.generate()}   `
+);
 
 {
   /*
@@ -831,7 +856,9 @@ class TablesBis {
 }
 
 const table5Bis = new TablesBis(3);
-console.log("table 5 bis:" + table5Bis.generate());
+console.log(
+  `Tables de multiplication de 1 jusqu'à 3, genérées avec la classe TablesBis:\n\n${table5Bis.generate()}   `
+);
 
 {
   /*
@@ -858,8 +885,7 @@ function digitsSum(integer: unknown): number {
 
 const inputNumber: number = -456;
 const sumOfDigits: number = digitsSum(inputNumber);
-console.log(sumOfDigits);
-
+console.log(`La somme des chiffres de ${inputNumber} est ${sumOfDigits}.`);
 {
   /*
   4v2. Somme des chiffres
@@ -885,7 +911,7 @@ function digitsSum2(integer2: unknown): number {
 
 const inputNumber2: number = 789;
 const sumOfDigits2: number = digitsSum2(inputNumber2);
-console.log(sumOfDigits2);
+console.log(`La somme des chiffres de ${inputNumber2} est ${sumOfDigits2}.`);
 
 {
   /*
@@ -915,8 +941,7 @@ function digitsSum3(integer3: unknown): number {
 
 const inputNumber3: number = 321;
 const sumOfDigits3: number = digitsSum3(inputNumber3);
-console.log(sumOfDigits3);
-
+console.log(`La somme des chiffres de ${inputNumber3} est ${sumOfDigits3}.`);
 {
   /*
   4v4. Somme des chiffres
@@ -945,7 +970,7 @@ function digitsSum4(integer4: unknown): number {
 
 const inputNumber4: number = 654;
 const sumOfDigits4: number = digitsSum4(inputNumber4);
-console.log(sumOfDigits4);
+console.log(`La somme des chiffres de ${inputNumber4} est ${sumOfDigits4}.`);
 
 {
   /*
@@ -975,7 +1000,7 @@ function digitsSum5(integer5: unknown): number {
 
 const inputNumber5: number = 1011;
 const sumOfDigits5: number = digitsSum5(inputNumber5);
-console.log(sumOfDigits5);
+console.log(`La somme des chiffres de ${inputNumber5} est ${sumOfDigits5}.`);
 
 {
   /*
@@ -1005,7 +1030,7 @@ function digitsSum6(integer6: unknown): number {
 
 const inputNumber6: number = 2022;
 const sumOfDigits6: number = digitsSum6(inputNumber6);
-console.log(sumOfDigits6);
+console.log(`La somme des chiffres de ${inputNumber6} est ${sumOfDigits6}.`);
 
 {
   /*
@@ -1032,7 +1057,7 @@ function digitsSum7(integer7: unknown): number {
 
 const inputNumber7: number = 30303;
 const sumOfDigits7: number = digitsSum7(inputNumber7);
-console.log(sumOfDigits7);
+console.log(`La somme des chiffres de ${inputNumber7} est ${sumOfDigits7}.`);
 
 {
   /*
@@ -1060,7 +1085,7 @@ function digitsSum8(integer8: unknown): number {
 
 const inputNumber8: number = 40404;
 const sumOfDigits8: number = digitsSum8(inputNumber8);
-console.log(sumOfDigits8);
+console.log(`La somme des chiffres de ${inputNumber8} est ${sumOfDigits8}.`);
 
 {
   /*
@@ -1090,7 +1115,7 @@ class DigitsSumUtils {
 
 const digitsSumUtil = new DigitsSumUtils(-50505);
 const sumOfDigitsUtil: number = digitsSumUtil.sum();
-console.log(sumOfDigitsUtil);
+console.log(`La somme des chiffres de -50505 est ${sumOfDigitsUtil}.`);
 
 {
   /*
@@ -1131,8 +1156,7 @@ class DigitsSumUtilsWithComments {
 // Testing the class with comments
 const digitsSumUtilBis = new DigitsSumUtilsWithComments(-60606);
 const sumOfDigitsUtilBis: number = digitsSumUtilBis.sum();
-console.log(sumOfDigitsUtilBis);
-
+console.log(`La somme des chiffres de -60606 est ${sumOfDigitsUtilBis}.`);
 {
   /*
   5. Nombre premier
@@ -1159,7 +1183,7 @@ function checkPrimeNumber(nbr: unknown): string {
 
 const nbr: number = 7;
 const primeNumber: string = checkPrimeNumber(nbr);
-console.log("primeNumber:", primeNumber);
+console.log(`Est-ce que ${nbr} est un nombre premier ?`, primeNumber);
 
 {
   /*
@@ -1187,7 +1211,7 @@ function checkPrimeNumber2(nbr2: unknown): string {
 
 const nbr2: number = 11;
 const primeNumber2: string = checkPrimeNumber2(nbr2);
-console.log("primeNumber2:", primeNumber2);
+console.log(`Est-ce que ${nbr2} est un nombre premier ?`, primeNumber2);
 
 {
   /*
@@ -1218,7 +1242,7 @@ function checkPrimeNumber3(nbr3: unknown): string {
 
 const nbr3: number = 13;
 const primeNumber3: string = checkPrimeNumber3(nbr3);
-console.log("primeNumber3:", primeNumber3);
+console.log(`Est-ce que ${nbr3} est un nombre premier ?`, primeNumber3);
 
 {
   /*
@@ -1249,7 +1273,7 @@ function checkPrimeNumber4(nbr4: unknown): string {
 
 const nbr4: number = 18;
 const primeNumber4: string = checkPrimeNumber4(nbr4);
-console.log("primeNumber4:", primeNumber4);
+console.log(`Est-ce que ${nbr4} est un nombre premier ?`, primeNumber4);
 
 {
   /*
@@ -1282,7 +1306,8 @@ function checkPrimeNumber5(nbr5: unknown): string {
 
 const nbr5: number = 19;
 const primeNumber5: string = checkPrimeNumber5(nbr5);
-console.log("primeNumber5:", primeNumber5);
+console.log(`Est-ce que ${nbr5} est un nombre premier ?`, primeNumber5);
+
 {
   /*
   5v6. Nombre premier
@@ -1314,7 +1339,7 @@ function checkPrimeNumber6(nbr6: unknown): string {
 
 const nbr6: number = 24;
 const primeNumber6: string = checkPrimeNumber6(nbr6);
-console.log("primeNumber6:", primeNumber6);
+console.log(`Est-ce que ${nbr6} est un nombre premier ?`, primeNumber6);
 
 {
   /*
@@ -1346,7 +1371,10 @@ function isPrimeNumber(nbr7: unknown): boolean {
 
 const nbr7: number = 30;
 const primeNumber7: boolean = isPrimeNumber(nbr7);
-console.log("primeNumber7:", primeNumber7);
+console.log(
+  `Vrai ou faux, est-ce que ${nbr7} est un nombre premier ?`,
+  primeNumber7
+);
 
 {
   /*
@@ -1378,7 +1406,10 @@ function isPrimeNumber2(nbr8: unknown): boolean {
 
 const nbr8: number = 38;
 const primeNumber8: boolean = isPrimeNumber2(nbr8);
-console.log("primeNumber8:", primeNumber8);
+console.log(
+  `Vrai ou faux, est-ce que ${nbr8} est un nombre premier ?`,
+  primeNumber8
+);
 
 {
   /*
@@ -1413,7 +1444,10 @@ function isPrimeNumber3(nbr9: unknown): boolean {
 
 const nbr9: number = 42;
 const primeNumber9: boolean = isPrimeNumber3(nbr9);
-console.log("primeNumber9:", primeNumber9);
+console.log(
+  `Vrai ou faux, est-ce que ${nbr9} est un nombre premier ?`,
+  primeNumber9
+);
 
 {
   /*
@@ -1448,7 +1482,10 @@ function isPrimeNumber4(nbr10: unknown): boolean {
 
 const nbr10: number = 48;
 const primeNumber10: boolean = isPrimeNumber4(nbr10);
-console.log("primeNumber10:", primeNumber10);
+console.log(
+  `Vrai ou faux, est-ce que ${nbr10} est un nombre premier ?`,
+  primeNumber10
+);
 
 {
   /*
@@ -1483,7 +1520,10 @@ function isPrimeNumber5(nbr11: unknown): boolean {
 
 const nbr11: number = 54;
 const primeNumber11: boolean = isPrimeNumber5(nbr11);
-console.log("primeNumber11:", primeNumber11);
+console.log(
+  `Vrai ou faux, est-ce que ${nbr11} est un nombre premier ?`,
+  primeNumber11
+);
 
 {
   /*
@@ -1518,7 +1558,10 @@ function isPrimeNumber6(nbr12: unknown): boolean {
 
 const nbr12: number = 59;
 const primeNumber12: boolean = isPrimeNumber6(nbr12);
-console.log("primeNumber12:", primeNumber12);
+console.log(
+  `Vrai ou faux, est-ce que ${nbr12} est un nombre premier ?`,
+  primeNumber12
+);
 
 {
   /*
@@ -1543,7 +1586,7 @@ function countLettersInAString(sentence: unknown): number {
 
 const sentenceToCount: string = "Bonjour, ça va 123 ?";
 const letterCount: number = countLettersInAString(sentenceToCount);
-console.log(letterCount);
+console.log(`La phrase "${sentenceToCount}" contient ${letterCount} lettres.`);
 
 {
   /*
@@ -1568,7 +1611,9 @@ function countLettersInAString2(sentence: unknown): number {
 
 const sentenceToCount2: string = "Salut! Comment ça va 456 ?";
 const letterCount2: number = countLettersInAString2(sentenceToCount2);
-console.log(letterCount2);
+console.log(
+  `La phrase "${sentenceToCount2}" contient ${letterCount2} lettres.`
+);
 
 {
   /*
@@ -1596,7 +1641,9 @@ function countLettersInAString3(sentence: unknown): number {
 
 const sentenceToCount3: string = "Coucou! Ça roule 789 ?";
 const letterCount3: number = countLettersInAString3(sentenceToCount3);
-console.log(letterCount3);
+console.log(
+  `La phrase "${sentenceToCount3}" contient ${letterCount3} lettres.`
+);
 
 {
   /*
@@ -1624,7 +1671,9 @@ function countLettersInAString4(sentence: unknown): number {
 
 const sentenceToCount4: string = "Hey! Quoi de neuf 1010 ?";
 const letterCount4: number = countLettersInAString4(sentenceToCount4);
-console.log(letterCount4);
+console.log(
+  `La phrase "${sentenceToCount4}" contient ${letterCount4} lettres.`
+);
 
 {
   /*
@@ -1652,7 +1701,9 @@ function countLettersInAString5(sentence: unknown): number {
 
 const sentenceToCount5: string = "Salut! Tout baigne 1112 ?";
 const letterCount5: number = countLettersInAString5(sentenceToCount5);
-console.log(letterCount5);
+console.log(
+  `La phrase "${sentenceToCount5}" contient ${letterCount5} lettres.`
+);
 
 {
   /*
@@ -1680,7 +1731,9 @@ function countLettersInAString6(sentence: unknown): number {
 
 const sentenceToCount6: string = "Hello! Ça gaze 1314 ?";
 const letterCount6: number = countLettersInAString6(sentenceToCount6);
-console.log(letterCount6);
+console.log(
+  `La phrase "${sentenceToCount6}" contient ${letterCount6} lettres.`
+);
 
 {
   /*
@@ -1705,7 +1758,9 @@ function countLettersInAString7(sentence: unknown): number {
 
 const sentenceToCount7: string = "Yo! Quoi de beau 1516 ?";
 const letterCount7: number = countLettersInAString7(sentenceToCount7);
-console.log(letterCount7);
+console.log(
+  `La phrase "${sentenceToCount7}" contient ${letterCount7} lettres.`
+);
 
 {
   /*
@@ -1729,7 +1784,9 @@ function countLettersInAString8(sentence: unknown): number {
 
 const sentenceToCount8: string = "Salut! La vie est belle 1718 ?";
 const letterCount8: number = countLettersInAString8(sentenceToCount8);
-console.log(letterCount8);
+console.log(
+  `La phrase "${sentenceToCount8}" contient ${letterCount8} lettres.`
+);
 
 {
   /*
@@ -1762,7 +1819,9 @@ function countLettersInAString8WithCmments(sentence: unknown): number {
 const sentenceToCount8Bis: string = "Salut! La vie est belle 1718 ?";
 const letterCount8Bis: number =
   countLettersInAString8WithCmments(sentenceToCount8Bis);
-console.log(letterCount8Bis);
+console.log(
+  `La phrase "${sentenceToCount8Bis}" contient ${letterCount8Bis} lettres.`
+);
 
 {
   /*
@@ -1790,7 +1849,9 @@ function findTheLongestWord(sentence: unknown): string {
 const inputSentence: string =
   "Le développement logiciel est une discipline passionnante";
 const longestWord: string = findTheLongestWord(inputSentence);
-console.log(longestWord);
+console.log(
+  `Dans la phrase "${inputSentence}", le mot le plus long est "${longestWord}".`
+);
 
 {
   /*
@@ -1818,7 +1879,9 @@ function findTheLongestWord2(sentence: unknown): string {
 const inputSentence2: string =
   "La programmation est un art qui demande de la créativité";
 const longestWord2: string = findTheLongestWord2(inputSentence2);
-console.log(longestWord2);
+console.log(
+  `Dans la phrase "${inputSentence2}", le mot le plus long est "${longestWord2}".`
+);
 
 {
   /*
@@ -1849,7 +1912,9 @@ function findTheLongestWord3(sentence: unknown): string {
 const inputSentence3: string =
   "Apprendre à coder ouvre de nombreuses opportunités professionnelles";
 const longestWord3: string = findTheLongestWord3(inputSentence3);
-console.log(longestWord3);
+console.log(
+  `Dans la phrase "${inputSentence3}", le mot le plus long est "${longestWord3}".`
+);
 
 {
   /*
@@ -1880,7 +1945,9 @@ function findTheLongestWord4(sentence: unknown): string {
 const inputSentence4: string =
   "Les algorithmes sont essentiels pour résoudre des problèmes complexes";
 const longestWord4: string = findTheLongestWord4(inputSentence4);
-console.log(longestWord4);
+console.log(
+  `Dans la phrase "${inputSentence4}", le mot le plus long est "${longestWord4}".`
+);
 
 {
   /*
@@ -1914,7 +1981,9 @@ function findTheLongestWord5(sentence: unknown): string {
 
 const inputSentence5: string = "Écartons ton carton car ton carton nous gêne.";
 const longestWord5: string = findTheLongestWord5(inputSentence5);
-console.log(longestWord5);
+console.log(
+  `Dans la phrase "${inputSentence5}", le mot le plus long est "${longestWord5}".`
+);
 
 {
   /*
@@ -1949,7 +2018,9 @@ function findTheLongestWord6(sentence: unknown): string {
 const inputSentence6: string =
   "Un chasseur sachant chasser doit savoir chasser sans son chien.";
 const longestWord6: string = findTheLongestWord6(inputSentence6);
-console.log(longestWord6);
+console.log(
+  `Dans la phrase "${inputSentence6}", le mot le plus long est "${longestWord6}".`
+);
 
 {
   /*
@@ -1977,7 +2048,9 @@ function findTheLongestWord7(sentence: unknown): string {
 const inputSentence7: string =
   "Si mon tonton tond ton tonton, ton tonton sera tondu.";
 const longestWord7: string = findTheLongestWord7(inputSentence7);
-console.log(longestWord7);
+console.log(
+  `Dans la phrase "${inputSentence7}", le mot le plus long est "${longestWord7}".`
+);
 
 {
   /*
@@ -2002,7 +2075,9 @@ function findTheLongestWord8(sentence: unknown): string {
 const inputSentence8: string =
   "Je veux et j'exige du jasmin et des jasmins pour mon jardin.";
 const longestWord8: string = findTheLongestWord8(inputSentence8);
-console.log(longestWord8);
+console.log(
+  `Dans la phrase "${inputSentence8}", le mot le plus long est "${longestWord8}".`
+);
 
 {
   /*
@@ -2029,7 +2104,9 @@ function filterOddNumbers(nbrArray: unknown[]): number[] {
 
 const numbersArray = [7, 8, 16, 21, 31, 38, 43];
 const oddNbrArray = filterOddNumbers(numbersArray);
-console.log(oddNbrArray);
+console.log(
+  `Dans le tableau [${numbersArray}], les nombres impairs sont [${oddNbrArray}].`
+);
 
 {
   /*
@@ -2056,7 +2133,9 @@ function filterOddNumbers2(nbrArray: unknown[]): number[] {
 
 const numbersArray2 = [10, 15, 22, 27, 34, 39, 44];
 const oddNbrArray2 = filterOddNumbers2(numbersArray2);
-console.log(oddNbrArray2);
+console.log(
+  `Dans le tableau [${numbersArray2}], les nombres impairs sont [${oddNbrArray2}].`
+);
 
 {
   /*
@@ -2086,7 +2165,9 @@ function filterOddNumbers3(nbrArray: unknown[]): number[] {
 
 const numbersArray3 = [5, 12, 19, 26, 33, 40, 47];
 const oddNbrArray3 = filterOddNumbers3(numbersArray3);
-console.log(oddNbrArray3);
+console.log(
+  `Dans le tableau [${numbersArray3}], les nombres impairs sont [${oddNbrArray3}].`
+);
 
 {
   /*
@@ -2116,7 +2197,9 @@ function filterOddNumbers4(nbrArray: unknown[]): number[] {
 
 const numbersArray4 = [2, 9, 14, 23, 28, 37, 50];
 const oddNbrArray4 = filterOddNumbers4(numbersArray4);
-console.log(oddNbrArray4);
+console.log(
+  `Dans le tableau [${numbersArray4}], les nombres impairs sont [${oddNbrArray4}].`
+);
 
 {
   /*
@@ -2146,7 +2229,9 @@ function filterOddNumbers5(nbrArray: unknown[]): number[] {
 
 const numbersArray5 = [1, 6, 13, 18, 25, 32, 49];
 const oddNbrArray5 = filterOddNumbers5(numbersArray5);
-console.log(oddNbrArray5);
+console.log(
+  `Dans le tableau [${numbersArray5}], les nombres impairs sont [${oddNbrArray5}].`
+);
 
 {
   /*
@@ -2176,7 +2261,9 @@ function filterOddNumbers6(nbrArray: unknown): number[] {
 
 const numbersArray6 = [4, 11, 20, 29, 36, 45, 52];
 const oddNbrArray6 = filterOddNumbers6(numbersArray6);
-console.log(oddNbrArray6);
+console.log(
+  `Dans le tableau [${numbersArray6}], les nombres impairs sont [${oddNbrArray6}].`
+);
 
 {
   /*
@@ -2203,7 +2290,9 @@ function filterOddNumbers7(nbrArray: unknown[]): number[] {
 
 const numbersArray7 = [3, 14, 17, 24, 35, 42, 55];
 const oddNbrArray7 = filterOddNumbers7(numbersArray7);
-console.log(oddNbrArray7);
+console.log(
+  `Dans le tableau [${numbersArray7}], les nombres impairs sont [${oddNbrArray7}].`
+);
 
 {
   /*
@@ -2232,7 +2321,9 @@ function filterOddNumbers8(nbrArray: unknown[]): number[] {
 
 const numbersArray8 = [9, 18, 27, 34, 41, 58, 63];
 const oddNbrArray8 = filterOddNumbers8(numbersArray8);
-console.log(oddNbrArray8);
+console.log(
+  `Dans le tableau [${numbersArray8}], les nombres impairs sont [${oddNbrArray8}].`
+);
 
 {
   /*
@@ -2270,7 +2361,9 @@ function filterOddNumbers8WithComments(nbrArray: unknown[]): number[] {
 
 const numbersArray8Bis = [14, 23, 30, 47, 52, 69, 78];
 const oddNbrArray8Bis = filterOddNumbers8WithComments(numbersArray8Bis);
-console.log(oddNbrArray8Bis);
+console.log(
+  `Dans le tableau [${numbersArray8Bis}], les nombres impairs sont [${oddNbrArray8Bis}].`
+);
 
 {
   /*
@@ -2309,7 +2402,9 @@ function getMostCommunValue(nbArray: unknown[]): number {
 
 const nbArray: number[] = [1, 3, 2, 3, 4, 2, 3, 5, 1, 2, 2, 3];
 const mostCommonValue: number = getMostCommunValue(nbArray);
-console.log(mostCommonValue);
+console.log(
+  `Dans le tableau [${nbArray}], la valeur la plus fréquente est ${mostCommonValue}.`
+);
 {
   /*
   9Bis (with comments). Valeur la plus fréquente
@@ -2356,8 +2451,9 @@ function getMostCommunValueWithComments(nbArray: unknown[]): number {
 
 const nbArrayBis: number[] = [1, 3, 2, 3, 4, 2, 3, 5, 1, 2, 2, 3];
 const mostCommonValueBis: number = getMostCommunValueWithComments(nbArrayBis);
-console.log(mostCommonValueBis);
-
+console.log(
+  `Dans le tableau [${nbArrayBis}], la valeur la plus fréquente est ${mostCommonValueBis}.`
+);
 {
   /*
   9v2. Valeur la plus fréquente
@@ -2395,7 +2491,9 @@ function getMostCommunValue2(nbArray: unknown[]): number {
 
 const nbArray2: number[] = [4, 5, 4, 6, 7, 5, 4, 8, 9, 5, 4, 5];
 const mostCommunValue2: number = getMostCommunValue2(nbArray2);
-console.log(mostCommunValue2);
+console.log(
+  `Dans le tableau [${nbArray2}], la valeur la plus fréquente est ${mostCommunValue2}.`
+);
 
 {
   /*
@@ -2440,7 +2538,9 @@ function getMostCommunValue3(nbArray: unknown[]): number {
 
 const nbArray3: number[] = [6, 7, 8, 6, 9, 7, 6, 10, 11, 7, 6];
 const mostCommonValue3: number = getMostCommunValue3(nbArray3);
-console.log(mostCommonValue3);
+console.log(
+  `Dans le tableau [${nbArray3}], la valeur la plus fréquente est ${mostCommonValue3}.`
+);
 
 {
   /*
@@ -2485,8 +2585,9 @@ function getMostCommunValue4(nbArray: unknown[]): number {
 
 const nbArray4: number[] = [8, 9, 8, 10, 11, 9, 8, 12, 13, 9, 8, 9];
 const mostCommonValue4: number = getMostCommunValue4(nbArray4);
-console.log(mostCommonValue4);
-
+console.log(
+  `Dans le tableau [${nbArray4}], la valeur la plus fréquente est ${mostCommonValue4}.`
+);
 {
   /*
   9v5. Valeur la plus fréquente
@@ -2532,7 +2633,9 @@ const nbArray5: number[] = [
   2.25, 3.5, 4.75, 2.25, 4.75, 5.0, 3.5, 2.25, 6.0, 4.75,
 ];
 const mostCommonValue5: number = getMostCommunValue5(nbArray5);
-console.log(mostCommonValue5);
+console.log(
+  `Dans le tableau [${nbArray5}], la valeur la plus fréquente est ${mostCommonValue5}.`
+);
 
 {
   /*
@@ -2577,7 +2680,9 @@ function getMostCommunValue6(nbArray: unknown[]): number {
 
 const nbArray6: number[] = [5.5, 6.5, 5.5, 7.5, 8.5, 6.5, 5.5, 9.5];
 const mostCommonValue6: number = getMostCommunValue6(nbArray6);
-console.log(mostCommonValue6);
+console.log(
+  `Dans le tableau [${nbArray6}], la valeur la plus fréquente est ${mostCommonValue6}.`
+);
 
 {
   /*
@@ -2612,7 +2717,9 @@ function getMostCommunValue7(nbArray: unknown[]): number {
 
 const nbArray7: number[] = [10, 11, 10, 12, 13, 11, 10, 14, 15, 11];
 const mostCommonValue7: number = getMostCommunValue7(nbArray7);
-console.log(mostCommonValue7);
+console.log(
+  `Dans le tableau [${nbArray7}], la valeur la plus fréquente est ${mostCommonValue7}.`
+);
 
 {
   /*
@@ -2649,7 +2756,9 @@ function getMostCommunValue8(nbArray: unknown[]): number {
 
 const nbArray8: number[] = [20, 21, 20, 22, 23, 21, 20, 24, 25, 21];
 const mostCommonValue8: number = getMostCommunValue8(nbArray8);
-console.log(mostCommonValue8);
+console.log(
+  `Dans le tableau [${nbArray8}], la valeur la plus fréquente est ${mostCommonValue8}.`
+);
 
 {
   /*
@@ -2705,7 +2814,9 @@ const nbArray8Bis: number[] = [
   19, 20, 21, 19, 20, 22, 19, 23, 21, 19, 20, 19, 24, 19, 19, 25, 21,
 ];
 const mostCommonValue8Bis: number = getMostCommunValue8Bis(nbArray8Bis);
-console.log(mostCommonValue8Bis);
+console.log(
+  `Dans le tableau [${nbArray8Bis}], la valeur la plus fréquente est ${mostCommonValue8Bis}.`
+);
 
 {
   /*
@@ -2742,7 +2853,9 @@ function getMostCommunValue9(nbArray: unknown[]): number {
 
 const nbArray9: number[] = [30, 31, 30, 32, 33, 31, 30, 34, 35, 31, 30, 30];
 const mostCommonValue9: number = getMostCommunValue9(nbArray9);
-console.log(mostCommonValue9);
+console.log(
+  `Dans le tableau [${nbArray9}], la valeur la plus fréquente est ${mostCommonValue9}.`
+);
 
 {
   /*
@@ -2782,7 +2895,9 @@ function getMostCommunValue10(nbArray: unknown[]): number {
 
 const nbArray10: number[] = [40, 41, 40, 42, 43, 41, 40, 44, 45, 41];
 const mostCommonValue10: number = getMostCommunValue10(nbArray10);
-console.log(mostCommonValue10);
+console.log(
+  `Dans le tableau [${nbArray10}], la valeur la plus fréquente est ${mostCommonValue10}.`
+);
 
 {
   /*
@@ -2822,7 +2937,9 @@ function getMostCommunValue11(nbArray: unknown[]): number {
 
 const nbArray11: number[] = [50.8, 51.9, 50.8, 52.1, 53.2, 51.9, 50.8, 54.3];
 const mostCommonValue11: number = getMostCommunValue11(nbArray11);
-console.log(mostCommonValue11);
+console.log(
+  `Dans le tableau [${nbArray11}], la valeur la plus fréquente est ${mostCommonValue11}.`
+);
 
 {
   /*
@@ -2864,7 +2981,9 @@ const nbArray12: number[] = [
   59, 25, 60.5, 59.25, 61.75, 62.0, 60.5, 59.25, 63.5,
 ];
 const mostCommonValue12: number = getMostCommunValue12(nbArray12);
-console.log(mostCommonValue12);
+console.log(
+  `Dans le tableau [${nbArray12}], la valeur la plus fréquente est ${mostCommonValue12}.`
+);
 
 {
   /*
@@ -2904,7 +3023,9 @@ function getMostCommunValue13(nbArray: unknown[]): number {
 
 const nbArray13: number[] = [70, 71, 70, 72, 73, 71, 70, 74, 75, 71];
 const mostCommonValue13: number = getMostCommunValue13(nbArray13);
-console.log(mostCommonValue13);
+console.log(
+  `Dans le tableau [${nbArray13}], la valeur la plus fréquente est ${mostCommonValue13}.`
+);
 
 {
   /*
@@ -2939,7 +3060,9 @@ function getMostCommunValue14(nbArray: unknown[]): number {
 
 const nbArray14: number[] = [-5, -4, -5, -3, -2, -4, -5, -1, 0, -4];
 const mostCommonValue14: number = getMostCommunValue14(nbArray14);
-console.log(mostCommonValue14);
+console.log(
+  `Dans le tableau [${nbArray14}], la valeur la plus fréquente est ${mostCommonValue14}.`
+);
 
 {
   /*
@@ -2975,7 +3098,9 @@ const nbArray15: number[] = [
   -10.99, -9.88, -10.99, -8.77, -7.66, -9.88, -10.99,
 ];
 const mostCommonValue15: number = getMostCommonValue15(nbArray15);
-console.log(mostCommonValue15);
+console.log(
+  `Dans le tableau [${nbArray15}], la valeur la plus fréquente est ${mostCommonValue15}.`
+);
 
 {
   /*
@@ -3016,7 +3141,10 @@ function arraysFusion(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1: number[] = [1, 2, 3, 4, 5];
 const numArr2: number[] = [5, 6, 7, 8];
 const mergedArray: number[] = arraysFusion(numArr1, numArr2);
-console.log("final merged array:", mergedArray);
+console.log(
+  `\nLa fusion des tableaux [${numArr1}] et [${numArr2}] donne :`,
+  mergedArray
+);
 
 {
   /*
@@ -3052,7 +3180,10 @@ function arraysFusion2(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v2: number[] = [10, 20, 30, 40, 50];
 const numArr2v2: number[] = [50, 60, 70, 80];
 const mergedArray2: number[] = arraysFusion2(numArr1v2, numArr2v2);
-console.log("final merged array v2:", mergedArray2);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v2}] et [${numArr2v2}] donne :`,
+  mergedArray2
+);
 
 {
   /*
@@ -3092,7 +3223,10 @@ function arraysFusion3(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v3: number[] = [100, 200, 300, 400];
 const numArr2v3: number[] = [400, 500, 600, 700];
 const mergedArray3: number[] = arraysFusion3(numArr1v3, numArr2v3);
-console.log("final merged array v3:", mergedArray3);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v3}] et [${numArr2v3}] donne :`,
+  mergedArray3
+);
 
 {
   /*
@@ -3132,7 +3266,10 @@ function arraysFusion4(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v4: number[] = [-15, -10, -5, 0];
 const numArr2v4: number[] = [0, 5, 10, 15];
 const mergedArray4: number[] = arraysFusion4(numArr1v4, numArr2v4);
-console.log("final merged array v4:", mergedArray4);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v4}] et [${numArr2v4}] donne :`,
+  mergedArray4
+);
 
 {
   /*
@@ -3175,7 +3312,10 @@ function arraysFusion5(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v5: number[] = [3.3, 4.4, 5.5];
 const numArr2v5: number[] = [5.5, 6.6, 7.7];
 const mergedArray5: number[] = arraysFusion5(numArr1v5, numArr2v5);
-console.log("final merged array v5:", mergedArray5);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v5}] et [${numArr2v5}] donne :`,
+  mergedArray5
+);
 
 {
   /*
@@ -3218,7 +3358,10 @@ function arraysFusion6(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v6: number[] = [7.7, 8.8, 9.9];
 const numArr2v6: number[] = [9.9, 10.1, 11.11];
 const mergedArray6: number[] = arraysFusion6(numArr1v6, numArr2v6);
-console.log("final merged array v6:", mergedArray6);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v6}] et [${numArr2v6}] donne :`,
+  mergedArray6
+);
 
 {
   /*
@@ -3252,7 +3395,10 @@ function arraysFusion7(nbArray1: unknown[], nbArray2: unknown[]) {
 const numArr1v7: number[] = [12, 14, 16, 18];
 const numArr2v7: number[] = [18, 20, 22, 24];
 const mergedArray7: number[] = arraysFusion7(numArr1v7, numArr2v7);
-console.log("final merged array v7:", mergedArray7);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v7}] et [${numArr2v7}] donne :`,
+  mergedArray7
+);
 
 {
   /*
@@ -3285,7 +3431,10 @@ function arraysFusion8(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v8: number[] = [25, 30, 35];
 const numArr2v8: number[] = [35, 40, 45];
 const mergedArray8: number[] = arraysFusion8(numArr1v8, numArr2v8);
-console.log("final merged array v8:", mergedArray8);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v8}] et [${numArr2v8}] donne :`,
+  mergedArray8
+);
 
 {
   /*
@@ -3312,8 +3461,10 @@ function arraysFusion9(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v9: number[] = [1000, 1000, 5000, 2000, 3000];
 const numArr2v9: number[] = [3000, 4000, 5000];
 const mergedArray9: number[] = arraysFusion9(numArr1v9, numArr2v9);
-console.log("final merged array v9:", mergedArray9);
-
+console.log(
+  `\nLa fusion des tableaux [${numArr1v9}] et [${numArr2v9}] donne :`,
+  mergedArray9
+);
 {
   /*
   10v9Bis (with comments). Fusion de tableaux
@@ -3345,4 +3496,7 @@ function arraysFusion9Bis(nbArray1: unknown[], nbArray2: unknown[]): number[] {
 const numArr1v9Bis: number[] = [6000, 6000, 7000, 8000, 6000, 9000];
 const numArr2v9Bis: number[] = [8000, 10000, 11000];
 const mergedArray9Bis: number[] = arraysFusion9Bis(numArr1v9Bis, numArr2v9Bis);
-console.log("final merged array v9 bis:", mergedArray9Bis);
+console.log(
+  `\nLa fusion des tableaux [${numArr1v9Bis}] et [${numArr2v9Bis}] donne :`,
+  mergedArray9Bis
+);

@@ -2,8 +2,6 @@ import {
   checkIsInteger,
   checkIsPositiveNumber,
   checkIsString,
-  checkIsArray,
-  checkMinArrayLength2,
   validateMinTwoNumbersArray,
   validateMinTwoIntegersArray,
   checkIsPositiveNumberMinOne,
