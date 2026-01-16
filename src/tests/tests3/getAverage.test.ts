@@ -5,6 +5,9 @@ import {
   getAverage4,
   getAverage8,
   MathUtil,
+  MathUtilV3,
+  MathUtilV7,
+  MathUtilV8,
 } from "../../algo/algo3/getAverage";
 
 // Tests for getAverage functions
@@ -47,7 +50,13 @@ describe.each([
 });
 
 // Tests for MathUtil class
-describe("MathUtil class", () => {
+describe.each([
+  { class: MathUtil, name: "MathUtil" },
+  { class: MathUtilV3, name: "MathUtilV3" },
+  { class: MathUtilV7, name: "MathUtilV7" },
+  { class: MathUtilV8, name: "MathUtilV8" },
+])("$name", ({ class: MathUtilClass }) => {
+  // use it.each to test multiple cases
   it.each([
     [[10, 20, 30], 20],
     [[5, 15, 25, 35], 20],
@@ -58,22 +67,22 @@ describe("MathUtil class", () => {
     [[-10, 0, 10], 0],
     [[-5, -15, -10], -10],
   ])("MathUtil.numbersAverage(%p) should return %p", (array, expected) => {
-    const mathUtil = new MathUtil(array);
-    const result = mathUtil.numbersAverage();
+    const mathUtil = new MathUtilClass(array);
+    const result = mathUtil.averageNumbers();
     expect(result).toBeCloseTo(expected, 2);
   });
-});
 
-it.each([
-  [[10]],
-  [["a", "b"]],
-  [["a", 20, 30]],
-  [[10, "20", 30]],
-  [null],
-  [undefined],
-  [[null, undefined, 5]],
-])("MathUtil should throw error for invalid input %p", (input) => {
-  expect(() => new MathUtil(input as any)).toThrowError(
-    "La saisie doit être un tableau contenant strictement des nombres et au moins deux éléments.",
-  );
+  it.each([
+    [[10]],
+    [["a", "b"]],
+    [["a", 20, 30]],
+    [[10, "20", 30]],
+    [null],
+    [undefined],
+    [[null, undefined, 5]],
+  ])("should throw error for invalid input %p", (input) => {
+    expect(() => new MathUtilClass(input as any)).toThrowError(
+      "La saisie doit être un tableau contenant strictement des nombres et au moins deux éléments.",
+    );
+  });
 });
