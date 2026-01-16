@@ -63,7 +63,7 @@ export class MathUtil {
     this.numArray = numbersArray;
   }
 
-  public numbersAverage(): number {
+  public averageNumbers(): number {
     const numberArray = this.numArray;
     const lengthNumArray: number = numberArray.length;
     let sum: number = 0;
@@ -72,6 +72,68 @@ export class MathUtil {
       const value: number = numberArray[i];
       sum += value;
     }
+    const average: number = sum / lengthNumArray;
+    return Math.round(average * 100) / 100;
+  }
+}
+
+export class MathUtilV3 {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public averageNumbers(): number {
+    const numbersArray = this.numArray;
+    const lengthNumArray: number = numbersArray.length;
+    let sum: number = 0;
+
+    let i = 0;
+    while (i < lengthNumArray) {
+      const value: number = numbersArray[i];
+      sum += value;
+      i++;
+    }
+    const average: number = sum / lengthNumArray;
+    return Math.round(average * 100) / 100;
+  }
+}
+
+export class MathUtilV7 {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public averageNumbers(): number {
+    const numbersArray = this.numArray;
+    const lengthNumArray: number = numbersArray.length;
+    let sum: number = 0;
+
+    for (const number of numbersArray) {
+      sum += number;
+    }
+    const average: number = sum / lengthNumArray;
+    return Math.round(average * 100) / 100;
+  }
+}
+
+export class MathUtilV8 {
+  private numArray: number[];
+  constructor(numbersArray: unknown[]) {
+    validateMinTwoNumbersArray(numbersArray);
+    this.numArray = numbersArray;
+  }
+
+  public averageNumbers(): number {
+    const numbersArray = this.numArray;
+    const lengthNumArray = numbersArray.length;
+
+    const sum: number = numbersArray.reduce((acc, val) => {
+      return acc + val;
+    }, 0);
     const average: number = sum / lengthNumArray;
     return Math.round(average * 100) / 100;
   }
