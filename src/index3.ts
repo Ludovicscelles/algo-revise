@@ -1996,7 +1996,7 @@ class MathUtil {
     this.numArray = numbersArray;
   }
 
-  public numbersAverage(): number {
+  public averageNumbers(): number {
     const numberArray = this.numArray;
     const lengthNumArray: number = numberArray.length;
     let sum: number = 0;
@@ -2011,7 +2011,7 @@ class MathUtil {
 }
 
 const numArray9 = [50.5, 60.6, 70.7, 80.8];
-const average9 = new MathUtil(numArray9).numbersAverage();
+const average9 = new MathUtil(numArray9).averageNumbers();
 console.log(`La moyenne des nombres dans [${numArray9}] est de :`, average9);
 
 {
@@ -2037,7 +2037,7 @@ class MathUtilBis {
   }
 
   // Public method to calculate the average of the numbers in the array
-  public numbersAverage(): number {
+  public averageNumbers(): number {
     // Retrieve the array of numbers from the private property
     const numbersArray = this.numArray;
     // Get the length of the number array
@@ -2061,7 +2061,7 @@ class MathUtilBis {
 
 // Test the MathUtilBis class with an array of numbers
 const numArray9Bis = [50.5, 60.6, 70.7, 80.8];
-const average9Bis = new MathUtilBis(numArray9Bis).numbersAverage();
+const average9Bis = new MathUtilBis(numArray9Bis).averageNumbers();
 console.log(
   `La moyenne des nombres dans [${numArray9Bis}] est de :`,
   average9Bis
@@ -2083,7 +2083,7 @@ class MathUtilV2 {
     this.numArray = numbersArray;
   }
 
-  public numbersAverage(): number {
+  public averageNumbers(): number {
     const numbersArray = this.numArray;
     const lengthNumArray: number = numbersArray.length;
     let sum: number = 0;
@@ -2099,7 +2099,7 @@ class MathUtilV2 {
 }
 
 const numArray10 = [105.99, 152.1584, 198.795, 500.25];
-const average10 = new MathUtilV2(numArray10).numbersAverage();
+const average10 = new MathUtilV2(numArray10).averageNumbers();
 console.log(`La moyenne des nombres dans [${numArray10}] est de :`, average10);
 
 {
