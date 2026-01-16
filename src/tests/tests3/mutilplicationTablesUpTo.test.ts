@@ -4,6 +4,8 @@ import {
   multiplicationTablesUpTo,
   multiplicationTablesUpToV3,
   MultiplicationTableUpTo,
+  MultiplicationTableUpToV2,
+  MultiplicationTableUpToV3,
 } from "../../algo/algo3/multiplicationTablesUpTo";
 
 describe.each([
@@ -62,24 +64,37 @@ describe.each([
     "should throw error for non-integer input: %p",
     (input) => {
       expect(() => (fn as any)(input)).toThrowError(
-        "La saisie doit être un nombre entier."
+        "La saisie doit être un nombre entier.",
       );
-    }
+    },
   );
 
   it.each([0, -1, -5])(
     "should throw error for non-positive input: %p",
     (input) => {
       expect(() => (fn as any)(input)).toThrowError(
-        "Le nombre saisi doit être supérieur ou égal à un."
+        "Le nombre saisi doit être supérieur ou égal à un.",
       );
-    }
+    },
   );
 });
 
-describe("MultiplicationTableUpTo class", () => {
+describe.each([
+  {
+    class: MultiplicationTableUpTo,
+    name: "MultiplicationTableUpTo",
+  },
+  {
+    class: MultiplicationTableUpToV2,
+    name: "MultiplicationTableUpToV2",
+  },
+  {
+    class: MultiplicationTableUpToV3,
+    name: "MultiplicationTableUpToV3",
+  },
+])("$name", ({ class: multiplicationClass }) => {
   it("should return correct multiplication tables up to given number", () => {
-    const multiplicationTable = new MultiplicationTableUpTo(2);
+    const multiplicationTable = new multiplicationClass(2);
     const result = multiplicationTable.generate();
     expect(result).toEqual([
       [
@@ -112,18 +127,18 @@ describe("MultiplicationTableUpTo class", () => {
   it.each([1.5, "5", [], {}, null, undefined, NaN])(
     "should throw error for non-integer input: %p",
     (input) => {
-      expect(() => new MultiplicationTableUpTo(input as any)).toThrowError(
-        "La saisie doit être un nombre entier."
+      expect(() => new multiplicationClass(input as any)).toThrowError(
+        "La saisie doit être un nombre entier.",
       );
-    }
+    },
   );
 
   it.each([0, -1, -5])(
     "should throw error for non-positive input: %p",
     (input) => {
-      expect(() => new MultiplicationTableUpTo(input)).toThrowError(
-        "Le nombre saisi doit être supérieur ou égal à un."
+      expect(() => new multiplicationClass(input as any)).toThrowError(
+        "Le nombre saisi doit être supérieur ou égal à un.",
       );
-    }
+    },
   );
 });

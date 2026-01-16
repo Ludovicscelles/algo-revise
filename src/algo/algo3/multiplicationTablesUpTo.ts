@@ -60,3 +60,51 @@ export class MultiplicationTableUpTo {
     return table;
   }
 }
+
+export class MultiplicationTableUpToV2 {
+  constructor(private n: number) {
+    checkIsInteger(n);
+    checkIsPositiveNumberMinOne(n);
+  }
+
+  public generate(): string[][] {
+    const table: string[][] = [];
+
+    let i = 1;
+    while (i <= this.n) {
+      const row: string[] = [];
+      let j = 1;
+      while (j <= 10) {
+        row.push(`${i} x ${j} = ${i * j}`);
+        j++;
+      }
+      table.push(row);
+      i++;
+    }
+    return table;
+  }
+}
+
+export class MultiplicationTableUpToV3 {
+  constructor(private n: number) {
+    checkIsInteger(n);
+    checkIsPositiveNumberMinOne(n);
+  }
+
+  public generate(): string[][] {
+    const table: string[][] = [];
+
+    let i = 1;
+    do {
+      const row: string[] = [];
+      let j = 1;
+      do {
+        row.push(`${i} x ${j} = ${i * j}`);
+        j++;
+      } while (j <= 10);
+      table.push(row);
+      i++;
+    } while (i <= this.n);
+    return table;
+  }
+}
