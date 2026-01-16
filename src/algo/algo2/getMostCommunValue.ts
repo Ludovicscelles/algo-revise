@@ -1,4 +1,4 @@
-import { validateMinTwoNumbersArray } from "../../utils/CheckFunctions";
+import { validateMinTwoNumbersArray } from "../../utils/checkFunctions";
 
 export function getMostCommunValue(nbArray: unknown[]): number {
   validateMinTwoNumbersArray(nbArray);

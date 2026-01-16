@@ -1,4 +1,4 @@
-import { checkIsInteger, checkIsPositiveNumber, checkIsPositiveNumberMinOne } from "../../utils/CheckFunctions";
+import { checkIsInteger, checkIsPositiveNumber, checkIsPositiveNumberMinOne } from "../../utils/checkFunctions";
 
 export function fizzBuzz3(number3: unknown): string[] {
   checkIsInteger(number3);

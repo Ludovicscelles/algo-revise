@@ -1,4 +1,4 @@
-import { validateMinTwoIntegersArray } from "../../utils/CheckFunctions";
+import { validateMinTwoIntegersArray } from "../../utils/checkFunctions";
 
 export function filterOddNumbers(nbrArray: unknown[]): number[] {
   validateMinTwoIntegersArray(nbrArray);

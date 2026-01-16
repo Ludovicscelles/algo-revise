@@ -1,4 +1,4 @@
-import { checkIsInteger } from "../../utils/CheckFunctions";
+import { checkIsInteger } from "../../utils/checkFunctions";
 
 export function getGreatestCommonDivisor(int1: unknown, int2: unknown): number {
   if (int1 === undefined || int2 === undefined) {

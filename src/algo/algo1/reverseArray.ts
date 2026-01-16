@@ -1,4 +1,4 @@
-import { validateMinTwoStringsArray } from "../../utils/CheckFunctions";
+import { validateMinTwoStringsArray } from "../../utils/checkFunctions";
 
 export function reverseArray4(stArr4: unknown[]): string[] {
   validateMinTwoStringsArray(stArr4);

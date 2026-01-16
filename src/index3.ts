@@ -3,8 +3,8 @@ import {
   checkIsPositiveNumberMinOne,
   checkIsString,
   validateMinTwoNumbersArray,
-} from "./utils/CheckFunctions";
-import { stringWithoutSpaces, wordsWithSpaces } from "./utils/Normalize";
+} from "./utils/checkFunctions";
+import { stringWithoutSpaces, wordsWithSpaces } from "./utils/normalize";
 
 {
   /*

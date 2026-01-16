@@ -5,9 +5,9 @@ import {
   validateMinTwoNumbersArray,
   checkIsPositiveNumberMinOne,
   validateMinTwoIntegersArray,
-} from "./utils/CheckFunctions";
+} from "./utils/checkFunctions";
 
-import { cleanString, words } from "./utils/Normalize";
+import { cleanString, words } from "./utils/normalize";
 
 /*
   1. Nombre de chiffres

@@ -1,7 +1,7 @@
 import {
   checkIsInteger,
   checkIsPositiveNumberMinOne,
-} from "../../utils/CheckFunctions";
+} from "../../utils/checkFunctions";
 
 export function isPrimeNumber(nbr7: unknown): boolean {
   checkIsInteger(nbr7);

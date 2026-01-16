@@ -1,5 +1,5 @@
-import { checkIsString } from "../../utils/CheckFunctions";
-import { stringWithoutSpaces } from "../../utils/Normalize";
+import { checkIsString } from "../../utils/checkFunctions";
+import { stringWithoutSpaces } from "../../utils/normalize";
 
 export function isAnagram(str1: unknown, str2: unknown): boolean {
   if (str1 === undefined || str2 === undefined)

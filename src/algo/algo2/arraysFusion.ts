@@ -1,4 +1,4 @@
-import { validateMinOneNumbersArray } from "../../utils/CheckFunctions";
+import { validateMinOneNumbersArray } from "../../utils/checkFunctions";
 
 export function arraysFusion(
   nbArray1: unknown[],

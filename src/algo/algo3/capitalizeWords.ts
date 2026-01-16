@@ -1,5 +1,5 @@
-import { checkIsString } from "../../utils/CheckFunctions";
-import { wordsWithSpaces } from "../../utils/Normalize";
+import { checkIsString } from "../../utils/checkFunctions";
+import { wordsWithSpaces } from "../../utils/normalize";
 
 export function capitalizeWords(string: unknown): string {
   checkIsString(string);

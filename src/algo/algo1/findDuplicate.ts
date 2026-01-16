@@ -1,4 +1,4 @@
-import { validateMinTwoNumbersArray } from "../../utils/CheckFunctions";
+import { validateMinTwoNumbersArray } from "../../utils/checkFunctions";
 
 export function findDuplicate3(nbArray3: unknown[]): number[] {
   validateMinTwoNumbersArray(nbArray3);

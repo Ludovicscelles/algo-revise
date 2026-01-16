@@ -1,15 +1,15 @@
 import {
   checkIsInteger,
   checkIsPositiveNumber,
-  checkIsString,
-  validateMinTwoNumbersArray,
-  validateMinTwoIntegersArray,
   checkIsPositiveNumberMinOne,
+  checkIsString,
   checkIsStringsArray,
+  validateMinTwoIntegersArray,
+  validateMinTwoNumbersArray,
   validateMinTwoStringsArray,
-} from "./utils/CheckFunctions";
+} from "./utils/checkFunctions";
 
-import { normalizedStr, vowels } from "./utils/Normalize";
+import { normalizedStr, vowels } from "./utils/normalize";
 
 {
   /*

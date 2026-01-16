@@ -1,4 +1,4 @@
-import { checkIsString } from "../../utils/CheckFunctions";
+import { checkIsString } from "../../utils/checkFunctions";
 
 export function reverseAString(string: unknown): string {
   checkIsString(string);

@@ -1,7 +1,7 @@
 import {
   checkIsInteger,
   checkIsPositiveNumberMinOne,
-} from "../../utils/CheckFunctions";
+} from "../../utils/checkFunctions";
 
 export function sumOfNumbers(nbr: unknown): number {
   checkIsInteger(nbr);

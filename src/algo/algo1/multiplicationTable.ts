@@ -1,4 +1,4 @@
-import { checkIsInteger, checkIsPositiveNumberMinOne } from "../../utils/CheckFunctions";
+import { checkIsInteger, checkIsPositiveNumberMinOne } from "../../utils/checkFunctions";
 
 export function multiplicationTable(nb: unknown): string {
   checkIsInteger(nb);

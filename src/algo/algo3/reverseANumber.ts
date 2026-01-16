@@ -1,4 +1,4 @@
-import { checkIsInteger } from "../../utils/CheckFunctions";
+import { checkIsInteger } from "../../utils/checkFunctions";
 
 export function reverseANumber(num: unknown): number {
   checkIsInteger(num);

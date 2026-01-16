@@ -1,5 +1,5 @@
-import { checkIsString } from "../../utils/CheckFunctions";
-import { cleanString } from "../../utils/Normalize";
+import { checkIsString } from "../../utils/checkFunctions";
+import { cleanString } from "../../utils/normalize";
 
 export function countLettersInAString(sentence: unknown): number {
   checkIsString(sentence);

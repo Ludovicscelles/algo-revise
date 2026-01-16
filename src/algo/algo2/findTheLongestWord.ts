@@ -1,5 +1,5 @@
-import { checkIsString } from "../../utils/CheckFunctions";
-import { words } from "../../utils/Normalize";
+import { checkIsString } from "../../utils/checkFunctions";
+import { words } from "../../utils/normalize";
 
 export function findTheLongestWord(sentence: unknown): string {
   checkIsString(sentence);
